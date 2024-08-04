@@ -73,14 +73,17 @@
     <div class="container-fluid">
     
 	    <div>
-	    	<div>
+	    	<div class="pb-2">
 	    		<h1>Manage User</h1>
 	    		<a class="btn btn-primary btn-info" th:href="@{/users/new}">Create New User</a>
 	    	</div>
 	    </div>
 	    
+	    <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
+
+	    </div>
 	    
-	    <div class="pt-4">
+	    <div class="pt-2">
 	    	<table class="table table-responsive-xl table-bordered table-striped table-hover " >
 	    		<thead class=" gradient-bg">
 	    			<tr>
