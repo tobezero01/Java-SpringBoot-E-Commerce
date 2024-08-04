@@ -14,7 +14,7 @@ import com.eshop.common.entity.User;
 public class UserService {
 
 	@Autowired
-	private UserRepository repository;
+	private UserRepository userRepository;
 	
 	@Autowired
 	private RoleRepository roleRepository;
@@ -23,7 +23,7 @@ public class UserService {
 	private PasswordEncoder passwordEncoder;
 	
 	public List<User> listALl() {
-		return (List<User>) repository.findAll();
+		return (List<User>) userRepository.findAll();
 	}
 	
 	public List<Role> listRoles() {
@@ -32,12 +32,17 @@ public class UserService {
 	
 	public void save(User user) {
 		encodePass(user);
-		repository.save(user);
+		userRepository.save(user);
 	}
 	
 	private void encodePass(User user) {
 		String encodePass = passwordEncoder.encode(user.getPassword());
 		user.setPassword(encodePass);
+	}
+	
+	public boolean isEmailUnipue(String email) {
+		User user = userRepository.getUserByEmail(email);
+		return user == null;
 	}
 	
 }

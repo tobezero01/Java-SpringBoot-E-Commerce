@@ -83,7 +83,8 @@
 	    
 	    <!-- form user -->
 	    <div>
-			<form th:action="@{/users/save}" th:object="${user}" method="post" style="max-width: 800px; margin: 0 auto;">
+			<form th:action="@{/users/save}" th:object="${user}" method="post" 
+			style="max-width: 800px; margin: 0 auto;" onsubmit="return checkEmailUnique(this)">
 			    <div class="border border-secondary rounded p-3">
 			        
 			        <div class="form-group row mb-3">
@@ -146,10 +147,28 @@
 			    </div>
 			</form>
 
-	    </div>
-	    
-	    
-	    
+	    </div>   
+    </div>
+   
+   	<!-- Model dialog -->
+   <div class="modal fade text-center" id="modalDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalTitle">Warning</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <span id="modalBody">
+                    </span>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
    
     <!-- footer -->
@@ -165,6 +184,37 @@
 			window.location = "[[@{/users}]]";
 		});
 	});
+	
+	
+	//check email unique
+	function checkEmailUnique(form) {
+        var url = "[[@{/users/check_email}]]";
+        var userEmail = $("#email").val();
+        var csrfValue = $("input[name='_csrf']").val();
+        var params = { email: userEmail, _csrf: csrfValue };
+
+        $.post(url, params, function(response) {
+            if (response == "OK") {
+                form.submit();
+            } else if (response == "Duplicated") {
+                showModalDialog("Warning", "Duplicated Email: " + userEmail);
+            }else{
+                showModalDialog("Error", "Unknown response from server");
+            }
+        }).fail(function(xhr, status, error) {
+            showModalDialog("Error", "An error occurred: " + error);
+        });
+
+        // Chặn việc submit form ngay lập tức
+        return false;
+    }
+
+    // Hàm để hiển thị modal dialog
+    function showModalDialog(title, message) {
+        $("#modalTitle").text(title);
+        $("#modalBody").text(message);
+        $("#modalDialog").modal('show');
+    }
 </script>
 
 </body>
