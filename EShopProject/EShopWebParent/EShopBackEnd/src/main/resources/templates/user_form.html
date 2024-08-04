@@ -21,6 +21,9 @@
 </head>
 
 <body>
+
+
+	<!-- nav bar -->>
     <div class="">
         <nav class="navbar navbar-expand-lg gradient-bg navbar-dark">
             <a class="navbar-brand" th:href="@{/}">
@@ -69,6 +72,7 @@
         </nav>
     </div>
     
+    <!-- body -->
     
     <div class="container-fluid">
     
@@ -76,69 +80,71 @@
 	    	<h1>Manage User | Create new user</h1>
 	    </div>
 	    
+	    
+	    <!-- form user -->
 	    <div>
-	    	<form th:action="@{/users/save}" th:object="${user}" method="post" style="max-width: 800px; margin: 0 auto;">
-    <div class="border border-secondary rounded p-3">
-        
-        <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">Email</label>
-            <div class="col-sm-9">
-                <input type="email" th:field="*{email}" class="form-control" required minlength="8" maxlength="128">
-            </div>
-        </div>
-        
-        <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">First Name</label>
-            <div class="col-sm-9">
-                <input type="text" th:field="*{firstName}" class="form-control" required minlength="2" maxlength="45">
-            </div>
-        </div>
-        
-        <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">Last Name</label>
-            <div class="col-sm-9">
-                <input type="text" th:field="*{lastName}" class="form-control" required minlength="2" maxlength="45">
-            </div>
-        </div>
-        
-        <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">Password</label>
-            <div class="col-sm-9">
-                <input type="password" th:field="*{password}" class="form-control" required minlength="8" maxlength="45">
-            </div>
-        </div>
-        
-        <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">Roles</label>
-            <div class="col-sm-9">
-                <div class="d-block">
-                    <th:block th:each="role : ${listRoles}">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" th:field="*{roles}" th:value="${role.id}" />
-                            <label class="form-check-label" th:text="${role.name}"></label>
-                            <small class="form-text text-muted" th:text="${role.description}"></small>
-                        </div>
-                    </th:block>
-                </div>
-            </div>
-        </div>
-        
-        <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">Enabled</label>
-            <div class="col-sm-9">
-                <input class="form-check-input" type="checkbox" th:field="*{enabled}" />
-            </div>
-        </div>
-        
-        <div class="form-group row pt-4">
-            <div class="col-sm-9 offset-sm-3">
-                <input type="submit" value="Save" class="btn btn-primary">
-                <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
-            </div>
-        </div>
-        
-    </div>
-</form>
+			<form th:action="@{/users/save}" th:object="${user}" method="post" style="max-width: 800px; margin: 0 auto;">
+			    <div class="border border-secondary rounded p-3">
+			        
+			        <div class="form-group row mb-3">
+			            <label class="col-sm-3 col-form-label">Email</label>
+			            <div class="col-sm-9">
+			                <input type="email" th:field="*{email}" class="form-control" required minlength="8" maxlength="128">
+			            </div>
+			        </div>
+			        
+			        <div class="form-group row mb-3">
+			            <label class="col-sm-3 col-form-label">First Name</label>
+			            <div class="col-sm-9">
+			                <input type="text" th:field="*{firstName}" class="form-control" required minlength="2" maxlength="45">
+			            </div>
+			        </div>
+			        
+			        <div class="form-group row mb-3">
+			            <label class="col-sm-3 col-form-label">Last Name</label>
+			            <div class="col-sm-9">
+			                <input type="text" th:field="*{lastName}" class="form-control" required minlength="2" maxlength="45">
+			            </div>
+			        </div>
+			        
+			        <div class="form-group row mb-3">
+			            <label class="col-sm-3 col-form-label">Password</label>
+			            <div class="col-sm-9">
+			                <input type="password" th:field="*{password}" class="form-control" required minlength="8" maxlength="45">
+			            </div>
+			        </div>
+			        
+			        <div class="form-group row mb-3">
+			            <label class="col-sm-3 col-form-label">Roles</label>
+			            <div class="col-sm-9">
+			                <div class="d-block">
+			                    <th:block th:each="role : ${listRoles}">
+			                        <div class="form-check">
+			                            <input class="form-check-input" type="checkbox" th:field="*{roles}" th:value="${role.id}" />
+			                            <label class="form-check-label" th:text="${role.name}"></label>
+			                            <small class="form-text text-muted" th:text="${role.description}"></small>
+			                        </div>
+			                    </th:block>
+			                </div>
+			            </div>
+			        </div>
+			        
+			        <div class="form-group row mb-3">
+			            <label class="col-sm-3 col-form-label">Enabled</label>
+			            <div class="col-sm-9">
+			                <input class="form-check-input" type="checkbox" th:field="*{enabled}" />
+			            </div>
+			        </div>
+			        
+			        <div class="form-group row pt-4">
+			            <div class="col-sm-9 offset-sm-3">
+			                <input type="submit" value="Save" class="btn btn-primary">
+			                <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
+			            </div>
+			        </div>
+			        
+			    </div>
+			</form>
 
 	    </div>
 	    
@@ -146,10 +152,13 @@
 	    
     </div>
    
+    <!-- footer -->
     <div class="text-center">
         <p>EShop Control Panel - Copyright &copy; EShop</p>
     </div>
     
+    
+ <!-- redirect cancel btn to /users-->
 <script type="text/javascript">
 	$(document).ready(function () {
 		$("#buttonCancel").on("click", function () {
@@ -157,5 +166,6 @@
 		});
 	});
 </script>
+
 </body>
 </html>
