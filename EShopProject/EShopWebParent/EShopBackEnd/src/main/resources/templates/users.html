@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" />
     <title>Shop Admin</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/font/all.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
     <style>
@@ -102,14 +104,20 @@
 	    		<tbody>
 	    			<tr th:each="user : ${listUsers}">
 	    				<td>[[${user.id}]]</td>
-	    				<td></td>
+	    				<td><span class="fas fa-portrait fa-3x icon-dark"></span></td>
 	    				<td>[[${user.email}]]</td>
 	    				<td>[[${user.firstName}]]</td>
 	    				<td>[[${user.lastName}]]</td>
 	    				<td>[[${user.roles}]]</td>
-	    				<td>[[${user.enabled}]]</td>
 	    				<td>
-	    					Edit &nbsp; Delete
+                            <a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green" href=""></a>
+                            <a th:if="${user.enabled != true}" class="fas fa-check-circle fa-2x icon-dark" href=""></a>
+                        </td>
+	    				<td>
+                            <a class="fas fa-edit fa-2x icon-orange" href=""></a>
+	    					 &nbsp;
+                            &nbsp;
+                            <a class="fas fa-trash fa-2x icon-silver" href=""></a>
 	    				</td>
 	    			</tr>
 	    		</tbody>
