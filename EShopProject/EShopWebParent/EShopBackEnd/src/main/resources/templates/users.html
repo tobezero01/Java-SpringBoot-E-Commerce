@@ -121,7 +121,12 @@
                             </a>
 	    					 &nbsp;
                             &nbsp;
-                            <a class="fas fa-trash fa-2x icon-silver" href=""></a>
+                            <a class="fas fa-trash fa-2x icon-silver link-delete"
+                               th:href="@{'/users/delete/' + ${user.id}}" title="Delete the user"
+                               th:id="${user.id}"
+                            >
+
+                            </a>
 	    				</td>
 	    			</tr>
 	    		</tbody>
@@ -129,7 +134,31 @@
 	    </div>
 
 
+    </div>
 
+
+    <!-- Model dialog Delete user-->
+    <div class="modal fade text-center" id="deleteConfirm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" >Delete Confirmation</h4>
+                    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <span id="modalBody">
+                    </span>
+                </div>
+
+                <div class="modal-footer">
+                    <a class="btn btn-success" href="" id="yesBtn" >Yes</a>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
 
@@ -139,6 +168,21 @@
     </div>
     
 
+
+
+<script>
+    $(document).ready(function () {
+        $(".link-delete").on("click", function(e) {
+            e.preventDefault();
+            link = $(this)
+            $("#yesBtn").attr("href", link.attr("href"));
+            //alert($(this).attr("href"));
+            id = link.attr("id");
+            $("#modalBody").text("Are you sure to want to delete the user id = " + id + " ?");
+            $("#deleteConfirm").modal('show');
+        });
+    });
+</script>
 
 </body>
 
