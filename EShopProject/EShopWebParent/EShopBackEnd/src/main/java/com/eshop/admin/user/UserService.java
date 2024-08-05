@@ -1,6 +1,8 @@
 package com.eshop.admin.user;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,19 @@ public class UserService {
 	}
 	
 	public void save(User user) {
-		encodePass(user);
+		boolean existingUser = user.getId()!=null;
+
+		if(existingUser) {
+			Optional<User> user1 = userRepository.findById(user.getId());
+
+			if(user.getPassword().isEmpty()) {
+				user.setPassword(user1.get().getPassword());
+			} else {
+				encodePass(user);
+			}
+		} else {
+			encodePass(user);
+		}
 		userRepository.save(user);
 	}
 	
@@ -40,9 +54,26 @@ public class UserService {
 		user.setPassword(encodePass);
 	}
 	
-	public boolean isEmailUnipue(String email) {
+	public boolean isEmailUnique(Integer id, String email) {
 		User user = userRepository.getUserByEmail(email);
-		return user == null;
+		if (user == null) return true;
+		boolean isCreatingNew = (id == null);
+		if(isCreatingNew) {
+			if(user != null) return false;
+		}else {
+			if(user.getId() != id) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public Optional<User> getUserById(Integer id) throws UserNotFoundException {
+		try{
+			return userRepository.findById(id);
+		}catch (NoSuchElementException ex) {
+			throw new UserNotFoundException("Could not find any user by id = " + id);
+		}
 	}
 	
 }

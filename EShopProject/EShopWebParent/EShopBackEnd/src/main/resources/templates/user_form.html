@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" />
-    <title>Create new user</title>
+    <title>[[${pageTitle}]]</title>
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
     <style>
@@ -76,7 +76,7 @@
     <div class="container-fluid">
     
 	    <div>
-	    	<h1>Manage User | Create new user</h1>
+	    	<h1>Manage User | [[${pageTitle}]] (id : [[${id}]])</h1>
 	    </div>
 	    
 	    
@@ -84,6 +84,7 @@
 	    <div>
 			<form th:action="@{/users/save}" th:object="${user}" method="post" 
 			style="max-width: 800px; margin: 0 auto;" onsubmit="return checkEmailUnique(this)">
+                <input type="hidden" th:field="*{id}"/>
 			    <div class="border border-secondary rounded p-3">
 			        
 			        <div class="form-group row mb-3">
@@ -110,7 +111,8 @@
 			        <div class="form-group row mb-3">
 			            <label class="col-sm-3 col-form-label">Password</label>
 			            <div class="col-sm-9">
-			                <input type="password" th:field="*{password}" class="form-control" required minlength="8" maxlength="45">
+                            <input th:if="${ id == null}" type="password" th:field="*{password}" class="form-control" required minlength="8" maxlength="45">
+                            <input th:if="${ id != null}" type="password" th:field="*{password}" class="form-control" minlength="8" maxlength="45">
 			            </div>
 			        </div>
 			        
@@ -191,8 +193,10 @@
 	function checkEmailUnique(form) {
         var url = "[[@{/users/check_email}]]";
         var userEmail = $("#email").val();
+        var userId = $("#id").val();
         var csrfValue = $("input[name='_csrf']").val();
-        var params = { email: userEmail, _csrf: csrfValue };
+
+        var params = {id:userId, email: userEmail, _csrf: csrfValue };
 
         $.post(url, params, function(response) {
             if (response == "OK") {
@@ -219,4 +223,5 @@
 </script>
 
 </body>
+
 </html>
