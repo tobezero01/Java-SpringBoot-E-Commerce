@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="update comment code">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserNotFoundException.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="update user function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/user_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/user/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/user/UserRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722838787636</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update user function">
+      <created>1722891497304</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1722891497304</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -186,6 +191,7 @@
     <MESSAGE value="message dialog for unique email" />
     <MESSAGE value="add font and fas-icon" />
     <MESSAGE value="update comment code" />
-    <option name="LAST_COMMIT_MESSAGE" value="update comment code" />
+    <MESSAGE value="update user function" />
+    <option name="LAST_COMMIT_MESSAGE" value="update user function" />
   </component>
 </project>
