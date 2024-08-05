@@ -112,8 +112,11 @@
 	    				<td>[[${user.lastName}]]</td>
 	    				<td>[[${user.roles}]]</td>
 	    				<td>
-                            <a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green" href=""></a>
-                            <a th:if="${user.enabled != true}" class="fas fa-circle fa-2x icon-dark" href=""></a>
+                            <a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+                               th:href="@{'/users/' + ${user.id} + '/enabled/false'}" title="Disable user"></a>
+
+                            <a th:if="${user.enabled != true}" class="fas fa-circle fa-2x icon-dark"
+                               th:href="@{'/users/' + ${user.id} + '/enabled/true'}" title="Enable user"></a>
                         </td>
 	    				<td>
                             <a class="fas fa-edit fa-2x icon-orange" th:href="@{'/users/edit/' + ${user.id}}" title="Edit the user">

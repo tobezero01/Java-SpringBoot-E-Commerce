@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 import com.eshop.common.entity.Role;
 import com.eshop.common.entity.User;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class UserService {
 
 	@Autowired
@@ -83,5 +85,9 @@ public class UserService {
 			throw new UserNotFoundException("Could not find any user by id = " + id);
 		}
 		userRepository.deleteById(id);
+	}
+
+	public void updateUserEnabledStatus(Integer id , boolean enabled) {
+		userRepository.updateEnableStatus(id, enabled);
 	}
 }
