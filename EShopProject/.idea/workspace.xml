@@ -4,34 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint update image">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/1/duc-argentina.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/10/Frederick Santos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/11/Anna Maria.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/12/Satya Narayana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/13/Matthew.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/15/Jack Bruce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/16/Mohamed Zirri.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/17/Mithun Kumar Majumdar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/18/Ali Raza.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/19/Isaac Henry.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/2/Allada Pavan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/21/Mike Gates.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/22/Pedro Quintero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/4/Muhammad Evran.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/5/KentHervey.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/6/Alfred.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/7/Nathi_Sangweni.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/9/Bill Feeny.png" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add database , add jpaRepo. add testListPage">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/user/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/user/UserRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-photos/3/Amina Elshal.png" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/23/Amina Elshal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-photos/3/Bruce Kitchell.png" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/3/Bruce Kitchell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-photos/3/Svetlana Stasovska.png" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/20/Svetlana Stasovska.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-photos/4/Ammanolla.png" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/8/Ammanolla.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-photos/9/Dave Kumar.png" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/user-photos/14/Dave Kumar.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +72,7 @@
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserRepositoryTests.testListFirstPage">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -167,8 +143,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserRepositoryTests.testListFirstPage" />
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.UserRepositoryTests.testListFirstPage" />
         <item itemvalue="JUnit.PasswordEncoderTest.testEncoderPassword" />
         <item itemvalue="JUnit.UserRepositoryTests.testListAllUsers" />
       </list>
@@ -288,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1722968064084</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add database , add jpaRepo. add testListPage">
+      <created>1722976742337</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1722976742337</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,6 +301,7 @@
     <MESSAGE value="update image for user by id /user-photos and add FileUploadUtil" />
     <MESSAGE value="update image for user.html" />
     <MESSAGE value="endpoint update image" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint update image" />
+    <MESSAGE value="add database , add jpaRepo. add testListPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="add database , add jpaRepo. add testListPage" />
   </component>
 </project>
