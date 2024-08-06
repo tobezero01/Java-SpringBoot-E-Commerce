@@ -140,6 +140,61 @@
 	    </div>
 
 
+        <div class="text-center m-1" th:if="${startCount < endCount}">
+            <span>Showing user # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+        </div>
+        <div class="text-center m-1" th:unless="${startCount < endCount}">
+            <span>No user found</span>
+        </div>
+
+
+
+        <!--pagination-->
+        <div>
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <!-- Link to the first page -->
+                    <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{/users/page/1}">First</a>
+                    </li>
+                    <!-- Link to the previous page -->
+                    <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{'/users/page/' + ${currentPage - 1}}">Previous</a>
+                    </li>
+                    <!-- Link to the first page if current page is greater than 2 -->
+                    <li th:if="${currentPage > 2}" class="page-item">
+                        <a class="page-link" th:href="@{'/users/page/' + 1}">1</a>
+                    </li>
+                    <!-- Dots before the current page -->
+                    <li th:if="${currentPage > 3}" class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                    <!-- Links for the current, previous, and next page -->
+                    <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
+                        th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
+                        <a class="page-link" th:href="@{'/users/page/' + ${i}}">[[${i}]]</a>
+                    </li>
+                    <!-- Dots after the current page -->
+                    <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                    <!-- Link to the last page if current page is less than total pages minus 1 -->
+                    <li th:if="${currentPage < totalPages - 1}" class="page-item">
+                        <a class="page-link" th:href="@{'/users/page/' + ${totalPages}}">[[${totalPages}]]</a>
+                    </li>
+                    <!-- Link to the next page -->
+                    <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{'/users/page/' + ${currentPage + 1}}">Next</a>
+                    </li>
+                    <!-- Link to the last page -->
+                    <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{'/users/page/' + ${totalPages}}">Last</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
     </div>
 
 
