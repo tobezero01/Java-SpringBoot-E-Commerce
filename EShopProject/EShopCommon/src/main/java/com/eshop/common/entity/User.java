@@ -150,12 +150,13 @@ public class User {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", firstName=" + firstName
 				+ ", lastName=" + lastName + ", photos=" + photos + ", enabled=" + enabled + ", roles=" + roles + "]";
 	}
-	
+
 	@Transient
 	public String getPhotosImagePath() {
-		if(id == null || photos == null) {
+		if (id == null || photos == null) {
 			return "/images/default-user.png";
 		}
 		return "/user-photos/" + this.id + "/" + this.photos;
 	}
+
 }
