@@ -142,7 +142,7 @@
                     <div class="form-group row mb-3">
                         <label class="col-sm-3 col-form-label">Photo</label>
                         <div class="col-sm-9">
-                            <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpge" />
+                            <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpge" name="image"/>
                             <img id="thumbnail" alt="Photos preview" th:src="@{/images/default-user.png} " class="img-fluid">
                         </div>
                     </div>
@@ -170,8 +170,8 @@
                     </div>
 
                     <div class="modal-body">
-                    <span id="modalBody">
-                    </span>
+                        <span id="modalBody">
+                        </span>
                     </div>
 
                     <div class="modal-footer">

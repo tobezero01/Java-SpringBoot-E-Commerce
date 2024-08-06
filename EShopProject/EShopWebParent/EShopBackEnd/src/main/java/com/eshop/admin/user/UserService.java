@@ -34,7 +34,7 @@ public class UserService {
 		return (List<Role>) roleRepository.findAll();
 	}
 	
-	public void save(User user) {
+	public User save(User user) {
 		boolean existingUser = user.getId()!=null;
 
 		if(existingUser) {
@@ -48,7 +48,8 @@ public class UserService {
 		} else {
 			encodePass(user);
 		}
-		userRepository.save(user);
+		 return userRepository.save(user);
+
 	}
 	
 	private void encodePass(User user) {
