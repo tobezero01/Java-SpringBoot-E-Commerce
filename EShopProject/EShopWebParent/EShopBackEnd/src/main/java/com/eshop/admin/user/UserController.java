@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.eshop.admin.FileUploadUtil;
+import com.eshop.admin.user.export.UserCsvExporter;
+import com.eshop.admin.user.export.UserExcelExporter;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -136,5 +138,14 @@ public class UserController {
 		List<User> list = userService.listALl();
 		UserCsvExporter userCsvExporter = new UserCsvExporter();
 		userCsvExporter.export(list,response);
+	}
+	
+	
+	@GetMapping("/users/export/excel")
+	public void exportToExcel(HttpServletResponse response) throws IOException {
+		List<User> list = userService.listALl();
+
+		UserExcelExporter excelExporter = new UserExcelExporter();
+		excelExporter.export(list, response);
 	}
 }

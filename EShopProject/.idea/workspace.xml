@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="fragments.html view">
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add UserCsvExporter.java helper">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/AbstractExporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/UserExcelExporter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserCsvExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/UserCsvExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,7 +67,9 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd",
+    "settings.editor.selected.configurable": "preferences.packagesearch.PackageSearchGeneralConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,6 +81,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.eshop.admin.user" />
     </key>
   </component>
   <component name="RunManager" selected="Application.EShopBackEndApplication">
@@ -94,7 +105,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.*" />
+          <option name="PATTERN" value="com.eshop.admin.user.export.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -110,7 +121,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.*" />
+          <option name="PATTERN" value="com.eshop.admin.user.export.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,7 +137,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.*" />
+          <option name="PATTERN" value="com.eshop.admin.user.export.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,7 +153,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.*" />
+          <option name="PATTERN" value="com.eshop.admin.user.export.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -334,7 +345,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723029894084</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="add dependency and controller for file csv">
+      <created>1723034186007</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1723034186007</updated>
+    </task>
+    <task id="LOCAL-00024" summary="add UserCsvExporter.java helper">
+      <created>1723034229460</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1723034229460</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,6 +396,8 @@
     <MESSAGE value="jUnit test search user by name" />
     <MESSAGE value="endpoint search user function with filter and pagination" />
     <MESSAGE value="fragments.html view" />
-    <option name="LAST_COMMIT_MESSAGE" value="fragments.html view" />
+    <MESSAGE value="add dependency and controller for file csv" />
+    <MESSAGE value="add UserCsvExporter.java helper" />
+    <option name="LAST_COMMIT_MESSAGE" value="add UserCsvExporter.java helper" />
   </component>
 </project>
