@@ -84,7 +84,9 @@ public class UserController {
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
 		}
 		redirectAttributes.addFlashAttribute("message", "The user has been saved successfully!");
-		return "redirect:/users";
+
+		String firstPathEmailSave = user.getEmail().split("@")[0];
+		return "redirect:/users/page/1?sortField=id&sortDir=asc&keyWord=" + firstPathEmailSave;
 	}
 
 	@GetMapping("/users/edit/{id}")

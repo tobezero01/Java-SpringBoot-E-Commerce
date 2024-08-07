@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <!--fragment table column filter-->
+    <th th:fragment="column_link(fieldName , columnLabel)">
+        <a  class="text-dark"
+           th:href = "@{'/users/page/' + ${currentPage} +'?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyWord != null ? '&keyWord=' + keyWord : ''}} ">[[${columnLabel}]]</a>
+        <span th:if="${sortField == fieldName}"
+              th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}" >
+        </span>
+    </th>
+</body>
+</html>
