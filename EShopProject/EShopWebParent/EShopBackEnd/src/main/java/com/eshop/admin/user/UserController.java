@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.eshop.admin.FileUploadUtil;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -127,5 +128,13 @@ public class UserController {
 		String message = "The user Id : " + id + " has been " + status;
 		redirectAttributes.addFlashAttribute("message", message);
 		return "redirect:/users";
+	}
+	
+	
+	@GetMapping("/users/export/csv")
+	public void exportToCsv(HttpServletResponse response) throws IOException {
+		List<User> list = userService.listALl();
+		UserCsvExporter userCsvExporter = new UserCsvExporter();
+		userCsvExporter.export(list,response);
 	}
 }
