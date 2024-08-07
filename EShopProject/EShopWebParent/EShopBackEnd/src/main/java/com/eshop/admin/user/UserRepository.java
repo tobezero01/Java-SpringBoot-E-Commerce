@@ -1,5 +1,7 @@
 package com.eshop.admin.user;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -20,5 +22,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	@Query("Update User u Set u.enabled = ?2 where u.id = ?1 ")
 	@Modifying
 	public void updateEnableStatus(Integer id , boolean enabled);
+
+
+	@Query("Select u from User u where u.firstName like %?1% OR u.lastName like %?1%")
+	public Page<User> findAll(String keyWord, Pageable pageable);
 	
 }
