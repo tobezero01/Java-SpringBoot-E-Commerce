@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head>
+<head >
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" />
-    <title>Login</title>
+    <title>Login Page</title>
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
     <style>
@@ -33,13 +33,13 @@
             margin-bottom: 20px;
         }
 
+        .login-container .btn-primary {
+            width: 100%;
+        }
+
         .login-container input[type="email"],
         .login-container input[type="password"] {
             margin-bottom: 15px;
-        }
-
-        .login-container .btn-primary {
-            width: 100%;
         }
 
         .footer {
@@ -51,14 +51,17 @@
     </style>
 </head>
 <body>
-<div class="login-container">
+<div class="login-container main-body">
     <div>
         <img th:src="@{/images/logo-removebg.png}" alt="Shop Logo" />
     </div>
 
     <form th:action="@{/login}" method="post">
         <div th:if="${param.error}">
-            <p class="text-danger" > [[${session.SPRING_SECURITY_LAST_EXCEPTION.message}}]]</p>
+            <p class="text-danger">[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]</p>
+        </div>
+        <div th:if="${param.logout}">
+            <p class="text-warning">You have been logout!</p>
         </div>
         <div class="border border-secondary rounded p-3">
             <p><b>Access to Shop Control</b></p>
