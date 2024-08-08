@@ -53,6 +53,10 @@ public class WebSecurityConfig {
                 )
                 .logout(logout -> logout
                         .permitAll()
+                )
+                .rememberMe( rem -> rem
+                        .key("AbcDefgHijKnmlOqprs_1234567890")
+                        .tokenValiditySeconds(7 * 24 * 60 * 60)
                 );
 
 
