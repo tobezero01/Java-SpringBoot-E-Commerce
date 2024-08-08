@@ -74,7 +74,7 @@ public class UserRepositoryTests {
 	public void testUpdateUserDetails() {
 		User user = repository.findById(1).get();
 		user.setEnabled(true);
-		user.setEmail("ducnhuad@gmail.com");
+		user.setPassword("ducnhu1234");
 		repository.save(user);
 		System.out.println(user);
 		assertThat(user).isNotNull();
