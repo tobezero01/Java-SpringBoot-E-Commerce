@@ -8,6 +8,12 @@
 <div>
     <div th:replace="navigation :: menu"></div>
 
+    <div class="container-fluid">
+        Welcome
+        <a th:href="@{/account}" sec:authentication="principal.username"></a>
+          <span sec:authentication="principal.authorities"></span>
+    </div>
+
     <div th:replace="fragments :: footer"></div>
 </div>
 
