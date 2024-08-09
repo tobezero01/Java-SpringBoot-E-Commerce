@@ -1,7 +1,8 @@
-package com.eshop.admin.user;
+package com.eshop.admin.user.controller;
 
 import com.eshop.admin.FileUploadUtil;
 import com.eshop.admin.security.EShopUserDetails;
+import com.eshop.admin.user.UserService;
 import com.eshop.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -30,7 +31,7 @@ public class AccountController {
 
         model.addAttribute("user", user);
 
-        return "account_form";
+        return "users/account_form";
     }
 
 
