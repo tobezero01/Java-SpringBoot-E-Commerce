@@ -50,9 +50,19 @@ public class Category {
         this.image = "default";
     }
 
+    public Category(String name, Category parent) {
+        this(name);
+        this.parent = parent;
+    }
+
+    public Category(Integer id) {
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }
+
 
     public void setId(Integer id) {
         this.id = id;
@@ -105,4 +115,5 @@ public class Category {
     public void setChildren(Set<Category> children) {
         this.children = children;
     }
+
 }

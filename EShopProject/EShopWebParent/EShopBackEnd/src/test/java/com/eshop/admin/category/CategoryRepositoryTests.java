@@ -10,7 +10,9 @@ import org.springframework.test.annotation.Rollback;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 
-@DataJpaTest
+import java.util.Set;
+
+@DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
 public class CategoryRepositoryTests {
@@ -18,14 +20,65 @@ public class CategoryRepositoryTests {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    @Autowired
-    private TestEntityManager entityManager;
-
     @Test
     public void testCreateRootCategory() {
-        Category category = new Category("Computers");
+        Category category = new Category("Electronic");
         Category savedCategory = categoryRepository.save(category);
 
         assertThat(savedCategory.getId()).isGreaterThan(0);
+    }
+
+    @Test
+    public void testCreateSubCategory() {
+        Category parent = new Category(2);
+        Category subCategory = new Category("Screen", parent);
+        Category savedCategory = categoryRepository.save(subCategory);
+
+        assertThat(savedCategory.getId()).isGreaterThan(0);
+
+    }
+
+    @Test
+    public void testGetCategory() {
+        Category category = categoryRepository.findById(1).get();
+        System.out.println(category.getName());
+
+        Set<Category> subCategory = category.getChildren();
+        for (Category cate : subCategory) {
+            System.out.println(cate.getName());
+        }
+
+        assertThat(subCategory.size()).isGreaterThan(0);
+    }
+
+
+    @Test
+    public void testPrintHierarchicalCategories() {
+        Iterable<Category> categories = categoryRepository.findAll();
+        for (Category category : categories) {
+            if(category.getParent() == null) {
+                System.out.println(category.getName());
+                Set<Category> children = category.getChildren();
+
+                for (Category subCategory : children) {
+                    System.out.print("--");
+                    System.out.println(subCategory.getName());
+                    printChildren(subCategory,1);
+                }
+            }
+        }
+    }
+
+    public void printChildren(Category parent , int subLevel) {
+        int newSubLevel = subLevel+1;
+        Set<Category> children = parent.getChildren();
+        for (Category subCategory : children) {
+            for (int i = 0 ; i < newSubLevel ; i++) {
+                System.out.print("--");
+            }
+            System.out.println(subCategory.getName());
+
+            printChildren(subCategory, newSubLevel);
+        }
     }
 }

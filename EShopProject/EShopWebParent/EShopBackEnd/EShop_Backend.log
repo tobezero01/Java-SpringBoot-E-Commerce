@@ -879,3 +879,131 @@ This generated password is for development use only. Your security configuration
 2024-08-10T04:47:04.215+07:00  WARN 17648 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 2024-08-10T04:47:04.218+07:00  WARN 17648 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
 2024-08-10T04:47:06.594+07:00  INFO 17648 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.317 seconds (process running for 5.489)
+2024-08-10T05:03:42.783+07:00  INFO 4044 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 4044 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:03:42.784+07:00 DEBUG 4044 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:03:42.784+07:00  INFO 4044 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:03:44.863+07:00  WARN 4044 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:03:44.865+07:00  WARN 4044 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:03:47.093+07:00  INFO 4044 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.955 seconds (process running for 6.277)
+2024-08-10T05:09:35.810+07:00  INFO 8384 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 8384 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:09:35.812+07:00 DEBUG 8384 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:09:35.813+07:00  INFO 8384 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:09:37.304+07:00  WARN 8384 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:09:37.307+07:00  WARN 8384 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:09:39.130+07:00  INFO 8384 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 3.662 seconds (process running for 4.562)
+2024-08-10T05:12:49.979+07:00  INFO 17936 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 17936 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:12:49.980+07:00 DEBUG 17936 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:12:49.981+07:00  INFO 17936 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:12:52.935+07:00  WARN 17936 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:12:52.941+07:00  WARN 17936 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:12:55.792+07:00  INFO 17936 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 6.222 seconds (process running for 7.423)
+2024-08-10T05:16:01.527+07:00  INFO 24440 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 24440 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:16:01.529+07:00 DEBUG 24440 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:16:01.529+07:00  INFO 24440 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:16:03.135+07:00  WARN 24440 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:16:03.137+07:00  WARN 24440 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:16:05.118+07:00  INFO 24440 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.01 seconds (process running for 5.005)
+2024-08-10T05:20:13.098+07:00  INFO 21548 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 21548 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:20:13.099+07:00 DEBUG 21548 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:20:13.100+07:00  INFO 21548 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:20:15.328+07:00  WARN 21548 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:20:15.331+07:00  WARN 21548 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:20:17.941+07:00  INFO 21548 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 5.258 seconds (process running for 6.522)
+2024-08-10T05:20:18.631+07:00  WARN 21548 --- [EShopBackEnd] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1062, SQLState: 23000
+2024-08-10T05:20:18.631+07:00 ERROR 21548 --- [EShopBackEnd] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : Duplicate entry 'Screen' for key 'categories.UK_jx1ptm0r46dop8v0o7nmgfbeq'
+2024-08-10T05:20:18.651+07:00  WARN 21548 --- [EShopBackEnd] [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] for test method [public void com.eshop.admin.category.CategoryRepositoryTests.testCreateSubCategory()] and test instance [com.eshop.admin.category.CategoryRepositoryTests@5876cd86]
+
+org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:804) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.transaction.TransactionContext.endTransaction(TransactionContext.java:135) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:260) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:487) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.afterEach(SpringExtension.java:278) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAfterEachCallbacks$12(TestMethodTestDescriptor.java:261) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$13(TestMethodTestDescriptor.java:277) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$14(TestMethodTestDescriptor.java:277) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:217) ~[junit-platform-commons-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAllAfterMethodsOrCallbacks(TestMethodTestDescriptor.java:276) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAfterEachCallbacks(TestMethodTestDescriptor.java:260) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:145) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+
+2024-08-10T05:20:43.933+07:00  INFO 18360 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 18360 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:20:43.935+07:00 DEBUG 18360 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:20:43.936+07:00  INFO 18360 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:20:45.663+07:00  WARN 18360 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:20:45.666+07:00  WARN 18360 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:20:48.211+07:00  INFO 18360 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.742 seconds (process running for 6.121)
+2024-08-10T05:22:40.908+07:00  INFO 10980 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 10980 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:22:40.909+07:00 DEBUG 10980 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:22:40.910+07:00  INFO 10980 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:22:42.573+07:00  WARN 10980 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:22:42.575+07:00  WARN 10980 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:22:44.801+07:00  INFO 10980 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.372 seconds (process running for 5.579)
+2024-08-10T05:23:07.242+07:00  INFO 5808 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 5808 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:23:07.243+07:00 DEBUG 5808 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:23:07.244+07:00  INFO 5808 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:23:09.053+07:00  WARN 5808 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:23:09.055+07:00  WARN 5808 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:23:11.261+07:00  INFO 5808 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.429 seconds (process running for 5.906)
+2024-08-10T05:25:34.630+07:00  INFO 11744 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 11744 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:25:34.632+07:00 DEBUG 11744 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:25:34.633+07:00  INFO 11744 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:25:36.151+07:00  WARN 11744 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:25:36.154+07:00  WARN 11744 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:25:38.095+07:00  INFO 11744 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 3.812 seconds (process running for 4.701)
+2024-08-10T05:31:06.868+07:00  INFO 19028 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Starting CategoryRepositoryTests using Java 21.0.2 with PID 19028 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-10T05:31:06.869+07:00 DEBUG 19028 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-10T05:31:06.870+07:00  INFO 19028 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T05:31:08.373+07:00  WARN 19028 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-10T05:31:08.375+07:00  WARN 19028 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-10T05:31:10.920+07:00  INFO 19028 --- [EShopBackEnd] [main] c.e.a.category.CategoryRepositoryTests   : Started CategoryRepositoryTests in 4.42 seconds (process running for 5.398)

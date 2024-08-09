@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="logging properties">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="JUnit firstTest CategoryRepositoryTests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/user/UserRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/user/UserRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +85,7 @@
       <recent name="com.eshop.admin.user" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CategoryRepositoryTests.testCreateRootCategory">
+  <component name="RunManager" selected="JUnit.CategoryRepositoryTests.testPrintHierarchicalCategories">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -119,49 +116,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testListFirstPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testCreateSubCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.export.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testListFirstPage" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateSubCategory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testSearchUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testGetCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.export.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testSearchUsers" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testGetCategory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTests.testUpdateUserDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CategoryRepositoryTests.testPrintHierarchicalCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.user.controller.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.user" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.user.UserRepositoryTests" />
-      <option name="METHOD_NAME" value="testUpdateUserDetails" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testPrintHierarchicalCategories" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -170,17 +167,17 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
-      <item itemvalue="JUnit.UserRepositoryTests.testUpdateUserDetails" />
-      <item itemvalue="JUnit.UserRepositoryTests.testSearchUsers" />
-      <item itemvalue="JUnit.UserRepositoryTests.testListFirstPage" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testGetCategory" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testPrintHierarchicalCategories" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CategoryRepositoryTests.testPrintHierarchicalCategories" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateSubCategory" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testGetCategory" />
         <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
         <item itemvalue="Application.EShopBackEndApplication" />
-        <item itemvalue="JUnit.UserRepositoryTests.testUpdateUserDetails" />
-        <item itemvalue="JUnit.UserRepositoryTests.testSearchUsers" />
-        <item itemvalue="JUnit.UserRepositoryTests.testListFirstPage" />
       </list>
     </recent_temporary>
   </component>
@@ -452,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723203069996</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="add Category.java and CategoryRepository.java">
+      <created>1723240232306</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1723240232306</updated>
+    </task>
+    <task id="LOCAL-00039" summary="JUnit firstTest CategoryRepositoryTests">
+      <created>1723240275069</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1723240275069</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -468,8 +479,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="user img js and user-form" />
-    <MESSAGE value="update image for user by id /user-photos and add FileUploadUtil" />
     <MESSAGE value="update image for user.html" />
     <MESSAGE value="endpoint update image" />
     <MESSAGE value="add database , add jpaRepo. add testListPage" />
@@ -493,6 +502,8 @@
     <MESSAGE value="code refactor" />
     <MESSAGE value="add some error 404,403,500" />
     <MESSAGE value="logging properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="logging properties" />
+    <MESSAGE value="add Category.java and CategoryRepository.java" />
+    <MESSAGE value="JUnit firstTest CategoryRepositoryTests" />
+    <option name="LAST_COMMIT_MESSAGE" value="JUnit firstTest CategoryRepositoryTests" />
   </component>
 </project>
