@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="rememberMe data key and token">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/common_form.js" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code refactor">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/controller/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/account_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/account_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/navigation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,22 +54,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.packagesearch.PackageSearchGeneralConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/error",
+    "settings.editor.selected.configurable": "preferences.packagesearch.PackageSearchGeneralConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\error" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\static\font" />
     </key>
@@ -425,7 +418,21 @@
       <option name="project" value="LOCAL" />
       <updated>1723135999483</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="basic authentication">
+      <created>1723201553158</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1723201553158</updated>
+    </task>
+    <task id="LOCAL-00035" summary="code refactor">
+      <created>1723201565564</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1723201565564</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,8 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="user delete service" />
-    <MESSAGE value="user delete function" />
     <MESSAGE value="user status test" />
     <MESSAGE value="user status update endpoint" />
     <MESSAGE value="user img js and user-form" />
@@ -466,6 +471,8 @@
     <MESSAGE value="add logout security" />
     <MESSAGE value="refactor layout" />
     <MESSAGE value="rememberMe data key and token" />
-    <option name="LAST_COMMIT_MESSAGE" value="rememberMe data key and token" />
+    <MESSAGE value="basic authentication" />
+    <MESSAGE value="code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactor" />
   </component>
 </project>
