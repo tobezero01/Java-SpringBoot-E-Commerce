@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="..">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-10.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/images/image_null.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code and edit CategoryForm">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/5/books.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/6/electronic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/7/hard driver.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/8/duc-argentina.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/common_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/common_form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/account_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/account_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,17 +68,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/error&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.packagesearch.PackageSearchGeneralConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/error",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
@@ -490,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723308246019</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="code and edit CategoryForm">
+      <created>1723381075640</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1723381075640</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -506,7 +518,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add service" />
     <MESSAGE value="pagination endpoint" />
     <MESSAGE value="sort user function" />
     <MESSAGE value="jUnit test search user by name" />
@@ -531,6 +542,7 @@
     <MESSAGE value="test junit category" />
     <MESSAGE value="add file manage categories" />
     <MESSAGE value=".." />
-    <option name="LAST_COMMIT_MESSAGE" value=".." />
+    <MESSAGE value="code and edit CategoryForm" />
+    <option name="LAST_COMMIT_MESSAGE" value="code and edit CategoryForm" />
   </component>
 </project>

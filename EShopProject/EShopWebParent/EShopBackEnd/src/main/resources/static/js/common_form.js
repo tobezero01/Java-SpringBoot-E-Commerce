@@ -1,3 +1,5 @@
+
+//add image form computer
 $(document).ready(function () {
 		$("#buttonCancel").on("click", function () {
 			window.location = moduleUrl;
@@ -16,7 +18,6 @@ $(document).ready(function () {
 
 		});
 	});
-
 
 	//js add image
 	function showImageThumbnail(fileInput) {

@@ -27,8 +27,11 @@
     </div>
 
     <div th:fragment="category_status">
-            <a  class="fas fa-circle fa-2x icon-dark" href=""
-                title="Enable category"></a>
+        <a th:if="${category.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+           href="" title="Disable category"></a>
+
+        <a th:if="${category.enabled != true}" class="fas fa-circle fa-2x icon-dark"
+           href="" title="Enable category"></a>
     </div>
 
     <div th:fragment="category_actions">

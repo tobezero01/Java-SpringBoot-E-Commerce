@@ -19,6 +19,8 @@
         </div>
     </div>
 
+    <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
+    </div>
 
     <div>
         <form th:action="@{/categories/page/1}" class="form-inline d-flex flex-wrap">
