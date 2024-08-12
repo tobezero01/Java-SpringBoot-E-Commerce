@@ -25,6 +25,10 @@ public class CategoryController {
     public String listAll(Model model) {
         List<Category> categoryList = categoryService.listAll();
 
+        for(Category category : categoryList) {
+            System.out.println(category.getName());
+        }
+
         model.addAttribute("listCategories", categoryList);
 
         return "categories/categories";

@@ -10,6 +10,7 @@ import org.springframework.test.annotation.Rollback;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 
+import java.util.List;
 import java.util.Set;
 
 @DataJpaTest(showSql = false)
@@ -79,6 +80,15 @@ public class CategoryRepositoryTests {
             System.out.println(subCategory.getName());
 
             printChildren(subCategory, newSubLevel);
+        }
+    }
+
+    @Test
+    public void testListRootCategories() {
+        List<Category> categories = categoryRepository.findRootCategories();
+
+        for(Category category : categories) {
+            System.out.println(category.getName());
         }
     }
 }

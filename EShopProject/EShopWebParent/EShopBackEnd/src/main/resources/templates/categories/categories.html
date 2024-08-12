@@ -55,7 +55,9 @@
             <tbody>
             <tr th:each="category : ${listCategories}">
                 <td>[[${category.id}]]</td>
-                <td></td>
+                <td>
+                    <image th:src="@{${category.imagePath}}" style="max-width : 80px"> </image>
+                </td>
                 <td>[[${category.name}]]</td>
                 <td>[[${category.alias}]]</td>
                 <td>
