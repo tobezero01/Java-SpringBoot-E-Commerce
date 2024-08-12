@@ -35,7 +35,7 @@
     </div>
 
     <div th:fragment="category_actions">
-            <a class="fas fa-edit fa-2x icon-orange" href="" title="Edit the category">
+            <a class="fas fa-edit fa-2x icon-orange" th:href="@{'/categories/edit/' + ${category.id}}" title="Edit the category">
             </a>
             &nbsp;
             &nbsp;

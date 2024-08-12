@@ -57,10 +57,12 @@
                     <label class="col-sm-3 col-form-label">Image</label>
                     <div class="col-sm-9">
                         <input type="hidden" th:field="*{image}">
-                        <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpge" name="fileImage"/>
+                        <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpge"
+                               name="fileImage" th:require="${category.imagePath == null}"/>
 
                         <div>
-                            <img id="thumbnail" alt="Image preview" class="img-fluid" style="max-width:120px" th:src="@{/images/image_null.png}">
+                            <img id="thumbnail" alt="Image preview" class="img-fluid" style="max-width:120px"
+                                 th:src="@{${category.imagePath}}">
 
                         </div>
 
