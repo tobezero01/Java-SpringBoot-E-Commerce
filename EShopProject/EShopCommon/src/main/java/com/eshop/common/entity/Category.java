@@ -65,6 +65,12 @@ public class Category {
         return copyCategory;
     }
 
+    public Category(Integer id, String name, String alias) {
+        this.id = id;
+        this.name = name;
+        this.alias = alias;
+    }
+
     public Category(Integer id, String name, String alias, String image, boolean enabled, Category parent, Set<Category> children) {
         this.id = id;
         this.name = name;
@@ -146,7 +152,6 @@ public class Category {
     public void setChildren(Set<Category> children) {
         this.children = children;
     }
-
     @Transient
     public String getImagePath() {
         if(this.id == null) {
@@ -155,4 +160,15 @@ public class Category {
         return "/category-images/" + this.id + "/" + this.image;
     }
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", alias='" + alias + '\'' +
+                ", image='" + image + '\'' +
+                ", enabled=" + enabled +
+                ", parent=" + parent +
+                '}';
+    }
 }

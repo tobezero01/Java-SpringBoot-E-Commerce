@@ -13,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import java.util.List;
 import java.util.Set;
 
+//used to test repository
 @DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)
@@ -90,5 +91,16 @@ public class CategoryRepositoryTests {
         for(Category category : categories) {
             System.out.println(category.getName());
         }
+    }
+
+    @Test
+    public void testFindByName() {
+        String name = "Desktops";
+
+        Category category = categoryRepository.findByName(name);
+
+        System.out.println(category.toString());
+        assertThat(category).isNotNull();
+        assertThat(category.getName()).isEqualTo(name);
     }
 }
