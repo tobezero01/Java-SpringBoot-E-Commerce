@@ -4,10 +4,12 @@ import com.eshop.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
 @Service
+@Transactional
 public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
@@ -152,5 +154,9 @@ public class CategoryService {
         });
         sortedChildren.addAll(children);
         return sortedChildren;
+    }
+
+    public void updateCategoryEnabledStatus(Integer id, boolean enabled) {
+        categoryRepository.updateEnabledStatus(id,enabled);
     }
 }

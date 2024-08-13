@@ -26,12 +26,12 @@
         <p>EShop Control Panel - Copyright &copy; EShop</p>
     </div>
 
-    <div th:fragment="category_status">
+    <div th:fragment="category_status" th:remove="tag">
         <a th:if="${category.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
-           href="" title="Disable category"></a>
+           th:href="@{'/categories/' + ${category.id} + '/enabled/false'}" title="Disable category"></a>
 
         <a th:if="${category.enabled != true}" class="fas fa-circle fa-2x icon-dark"
-           href="" title="Enable category"></a>
+           th:href="@{'/categories/' + ${category.id} + '/enabled/true'}" title="Enabled category"></a>
     </div>
 
     <div th:fragment="category_actions">
@@ -40,7 +40,8 @@
             &nbsp;
             &nbsp;
             <a class="fas fa-trash fa-2x icon-silver link-delete"
-               href="" title="Delete the category"
+               th:href="@{'/categories/delete/' + ${category.id}}"
+               title="Delete the category" th:catId="${category.id}"
             >
             </a>
     </div>
