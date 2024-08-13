@@ -19,7 +19,7 @@
     <!-- form user -->
     <div>
         <form th:action="@{/categories/save}" th:object="${category}" method="post"
-              enctype="multipart/form-data"
+              enctype="multipart/form-data" onsubmit="return checkUnique(this)"
               style="max-width: 800px; margin: 0 auto;">
             <input type="hidden" th:field="*{id}"/>
             <div class="border border-secondary rounded p-3">
@@ -88,40 +88,47 @@
 
     </div>
 
+    <!-- Model dialog duplicated -->
+    <div th:replace="modal_fragments :: modal_dialog"></div>
 
-    <!-- Model dialog duplicated email-->
-    <div class="modal fade text-center" id="modalDialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="modalTitle">Warning</h4>
-                    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
-                </div>
-
-                <div class="modal-body">
-                        <span id="modalBody">
-                        </span>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- footer -->
+    <div th:replace="fragments :: footer"></div>
 
 
-<!-- footer -->
-<div th:replace="fragments :: footer"></div>
 
+    <!-- redirect cancel btn to /users-->
 
-<!-- redirect cancel btn to /users-->
+    <script type="text/javascript">
+        moduleUrl = "[[@{/categories}]]";
 
-<script type="text/javascript">
-    moduleUrl = "[[@{/categories}]]";
-</script>
-<script th:src="@{/js/common_form.js}"></script>
+        function checkUnique(form) {
+            catId = $("#id").val();
+            catName = $("#name").val();
+            catAlias = $("#alias").val();
+
+            var csrfValue = $("input[name='_csrf']").val();
+
+            url = "[[@{/categories/check_unique}]]";
+            params = {id : catId , name : catName , alias : catAlias , _csrf : csrfValue};
+
+            $.post(url , params , function(response) {
+                if(response == "OK") {
+                    form.submit();
+                } else if(response == "DuplicateName") {
+                    showWarningModal( "Duplicated Name: " + catName);
+                } else if(response == "DuplicateAlias") {
+                    showWarningModal( "Duplicated Alias: " + catAlias);
+                }else {
+                    showErrorModal("Unknown response from server");
+                }
+            }).fail(function(xhr, status, error) {
+				showErrorModal( "An error occurred: " + error);
+			});
+            return false;
+        }
+
+    </script>
+    <script th:src="@{/js/common_form.js}"></script>
 
 </body>
 

@@ -16,4 +16,5 @@ public class CategoryRestController {
                               @Param("alias") String alias) {
         return categoryService.checkUniqueCategory(id, name, alias);
     }
+
 }
