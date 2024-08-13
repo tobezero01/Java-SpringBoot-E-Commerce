@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.2.8</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.eshop</groupId>
 	<artifactId>EShopWebParent</artifactId>
@@ -74,7 +74,7 @@
 		<dependency>
 		    <groupId>org.webjars</groupId>
 		    <artifactId>jquery</artifactId>
-		    <version>3.6.4</version> <!-- Phiên bản mới hơn và ổn định hơn -->
+		    <version>3.6.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
