@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
@@ -86,7 +87,7 @@ public class CategoryRepositoryTests {
 
     @Test
     public void testListRootCategories() {
-        List<Category> categories = categoryRepository.findRootCategories();
+        List<Category> categories = categoryRepository.findRootCategories(Sort.by("name").ascending());
 
         for(Category category : categories) {
             System.out.println(category.getName());
