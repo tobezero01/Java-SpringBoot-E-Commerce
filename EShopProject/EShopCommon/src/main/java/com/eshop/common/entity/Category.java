@@ -6,7 +6,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "categories")
+@Table(name = "categories",
+        indexes = {
+                @Index(name = "idx_category_name", columnList = "name", unique = true),
+                @Index(name = "idx_category_alias", columnList = "alias", unique = true)
+        }
+)
 public class Category {
 
     @Id
@@ -24,11 +29,11 @@ public class Category {
 
     private boolean enabled;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "parent_id")
     private Category parent;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
     private Set<Category> children = new HashSet<>();
 
     public Category() {

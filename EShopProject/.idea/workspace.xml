@@ -4,20 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint change status enabled">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryPageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/common_list.js" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint pagination categories">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/1/electronics.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/10/digital cameras.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/11/flashes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/12/lenses.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/13/tripods_monopods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/14/carrier cellphones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/15/unlocked cellphones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/16/cellphone accessories.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/17/cables and adapters.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/18/microsd cards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/19/cellphone_stands.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/2/camera.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/20/cellphone cases.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/21/headphones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/22/computer processors.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/23/graphic cards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/24/internal hard drive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/25/internal optical drives.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/26/power supplies.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/27/solid state drives.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/28/sound cards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/29/computer memory.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/3/computers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/30/motherboards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/31/network cards.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/4/cellphones.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/5/desktop computers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/6/laptop computers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/7/tablets.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/8/computer components.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/9/bags_cases.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/FileUploadUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/FileUploadUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/modal_fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/modal_fragments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/1/electronic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/5/books.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/6/electronic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/7/hard driver.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/8/duc-argentina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/9/duc-argentina.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,17 +102,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
@@ -109,6 +143,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryRepositoryTests.testCreateRootCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.category.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateRootCategory" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,22 +195,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryRepositoryTests.testPrintHierarchicalCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testPrintHierarchicalCategories" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CategoryServiceTests.testCheckUniqueReturnDuplicateName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
@@ -179,18 +213,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
+      <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
       <item itemvalue="JUnit.CategoryRepositoryTests.testFindByName" />
       <item itemvalue="JUnit.CategoryServiceTests.testCheckUniqueReturnDuplicateName" />
       <item itemvalue="JUnit.CategoryRepositoryTests.testListRootCategories" />
-      <item itemvalue="JUnit.CategoryRepositoryTests.testPrintHierarchicalCategories" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
         <item itemvalue="JUnit.CategoryServiceTests.testCheckUniqueReturnDuplicateName" />
         <item itemvalue="JUnit.CategoryRepositoryTests.testFindByName" />
         <item itemvalue="JUnit.CategoryRepositoryTests.testListRootCategories" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testPrintHierarchicalCategories" />
       </list>
     </recent_temporary>
   </component>
@@ -202,13 +236,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00003" summary="message dialog for unique email">
-      <created>1722800451447</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1722800451447</updated>
     </task>
     <task id="LOCAL-00004" summary="add font and fas-icon">
       <created>1722802147338</created>
@@ -546,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723585163538</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="endpoint pagination categories">
+      <created>1723636192283</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1723636192283</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -562,7 +596,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add UserExcelExporter AbstractExporter.java file . endpoint import data to excel file" />
     <MESSAGE value="add security change" />
     <MESSAGE value="edit application properties" />
     <MESSAGE value="login with user from database" />
@@ -587,6 +620,7 @@
     <MESSAGE value="endpoint check_unique cate" />
     <MESSAGE value="endpoint sort Category by name" />
     <MESSAGE value="endpoint change status enabled" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint change status enabled" />
+    <MESSAGE value="endpoint pagination categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint pagination categories" />
   </component>
 </project>

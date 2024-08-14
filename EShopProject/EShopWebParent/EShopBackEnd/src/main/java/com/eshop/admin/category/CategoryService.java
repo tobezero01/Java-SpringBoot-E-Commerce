@@ -18,7 +18,7 @@ public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
 
-    public List<Category> listByPage(CategoryPageInfo pageInfo,int pageNumber , String sortDir) {
+    public List<Category> listByPage(CategoryPageInfo pageInfo,int pageNumber , String sortDir, String keyWord) {
         Sort sort = Sort.by("name");
         if(sortDir.equals("asc")) {
             sort = sort.ascending();
@@ -26,11 +26,26 @@ public class CategoryService {
             sort = sort.descending();
         }
         Pageable pageable = PageRequest.of(pageNumber -1, ROOT_CATEGORIES_PER_PAGE, sort);
-        Page<Category> pageCategories = categoryRepository.findRootCategories(pageable);
+
+        Page<Category> pageCategories = null;
+        if(keyWord != null && !keyWord.isEmpty()) {
+            pageCategories = categoryRepository.search(keyWord, pageable);
+        } else {
+            pageCategories = categoryRepository.findRootCategories(pageable);
+        }
+
         List<Category> rootCategories = pageCategories.getContent();
         pageInfo.setTotalElements(pageCategories.getTotalElements());
         pageInfo.setTotalPages(pageCategories.getTotalPages());
-        return listHierarchicalCategories(rootCategories,sortDir);
+        if(keyWord != null && !keyWord.isEmpty()) {
+            List<Category> searchResult = pageCategories.getContent();
+            for (Category category : searchResult) {
+                category.setHasChildren(category.getChildren().size()> 0);
+            }
+            return searchResult;
+        } else {
+            return listHierarchicalCategories(rootCategories,sortDir);
+        }
     }
 
     //using copy method to avoid change the database

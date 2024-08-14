@@ -48,5 +48,19 @@
             </th:block>
 
     </div>
+
+    <div th:fragment="search_form(moduleURL)">
+        <form th:action="@{'/' + ${moduleURL} + '/page/1'}" class="form-inline d-flex flex-wrap">
+            <input type="hidden" name="sortField" th:value="${sortField}">
+            <input type="hidden" name="sortDir" th:value="${sortDir}">
+            <label class="my-1 mr-2"> <b>Filters &nbsp;&nbsp; </b></label>
+            <input type="search" name="keyWord" th:value="${keyWord}" class="form-control mb-2 mr-sm-2"
+                   style="max-width:300px" required/>
+            &nbsp;&nbsp;
+            <input type="submit" value="Search" class="btn btn-primary mb-2 mr-sm-2"/>
+            &nbsp;&nbsp;
+            <input type="button" value="Clear" class="btn btn-secondary mb-2" onclick="clearFilter()"/>
+        </form>
+    </div>
 </body>
 </html>
