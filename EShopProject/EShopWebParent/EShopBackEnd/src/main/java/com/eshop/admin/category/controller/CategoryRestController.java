@@ -1,5 +1,6 @@
-package com.eshop.admin.category;
+package com.eshop.admin.category.controller;
 
+import com.eshop.admin.category.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PostMapping;

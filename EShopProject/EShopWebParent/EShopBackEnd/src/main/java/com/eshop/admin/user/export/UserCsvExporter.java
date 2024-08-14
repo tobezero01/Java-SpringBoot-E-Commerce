@@ -16,7 +16,7 @@ public class UserCsvExporter extends AbstractExporter {
 
 	//file download can open with excel
 	public void export(List<User> listUsers, HttpServletResponse response ) throws IOException {
-		super.setResponseHeader(response,"text/csv",".csv" );
+		super.setResponseHeader(response,"text/csv",".csv" , "users_");
 		ICsvBeanWriter csvBeanWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);
 
 		String[] csvHeader = {"User Id", "Email", "First Name", "last Name" , "Roles", "Enabled"};

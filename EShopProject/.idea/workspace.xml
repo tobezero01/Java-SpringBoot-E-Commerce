@@ -4,54 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint pagination categories">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/1/electronics.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/10/digital cameras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/11/flashes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/12/lenses.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/13/tripods_monopods.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/14/carrier cellphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/15/unlocked cellphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/16/cellphone accessories.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/17/cables and adapters.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/18/microsd cards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/19/cellphone_stands.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/2/camera.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/20/cellphone cases.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/21/headphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/22/computer processors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/23/graphic cards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/24/internal hard drive.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/25/internal optical drives.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/26/power supplies.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/27/solid state drives.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/28/sound cards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/29/computer memory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/3/computers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/30/motherboards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/31/network cards.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/4/cellphones.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/5/desktop computers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/6/laptop computers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/7/tablets.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/8/computer components.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/category-images/9/bags_cases.png" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint search and fix error with import data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/category/CategoryRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/1/electronic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/5/books.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/6/electronic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/7/hard driver.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/8/duc-argentina.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/category-images/9/duc-argentina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/controller/CategoryRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/AbstractExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/AbstractExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/UserCsvExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/UserCsvExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/UserExcelExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/user/export/UserExcelExporter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category",
     "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
@@ -118,10 +77,11 @@
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\java\com\eshop\admin\category" />
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\categories" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\error" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates" />
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\static\font" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates" />
@@ -151,7 +111,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -167,7 +127,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -183,7 +143,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -199,7 +159,7 @@
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.*" />
+          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -236,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add font and fas-icon">
-      <created>1722802147338</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1722802147338</updated>
     </task>
     <task id="LOCAL-00005" summary="update comment code">
       <created>1722838787636</created>
@@ -580,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723636192283</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="endpoint search and fix error with import data">
+      <created>1723640283880</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1723640283880</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -596,7 +556,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add security change" />
     <MESSAGE value="edit application properties" />
     <MESSAGE value="login with user from database" />
     <MESSAGE value="update thymeleaf with spring security mvc" />
@@ -621,6 +580,7 @@
     <MESSAGE value="endpoint sort Category by name" />
     <MESSAGE value="endpoint change status enabled" />
     <MESSAGE value="endpoint pagination categories" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint pagination categories" />
+    <MESSAGE value="endpoint search and fix error with import data" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint search and fix error with import data" />
   </component>
 </project>
