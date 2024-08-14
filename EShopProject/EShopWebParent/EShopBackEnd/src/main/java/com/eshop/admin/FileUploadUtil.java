@@ -5,10 +5,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.nio.file.*;
 
 public class FileUploadUtil {
 
@@ -28,4 +25,21 @@ public class FileUploadUtil {
     }
 
     //public static void
+    public static void removeDir(String uploadDir) throws IOException {
+        Path dirPath = Paths.get(uploadDir);
+
+        if (Files.exists(dirPath)) {
+            try (DirectoryStream<Path> stream = Files.newDirectoryStream(dirPath)) {
+                for (Path entry : stream) {
+                    if (Files.isDirectory(entry)) {
+                        removeDir(entry.toString());
+                    } else {
+                        Files.delete(entry);
+                    }
+                }
+            }
+
+            Files.delete(dirPath);
+        }
+    }
 }
