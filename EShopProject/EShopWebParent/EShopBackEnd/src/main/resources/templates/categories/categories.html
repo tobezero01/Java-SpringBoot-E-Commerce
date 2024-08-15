@@ -13,15 +13,19 @@
     <div>
         <div class="pb-3">
             <h1>Manage categories</h1>
-            <a class="btn btn-primary btn-info" th:href="@{/categories/new}">Create New User</a>
+            <a class="btn btn-primary btn-info" th:href="@{/categories/new}">Create New Category</a>
 <!--            <a class="btn btn-primary btn-danger" th:href="@{/categories/export/csv}">Export to CSV</a>-->
         </div>
     </div>
-
     <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
     </div>
 
     <div th:replace="fragments :: search_form('categories')"></div>
+
+
+    
+
+    <!-- Begin table data-->
 
     <div class="pt-2">
         <table class="table table-responsive-xl table-bordered table-striped table-hover ">
@@ -58,8 +62,10 @@
         </table>
     </div>
 
+    <!-- End table data-->
 
-    <!--pagination-->
+
+    <!--pagination begin-->
 
     <div class="text-center m-1" th:if="${totalItems > 0}">
         <span>Showing Top-level Category #  of [[${totalItems}]]</span>
@@ -118,6 +124,8 @@
             </ul>
         </nav>
     </div>
+
+    <!--pagination END-->
 
 
 </div>
