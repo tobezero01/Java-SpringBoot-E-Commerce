@@ -105,10 +105,9 @@
 
     </div>
 
-
+    <script th:src="@{/js/common_form.js}"></script>
     <!-- Model dialog duplicated -->
-    <div th:repalce="modal_fragments :: modal_dialog"></div>
-
+    <div th:replace="modal_fragments :: modal_dialog"></div>
 
     <!-- footer -->
     <div th:replace="fragments :: footer"></div>
@@ -144,10 +143,7 @@
 			return false;
 		}
 
-
-
     </script>
-    <script th:src="@{/js/common_form.js}"></script>
 
 </body>
 

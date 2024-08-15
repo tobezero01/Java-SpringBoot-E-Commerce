@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add brand entity">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/brand/BrandRepositoryTests.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint brand unit test">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +30,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -94,7 +99,7 @@
       <recent name="com.eshop.admin.user" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BrandRepositoryTests.testFindById">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -182,10 +187,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.BrandRepositoryTests.testFindById" />
         <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand2" />
         <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand1" />
-        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
       </list>
     </recent_temporary>
@@ -198,13 +203,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00007" summary="user delete test">
-      <created>1722892636810</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1722892636810</updated>
     </task>
     <task id="LOCAL-00008" summary="user delete service">
       <created>1722892655839</created>
@@ -542,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723730127878</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="endpoint brand unit test">
+      <created>1723732163795</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1723732163796</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update thymeleaf with spring security mvc" />
     <MESSAGE value="add logout security" />
     <MESSAGE value="refactor layout" />
     <MESSAGE value="rememberMe data key and token" />
@@ -583,6 +587,7 @@
     <MESSAGE value="endpoint search and fix error with import data" />
     <MESSAGE value="endpoint export file" />
     <MESSAGE value="add brand entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="add brand entity" />
+    <MESSAGE value="endpoint brand unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint brand unit test" />
   </component>
 </project>

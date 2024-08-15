@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
@@ -40,11 +41,11 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-    	httpSecurity.authorizeHttpRequests(
-    		configuration -> configuration
-                    .requestMatchers("/users/**").hasAuthority("Admin")
-                    .requestMatchers("/categories/**").hasAnyAuthority("Admin", "Editor")
-                    .anyRequest().authenticated()
+        httpSecurity.authorizeHttpRequests(
+                        configuration -> configuration
+                                .requestMatchers("/users/**").hasAuthority("Admin")
+                                .requestMatchers("/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor")
+                                .anyRequest().authenticated()
                 )
                 .formLogin(
                         form -> form
@@ -55,13 +56,14 @@ public class WebSecurityConfig {
                 .logout(logout -> logout
                         .permitAll()
                 )
-                .rememberMe( rem -> rem
-                        .key("AbcDefgHijKnmlOqprs_1234567890")
-                        .tokenValiditySeconds(7 * 24 * 60 * 60)
+                .rememberMe(
+                        rem -> rem
+                                .key("AbcDefgHijKnmlOqprs_1234567890")
+                                .tokenValiditySeconds(7 * 24 * 60 * 60)
                 );
 
 
-    	return httpSecurity.build();
+        return httpSecurity.build();
     }
 
 

@@ -53,25 +53,13 @@
                 <td>[[${user.lastName}]]</td>
                 <td>[[${user.roles}]]</td>
                 <td>
-                    <a th:if="${user.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
-                       th:href="@{'/users/' + ${user.id} + '/enabled/false'}" title="Disable user"></a>
-
-                    <a th:if="${user.enabled != true}" class="fas fa-circle fa-2x icon-dark"
-                       th:href="@{'/users/' + ${user.id} + '/enabled/true'}" title="Enable user"></a>
+                    <div th:replace="fragments :: status(${user.enabled} ,'user' ,'/users/' + ${user.id})"></div>
                 </td>
                 <td>
-                    <a class="fas fa-edit fa-2x icon-orange" th:href="@{'/users/edit/' + ${user.id}}"
-                       title="Edit the user">
-
-                    </a>
+                    <div th:replace="fragments :: edit('user' ,'/users/edit/' + ${user.id})"></div>
                     &nbsp;
                     &nbsp;
-                    <a class="fas fa-trash fa-2x icon-silver link-delete"
-                       th:href="@{'/users/delete/' + ${user.id}}" title="Delete the user"
-                       th:id="${user.id}"
-                    >
-
-                    </a>
+                    <div th:replace="fragments :: elseDelete('user' ,'/users/delete/' + ${user.id}, ${user.id})"></div>
                 </td>
             </tr>
             </tbody>
@@ -138,7 +126,6 @@
         </nav>
     </div>
 
-
 </div>
 
 <div th:replace="modal_fragments :: confirm_modal"></div>
@@ -146,22 +133,13 @@
 
 <script th:src="@{/js/common_list.js}"></script>
 <script>
-    $(document).ready(function () {
+    moduleUrl = "[[@{/users}]]";
+    $(document).ready(function() {
         $(".link-delete").on("click", function(e) {
             e.preventDefault();
-            link = $(this)
-            $("#yesBtn").attr("href", link.attr("href"));
-            //alert($(this).attr("href"));
-            id = link.attr("id");
-            $("#modalBody").text("Are you sure to want to delete the user id = " + id + " ?");
-            $("#deleteConfirm").modal('show');
+            showDeleteConfirmModal($(this) , 'user');
         });
     });
-
-
-    function clearFilter() {
-        window.location = "[[@{/users}]]" ;
-    }
 
 </script>
 

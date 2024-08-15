@@ -51,10 +51,13 @@
                 <td>[[${category.name}]]</td>
                 <td>[[${category.alias}]]</td>
                 <td>
-                    <div th:replace="fragments :: category_status"></div>
+                    <div th:replace="fragments :: status(${category.enabled} ,'category' ,'/categories/' + ${category.id})"></div>
                 </td>
                 <td>
-                    <div th:replace="fragments :: category_actions"></div>
+                    <div th:replace="fragments :: edit('category' ,'/categories/edit/' + ${category.id})"></div>
+                    &nbsp;
+                    &nbsp;
+                    <div th:replace="fragments :: deleteCategory"></div>
                 </td>
 
             </tr>

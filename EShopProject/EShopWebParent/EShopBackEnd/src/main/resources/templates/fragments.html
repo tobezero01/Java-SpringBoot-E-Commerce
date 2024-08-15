@@ -26,19 +26,21 @@
         <p>EShop Control Panel - Copyright &copy; EShop</p>
     </div>
 
-    <div th:fragment="category_status" th:remove="tag">
-        <a th:if="${category.enabled == true}" class="fas fa-check-circle fa-2x icon-green"
-           th:href="@{'/categories/' + ${category.id} + '/enabled/false'}" title="Disable category"></a>
+    <div th:fragment="status(enabled , entityName, entityUrl)" >
+        <a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+           th:href="@{${entityUrl} + '/enabled/false'}" th:title="'Disabled ' + ${entityName}"></a>
 
-        <a th:if="${category.enabled != true}" class="fas fa-circle fa-2x icon-dark"
-           th:href="@{'/categories/' + ${category.id} + '/enabled/true'}" title="Enabled category"></a>
+        <a th:if="${enabled != true}" class="fas fa-circle fa-2x icon-dark"
+           th:href="@{${entityUrl} + '/enabled/true'}" th:title="'Enabled ' + ${entityName}"></a>
     </div>
 
-    <div th:fragment="category_actions" th:remove="tag">
-            <a class="fas fa-edit fa-2x icon-orange" th:href="@{'/categories/edit/' + ${category.id}}" title="Edit the category">
+        <div th:fragment="edit(entityName , entityUrl)">
+            <a class="fas fa-edit fa-2x icon-orange"
+               th:href="@{${entityUrl}}" th:title="'Edit the ' + ${entityName}">
             </a>
-            &nbsp;
-            &nbsp;
+        </div>
+
+        <div th:fragment="deleteCategory">
             <th:block th:if="${category.hasChildren == false}">
                 <a class="fas fa-trash fa-2x icon-silver link-delete"
                    th:href="@{'/categories/delete/' + ${category.id}}"
@@ -46,8 +48,16 @@
                 >
                 </a>
             </th:block>
+        </div>
 
-    </div>
+        <div th:fragment="elseDelete(entityName, entityUrl, id)">
+            <a class="fas fa-trash fa-2x icon-silver link-delete"
+               th:href="@{${entityUrl}}" th:title="'Delete the ' +  ${entityName}"
+               th:entityId="${id}">
+            </a>
+        </div>
+
+
 
     <div th:fragment="search_form(moduleURL)">
         <form th:action="@{'/' + ${moduleURL} + '/page/1'}" class="form-inline d-flex flex-wrap">
