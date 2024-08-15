@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint export file">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-14.0.gz" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add brand entity">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/brand/BrandRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -87,21 +87,72 @@
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\users" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.eshop.admin.brand" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.eshop.admin.user" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopBackEndApplication">
+  <component name="RunManager" selected="JUnit.BrandRepositoryTests.testFindById">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/EShopWebParent/EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.*" />
+          <option name="PATTERN" value="com.eshop.admin.brand.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandRepositoryTests.testCreateBrand1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.brand.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.brand" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.brand.BrandRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateBrand1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandRepositoryTests.testCreateBrand2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.brand.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.brand" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.brand.BrandRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateBrand2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandRepositoryTests.testFindById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.brand.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.brand" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.brand.BrandRepositoryTests" />
+      <option name="METHOD_NAME" value="testFindById" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -122,68 +173,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryRepositoryTests.testFindByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindByName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryRepositoryTests.testListRootCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testListRootCategories" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CategoryServiceTests.testCheckUniqueReturnDuplicateName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryServiceTests" />
-      <option name="METHOD_NAME" value="testCheckUniqueReturnDuplicateName" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
+      <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand1" />
+      <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand2" />
+      <item itemvalue="JUnit.BrandRepositoryTests.testFindById" />
       <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
-      <item itemvalue="JUnit.CategoryRepositoryTests.testFindByName" />
-      <item itemvalue="JUnit.CategoryServiceTests.testCheckUniqueReturnDuplicateName" />
-      <item itemvalue="JUnit.CategoryRepositoryTests.testListRootCategories" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BrandRepositoryTests.testFindById" />
+        <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand2" />
+        <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand1" />
         <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
-        <item itemvalue="JUnit.CategoryServiceTests.testCheckUniqueReturnDuplicateName" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testFindByName" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testListRootCategories" />
       </list>
     </recent_temporary>
   </component>
@@ -195,13 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00006" summary="update user function">
-      <created>1722891497304</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1722891497304</updated>
     </task>
     <task id="LOCAL-00007" summary="user delete test">
       <created>1722892636810</created>
@@ -539,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723640849575</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add brand entity">
+      <created>1723730127877</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1723730127878</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -555,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="login with user from database" />
     <MESSAGE value="update thymeleaf with spring security mvc" />
     <MESSAGE value="add logout security" />
     <MESSAGE value="refactor layout" />
@@ -580,6 +582,7 @@
     <MESSAGE value="endpoint pagination categories" />
     <MESSAGE value="endpoint search and fix error with import data" />
     <MESSAGE value="endpoint export file" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint export file" />
+    <MESSAGE value="add brand entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="add brand entity" />
   </component>
 </project>

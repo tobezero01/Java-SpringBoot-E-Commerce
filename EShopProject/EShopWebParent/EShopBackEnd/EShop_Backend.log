@@ -44,3 +44,93 @@
 2024-08-15T20:54:34.799+07:00  WARN 21724 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
 2024-08-15T20:54:34.800+07:00  WARN 21724 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
 2024-08-15T20:54:35.202+07:00  INFO 21724 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 10.354 seconds (process running for 10.972)
+2024-08-15T21:08:22.598+07:00  INFO 14012 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Starting BrandRepositoryTests using Java 21.0.2 with PID 14012 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-15T21:08:22.615+07:00 DEBUG 14012 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-15T21:08:22.618+07:00  INFO 14012 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : No active profile set, falling back to 1 default profile: "default"
+2024-08-15T21:08:25.425+07:00  WARN 14012 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15T21:08:25.428+07:00  WARN 14012 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-15T21:08:29.186+07:00  INFO 14012 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Started BrandRepositoryTests in 7.203 seconds (process running for 8.444)
+2024-08-15T21:08:29.969+07:00  WARN 14012 --- [EShopBackEnd] [main] o.s.test.context.TestContextManager      : Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] for test method [public void com.eshop.admin.brand.BrandRepositoryTests.testCreateBrand1()] and test instance [com.eshop.admin.brand.BrandRepositoryTests@533ed36e]
+
+org.springframework.transaction.UnexpectedRollbackException: Transaction silently rolled back because it has been marked as rollback-only
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:804) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.transaction.TransactionContext.endTransaction(TransactionContext.java:135) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.transaction.TransactionalTestExecutionListener.afterTestMethod(TransactionalTestExecutionListener.java:260) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:487) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.afterEach(SpringExtension.java:278) ~[spring-test-6.1.11.jar:6.1.11]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAfterEachCallbacks$12(TestMethodTestDescriptor.java:261) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$13(TestMethodTestDescriptor.java:277) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$14(TestMethodTestDescriptor.java:277) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.commons.util.CollectionUtils.forEachInReverseOrder(CollectionUtils.java:217) ~[junit-platform-commons-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAllAfterMethodsOrCallbacks(TestMethodTestDescriptor.java:276) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAfterEachCallbacks(TestMethodTestDescriptor.java:260) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:145) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54) ~[junit-rt.jar:na]
+
+2024-08-15T21:11:39.284+07:00  INFO 18484 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Starting BrandRepositoryTests using Java 21.0.2 with PID 18484 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-15T21:11:39.285+07:00 DEBUG 18484 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-15T21:11:39.286+07:00  INFO 18484 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : No active profile set, falling back to 1 default profile: "default"
+2024-08-15T21:11:41.033+07:00  WARN 18484 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15T21:11:41.036+07:00  WARN 18484 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-15T21:11:43.601+07:00  INFO 18484 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Started BrandRepositoryTests in 4.623 seconds (process running for 5.466)
+2024-08-15T21:12:02.305+07:00  INFO 25428 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Starting BrandRepositoryTests using Java 21.0.2 with PID 25428 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-15T21:12:02.306+07:00 DEBUG 25428 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-15T21:12:02.307+07:00  INFO 25428 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : No active profile set, falling back to 1 default profile: "default"
+2024-08-15T21:12:03.711+07:00  WARN 25428 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15T21:12:03.713+07:00  WARN 25428 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-15T21:12:05.618+07:00  INFO 25428 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Started BrandRepositoryTests in 3.708 seconds (process running for 4.732)
+2024-08-15T21:22:05.179+07:00  INFO 21324 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Starting BrandRepositoryTests using Java 21.0.2 with PID 21324 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-15T21:22:05.180+07:00 DEBUG 21324 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-15T21:22:05.181+07:00  INFO 21324 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : No active profile set, falling back to 1 default profile: "default"
+2024-08-15T21:22:07.145+07:00  WARN 21324 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15T21:22:07.148+07:00  WARN 21324 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-15T21:22:09.901+07:00  INFO 21324 --- [EShopBackEnd] [main] c.e.admin.brand.BrandRepositoryTests     : Started BrandRepositoryTests in 5.08 seconds (process running for 6.046)
