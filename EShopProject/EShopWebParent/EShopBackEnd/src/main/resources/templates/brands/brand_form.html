@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(${pageTitle})">
+</head>
+
+<body>
+
+<!-- nav bar -->
+<div th:replace="navigation :: menu"></div>
+
+<!-- body -->
+<div class="container-fluid">
+
+    <div>
+        <h1>Manage Brand | [[${pageTitle}]] </h1>
+    </div>
+
+
+    <!-- form user -->
+    <div>
+        <form th:action="@{/brands/save}" th:object="${brand}" method="post"
+              enctype="multipart/form-data"
+              style="max-width: 800px; margin: 0 auto;">
+            <input type="hidden" th:field="*{id}"/>
+            <div class="border border-secondary rounded p-3">
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-3 col-form-label">Brand name</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{name}" class="form-control" required minlength="3"
+                               maxlength="128">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-3 col-form-label">Logo</label>
+                    <div class="col-sm-9">
+                        <input type="hidden" th:field="*{logo}">
+                        <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpeg"
+                               name="fileImage" required/>
+
+                        <div>
+                            <img id="thumbnail" alt="Image preview" class="img-fluid" style="max-width:120px"
+                                 th:src="@{${brand.logoPath}}">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-3 col-form-label">Select onr or more category</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" th:field="*{categories}" multiple required
+                            style="resize: vertical ; height : 200px">
+                            <th:block th:each="cat : ${listCategories}">
+                                <option th:value="${cat.id}"> [[${cat.name}]]</option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-3 col-form-label">Chosen categories</label>
+                    <div class="col-sm-9">
+                        <div id="chosenCategories"></div>
+                    </div>
+                </div>
+
+
+                <div class="form-group row pt-4">
+                    <div class="col-sm-9 offset-sm-3">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                        <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Model dialog duplicated -->
+    <div th:replace="modal_fragments :: modal_dialog"></div>
+
+    <!-- footer -->
+    <div th:replace="fragments :: footer"></div>
+
+
+
+    <!-- redirect cancel btn to /users-->
+
+    <script type="text/javascript">
+        moduleUrl = "[[@{/brands}]]";
+
+        $(document).ready(function() {
+            dropdownCategories = $("#categories");
+            divChosenCategories = $("#chosenCategories");
+
+            dropdownCategories.change(function() {
+
+                showChosenCategories();
+            });
+        });
+
+        function showChosenCategories() {
+            dropdownCategories.children("option:selected").each(function () {
+                selectedCategory = $(this);
+                catId = selectedCategory.val();
+                catName = selectedCategory.text().replace(/-/g,"");
+
+                divChosenCategories.append("<span class='custom-badge m-1'>" + catName + "</span>");
+            });
+        }
+
+    </script>
+    <script th:src="@{/js/common_form.js}"></script>
+</body>
+
+</html>
