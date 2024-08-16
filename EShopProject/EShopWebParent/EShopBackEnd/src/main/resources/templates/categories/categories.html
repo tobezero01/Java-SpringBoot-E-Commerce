@@ -23,8 +23,6 @@
     <div th:replace="fragments :: search_form('categories')"></div>
 
 
-    
-
     <!-- Begin table data-->
 
     <div class="pt-2">
@@ -40,6 +38,7 @@
                 </th>
                 <th>Alias</th>
                 <th>Enabled</th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -54,10 +53,13 @@
                     <div th:replace="fragments :: status(${category.enabled} ,'category' ,'/categories/' + ${category.id})"></div>
                 </td>
                 <td>
-                    <div th:replace="fragments :: edit('category' ,'/categories/edit/' + ${category.id})"></div>
-                    &nbsp;
-                    &nbsp;
-                    <div th:replace="fragments :: deleteCategory"></div>
+                    <div class="inline-container">
+                        <div th:replace="fragments :: edit('category' ,'/categories/edit/' + ${category.id})"></div>
+                        &nbsp;
+                        &nbsp;
+                        <div th:replace="fragments :: deleteCategory"></div>
+                    </div>
+
                 </td>
 
             </tr>

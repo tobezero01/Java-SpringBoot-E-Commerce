@@ -38,7 +38,7 @@
                 <th th:replace="fragments :: column_link('lastName', 'Last Name')"></th>
                 <th>Roles</th>
                 <th th:replace="fragments :: column_link('enabled', 'Enabled')"></th>
-                <th></th>
+                <th>Actions</th>
             </tr>
             </thead>
             <tbody>
@@ -56,10 +56,12 @@
                     <div th:replace="fragments :: status(${user.enabled} ,'user' ,'/users/' + ${user.id})"></div>
                 </td>
                 <td>
-                    <div th:replace="fragments :: edit('user' ,'/users/edit/' + ${user.id})"></div>
-                    &nbsp;
-                    &nbsp;
-                    <div th:replace="fragments :: elseDelete('user' ,'/users/delete/' + ${user.id}, ${user.id})"></div>
+                    <div class="inline-container">
+                        <div th:replace="fragments :: edit('user' ,'/users/edit/' + ${user.id})"></div>
+                        &nbsp;
+                        &nbsp;
+                        <div th:replace="fragments :: elseDelete('user' ,'/users/delete/' + ${user.id}, ${user.id})"></div>
+                    </div>
                 </td>
             </tr>
             </tbody>

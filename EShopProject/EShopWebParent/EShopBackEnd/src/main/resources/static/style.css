@@ -71,3 +71,20 @@
             text-align: center;
             width: 100%;
         }
+
+        .inline-container {
+                display: flex;
+                align-items: center; /* Căn giữa theo chiều dọc */
+            }
+
+            .inline-container div {
+                margin-right: 10px; /* Khoảng cách giữa các phần tử */
+            }
+        .custom-badge {
+                    background-color: #FFDAB9; /* Màu nền cam nhạt */
+                    color: #8B4513; /* Màu chữ nâu đậm */
+                    padding: 5px 10px; /* Khoảng cách giữa nội dung và viền */
+                    border-radius: 12px; /* Bo tròn góc */
+                    font-size: 14px; /* Kích thước chữ */
+                    font-weight: bold; /* Đậm chữ */
+                }
