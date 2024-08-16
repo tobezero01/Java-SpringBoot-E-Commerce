@@ -33,16 +33,16 @@ $(document).ready(function () {
 
 
     // Hàm để hiển thị modal dialog
-    		function showModalDialog(title, message) {
-    			$("#modalTitle").text(title);
-    			$("#modalBody").text(message);
-    			$("#modalDialog").modal('show');
-    		}
+    function showModalDialog(title, message) {
+        	$("#modalTitle").text(title);
+        	$("#modalBody").text(message);
+        	$("#modalDialog").modal('show');
+    }
 
-    		function showWarningModal(message) {
-    		    showModalDialog("Warning", message);
-    		}
+  function showWarningModal(message) {
+        	showModalDialog("Warning", message);
+  }
 
-    		function showErrorModal(message) {
-    		    showModalDialog("Error", message);
-    		}
+        		function showErrorModal(message) {
+        		    showModalDialog("Error", message);
+        		}

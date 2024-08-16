@@ -19,7 +19,7 @@
     <!-- form user -->
     <div>
         <form th:action="@{/brands/save}" th:object="${brand}" method="post"
-              enctype="multipart/form-data"
+              enctype="multipart/form-data" onsubmit="return checkUnique(this)"
               style="max-width: 800px; margin: 0 auto;">
             <input type="hidden" th:field="*{id}"/>
             <div class="border border-secondary rounded p-3">
@@ -48,17 +48,15 @@
                 </div>
 
                 <div class="form-group row mb-3">
-                    <label class="col-sm-3 col-form-label">Select one or (ctrl + click) to select more categories</label>
+                    <label class="col-sm-3 col-form-label">Select one or more categories</label>
                     <div class="col-sm-9">
-                        <select class="form-control" th:field="*{categories}" required multiple size="5" style="resize: vertical; height: 200px;">
+                        <select class="form-control" th:field="*{categories}" required multiple style="resize: vertical; height: 200px;">
                             <th:block th:each="cat : ${listCategories}">
                                 <option th:value="${cat.id}"> [[${cat.name}]]</option>
                             </th:block>
                         </select>
                     </div>
                 </div>
-
-
 
 
                 <div class="form-group row mb-3">
@@ -87,9 +85,7 @@
     <div th:replace="fragments :: footer"></div>
 
 
-
-    <!-- redirect cancel btn to /users-->
-
+    <!-- -->
     <script type="text/javascript">
         moduleUrl = "[[@{/brands}]]";
 
@@ -115,7 +111,35 @@
         }
 
     </script>
+
+    <script type="text/javascript">
+
+        function checkUnique(form) {
+            brandId = $("#id").val();
+            brandName = $("#name").val();
+
+            csrfValue = $("input[name='_csrf']").val();
+
+            url = "[[@{/brands/check_unique}]]";
+            params = {id : brandId , name : brandName ,  _csrf : csrfValue};
+
+            $.post(url , params , function(response) {
+                if(response == "OK") {
+                    form.submit();
+                } else if(response == "Duplicate") {
+                    showWarningModal( "Duplicated brand : " + brandName);
+                } else{
+                    showErrorModal("Unknown response from server");
+                }
+            }).fail(function() {
+				showErrorModal( "Could not connect to server");
+			});
+            return false;
+        }
+    </script>
+
     <script th:src="@{/js/common_form.js}"></script>
+
 </body>
 
 </html>
