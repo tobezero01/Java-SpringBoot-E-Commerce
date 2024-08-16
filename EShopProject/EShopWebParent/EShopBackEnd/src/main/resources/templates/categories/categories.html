@@ -17,10 +17,10 @@
 <!--            <a class="btn btn-primary btn-danger" th:href="@{/categories/export/csv}">Export to CSV</a>-->
         </div>
     </div>
-    <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
-    </div>
 
-    <div th:replace="fragments :: search_form('categories')"></div>
+
+    <!-- search form and message-->
+    <div th:replace="fragments :: search_form_and_message('/categories/page/1')"></d
 
 
     <!-- Begin table data-->

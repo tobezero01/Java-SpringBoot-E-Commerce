@@ -17,11 +17,9 @@
       <!--            <a class="btn btn-primary btn-danger" th:href="@{/categories/export/csv}">Export to CSV</a>-->
     </div>
   </div>
-<!--  <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >-->
-<!--  </div>-->
 
-  <div th:replace="fragments :: search_form('brands')"></div>
-
+  <!-- search form and message-->
+  <div th:replace="fragments :: search_form_and_message('/brands/page/1')"></div>
 
   <!-- Begin table data-->
 

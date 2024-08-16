@@ -3,7 +3,7 @@
 <head th:fragment="page_head(title)">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}"/>
     <title>[[${title}]]</title>
     <link rel="stylesheet" type="text/css" th:href="@{/font/all.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
@@ -13,64 +13,65 @@
 </head>
 <body>
 
-    <!--fragment table column filter-->
-    <th th:fragment="column_link(fieldName , columnLabel)">
-        <a  class="text-dark"
-           th:href = "@{'/users/page/' + ${currentPage} +'?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyWord != null ? '&keyWord=' + keyWord : ''}} ">[[${columnLabel}]]</a>
-        <span th:if="${sortField == fieldName}"
-              th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}" >
+<!--fragment table column filter-->
+<th th:fragment="column_link(fieldName , columnLabel)">
+    <a class="text-dark"
+       th:href="@{'/users/page/' + ${currentPage} +'?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyWord != null ? '&keyWord=' + keyWord : ''}} ">[[${columnLabel}]]</a>
+    <span th:if="${sortField == fieldName}"
+          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
         </span>
-    </th>
+</th>
 
-    <div th:fragment="footer" class="footer">
-        <p>EShop Control Panel - Copyright &copy; EShop</p>
+<div th:fragment="footer" class="footer">
+    <p>EShop Control Panel - Copyright &copy; EShop</p>
+</div>
+
+<div th:fragment="status(enabled , entityName, entityUrl)">
+    <a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green"
+       th:href="@{${entityUrl} + '/enabled/false'}" th:title="'Disabled ' + ${entityName}"></a>
+
+    <a th:if="${enabled != true}" class="fas fa-circle fa-2x icon-dark"
+       th:href="@{${entityUrl} + '/enabled/true'}" th:title="'Enabled ' + ${entityName}"></a>
+</div>
+
+<div th:fragment="edit(entityName , entityUrl)">
+    <a class="fas fa-edit fa-2x icon-orange"
+       th:href="@{${entityUrl}}" th:title="'Edit the ' + ${entityName}">
+    </a>
+</div>
+
+<div th:fragment="deleteCategory">
+    <th:block th:if="${category.hasChildren == false}">
+        <a class="fas fa-trash fa-2x icon-silver link-delete"
+           th:href="@{'/categories/delete/' + ${category.id}}"
+           title="Delete the category" th:entityId="${category.id}"
+        >
+        </a>
+    </th:block>
+</div>
+
+<div th:fragment="elseDelete(entityName, entityUrl, id)">
+    <a class="fas fa-trash fa-2x icon-silver link-delete"
+       th:href="@{${entityUrl}}" th:title="'Delete the ' +  ${entityName}"
+       th:entityId="${id}">
+    </a>
+</div>
+
+
+<div th:fragment="search_form_and_message(moduleURL)">
+    <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
     </div>
-
-    <div th:fragment="status(enabled , entityName, entityUrl)" >
-        <a th:if="${enabled == true}" class="fas fa-check-circle fa-2x icon-green"
-           th:href="@{${entityUrl} + '/enabled/false'}" th:title="'Disabled ' + ${entityName}"></a>
-
-        <a th:if="${enabled != true}" class="fas fa-circle fa-2x icon-dark"
-           th:href="@{${entityUrl} + '/enabled/true'}" th:title="'Enabled ' + ${entityName}"></a>
-    </div>
-
-        <div th:fragment="edit(entityName , entityUrl)">
-            <a class="fas fa-edit fa-2x icon-orange"
-               th:href="@{${entityUrl}}" th:title="'Edit the ' + ${entityName}">
-            </a>
-        </div>
-
-        <div th:fragment="deleteCategory">
-            <th:block th:if="${category.hasChildren == false}">
-                <a class="fas fa-trash fa-2x icon-silver link-delete"
-                   th:href="@{'/categories/delete/' + ${category.id}}"
-                   title="Delete the category" th:entityId="${category.id}"
-                >
-                </a>
-            </th:block>
-        </div>
-
-        <div th:fragment="elseDelete(entityName, entityUrl, id)">
-            <a class="fas fa-trash fa-2x icon-silver link-delete"
-               th:href="@{${entityUrl}}" th:title="'Delete the ' +  ${entityName}"
-               th:entityId="${id}">
-            </a>
-        </div>
-
-
-
-    <div th:fragment="search_form(moduleURL)">
-        <form th:action="@{'/' + ${moduleURL} + '/page/1'}" class="form-inline d-flex flex-wrap">
-            <input type="hidden" name="sortField" th:value="${sortField}">
-            <input type="hidden" name="sortDir" th:value="${sortDir}">
-            <label class="my-1 mr-2"> <b>Filters &nbsp;&nbsp; </b></label>
-            <input type="search" name="keyWord" th:value="${keyWord}" class="form-control mb-2 mr-sm-2"
-                   style="max-width:300px" required/>
-            &nbsp;&nbsp;
-            <input type="submit" value="Search" class="btn btn-primary mb-2 mr-sm-2"/>
-            &nbsp;&nbsp;
-            <input type="button" value="Clear" class="btn btn-secondary mb-2" onclick="clearFilter()"/>
-        </form>
-    </div>
+    <form th:action="@{${moduleURL}}" class="form-inline d-flex flex-wrap">
+        <input type="hidden" name="sortField" th:value="${sortField}">
+        <input type="hidden" name="sortDir" th:value="${sortDir}">
+        <label class="my-1 mr-2"> <b>Filters &nbsp;&nbsp; </b></label>
+        <input type="search" name="keyWord" th:value="${keyWord}" class="form-control mb-2 mr-sm-2"
+               style="max-width:300px" required/>
+        &nbsp;&nbsp;
+        <input type="submit" value="Search" class="btn btn-primary mb-2 mr-sm-2"/>
+        &nbsp;&nbsp;
+        <input type="button" value="Clear" class="btn btn-secondary mb-2" onclick="clearFilter()"/>
+    </form>
+</div>
 </body>
 </html>
