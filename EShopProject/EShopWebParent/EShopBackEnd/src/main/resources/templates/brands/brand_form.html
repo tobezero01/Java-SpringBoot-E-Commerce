@@ -33,11 +33,11 @@
                 </div>
 
                 <div class="form-group row mb-3">
-                    <label class="col-sm-3 col-form-label">Logo</label>
+                    <label class="col-sm-3 col-form-label">Brand Logo</label>
                     <div class="col-sm-9">
                         <input type="hidden" th:field="*{logo}">
                         <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpeg"
-                               name="fileImage" required/>
+                               name="fileImage" th:required="${brand.id == null}"/>
 
                         <div>
                             <img id="thumbnail" alt="Image preview" class="img-fluid" style="max-width:120px"
@@ -48,16 +48,16 @@
                 </div>
 
                 <div class="form-group row mb-3">
-                    <label class="col-sm-3 col-form-label">Select onr or more category</label>
+                    <label class="col-sm-3 col-form-label">Select one or (ctrl + click) to select more categories</label>
                     <div class="col-sm-9">
-                        <select class="form-control" th:field="*{categories}" multiple required
-                            style="resize: vertical ; height : 200px">
+                        <select class="form-control" th:field="*{categories}" required multiple size="5" style="resize: vertical; height: 200px;">
                             <th:block th:each="cat : ${listCategories}">
                                 <option th:value="${cat.id}"> [[${cat.name}]]</option>
                             </th:block>
                         </select>
                     </div>
                 </div>
+
 
 
 
@@ -75,7 +75,6 @@
                         <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
                     </div>
                 </div>
-
             </div>
         </form>
 
@@ -99,9 +98,10 @@
             divChosenCategories = $("#chosenCategories");
 
             dropdownCategories.change(function() {
-
+                divChosenCategories.empty();
                 showChosenCategories();
             });
+            showChosenCategories();
         });
 
         function showChosenCategories() {
