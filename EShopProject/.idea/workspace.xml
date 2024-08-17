@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint create , edit and delete">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/brand/BrandServiceTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/6/electronic.png" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add product repository">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/product/ProductRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/11/books.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/13/books.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/common_form.js" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/common_form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brand_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brand_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,17 +64,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
@@ -203,27 +203,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00013" summary="update image for user by id /user-photos and add FileUploadUtil">
-      <created>1722964158671</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1722964158672</updated>
-    </task>
-    <task id="LOCAL-00014" summary="update image for user.html">
-      <created>1722965367086</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1722965367086</updated>
-    </task>
-    <task id="LOCAL-00015" summary="endpoint update image">
-      <created>1722968064084</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1722968064084</updated>
     </task>
     <task id="LOCAL-00016" summary="add database , add jpaRepo. add testListPage">
       <created>1722976742337</created>
@@ -547,7 +526,28 @@
       <option name="project" value="LOCAL" />
       <updated>1723831779272</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="endpoint check unique">
+      <created>1723837039273</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1723837039273</updated>
+    </task>
+    <task id="LOCAL-00063" summary="add entity product">
+      <created>1723889909806</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1723889909806</updated>
+    </task>
+    <task id="LOCAL-00064" summary="add product repository">
+      <created>1723889932050</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1723889932050</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,9 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add some error 404,403,500" />
-    <MESSAGE value="logging properties" />
-    <MESSAGE value="add Category.java and CategoryRepository.java" />
     <MESSAGE value="JUnit firstTest CategoryRepositoryTests" />
     <MESSAGE value="test junit category" />
     <MESSAGE value="add file manage categories" />
@@ -588,6 +585,9 @@
     <MESSAGE value="add fragment search and message" />
     <MESSAGE value="add brand_form" />
     <MESSAGE value="endpoint create , edit and delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint create , edit and delete" />
+    <MESSAGE value="endpoint check unique" />
+    <MESSAGE value="add entity product" />
+    <MESSAGE value="add product repository" />
+    <option name="LAST_COMMIT_MESSAGE" value="add product repository" />
   </component>
 </project>
