@@ -4,14 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add product list all service and controller">
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint sort, filter ,pagination brand">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/1/Canon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/10/Samsung.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/11/Olympus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/12/Caden.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/13/amazonbasics.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/14/Nikon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/15/Neewer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/16/Sigma.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/17/Bosch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/18/Joby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/19/GoPro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/2/Fujifilm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/20/Manfrotto.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/21/Google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/22/LG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/23/Motorola.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/24/Pantech.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/25/Huawei.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/26/Xiaomi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/27/Hovamp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/28/Aioneus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/29/XIAE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/3/Sony.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/30/Everyworth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/31/Lexar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/32/Nulaxy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/33/Fitfort.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/34/PopSocket.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/35/SHAWE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/36/Lenovo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/37/Acer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/38/Dell.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/39/Intel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/4/HP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/40/ASUS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/41/Microsoft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/42/DragonTouch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/43/AMD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/44/XFX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/45/MSI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/46/Seagate.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/47/Corsair.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/48/Thermaltake.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/49/Kingston.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/5/SanDisk.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/50/Creative.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/51/Crucial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/52/HyperX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/53/Gigabyte.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/54/TP-Link.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/6/Western Digital.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/7/Panasonic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/8/Pelican.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/brand-logos/9/Apple.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Brand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-10.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/brand-logos/11/books.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/brand-logos/13/books.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/brand-logos/3/electronic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/brand-logos/5/books.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/brand-logos/6/electronic.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,25 +118,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent",
+    "settings.editor.selected.configurable": "project.propCompiler"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\brands" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\java\com\eshop\admin\category" />
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\categories" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\error" />
     </key>
@@ -201,13 +257,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00018" summary="pagination endpoint">
-      <created>1722980691135</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1722980691135</updated>
     </task>
     <task id="LOCAL-00019" summary="sort user function">
       <created>1723023802900</created>
@@ -545,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723909426382</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="endpoint sort, filter ,pagination brand">
+      <created>1723913171511</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1723913171511</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -561,7 +617,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add file manage categories" />
     <MESSAGE value=".." />
     <MESSAGE value="code and edit CategoryForm" />
     <MESSAGE value="add new category" />
@@ -586,6 +641,7 @@
     <MESSAGE value="add product repository" />
     <MESSAGE value="add product service and controller" />
     <MESSAGE value="add product list all service and controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="add product list all service and controller" />
+    <MESSAGE value="endpoint sort, filter ,pagination brand" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint sort, filter ,pagination brand" />
   </component>
 </project>

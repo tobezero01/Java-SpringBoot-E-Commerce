@@ -93,6 +93,6 @@ public class Brand {
     public String getLogoPath() {
         if(this.id == null) return "/images/logo-not-found.png";
 
-        return "/brands-logos/" + this.id + "/" + this.logo;
+        return "/brand-logos/" + this.id + "/" + this.logo;
     }
 }
