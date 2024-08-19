@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add sample data brand">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-17.0.gz" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="list view products">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-11.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -159,17 +156,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryRepositoryTests.testCreateRootCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductRepositoryTests.testCreateProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.category.controller.*" />
+          <option name="PATTERN" value="com.eshop.admin.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.category" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.category.CategoryRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateRootCategory" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.product" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.product.ProductRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,18 +174,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
+      <item itemvalue="JUnit.ProductRepositoryTests.testCreateProduct" />
       <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand1" />
       <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand2" />
       <item itemvalue="JUnit.BrandRepositoryTests.testFindById" />
-      <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.ProductRepositoryTests.testCreateProduct" />
         <item itemvalue="JUnit.BrandRepositoryTests.testFindById" />
         <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand2" />
         <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand1" />
-        <item itemvalue="JUnit.CategoryRepositoryTests.testCreateRootCategory" />
       </list>
     </recent_temporary>
   </component>
@@ -200,13 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00020" summary="jUnit test search user by name">
-      <created>1723024586076</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1723024586076</updated>
     </task>
     <task id="LOCAL-00021" summary="endpoint search user function with filter and pagination">
       <created>1723027486380</created>
@@ -544,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1723990866865</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="list view products">
+      <created>1724042860460</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1724042860460</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -560,7 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code and edit CategoryForm" />
     <MESSAGE value="add new category" />
     <MESSAGE value="list category with hierarchical form" />
     <MESSAGE value="add test service with Mockito" />
@@ -585,6 +581,7 @@
     <MESSAGE value="add product list all service and controller" />
     <MESSAGE value="endpoint sort, filter ,pagination brand" />
     <MESSAGE value="add sample data brand" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sample data brand" />
+    <MESSAGE value="list view products" />
+    <option name="LAST_COMMIT_MESSAGE" value="list view products" />
   </component>
 </project>
