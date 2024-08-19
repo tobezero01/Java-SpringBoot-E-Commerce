@@ -29,34 +29,36 @@
             <tr>
                 <!-- Call fragment -->
                 <th>ID</th>
-                <th>Logo</th>
-                <th>Name</th>
-                <!--        <th>-->
-                <!--          <a class="text-dark" th:href="@{'/categories?sortDir=' + ${reverseSortDir}}">Category Name</a>-->
-                <!--          <span th:class="${reverseSortDir == 'desc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}"></span>-->
-                <!--        </th>-->
-                <th>Categories</th>
-                <th>Actions</th>
+                <th>Main Image</th>
+                <th>Product Name</th>
+                <th>Brand</th>
+                <th>Category</th>
+                <th>Enabled</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="brand : ${listBrands}">
-                <td>[[${brand.id}]]</td>
+            <tr th:each="product : ${listProducts}">
+                <td>[[${product.id}]]</td>
                 <td>
-                    <img th:src="@{${brand.logoPath}}" style="max-width : 80px">
+<!--                    <img th:src="@{${brand.logoPath}}" style="max-width : 80px">-->
                 </td>
-                <td>[[${brand.name}]]</td>
+                <td>[[${product.name}]]</td>
+                <td>[[${product.brand.name}]]</td>
+                <td>[[${product.category.name}]]</td>
+
                 <td>
-                    <th:block th:each="cat : ${brand.categories}">
-                        <span class="custom-badge " th:text="${cat.name}"></span>
-                    </th:block>
+                    <div th:replace="fragments :: status(${product.enabled} ,'product' ,'/products/' + ${product.id})"></div>
                 </td>
                 <td>
                     <div class="inline-container">
-                        <div th:replace="fragments :: edit('brand' ,'/brands/edit/' + ${brand.id})"></div>
+                        <a class="fas fa-file-alt fa-2x icon-green" th:href="@{'/products/detail/' + ${product.id}}"
+                            title="View "></a>
                         &nbsp;
                         &nbsp;
-                        <div th:replace="fragments :: elseDelete('brand' ,'/brands/delete/' + ${brand.id}, ${brand.id})"></div>
+                        <div th:replace="fragments :: edit('product' ,'/products/edit/' + ${product.id})"></div>
+                        &nbsp;
+                        &nbsp;
+                        <div th:replace="fragments :: elseDelete('product' ,'/products/delete/' + ${product.id}, ${product.id})"></div>
                     </div>
 
                 </td>
