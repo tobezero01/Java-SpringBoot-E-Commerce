@@ -34,7 +34,7 @@ public class ProductController {
     @GetMapping("/products/new")
     public String newProduct(Model model) {
         List<Brand> listBrands = brandService.listAll();
-        List<Category> listCategories = categoryService.listCategoriesUsedInForm();
+        //List<Category> listCategories = categoryService.listCategoriesUsedInForm();
 
         Product product = new Product();
         product.setEnabled(true);
@@ -43,7 +43,7 @@ public class ProductController {
         model.addAttribute("product", product);
         model.addAttribute("listBrands",listBrands);
         model.addAttribute("pageTitle" , "Create new product");
-        model.addAttribute("listCategories", listCategories);
+        //model.addAttribute("listCategories", listCategories);
 
         return "products/product_form";
     }
