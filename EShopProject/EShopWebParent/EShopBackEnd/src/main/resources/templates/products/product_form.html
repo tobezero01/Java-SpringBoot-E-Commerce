@@ -41,12 +41,22 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane active" id="overview" role="tabpanel" >Overview</div>
+                    <div class="tab-pane active p-3" id="overview" role="tabpanel" >
+                        <div th:replace="products/product_overview :: content"></div>
+                    </div>
                     <div class="tab-pane" id="description" role="tabpanel" >Description</div>
                     <div class="tab-pane" id="images" role="tabpanel" >Images</div>
                     <div class="tab-pane" id="details" role="tabpanel" >Details</div>
                 </div>
 
+            </div>
+            <div>
+                <div class="form-group row pt-4">
+                    <div class="col-sm-9 offset-sm-3">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                        <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
+                    </div>
+                </div>
             </div>
         </form>
 

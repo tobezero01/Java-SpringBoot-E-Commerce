@@ -3,6 +3,7 @@ package com.eshop.admin.product;
 import com.eshop.admin.brand.BrandService;
 import com.eshop.admin.category.CategoryService;
 import com.eshop.common.entity.Brand;
+import com.eshop.common.entity.Category;
 import com.eshop.common.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,7 @@ public class ProductController {
     @GetMapping("/products/new")
     public String newProduct(Model model) {
         List<Brand> listBrands = brandService.listAll();
+        List<Category> listCategories = categoryService.listCategoriesUsedInForm();
 
         Product product = new Product();
         product.setEnabled(true);
@@ -41,6 +43,7 @@ public class ProductController {
         model.addAttribute("product", product);
         model.addAttribute("listBrands",listBrands);
         model.addAttribute("pageTitle" , "Create new product");
+        model.addAttribute("listCategories", listCategories);
 
         return "products/product_form";
     }
