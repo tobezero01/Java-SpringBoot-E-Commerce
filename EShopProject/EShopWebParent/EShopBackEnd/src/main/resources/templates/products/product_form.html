@@ -71,14 +71,38 @@
     <!-- -->
     <script type="text/javascript">
         moduleUrl = "[[@{/products}]]";
+        brandModuleURL = "[[@{/brands}]]";
 
+        dropdownBrands = $("#brand");
+        dropdownCategories = $("#category");
+
+        $(document).ready(function () {
+            console.log("Document is ready"); // Kiểm tra xem đoạn mã đã được thực thi hay chưa
+            dropdownBrands.change(function() {
+                dropdownCategories.empty();
+                getCategories();
+            });
+            getCategories();
+        });
+
+
+
+        function getCategories() {
+            brandId = dropdownBrands.val();
+            url = brandModuleURL + "/" + brandId + "/categories" ;
+
+            $.get(url, function(responseJson) {
+                $.each(responseJson , function(index, category) {
+                    $("<option>").val(category.id).text(category.name).appendTo(dropdownCategories);
+                });
+            });
+        }
 
 
     </script>
 
 
     <script th:src="@{/js/common_form.js}"></script>
-
 </body>
 
 </html>

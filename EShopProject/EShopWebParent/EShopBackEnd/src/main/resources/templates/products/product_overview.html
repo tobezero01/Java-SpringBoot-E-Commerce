@@ -36,11 +36,7 @@
             <label class="col-sm-3 col-form-label">Categories </label>
             <div class="col-sm-9">
                 <select th:field="*{category}" class="form-control" required>
-                    <th:block th:each="category : ${listCategories}">
-                        <option th:value="${category.id}">
-                            [[${category.name}]]
-                        </option>
-                    </th:block>
+
                 </select>
             </div>
         </div>
