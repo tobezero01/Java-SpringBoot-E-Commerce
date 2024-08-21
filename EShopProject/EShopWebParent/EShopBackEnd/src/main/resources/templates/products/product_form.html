@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(${pageTitle})">
+</head>
+
+<body>
+
+<!-- nav bar -->
+<div th:replace="navigation :: menu"></div>
+
+<!-- body -->
+<div class="container-fluid">
+
+    <div>
+        <h1>Manage Product | [[${pageTitle}]] </h1>
+    </div>
+
+
+    <!-- form user -->
+    <div>
+        <form th:action="@{/products/save}" th:object="${product}" method="post"
+              enctype="multipart/form-data" >
+            <input type="hidden" th:field="*{id}"/>
+
+            <div >
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active"  data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Overview</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" >Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#images" type="button" role="tab" >Images</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" >Details</button>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="overview" role="tabpanel" >Overview</div>
+                    <div class="tab-pane" id="description" role="tabpanel" >Description</div>
+                    <div class="tab-pane" id="images" role="tabpanel" >Images</div>
+                    <div class="tab-pane" id="details" role="tabpanel" >Details</div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Model dialog duplicated -->
+    <div th:replace="modal_fragments :: modal_dialog"></div>
+
+    <!-- footer -->
+    <div th:replace="fragments :: footer"></div>
+
+    <!-- -->
+    <script type="text/javascript">
+        moduleUrl = "[[@{/products}]]";
+
+
+
+    </script>
+
+
+    <script th:src="@{/js/common_form.js}"></script>
+
+</body>
+
+</html>
