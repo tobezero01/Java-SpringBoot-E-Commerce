@@ -4,35 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="javascript call apirest set categories by brandId">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-21.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/richtext/jquery.richtext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/richtext/jquery.richtext.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/richtext/richtext.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/richtext/richtext.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/richtext/richtext.scss" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add file richtext editor">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_description.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_shipping.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-14.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-15.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-08-16.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brand_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brand_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/error/500.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/account_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/account_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/user_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +67,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/static/richtext",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/products",
     "settings.editor.selected.configurable": "project.propCompiler"
   }
 }]]></component>
@@ -99,8 +76,8 @@
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\static\richtext" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\products" />
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\static\richtext" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\brands" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\java\com\eshop\admin\category" />
@@ -222,13 +199,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00027" summary="edit application properties">
-      <created>1723113868623</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1723113868623</updated>
     </task>
     <task id="LOCAL-00028" summary="login with user from database">
       <created>1723128087036</created>
@@ -566,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724255968801</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="add file richtext editor">
+      <created>1724473982470</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1724473982470</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="endpoint change status enabled" />
     <MESSAGE value="endpoint pagination categories" />
     <MESSAGE value="endpoint search and fix error with import data" />
     <MESSAGE value="endpoint export file" />
@@ -607,6 +583,7 @@
     <MESSAGE value="complete form overview product" />
     <MESSAGE value="add CategoryDTO vs BrandNotFoundRestException" />
     <MESSAGE value="javascript call apirest set categories by brandId" />
-    <option name="LAST_COMMIT_MESSAGE" value="javascript call apirest set categories by brandId" />
+    <MESSAGE value="add file richtext editor" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file richtext editor" />
   </component>
 </project>
