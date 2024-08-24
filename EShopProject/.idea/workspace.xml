@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add shipping and description">
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add new product first code">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,13 +199,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00029" summary="update thymeleaf with spring security mvc">
-      <created>1723128883750</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1723128883750</updated>
     </task>
     <task id="LOCAL-00030" summary="add logout security">
       <created>1723128984905</created>
@@ -542,7 +536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1724476189757</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="add new product first code">
+      <created>1724480032663</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1724480032663</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -558,7 +559,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="endpoint search and fix error with import data" />
     <MESSAGE value="endpoint export file" />
     <MESSAGE value="add brand entity" />
     <MESSAGE value="endpoint brand unit test" />
@@ -583,6 +583,7 @@
     <MESSAGE value="javascript call apirest set categories by brandId" />
     <MESSAGE value="add file richtext editor" />
     <MESSAGE value="add shipping and description" />
-    <option name="LAST_COMMIT_MESSAGE" value="add shipping and description" />
+    <MESSAGE value="add new product first code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new product first code" />
   </component>
 </project>

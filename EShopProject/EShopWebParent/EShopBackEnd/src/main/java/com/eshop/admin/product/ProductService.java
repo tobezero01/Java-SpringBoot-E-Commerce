@@ -1,5 +1,6 @@
 package com.eshop.admin.product;
 
+import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,20 @@ public class ProductService {
 
         product.setUpdatedTime(new Date());
         return productRepository.save(product);
+    }
+
+    public String checkUnique(Integer id, String name) {
+        boolean isCreatingNew = (id == null || id == 0);
+
+        Product productByName = productRepository.findByName(name);
+
+        if(isCreatingNew) {
+            if(productByName != null) return "Duplicate";
+        } else {
+            if( productByName != null && productByName.getId() != id) {
+                return "Duplicate";
+            }
+        }
+        return "OK";
     }
 }
