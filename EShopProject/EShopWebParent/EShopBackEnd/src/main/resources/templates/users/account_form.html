@@ -100,6 +100,8 @@
  <!-- redirect cancel btn to /users-->
 <script type="text/javascript">
 	moduleUrl = "[[@{/}]]";
+	MAX_FILE_SIZE = 1004800;
+
 	function checkPasswordMatch(confirmPassword) {
 		if (confirmPassword.value != $("#password").val()) {
 			confirmPassword.setCustomValidation("Password do not match!");

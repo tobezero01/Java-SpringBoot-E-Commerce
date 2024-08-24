@@ -40,7 +40,7 @@
             <tr th:each="product : ${listProducts}">
                 <td>[[${product.id}]]</td>
                 <td>
-<!--                    <img th:src="@{${brand.logoPath}}" style="max-width : 80px">-->
+                    <img th:src="@{${product.mainImagePath}}" style="max-width : 80px">
                 </td>
                 <td>[[${product.name}]]</td>
                 <td>[[${product.brand.name}]]</td>

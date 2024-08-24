@@ -52,10 +52,13 @@
                     </div>
                     <div class="tab-pane p-3" id="description" role="tabpanel" >
                         <div th:replace="products/product_description :: content"></div>
+                    </div>
+                    <div class="tab-pane" id="images" role="tabpanel" >
+                        <div th:replace="products/product_images :: content"></div>
+                    </div>
+                    <div class="tab-pane" id="details" role="tabpanel" >
 
                     </div>
-                    <div class="tab-pane" id="images" role="tabpanel" >Images</div>
-                    <div class="tab-pane" id="details" role="tabpanel" >Details</div>
                     <div class="tab-pane p-3" id="shipping" role="tabpanel" >
                         <div th:replace="products/product_shipping :: content"></div>
                     </div>
@@ -82,6 +85,9 @@
 
     <!-- -->
     <script type="text/javascript">
+
+        MAX_FILE_SIZE = 1004800;
+
         moduleUrl = "[[@{/products}]]";
         brandModuleURL = "[[@{/brands}]]";
 
