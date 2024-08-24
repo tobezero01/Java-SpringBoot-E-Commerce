@@ -141,11 +141,11 @@
 
 <script th:src="@{/js/common_list.js}"></script>
 <script type="text/javascript">
-    moduleUrl = "[[@{/brands}]]";
+    moduleUrl = "[[@{/products}]]";
     $(document).ready(function() {
         $(".link-delete").on("click", function(e) {
             e.preventDefault();
-            showDeleteConfirmModal($(this) , 'brand');
+            showDeleteConfirmModal($(this) , 'product');
         });
     });
 
