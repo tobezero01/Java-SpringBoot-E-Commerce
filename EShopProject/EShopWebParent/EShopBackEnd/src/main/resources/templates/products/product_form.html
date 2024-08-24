@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="fragments :: page_head(${pageTitle})">
-</head>
 
+<head>
+    <head th:replace="fragments :: page_head(${pageTitle}, 'tag')"></head>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}" />
+    <script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+</head>
 <body>
 
 <!-- nav bar -->

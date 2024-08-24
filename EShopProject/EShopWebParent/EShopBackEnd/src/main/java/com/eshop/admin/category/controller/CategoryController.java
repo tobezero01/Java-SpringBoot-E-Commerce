@@ -1,6 +1,7 @@
 package com.eshop.admin.category.controller;
 
 import com.eshop.admin.FileUploadUtil;
+import com.eshop.admin.brand.BrandService;
 import com.eshop.admin.category.CategoryNotFoundException;
 import com.eshop.admin.category.CategoryPageInfo;
 import com.eshop.admin.category.CategoryService;
@@ -29,27 +30,28 @@ public class CategoryController {
 
     @GetMapping("/categories")
     public String listFirstPage(@Param("sortDir") String sortDir, Model model) {
-        return listByPage(1 , sortDir, model ,null);
+        return listByPage(1 , sortDir, model ,null,"name");
     }
 
     @GetMapping("/categories/page/{pageNum}")
     public String listByPage(@PathVariable(name = "pageNum") int pageNum ,
                              @Param("sortDir") String sortDir, Model model,
-                             @Param("keyWord") String keyWord) {
+                             @Param("keyWord") String keyWord,
+                             @Param("sortField") String sortField) {
         if(sortDir == null || sortDir.isEmpty()) {
             sortDir = "asc";
         }
+
         CategoryPageInfo categoryPageInfo = new CategoryPageInfo();
         List<Category> categoryList = categoryService.listByPage(categoryPageInfo,pageNum, sortDir, keyWord);
         String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-
 
         model.addAttribute("totalPages" , categoryPageInfo.getTotalPages());
         model.addAttribute("totalItems" , categoryPageInfo.getTotalElements());
         model.addAttribute("currentPage" , pageNum);
         model.addAttribute("reverseSortDir", reverseSortDir);
         model.addAttribute("listCategories", categoryList);
-        model.addAttribute("sortField", "name");
+        model.addAttribute("sortField", sortField);
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("keyWord", keyWord);
         return "categories/categories";
