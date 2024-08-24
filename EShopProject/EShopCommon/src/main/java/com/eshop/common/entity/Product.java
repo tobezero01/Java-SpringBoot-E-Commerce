@@ -4,6 +4,8 @@ package com.eshop.common.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -56,10 +58,30 @@ public class Product {
     @JoinColumn(name = "brand_id")
     private Brand brand;
 
+    @Column(name = "main_image" , nullable = false)
+    private String mainImage;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private Set<ProductImage> images = new HashSet<>();
+
     public Product() {
     }
 
+    public String getMainImage() {
+        return mainImage;
+    }
 
+    public void setMainImage(String mainImage) {
+        this.mainImage = mainImage;
+    }
+
+    public Set<ProductImage> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<ProductImage> images) {
+        this.images = images;
+    }
 
     public Integer getId() {
         return id;
@@ -227,5 +249,9 @@ public class Product {
                 ", category=" + category.getName() +
                 ", brand=" + brand.getName() +
                 '}';
+    }
+
+    public void addExtraImage(String imageName) {
+        this.images.add(new ProductImage(imageName, this));
     }
 }

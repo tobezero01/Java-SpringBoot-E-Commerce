@@ -1152,3 +1152,90 @@ Caused by: java.lang.ClassNotFoundException: com.eshop.admin.product.ProductServ
 2024-08-24T15:13:50.670+07:00  WARN 10216 --- [EShopBackEnd] [http-nio-8080-exec-10] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-10][products/products] Deprecated unwrapped fragment expression "fragments :: elseDelete('product' ,'/products/delete/' + ${product.id}, ${product.id})" found in template products/products, line 60, col 30. Please use the complete syntax of fragment expressions instead ("~{fragments :: elseDelete('product' ,'/products/delete/' + ${product.id}, ${product.id})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
 2024-08-24T15:13:50.677+07:00  WARN 10216 --- [EShopBackEnd] [http-nio-8080-exec-10] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-10][products/products] Deprecated unwrapped fragment expression "modal_fragments :: confirm_modal" found in template products/products, line 137, col 6. Please use the complete syntax of fragment expressions instead ("~{modal_fragments :: confirm_modal}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
 2024-08-24T15:13:50.679+07:00  WARN 10216 --- [EShopBackEnd] [http-nio-8080-exec-10] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-10][products/products] Deprecated unwrapped fragment expression "fragments :: footer" found in template products/products, line 138, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-08-24T16:37:06.710+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 21.0.2 with PID 22976 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-24T16:37:06.713+07:00 DEBUG 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-24T16:37:06.714+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-24T16:37:08.752+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] o.a.c.c.C.[.[localhost].[/EShopAdmin]    : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [615F9E2E36129C12517278D9549FC394]
+2024-08-24T16:37:09.893+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-24T16:37:09.895+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-24T16:37:13.160+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-24T16:37:14.253+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-24T16:37:14.254+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-24T16:37:14.654+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 8.395 seconds (process running for 8.925)
+2024-08-24T16:41:30.595+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 21.0.2 with PID 22976 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-24T16:41:30.595+07:00 DEBUG 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-24T16:41:30.597+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-24T16:41:30.917+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type com.eshop.common.entity.Product not present
+2024-08-24T16:41:30.948+07:00 ERROR 22976 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.TypeNotPresentException: Type com.eshop.common.entity.Product not present
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:125) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.reifyTypeArguments(Reifier.java:68) ~[na:na]
+	at java.base/sun.reflect.generics.visitor.Reifier.visitClassTypeSignature(Reifier.java:138) ~[na:na]
+	at java.base/sun.reflect.generics.tree.ClassTypeSignature.accept(ClassTypeSignature.java:49) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.computeSuperInterfaces(ClassRepository.java:117) ~[na:na]
+	at java.base/sun.reflect.generics.repository.ClassRepository.getSuperInterfaces(ClassRepository.java:95) ~[na:na]
+	at java.base/java.lang.Class.getGenericInterfaces(Class.java:1296) ~[na:na]
+	at org.springframework.core.ResolvableType.getInterfaces(ResolvableType.java:517) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.core.ResolvableType.as(ResolvableType.java:465) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.data.util.TypeDiscoverer.getSuperTypeInformation(TypeDiscoverer.java:256) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.data.util.ClassTypeInformation.getSuperTypeInformation(ClassTypeInformation.java:36) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.data.util.TypeInformation.getRequiredSuperTypeInformation(TypeInformation.java:327) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.data.repository.core.support.DefaultRepositoryMetadata.<init>(DefaultRepositoryMetadata.java:55) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.getMetadata(AbstractRepositoryMetadata.java:79) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:91) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168) ~[spring-data-commons-3.2.8.jar:3.2.8]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.2.8.jar:3.2.8]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:376) ~[spring-context-6.1.11.jar:6.1.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:375) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:429) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:789) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:607) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.ClassNotFoundException: com.eshop.common.entity.Product
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:534) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:513) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:534) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:513) ~[na:na]
+	at java.base/sun.reflect.generics.factory.CoreReflectionFactory.makeNamedType(CoreReflectionFactory.java:114) ~[na:na]
+	... 39 common frames omitted
+
+2024-08-24T16:41:32.453+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 21.0.2 with PID 22976 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-24T16:41:32.453+07:00 DEBUG 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-24T16:41:32.455+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-08-24T16:41:33.177+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-24T16:41:33.177+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-24T16:41:33.644+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-24T16:41:33.997+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-24T16:41:33.998+07:00  WARN 22976 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-08-24T16:41:34.083+07:00  INFO 22976 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.677 seconds (process running for 268.354)
+2024-08-24T16:47:14.516+07:00  INFO 8780 --- [EShopBackEnd] [main] c.e.a.product.ProductRepositoryTests     : Starting ProductRepositoryTests using Java 21.0.2 with PID 8780 (started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-08-24T16:47:14.517+07:00 DEBUG 8780 --- [EShopBackEnd] [main] c.e.a.product.ProductRepositoryTests     : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-08-24T16:47:14.519+07:00  INFO 8780 --- [EShopBackEnd] [main] c.e.a.product.ProductRepositoryTests     : No active profile set, falling back to 1 default profile: "default"
+2024-08-24T16:47:16.050+07:00  WARN 8780 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-24T16:47:16.053+07:00  WARN 8780 --- [EShopBackEnd] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-24T16:47:18.438+07:00  INFO 8780 --- [EShopBackEnd] [main] c.e.a.product.ProductRepositoryTests     : Started ProductRepositoryTests in 4.263 seconds (process running for 5.516)
