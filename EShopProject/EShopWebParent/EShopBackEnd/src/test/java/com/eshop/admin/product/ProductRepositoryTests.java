@@ -105,4 +105,16 @@ public class ProductRepositoryTests {
 
     }
 
+    @Test
+    public void testProductDetail() {
+        Integer id =2;
+        Product product = productRepository.findById(id).get();
+
+        product.addDetail("Device memory" , "128G");
+        product.addDetail("CPU" , "Intel");
+
+        Product savedProduct = productRepository.save(product);
+        assertThat(savedProduct.getDetails()).isNotEmpty();
+    }
+
 }

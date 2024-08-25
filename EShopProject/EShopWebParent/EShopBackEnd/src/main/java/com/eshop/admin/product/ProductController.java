@@ -68,7 +68,6 @@ public class ProductController {
         setExtraImageNames(extraImageMultipart , product);
 
         Product savedProduct = productService.save(product);
-
         saveUploadImages(mainImageMultipart , extraImageMultipart, savedProduct);
 
         redirectAttributes.addFlashAttribute("message", "The product has been saved successfully");
