@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 public class ProductController {
@@ -36,7 +38,7 @@ public class ProductController {
     @GetMapping("/products")
     public String listAll(Model model) {
         List<Product> listProducts = productService.listAll();
-        model.addAttribute("listProducts" , listProducts);
+        model.addAttribute("listProducts", listProducts);
         return "products/products";
     }
 
@@ -50,29 +52,65 @@ public class ProductController {
         product.setInStock(true);
 
         model.addAttribute("product", product);
-        model.addAttribute("listBrands",listBrands);
-        model.addAttribute("pageTitle" , "Create new product");
+        model.addAttribute("listBrands", listBrands);
+        model.addAttribute("pageTitle", "Create new product");
         //model.addAttribute("listCategories", listCategories);
 
         return "products/product_form";
     }
 
     @PostMapping("/products/save")
-    public String saveProduct(Product product , RedirectAttributes redirectAttributes,
-                              @RequestParam("fileImage") MultipartFile multipartFile) throws IOException {
-        if(!multipartFile.isEmpty()) {
-            String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-            product.setMainImage(fileName);
-            Product savedProduct = productService.save(product);
+    public String saveProduct(Product product, RedirectAttributes redirectAttributes,
+                              @RequestParam("fileImage") MultipartFile mainImageMultipart,
+                              @RequestParam("extraImage") MultipartFile[] extraImageMultipart) throws IOException {
 
+        setMainImageName(mainImageMultipart , product);
+        setExtraImageNames(extraImageMultipart , product);
+
+        Product savedProduct = productService.save(product);
+
+        saveUploadImages(mainImageMultipart , extraImageMultipart, savedProduct);
+
+        redirectAttributes.addFlashAttribute("message", "The product has been saved successfully");
+        return "redirect:/products";
+    }
+
+    private void saveUploadImages(MultipartFile mainImageMultipart, MultipartFile[] extraImageMultipart, Product savedProduct) throws IOException {
+        if (!mainImageMultipart.isEmpty()) {
+            String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
             String uploadDir = "../product-images/" + savedProduct.getId();
 
-            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        } else {
-            productService.save(product);
+            FileUploadUtil.saveFile(uploadDir, fileName, mainImageMultipart);
         }
-        redirectAttributes.addFlashAttribute("message","The product has been saved successfully");
-        return "redirect:/products";
+
+        if(extraImageMultipart.length > 0) {
+            String uploadDir = "../product-images/" + savedProduct.getId() + "/extras";
+
+            for (MultipartFile multipartFile : extraImageMultipart) {
+                if (!multipartFile.isEmpty()) continue;
+                String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+                FileUploadUtil.saveFile(uploadDir, fileName, mainImageMultipart);
+            }
+        }
+
+    }
+
+    public void setExtraImageNames(MultipartFile[] extraImageMultipart , Product product) {
+        if(extraImageMultipart.length > 0) {
+            for (MultipartFile multipartFile : extraImageMultipart) {
+                if (!multipartFile.isEmpty()) {
+                    String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+                    product.addExtraImage(fileName);
+                }
+            }
+        }
+    }
+
+    public void setMainImageName(MultipartFile mainImageMultipart, Product product) {
+        if (!mainImageMultipart.isEmpty()) {
+            String fileName = StringUtils.cleanPath(mainImageMultipart.getOriginalFilename());
+            product.setMainImage(fileName);
+        }
     }
 
     @GetMapping("/products/{id}/enabled/{status}")
@@ -87,11 +125,15 @@ public class ProductController {
     }
 
     @GetMapping("/products/delete/{id}")
-    public String delete(@PathVariable(name = "id") Integer id ,
-                              Model model , RedirectAttributes redirectAttributes) throws IOException {
-        try{
+    public String delete(@PathVariable(name = "id") Integer id,
+                         Model model, RedirectAttributes redirectAttributes) throws IOException {
+        try {
             productService.delete(id);
-            redirectAttributes.addFlashAttribute("message" , "The product ID : " + id + " has been deleted successfully!" );
+            String extraDir = "../product-images/" + id + "/extras";
+            String mainImageDir = "../product-images/" + id ;
+            FileUploadUtil.removeDir(extraDir);
+            FileUploadUtil.removeDir(mainImageDir);
+            redirectAttributes.addFlashAttribute("message", "The product ID : " + id + " has been deleted successfully!");
         } catch (ProductNotFoundException exception) {
             redirectAttributes.addFlashAttribute("message", exception.getMessage());
         }
