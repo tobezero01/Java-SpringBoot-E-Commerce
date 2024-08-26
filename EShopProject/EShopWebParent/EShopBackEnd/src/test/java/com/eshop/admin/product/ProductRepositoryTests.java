@@ -100,9 +100,7 @@ public class ProductRepositoryTests {
         product.addExtraImage("extra_images_2");
 
         Product saveProduct = productRepository.save(product);
-
         assertThat(saveProduct.getImages().size()).isEqualTo(2);
-
     }
 
     @Test

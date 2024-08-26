@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<body>
+<div th:fragment="content" id="divProductDetails">
+    <div class="d-flex align-items-center mb-2" id="divDetail0">
+
+        <label class="m-3">Name</label>
+        <input type="text" class="form-control w-25 mr-3" name="detailNames" maxlength="255"/>
+        <label class="m-3">Value</label>
+        <input type="text" class="form-control w-25" name="detailValues" maxlength="255"/>
+        <a hidden class="btn fas fa-times-circle fa-2x icon-dark mr-3"
+           title="Remove this section" href="javascript:removeDetailSectionById('0')"></a>
+    </div>
+</div>
+
+</body>
+</html>

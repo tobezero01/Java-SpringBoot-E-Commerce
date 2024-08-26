@@ -57,7 +57,11 @@
                         <div th:replace="products/product_images :: content"></div>
                     </div>
                     <div class="tab-pane" id="details" role="tabpanel" >
-
+                        <div th:replace="products/product_details :: content"></div>
+                        <div>
+                            <input type="button" class="btn btn-secondary" value="Add More Details"
+                             onclick="addNextDetailSection()" />
+                        </div>
                     </div>
                     <div class="tab-pane p-3" id="shipping" role="tabpanel" >
                         <div th:replace="products/product_shipping :: content"></div>
@@ -96,7 +100,9 @@
 
 
     <script th:src="@{/js/common_form.js}"></script>
-    <script th:src="@{/js/product_form.js}"></script>
+    <script th:src="@{/js/product_form_overview.js}"></script>
+    <script th:src="@{/js/product_form_images.js}"></script>
+    <script th:src="@{/js/product_form_details.js}"></script>
 </body>
 
 </html>
