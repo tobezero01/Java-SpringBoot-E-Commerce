@@ -12,6 +12,12 @@
             });
         });
 
+        $("a[name='linkRemoveExtraImage']").each(function (index) {
+            $(this).click(function {
+                removeExtraImage(index);
+            });
+        });
+
     });
 
     function showExtraImageThumbnail(fileInput, index) {
@@ -27,6 +33,8 @@
             addNextExtraImageSection(index + 1);
         }
     }
+
+
 
     function addNextExtraImageSection(index) {
         htmlExtraImage = `

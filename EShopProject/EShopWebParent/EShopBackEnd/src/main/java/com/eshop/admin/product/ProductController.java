@@ -7,6 +7,7 @@ import com.eshop.admin.category.CategoryService;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Category;
 import com.eshop.common.entity.Product;
+import org.apache.commons.collections4.Get;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -128,6 +129,27 @@ public class ProductController {
         }
     }
 
+    @GetMapping("/products/edit/{id}")
+    public String editProduct(@PathVariable("id") Integer id , Model model,
+                              RedirectAttributes redirectAttributes) {
+        try {
+            Product product = productService.get(id);
+            List<Brand> listBrands = brandService.listAll();
+
+            Integer numberOfExistingExtraImages = product.getImages().size();
+
+            model.addAttribute("product" , product);
+            model.addAttribute("listBrands" , listBrands);
+            model.addAttribute("numberOfExistingExtraImages" , numberOfExistingExtraImages);
+            model.addAttribute("pageTitle" , "Edit product ( Id = " + id + " )");
+
+            return "products/product_form";
+        } catch (ProductNotFoundException ex) {
+            redirectAttributes.addFlashAttribute("message" , ex.getMessage());
+            return "redirect:/products";
+        }
+    }
+
     @GetMapping("/products/{id}/enabled/{status}")
     public String updateCategoryEnabledStatus(@PathVariable("id") Integer id,
                                               @PathVariable("status") boolean enabled,
@@ -138,6 +160,8 @@ public class ProductController {
         redirectAttributes.addFlashAttribute("message", message);
         return "redirect:/products";
     }
+
+
 
     @GetMapping("/products/delete/{id}")
     public String delete(@PathVariable(name = "id") Integer id,

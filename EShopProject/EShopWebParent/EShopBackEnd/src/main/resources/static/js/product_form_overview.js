@@ -12,10 +12,20 @@
             dropdownCategories.empty();
             getCategories();
         });
-        getCategories();
+        getCategoriesForNewForm();
 
 
     });
+
+    function getCategoriesForNewForm()  {
+        catIdField = $("#categoryId");
+        editMode = false;
+
+        if(catIdField.length) {
+            editMode = true;
+        }
+        if(!editMode) getCategories();
+    }
 
     function getCategories() {
         brandId = dropdownBrands.val();

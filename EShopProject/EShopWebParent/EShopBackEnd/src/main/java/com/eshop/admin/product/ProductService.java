@@ -65,4 +65,8 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public Product get(Integer id) throws ProductNotFoundException {
+        return productRepository.findById(id).get();
+    }
+
 }

@@ -14,7 +14,7 @@
         <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Alias</label>
             <div class="col-sm-9">
-                <input type="text" th:field="*{name}" class="form-control" required minlength="3"
+                <input type="text" th:field="*{alias}" class="form-control" required minlength="3"
                        maxlength="256">
             </div>
         </div>
@@ -35,9 +35,20 @@
         <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Categories </label>
             <div class="col-sm-9">
-                <select th:field="*{category}" class="form-control" required>
+                <th:block th:if="${product.category != null}">
+                    <select th:field="*{category}" class="form-control" required>
 
-                </select>
+                        <th:block th:each="cat : ${product.brand.categories}">
+                            <option th:value="${cat.id}">[[${cat.name}]]</option>
+                        </th:block>
+
+                    </select>
+                </th:block>
+
+                <th:block th:if="${product.category == null}">
+                    <select th:field="*{category}" class="form-control" required>
+                    </select>
+                </th:block>
             </div>
         </div>
 
