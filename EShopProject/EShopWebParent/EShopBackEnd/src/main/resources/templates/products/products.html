@@ -42,7 +42,11 @@
                 <td>
                     <img th:src="@{${product.mainImagePath}}" style="max-width : 80px">
                 </td>
-                <td>[[${product.name}]]</td>
+                <td>
+                    <a class="link-detail" th:src="@{'/products/detail/' + ${product.id}}" title="View details for this product">
+                        [[${product.name}]]
+                    </a>
+                </td>
                 <td>[[${product.brand.name}]]</td>
                 <td>[[${product.category.name}]]</td>
 
@@ -51,7 +55,7 @@
                 </td>
                 <td>
                     <div class="inline-container">
-                        <a class="fas fa-file-alt fa-2x icon-green" th:href="@{'/products/detail/' + ${product.id}}"
+                        <a class="link-detail fas fa-file-alt fa-2x icon-green" th:href="@{'/products/detail/' + ${product.id}}"
                             title="View "></a>
                         &nbsp;
                         &nbsp;
@@ -137,6 +141,15 @@
 <div th:replace="modal_fragments :: confirm_modal"></div>
 <div th:replace="fragments :: footer"></div>
 
+
+<div class="modal fade" id="detailModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
 </div>
 
 <script th:src="@{/js/common_list.js}"></script>
@@ -146,6 +159,12 @@
         $(".link-delete").on("click", function(e) {
             e.preventDefault();
             showDeleteConfirmModal($(this) , 'product');
+        });
+
+        $(".link-detail").on("click", function(e) {
+            e.preventDefault();
+            linkDetailURL = $(this).attr("href");
+            $("#detailModal").modal("show").find(".modal-dialog").load(linkDetailURL);
         });
     });
 
