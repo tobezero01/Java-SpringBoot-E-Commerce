@@ -43,7 +43,7 @@
                     <img th:src="@{${product.mainImagePath}}" style="max-width : 80px">
                 </td>
                 <td>
-                    <a class="link-detail" th:src="@{'/products/detail/' + ${product.id}}" title="View details for this product">
+                    <a class="link-detail" th:href="@{'/products/detail/' + ${product.id}}" title="View details for this product">
                         [[${product.name}]]
                     </a>
                 </td>
@@ -139,16 +139,16 @@
 
 </div>
 <div th:replace="modal_fragments :: confirm_modal"></div>
-<div th:replace="fragments :: footer"></div>
-
 
 <div class="modal fade" id="detailModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl bg-white">
         <div class="modal-content">
-
         </div>
     </div>
 </div>
+
+<div th:replace="fragments :: footer"></div>
+
 
 </div>
 
@@ -165,6 +165,7 @@
             e.preventDefault();
             linkDetailURL = $(this).attr("href");
             $("#detailModal").modal("show").find(".modal-dialog").load(linkDetailURL);
+
         });
     });
 
