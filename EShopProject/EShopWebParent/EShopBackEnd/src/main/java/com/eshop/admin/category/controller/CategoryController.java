@@ -41,7 +41,8 @@ public class CategoryController {
         if(sortDir == null || sortDir.isEmpty()) {
             sortDir = "asc";
         }
-
+        long startCount = (pageNum - 1) *CategoryService.ROOT_CATEGORIES_PER_PAGE +1;
+        long endCount = startCount + CategoryService.ROOT_CATEGORIES_PER_PAGE -1;
         CategoryPageInfo categoryPageInfo = new CategoryPageInfo();
         List<Category> categoryList = categoryService.listByPage(categoryPageInfo,pageNum, sortDir, keyWord);
         String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
@@ -54,6 +55,9 @@ public class CategoryController {
         model.addAttribute("sortField", sortField);
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("keyWord", keyWord);
+        model.addAttribute("startCount", startCount);
+        model.addAttribute("endCount", endCount);
+
         return "categories/categories";
     }
 

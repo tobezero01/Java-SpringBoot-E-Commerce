@@ -4,473 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="start coding modal detail (error ) fix later">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/1/canon eos m50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/1/extras/EOS M50 LCD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/1/extras/EOS M50 flash opened.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/1/extras/EOS M50 incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/1/extras/EOS M50 straight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/1/extras/EOS M50 top down.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/10/Olympus Tough main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/10/extras/Olympus Tough potrait.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/10/extras/Olympus Tough water around.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/10/extras/Olympus Tough water slow motion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/100/Crucial 8GB DDR main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/100/extras/Crucial 8GB DDR 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/100/extras/Crucial 8GB DDR installation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/100/extras/Crucial 8GB DDR on laptop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/101/HyperX 16GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/101/extras/HyperX 16GB DDR4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/101/extras/HyperX 16GB couple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/101/extras/HyperX 16GB package.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/102/Asus AM4 TUF main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/102/extras/Asus AM4 TUF 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/102/extras/Asus AM4 TUF box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/102/extras/Asus AM4 TUF circuit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/102/extras/Asus AM4 TUF ports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/103/Asus Prime main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/103/extras/Asus Prime connectivity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/103/extras/Asus Prime details.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/103/extras/Asus Prime outclass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/103/extras/Asus Prime outshine competition.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/104/Gigabyte B450M main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/104/extras/Gigabyte B450M circuit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/104/extras/Gigabyte B450M details.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/104/extras/Gigabyte B450M ports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/105/TPLink AX3000 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/105/extras/TPLink AX3000 Wifi 6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/105/extras/TPLink AX3000 reduce lag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/105/extras/TPLink AX3000 speed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/106/TPLink AC1200 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/106/extras/TPLink AC1200 antennas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/106/extras/TPLink AC1200 bluetooth.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/106/extras/TPLink AC1200 details.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/107/batch-files-automate-670x335.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/11/Sony a7 III main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/12/CADeN Camera Backpack open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/12/extras/CADeN Camera Backpack Waterproof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/12/extras/CADeN Camera Backpack details.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/12/extras/CADeN Camera Backpack sizes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/12/extras/CADeN Camera Backpack usages.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/14/AmazonBasics Large DSLR Camera Bag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/14/extras/AmazonBasics Large DSLR Camera Bag close view.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/14/extras/AmazonBasics Large DSLR Camera Bag cover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/14/extras/AmazonBasics Large DSLR Camera Bag opened.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/14/extras/AmazonBasics Large DSLR Camera Bag top view.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/14/extras/AmazonBasics Large DSLR Camera Bag tripod.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/15/Nikon Flash 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/15/extras/Nikon Flash details.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/16/Canon Speedlite main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/16/extras/Canon Speedlite 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/16/extras/Canon Speedlite 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/16/extras/Canon Speedlite 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/17/Sony Flash 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/17/extras/Sony Flash 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/17/extras/Sony Flash 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/17/extras/Sony Flash 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/18/Neewer TT560 Flash Speedlite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/18/extras/Neewer TT560 Flash Speedlite 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/18/extras/Neewer TT560 Flash Speedlite 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/18/extras/Neewer TT560 Flash Speedlite 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/19/Canon EF 50mm main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/19/extras/Canon EF 50mm side 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/19/extras/Canon EF 50mm side 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/19/extras/Canon EF 50mm side 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/19/extras/Canon EF 50mm side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/2/Sony ZV-1 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/2/extras/Sony ZV-1 bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/2/extras/Sony ZV-1 front 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/2/extras/Sony ZV-1 front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/2/extras/Sony ZV-1 side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/20/Nikon AF-S Nikkor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/21/Canon EF 75-300mm 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/21/extras/Canon EF 75-300mm 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/22/Sigma 150-600mm main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/22/extras/Sigma 150-600mm 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/22/extras/Sigma 150-600mm 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/22/extras/Sigma 150-600mm 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/22/extras/Sigma 150-600mm buttons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/22/extras/Sigma 150-600mm front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/23/Bosch BT150 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/23/extras/Bosch BT150 install 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/23/extras/Bosch BT150 install 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/23/extras/Bosch BT150 install.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/23/extras/Bosch BT150 usage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/24/Joby JB01507 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/24/extras/Joby JB01507 collapsed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/24/extras/Joby JB01507 usage 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/24/extras/Joby JB01507 usage 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/24/extras/Joby JB01507 usage 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/24/extras/Joby JB01507 usage 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/25/GoPro Tripod main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/25/extras/GoPro Tripod with camera 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/25/extras/GoPro Tripod with camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/25/extras/GoPro monopod mode.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/25/extras/GoPro monopod selfie.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/25/extras/GoPro tripod picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/26/Manfrotto Monopod main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/27/Samsung Galaxy S7 front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/27/extras/Samsung Galaxy S7 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/27/extras/Samsung Galaxy S7 incline 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/27/extras/Samsung Galaxy S7 incline 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/Samsung Galaxy S6 Edge front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/extras/Samsung Galaxy S6 Edge back 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/extras/Samsung Galaxy S6 Edge back 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/extras/Samsung Galaxy S6 Edge incline 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/extras/Samsung Galaxy S6 Edge incline 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/extras/Samsung Galaxy S6 Edge incline 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/28/extras/Samsung Galaxy S6 Edge incline 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/29/Google Pixel 3a - front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/29/extras/Google Pixel 3a - back and front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/29/extras/Google Pixel 3a - back side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/3/Lumix FZ80 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/3/extras/Lumix FZ80 buttons.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/3/extras/Lumix FZ80 dimensions.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/3/extras/Lumix FZ80 lens.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/3/extras/Lumix FZ80 rear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/30/LG G Flex front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/30/extras/LG G Flex front and back curve.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/30/extras/LG G Flex incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/30/extras/LG G Flex lying.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/30/extras/LG G Flex sim tray open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/31/LG Optimus Exceed 2 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/31/extras/LG Optimus Exceed 2 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/31/extras/LG Optimus Exceed 2 incline 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/31/extras/LG Optimus Exceed 2 incline 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/32/LG G6 T-Mobile main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/32/extras/LG G6 T-Mobile back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/32/extras/LG G6 T-Mobile lying.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/32/extras/LG G6 T-Mobile side 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/33/TracFone Motorola Moto G6 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/33/extras/TracFone Motorola Moto G6 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/33/extras/TracFone Motorola Moto G6 side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/34/Pantech Pocket main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/34/extras/Pantech Pocket 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/34/extras/Pantech Pocket 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/34/extras/Pantech Pocket 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/35/Samsung Galaxy S10 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/35/extras/Samsung Galaxy S10 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/35/extras/Samsung Galaxy S10 front and back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/35/extras/Samsung Galaxy S10 side 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/35/extras/Samsung Galaxy S10 side 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/36/Samsung Galaxy A20s main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/36/extras/Samsung Galaxy A20s back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/36/extras/Samsung Galaxy A20s cameras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/36/extras/Samsung Galaxy A20s side1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/36/extras/Samsung Galaxy A20s side2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/37/Samsung Galaxy S20 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/37/extras/Samsung Galaxy S20 front and back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/37/extras/Samsung Galaxy S20 incline1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/37/extras/Samsung Galaxy S20 incline2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/37/extras/Samsung Galaxy S20 side1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/37/extras/Samsung Galaxy S20 side2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/38/iPhone XS 256GB 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/39/extras/iPhone 7 Plus 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/39/extras/iPhone 7 Plus back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/39/extras/iPhone 7 Plus front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/39/iPhone 7 Plus main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/4/Pelican 1200 Case main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/4/extras/Pelican 1200 Case features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/4/extras/Pelican 1200 Case open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/4/extras/Pelican 1200 Case usages.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/40/extras/iPhone X 64GB rear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/40/iPhone X 64GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/41/Google Pixel 4 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/41/extras/Google Pixel 4 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/41/extras/Google Pixel 4 incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/41/extras/Google Pixel 4 side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/42/Motor G Power main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/42/extras/Motor G Power cameras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/42/extras/Motor G Power twos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/42/extras/Motor G Power unlocked.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/43/Huawai P30 Lite main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/43/extras/Huawai P30 Lite cameras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/43/extras/Huawai P30 Lite rear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/43/extras/Huawai P30 Lite specs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/43/extras/Huawai P30 Lite twos.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/44/Redmi Note 9S main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/44/extras/Redmi Note 9S cameras.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/45/HOVAMP iPhone Charger 5pack main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/45/extras/HOVAMP iPhone Charger Aluminum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/45/extras/HOVAMP iPhone Charger compatible.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/45/extras/HOVAMP iPhone Charger internal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/46/Aioneus iphone charger cord main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/46/extras/Aioneus iphone charger cord demo charging.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/46/extras/Aioneus iphone charger cord easy to carry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/46/extras/Aioneus iphone charger cord internal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/46/extras/Aioneus iphone charger cord supported devices.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/47/XIAE USB C Cable main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/47/extras/XIAE USB C Cable connectors.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/47/extras/XIAE USB C Cable features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/47/extras/XIAE USB C Cable internals.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/47/extras/XIAE USB C Cable suitability.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/47/extras/XIAE USB C Cable supported devices.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/48/Everyworth Micro USB Cable 3pack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/48/extras/Everyworth Micro USB Cable Attention.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/48/extras/Everyworth Micro USB Cable Durability.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/48/extras/Everyworth Micro USB Cable perfect design.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/48/extras/Everyworth Micro USB Cable supported devices.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/Samsung EVO Select 256GB microSD main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/extras/Samsung EVO Select 256GB microSD 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/extras/Samsung EVO Select 256GB microSD 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/extras/Samsung EVO Select 256GB microSD 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/extras/Samsung EVO Select 256GB microSD 5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/extras/Samsung EVO Select 256GB microSD 6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/49/extras/Samsung EVO Select 256GB microSD 7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/5/Pelican 1040 Micro Case 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/5/extras/Pelican 1040 Micro Case 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/50/SanDisk 128GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/50/extras/SanDisk 128GB 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/50/extras/SanDisk 128GB 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/50/extras/SanDisk 128GB 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/51/SanDisk Ultra 32GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/51/extras/SanDisk Ultra 32GB 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/51/extras/SanDisk Ultra 32GB 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/51/extras/SanDisk Ultra 32GB 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/51/extras/SanDisk Ultra 32GB 5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/52/Samsung PRO 128GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/52/extras/Samsung PRO 128GB 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/52/extras/Samsung PRO 128GB 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/52/extras/Samsung PRO 128GB 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/53/Lexar 512GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/53/extras/Lexar 512GB 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/53/extras/Lexar 512GB2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/54/Manfrotto Tripod main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/54/extras/Manfrotto Tripod 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/54/extras/Manfrotto Tripod 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/54/extras/Manfrotto Tripod collapse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/54/extras/Manfrotto Tripod hand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/55/Nulaxy A4 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/55/extras/Nulaxy A4 2 case.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/55/extras/Nulaxy A4 2 portable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/55/extras/Nulaxy A4 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/55/extras/Nulaxy A4 holds ipad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/56/Fitfort Phone Ring Holder main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/56/extras/Fitfort Phone Ring Holder car mount.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/56/extras/Fitfort Phone Ring Holder rotation.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/56/extras/Fitfort Phone Ring Holder structure.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/56/extras/Fitfort Phone Ring Holder usages.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/57/PopWallet main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/57/extras/PopWallet 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/57/extras/PopWallet 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/57/extras/PopWallet holds phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/58/Shawe Phone holder main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/58/extras/Shawe Phone holder 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/58/extras/Shawe Phone holder 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/58/extras/Shawe Phone holder 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/Lenovo IdeaCenter main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/extras/Lenovo IdeaCenter back 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/extras/Lenovo IdeaCenter back 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/extras/Lenovo IdeaCenter back 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/extras/Lenovo IdeaCenter back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/extras/Lenovo IdeaCenter incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/59/extras/Lenovo IdeaCenter incline2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/6/Verizon Apple iPhone 6S main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/6/extras/Verizon Apple iPhone 6S all.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/6/extras/Verizon Apple iPhone 6S back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/6/extras/Verizon Apple iPhone 6S front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/60/Aspire TC-885-UA92 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/60/extras/Aspire TC-885-UA92 CPU and RAM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/60/extras/Aspire TC-885-UA92 audio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/60/extras/Aspire TC-885-UA92 compact form.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/60/extras/Aspire TC-885-UA92 connect.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/60/extras/Aspire TC-885-UA92 connectivity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/61/Dell Inspiron 27 AIO main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/61/extras/Dell Inspiron 27 AIO 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/61/extras/Dell Inspiron 27 AIO back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/61/extras/Dell Inspiron 27 AIO side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/IdeaCentre 3 main 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/extras/IdeaCentre 3 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/extras/IdeaCentre 3 front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/extras/IdeaCentre 3 incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/extras/IdeaCentre 3 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/extras/IdeaCentre 3 with screen mouse keyboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/62/extras/IdeaCentre 3 with screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/63/Dell OptiPlex main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/63/extras/Dell OptiPlex details.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/63/extras/Dell OptiPlex interfaces 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/63/extras/Dell OptiPlex interfaces.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/63/extras/Dell OptiPlex on desktop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/63/extras/Dell OptiPlex with screen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/64/Intel NUC main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/64/extras/Intel NUC interface.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/64/extras/intel NUC usage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/64/extras/intel core i7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/65/Lenovo Flex 5 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/65/extras/Lenovo Flex 5 fold 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/65/extras/Lenovo Flex 5 fold 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/65/extras/Lenovo Flex 5 fold.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/65/extras/Lenovo Flex 5 laptop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/65/extras/Lenovo Flex 5 top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/66/Acer Aspire 5 Slim Laptop main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/66/extras/Acer Aspire 5 Slim Laptop family.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/66/extras/Acer Aspire 5 Slim Laptop full hd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/66/extras/Acer Aspire 5 Slim Laptop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/ASUS VivoBook main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/extras/ASUS VivoBook battery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/extras/ASUS VivoBook cinematic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/extras/ASUS VivoBook ergonomic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/extras/ASUS VivoBook flexibility.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/extras/ASUS VivoBook hinge.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/67/extras/ASUS VivoBook mobility.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/68/HP Chromebook main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/68/extras/HP Chromebook components.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/68/extras/HP Chromebook dimensions.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/68/extras/HP Chromebook usb audio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/69/Acer Swift 3 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/69/extras/Acer Swift 3 features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/69/extras/Acer Swift 3 full HD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/69/extras/Acer Swift 3 performance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/69/extras/Acer Swift 3 stay on the move.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/69/extras/Acer Swift 3 ultra light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/7/Samsung Galaxy Note 2 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/7/extras/Samsung Galaxy Note 2 incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/7/extras/Samsung Galaxy Note 2 with stylus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/70/ASUS TUF Gaming main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/70/extras/ASUS TUF Gaming 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/70/extras/ASUS TUF Gaming back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/70/extras/ASUS TUF Gaming side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/70/extras/ASUS TUF Gaming top view.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/71/Lenovo Legion main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/71/extras/Lenovo Legion Audio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/71/extras/Lenovo Legion Light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/71/extras/Lenovo Legion fast refresh.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/71/extras/Lenovo Legion keys.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/71/extras/Lenovo Legion minimal mighty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/72/Acer Chromebook Spin main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/72/extras/Acer Chromebook Spin 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/72/extras/Acer Chromebook Spin 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/72/extras/Acer Chromebook Spin 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/72/extras/Acer Chromebook Spin 5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/72/extras/Acer Chromebook Spin 6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/73/Dell Inspiron 3000 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/73/extras/Dell Inspiron 3000 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/73/extras/Dell Inspiron 3000 incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/73/extras/Dell Inspiron 3000 sideview.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/73/extras/Dell Inspiron 3000 top view.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/74/Galaxy Tab A main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/74/extras/Galaxy Tab A back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/74/extras/Galaxy Tab A front and back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/74/extras/Galaxy Tab A potrait.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/74/extras/Galaxy Tab A side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/75/Galaxy Tab S6 Lite main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/75/extras/Galaxy Tab S6 Lite back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/75/extras/Galaxy Tab S6 Lite incline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/75/extras/Galaxy Tab S6 Lite landscape.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/75/extras/Galaxy Tab S6 Lite pen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/76/Surface Pro 7 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/76/extras/Surface Pro 7 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/76/extras/Surface Pro 7 key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/76/extras/Surface Pro 7 side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/76/extras/Surface Pro 7 stand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/76/extras/Surface Pro 7 straight.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/77/Lenovo Tab M10 Plus main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/77/extras/Lenovo Tab M10 Plus back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/77/extras/Lenovo Tab M10 Plus camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/77/extras/Lenovo Tab M10 Plus front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/77/extras/Lenovo Tab M10 Plus music.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/77/extras/Lenovo Tab M10 Plus side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/78/Lenovo Tab M8 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/78/extras/Lenovo Tab M8 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/78/extras/Lenovo Tab M8 camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/78/extras/Lenovo Tab M8 front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/78/extras/Lenovo Tab M8 gaming.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/78/extras/Lenovo Tab M8 side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/79/extras/iPad 6 all sides.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/79/iPad 6 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/8/Samsung 500GB SSD main 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/8/extras/Samsung 500GB SSD 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/8/extras/Samsung 500GB SSD bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/8/extras/Samsung 500GB SSD main 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/8/extras/Samsung 500GB SSD speed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/8/extras/Samsung 500GB SSD waranty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/80/Dragon Touch Notepad K10 Tablet main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/80/extras/Dragon Touch Notepad K10 Tablet camera.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/80/extras/Dragon Touch Notepad K10 Tablet features.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/80/extras/Dragon Touch Notepad K10 Tablet performance.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/81/AMD Ryzen 5 Box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/81/extras/AMD Ryzen 5 Box 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/81/extras/AMD Ryzen 5 Box 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/81/extras/AMD Ryzen 5 chip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/82/Intel Core i5 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/82/extras/Intel Core i5 desktop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/82/extras/Intel Core i5 graphics required.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/82/extras/Intel Core i5 specs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/83/Intel Core i9 main box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/83/extras/Intel Core i9 box chip close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/83/extras/Intel Core i9 box with chip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/83/extras/Intel Core i9 chip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/84/XFX Radeon RX 580 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/84/extras/XFX Radeon RX 580 bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/84/extras/XFX Radeon RX 580 ports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/84/extras/XFX Radeon RX 580 stand.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/85/MSI GeForce main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/85/extras/MSI GeForce bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/85/extras/MSI GeForce card.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/86/Western Digital 1TB 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/86/extras/Western Digital 1TB 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/86/extras/Western Digital 1TB 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/86/extras/Western Digital 1TB 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/86/extras/Western Digital 1TB 5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/87/Western Digital 4TB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/87/extras/Western Digital 4TB external.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/87/extras/Western Digital 4TB internal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/88/Seagate BarraCuda 2TB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/88/extras/Seagate BarraCuda 2TB 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/88/extras/Seagate BarraCuda 2TB go big.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/89/Asus 24x DVD-RW main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/89/extras/Asus 24x DVD-RW back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/Powershot ELPH 180 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/extras/Powershot ELPH 180 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/extras/Powershot ELPH 180 bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/extras/Powershot ELPH 180 front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/extras/Powershot ELPH 180 landscape.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/extras/Powershot ELPH 180 lense closed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/9/extras/Powershot ELPH 180 top.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/90/LG WH16NS40 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/90/extras/LG WH16NS40 disc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/90/extras/LG WH16NS40 front.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/91/LG Bluray main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/92/Asus Rog Thor 1200 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/92/extras/Asus Rog Thor 1200 connectivity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/92/extras/Asus Rog Thor 1200 cooling.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/92/extras/Asus Rog Thor 1200 customization.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/93/Corsair SF600 main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/93/extras/Corsair SF600 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/93/extras/Corsair SF600 back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/93/extras/Corsair SF600 cables.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/93/extras/Corsair SF600 fan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/94/Thermaltake 500W main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/94/extras/Thermaltake 500W 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/94/extras/Thermaltake 500W connector.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/94/extras/Thermaltake 500W fan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/95/Western Digital 500GB SSD main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/95/extras/Western Digital 500GB SSD 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/95/extras/Western Digital 500GB SSD 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/95/extras/Western Digital 500GB SSD 4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/96/Kingston 240GB SSD main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/96/extras/Kingston 240GB SSD 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/96/extras/Kingston 240GB SSD bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/96/extras/Kingston 240GB SSD package.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/97/Xonar main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/97/extras/Xonar bottom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/97/extras/Xonar ciruct.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/97/extras/Xonar ports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/98/Sound Blaster main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/98/extras/Sound Blaster 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/98/extras/Sound Blaster ports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/99/Corsair 16GB main.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/99/extras/Corsair 8 GB.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/99/extras/Corsair DDR.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/99/extras/Corsair slot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/product-images/99/extras/Corsair specs.png" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add repo query search anf filter product">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/brand/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/product-images/5/duc-argentina.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/product-images/5/extras/duc-argentina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/brands/brands.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/categories.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_detail_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/product_detail_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/products/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/users/users.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -528,7 +75,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/flight-booking/Assignment_VinhCVHE151243_JavaWeb&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
 }</component>
@@ -639,10 +186,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
+      <item itemvalue="JUnit.ProductRepositoryTests.testSaveProductWithImages" />
+      <item itemvalue="JUnit.ProductRepositoryTests.testCreateProduct" />
       <item itemvalue="JUnit.BrandRepositoryTests.testCreateBrand2" />
       <item itemvalue="JUnit.BrandRepositoryTests.testFindById" />
-      <item itemvalue="JUnit.ProductRepositoryTests.testCreateProduct" />
-      <item itemvalue="JUnit.ProductRepositoryTests.testSaveProductWithImages" />
     </list>
     <recent_temporary>
       <list>
@@ -662,20 +209,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00043" summary="code and edit CategoryForm">
-      <created>1723381075640</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1723381075640</updated>
-    </task>
-    <task id="LOCAL-00044" summary="add new category">
-      <created>1723384257925</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1723384257925</updated>
     </task>
     <task id="LOCAL-00045" summary="list category with hierarchical form">
       <created>1723475641577</created>
@@ -1006,7 +539,21 @@
       <option name="project" value="LOCAL" />
       <updated>1724871435021</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="add sample data Product">
+      <created>1724939119126</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1724939119127</updated>
+    </task>
+    <task id="LOCAL-00093" summary="add repo query search anf filter product">
+      <created>1724939217012</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1724939217012</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -1022,8 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="endpoint sort, filter ,pagination brand" />
-    <MESSAGE value="add sample data brand" />
     <MESSAGE value="list view products" />
     <MESSAGE value="list view products add icon detail" />
     <MESSAGE value="update brand repo findAll" />
@@ -1047,6 +592,8 @@
     <MESSAGE value="code edit product (fix bug later)" />
     <MESSAGE value="add link detail product modal" />
     <MESSAGE value="start coding modal detail (error ) fix later" />
-    <option name="LAST_COMMIT_MESSAGE" value="start coding modal detail (error ) fix later" />
+    <MESSAGE value="add sample data Product" />
+    <MESSAGE value="add repo query search anf filter product" />
+    <option name="LAST_COMMIT_MESSAGE" value="add repo query search anf filter product" />
   </component>
 </project>

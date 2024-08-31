@@ -29,13 +29,13 @@
             <thead class=" gradient-bg">
             <tr>
                 <!-- Call fragment -->
-                <th th:replace="fragments :: column_link('id', 'User Id')"></th>
+                <th th:replace="fragments :: column_link('/users','id', 'User Id')"></th>
                 <th>Photos</th>
-                <th th:replace="fragments :: column_link('email', 'Email')"></th>
-                <th th:replace="fragments :: column_link('firstName', 'First Name')"></th>
-                <th th:replace="fragments :: column_link('lastName', 'Last Name')"></th>
+                <th th:replace="fragments :: column_link('/users','email', 'Email')"></th>
+                <th th:replace="fragments :: column_link('/users','firstName', 'First Name')"></th>
+                <th th:replace="fragments :: column_link('/users','lastName', 'Last Name')"></th>
                 <th>Roles</th>
-                <th th:replace="fragments :: column_link('enabled', 'Enabled')"></th>
+                <th th:replace="fragments :: column_link('/users','enabled', 'Enabled')"></th>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -67,64 +67,7 @@
     </div>
 
 
-    <div class="text-center m-1" th:if="${totalItems > 0}">
-        <span>Showing user # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
-    </div>
-    <div class="text-center m-1" th:unless="${totalItems > 0}">
-        <span>No user found</span>
-    </div>
-
-    <!--pagination-->
-    <div th:if="${totalItems > 0}">
-        <nav>
-            <ul class="pagination justify-content-center">
-                <!-- Link to the first page -->
-                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/users/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''} }">First</a>
-                </li>
-                <!-- Link to the previous page -->
-                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/users/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Previous</a>
-                </li>
-                <!-- Link to the first page if current page is greater than 2 -->
-                <li th:if="${currentPage > 2}" class="page-item">
-                    <a class="page-link"
-                       th:href="@{'/users/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">1</a>
-                </li>
-                <!-- Dots before the current page -->
-                <li th:if="${currentPage > 3}" class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-                <!-- Links for the current, previous, and next page -->
-                <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
-                    th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
-                    <a class="page-link"
-                       th:href="@{'/users/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${i}]]</a>
-                </li>
-                <!-- Dots after the current page -->
-                <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-                <!-- Link to the last page if current page is less than total pages minus 1 -->
-                <li th:if="${currentPage < totalPages - 1}" class="page-item">
-                    <a class="page-link"
-                       th:href="@{'/users/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${totalPages}]]</a>
-                </li>
-                <!-- Link to the next page -->
-                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/users/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Next</a>
-                </li>
-                <!-- Link to the last page -->
-                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/users/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Last</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <div th:replace="fragments :: pagination('/users')"></div>
 
 </div>
 

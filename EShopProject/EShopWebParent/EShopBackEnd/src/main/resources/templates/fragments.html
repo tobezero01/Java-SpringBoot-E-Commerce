@@ -15,9 +15,9 @@
 <body>
 
 <!--fragment table column filter-->
-<th th:fragment="column_link(fieldName , columnLabel)">
+<th th:fragment="column_link( url, fieldName , columnLabel)">
     <a class="text-dark"
-       th:href="@{'/users/page/' + ${currentPage} +'?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyWord != null ? '&keyWord=' + keyWord : ''}} ">[[${columnLabel}]]</a>
+       th:href="@{${url} + '/page/' + ${currentPage} +'?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyWord != null ? '&keyWord=' + keyWord : ''}} ">[[${columnLabel}]]</a>
     <span th:if="${sortField == fieldName}"
           th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
         </span>
@@ -73,6 +73,66 @@
         &nbsp;&nbsp;
         <input type="button" value="Clear" class="btn btn-secondary mb-2" onclick="clearFilter()"/>
     </form>
+</div>
+
+<div th:fragment="pagination(pageName)">
+    <div class="text-center m-1" th:if="${totalItems > 0}">
+        <span>Showing Items #[[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+    </div>
+    <div class="text-center m-1" th:unless="${totalItems > 0}">
+        <span>No Items found</span>
+    </div>
+
+    <div th:if="${totalItems > 0}">
+        <nav>
+            <ul class="pagination justify-content-center">
+                <!-- Link to the first page -->
+                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''} }">First</a>
+                </li>
+                <!-- Link to the previous page -->
+                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{${pageName} +'/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Previous</a>
+                </li>
+                <!-- Link to the first page if current page is greater than 2 -->
+                <li th:if="${currentPage > 2}" class="page-item">
+                    <a class="page-link"
+                       th:href="@{${pageName} +'/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">1</a>
+                </li>
+                <!-- Dots before the current page -->
+                <li th:if="${currentPage > 3}" class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+                <!-- Links for the current, previous, and next page -->
+                <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
+                    th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
+                    <a class="page-link"
+                       th:href="@{${pageName} +'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${i}]]</a>
+                </li>
+                <!-- Dots after the current page -->
+                <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+                <!-- Link to the last page if current page is less than total pages minus 1 -->
+                <li th:if="${currentPage < totalPages - 1}" class="page-item">
+                    <a class="page-link"
+                       th:href="@{${pageName} +'/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${totalPages}]]</a>
+                </li>
+                <!-- Link to the next page -->
+                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{${pageName} +'/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Next</a>
+                </li>
+                <!-- Link to the last page -->
+                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{${pageName} +'/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Last</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
 </body>
 </html>

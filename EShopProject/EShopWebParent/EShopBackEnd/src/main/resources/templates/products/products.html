@@ -28,12 +28,13 @@
             <thead class=" gradient-bg">
             <tr>
                 <!-- Call fragment -->
-                <th>ID</th>
+                <th th:replace="fragments :: column_link('/products','id', 'Product Id')"></th>
                 <th>Main Image</th>
-                <th>Product Name</th>
+                <th th:replace="fragments :: column_link('/products','name', 'Product name')"></th>
+                </th>
                 <th>Brand</th>
                 <th>Category</th>
-                <th>Enabled</th>
+                <th th:replace="fragments :: column_link('/products','enabled', 'Enabled')"></th>
             </tr>
             </thead>
             <tbody>
@@ -73,68 +74,9 @@
 
     <!-- End table data-->
 
-
-    <!--pagination begin-->
-
-    <!--  <div class="text-center m-1" th:if="${totalItems > 0}">-->
-    <!--    <span>Showing Top-level Category #  of [[${totalItems}]]</span>-->
-    <!--  </div>-->
-    <!--  <div class="text-center m-1" th:unless="${totalItems > 0}">-->
-    <!--    <span>No Category found</span>-->
-    <!--  </div>-->
-
-    <!--  <div th:if="${totalItems > 0}">-->
-    <!--    <nav>-->
-    <!--      <ul class="pagination justify-content-center">-->
-    <!--        &lt;!&ndash; Link to the first page &ndash;&gt;-->
-    <!--        <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''} }">First</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Link to the previous page &ndash;&gt;-->
-    <!--        <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Previous</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Link to the first page if current page is greater than 2 &ndash;&gt;-->
-    <!--        <li th:if="${currentPage > 2}" class="page-item">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">1</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Dots before the current page &ndash;&gt;-->
-    <!--        <li th:if="${currentPage > 3}" class="page-item disabled">-->
-    <!--          <a class="page-link">...</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Links for the current, previous, and next page &ndash;&gt;-->
-    <!--        <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"-->
-    <!--            th:class="${currentPage == i} ? 'page-item active' : 'page-item'">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${i}]]</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Dots after the current page &ndash;&gt;-->
-    <!--        <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">-->
-    <!--          <a class="page-link">...</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Link to the last page if current page is less than total pages minus 1 &ndash;&gt;-->
-    <!--        <li th:if="${currentPage < totalPages - 1}" class="page-item">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${totalPages}]]</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Link to the next page &ndash;&gt;-->
-    <!--        <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Next</a>-->
-    <!--        </li>-->
-    <!--        &lt;!&ndash; Link to the last page &ndash;&gt;-->
-    <!--        <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">-->
-    <!--          <a class="page-link"-->
-    <!--             th:href="@{'/categories/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Last</a>-->
-    <!--        </li>-->
-    <!--      </ul>-->
-    <!--    </nav>-->
-    <!--  </div>-->
-
-    <!--pagination END-->
+<!--    pagination begin-->
+    <div th:replace="fragments :: pagination('/products')"></div>
+<!--    pagination END-->
 
 
 </div>

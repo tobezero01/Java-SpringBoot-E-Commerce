@@ -12,7 +12,7 @@
 <div class="container-fluid">
     <div>
         <div class="pb-3">
-            <h1>Manage categories</h1>
+            <h1>Manage Brands</h1>
             <a class="btn btn-primary btn-info" th:href="@{/brands/new}">Create New Brand</a>
             <!--            <a class="btn btn-primary btn-danger" th:href="@{/categories/export/csv}">Export to CSV</a>-->
         </div>
@@ -71,63 +71,7 @@
 
     <!--  pagination begin-->
 
-    <div class="text-center m-1" th:if="${totalItems > 0}">
-        <span>Showing Brand # [[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
-    </div>
-    <div class="text-center m-1" th:unless="${totalItems > 0}">
-        <span>No brand found</span>
-    </div>
-
-    <div th:if="${totalItems > 0}">
-        <nav>
-            <ul class="pagination justify-content-center">
-                <!-- Link to the first page -->
-                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''} }">First</a>
-                </li>
-                <!-- Link to the previous page -->
-                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Previous</a>
-                </li>
-                <!-- Link to the first page if current page is greater than 2 -->
-                <li th:if="${currentPage > 2}" class="page-item">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">1</a>
-                </li>
-                <!-- Dots before the current page -->
-                <li th:if="${currentPage > 3}" class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-                <!-- Links for the current, previous, and next page -->
-                <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
-                    th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${i}]]</a>
-                </li>
-                <!-- Dots after the current page -->
-                <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-                <!-- Link to the last page if current page is less than total pages minus 1 -->
-                <li th:if="${currentPage < totalPages - 1}" class="page-item">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${totalPages}]]</a>
-                </li>
-                <!-- Link to the next page -->
-                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Next</a>
-                </li>
-                <!-- Link to the last page -->
-                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/brands/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Last</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <div th:replace="fragments :: pagination('/brands')"></div>
 
     <!--pagination END-->
 

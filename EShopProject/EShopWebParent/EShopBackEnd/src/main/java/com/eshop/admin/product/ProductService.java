@@ -3,6 +3,10 @@ package com.eshop.admin.product;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,12 +16,23 @@ import java.util.List;
 @Service
 @Transactional
 public class ProductService {
+    public static final int PRODUCTS_BY_PAGE = 5;
 
     @Autowired
     private ProductRepository productRepository;
 
     public List<Product> listAll() {
         return productRepository.findAll();
+    }
+
+    public Page<Product> listByPage(int pageNum, String sortField, String sortDir, String keyWord) {
+        Sort sort = Sort.by(sortField);
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+        Pageable pageable = PageRequest.of(pageNum - 1 , PRODUCTS_BY_PAGE, sort);
+        if(keyWord != null) {
+            return productRepository.findAll(keyWord, pageable);
+        }
+        return productRepository.findAll(pageable);
     }
 
     public Product save(Product product) {
