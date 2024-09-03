@@ -4,6 +4,7 @@ import com.eshop.admin.FileUploadUtil;
 import com.eshop.admin.brand.BrandNotFoundException;
 import com.eshop.admin.brand.BrandService;
 import com.eshop.admin.category.CategoryService;
+import com.eshop.admin.security.EShopUserDetails;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Category;
 import com.eshop.common.entity.Product;
@@ -11,6 +12,7 @@ import org.apache.commons.collections4.Get;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -64,11 +66,18 @@ public class ProductController {
 
     @PostMapping("/products/save")
     public String saveProduct(Product product, RedirectAttributes redirectAttributes,
-                              @RequestParam("fileImage") MultipartFile mainImageMultipart,
-                              @RequestParam("extraImage") MultipartFile[] extraImageMultipart,
+                              @RequestParam(value = "fileImage") MultipartFile mainImageMultipart,
+                              @RequestParam(value = "extraImage") MultipartFile[] extraImageMultipart,
                               @RequestParam(name = "detailNames", required = false ) String [] detailNames,
-                              @RequestParam(name = "detailValues", required = false ) String [] detailValues
+                              @RequestParam(name = "detailValues", required = false ) String [] detailValues,
+                              @AuthenticationPrincipal EShopUserDetails loggerUser
                               ) throws IOException {
+
+        if(loggerUser.hasRole("Salesperson")) {
+            productService.saveProductPrice(product);
+            redirectAttributes.addFlashAttribute("message", "The product has been saved successfully");
+            return "redirect:/products";
+        }
 
         setMainImageName(mainImageMultipart , product);
         setExtraImageNames(extraImageMultipart , product);
