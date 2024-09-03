@@ -268,9 +268,19 @@ public class Product {
         this.details.add(new ProductDetail(name, value, this));
     }
 
+    public void addDetail(Integer id, String name ,String value) {
+        this.details.add(new ProductDetail(id,name, value, this));
+    }
+
     @Transient
     public String getMainImagePath() {
         if(id == null || mainImage == null) return "/images/image_null.png";
         return "/product-images/" + this.id + "/" + this.mainImage;
+    }
+
+    @Transient
+    public String getShortName() {
+        if(name.length() > 70) return name.substring(0, 70).concat("...");
+        return name;
     }
 }
