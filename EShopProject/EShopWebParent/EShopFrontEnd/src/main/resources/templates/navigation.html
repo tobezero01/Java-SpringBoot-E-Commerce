@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<body>
+
+<div th:fragment="header_menu">
+    <nav class="navbar navbar-expand-lg gradient-bg navbar-dark">
+        <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/images/logo-removebg.png}" style="width: 100px; height: auto;" alt="Shop Logo"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="topNavbar" class="collapse navbar-collapse" style="margin-left:10px">
+            <ul class="navbar-nav me-auto ">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="">Careers</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="">Payments</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="">Shipping &amp; Delivery</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="">Login</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="">Register</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div th:fragment="footer_menu">
+    <div>
+        <nav class="navbar navbar-expand-lg gradient-bg navbar-dark">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bottomNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="bottomNavbar" class="collapse navbar-collapse" style="margin-left:10px">
+                <ul class="navbar-nav me-auto ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="">About us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="">Privacy Notice</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="">Returns &amp; Refunds</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div  class="text-center m-3">
+        <p>EShop - Copyright &copy; EShop Ltd.</p>
+    </div>
+</div>
+</body>
+</html>

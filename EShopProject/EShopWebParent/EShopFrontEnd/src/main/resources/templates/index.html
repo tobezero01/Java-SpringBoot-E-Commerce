@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Shop Admin </title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head('Home - Eshop ', 'none')" />
 <body>
-	<h1>Welcome to my EShop</h1>
+<div>
+	<div th:replace="navigation :: header_menu"></div>
+
+	<div class="container-fluid">
+		<h1>Welcome to my EShop</h1>
+	</div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+</div>
 </body>
 </html>

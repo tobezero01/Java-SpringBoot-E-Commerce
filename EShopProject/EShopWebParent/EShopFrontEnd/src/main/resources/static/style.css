@@ -1,0 +1,91 @@
+
+        .icon-white{
+            color: while;
+        }
+        .icon-silver{
+            color: silver;
+        }
+        .icon-green{
+            color: green;
+        }
+        .icon-dark{
+            color: gray;
+        }
+
+        .icon-orange{
+            color: orange;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+        .gradient-bg {
+            background: linear-gradient(45deg, #f5f5dc, #ff7043);
+        }
+        .navbar-nav .nav-link {
+            color: #333; /* Màu tối, có thể thay đổi thành màu khác */
+        }
+        .navbar-nav .nav-item :hover {
+            color: rgb(60, 179, 113) /* Màu chữ khi hover, có thể thay đổi nếu cần */
+        }
+
+        .main-body {
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-container img {
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .login-container .btn-primary {
+            width: 100%;
+        }
+
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            margin-bottom: 15px;
+        }
+
+        /*
+        .footer {
+            position: absolute;
+            bottom: -10%;
+            text-align: center;
+            width: 100%;
+        }*/
+
+        .inline-container {
+                display: flex;
+                align-items: center; /* Căn giữa theo chiều dọc */
+            }
+
+            .inline-container div {
+                margin-right: 10px; /* Khoảng cách giữa các phần tử */
+            }
+        .custom-badge {
+                    background-color: #FFDAB9; /* Màu nền cam nhạt */
+                    color: #8B4513; /* Màu chữ nâu đậm */
+                    padding: 5px 10px; /* Khoảng cách giữa nội dung và viền */
+                    border-radius: 12px; /* Bo tròn góc */
+                    font-size: 14px; /* Kích thước chữ */
+                    font-weight: bold; /* Đậm chữ */
+                }
