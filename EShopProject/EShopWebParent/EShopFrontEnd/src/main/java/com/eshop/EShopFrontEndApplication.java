@@ -13,6 +13,5 @@ public class EShopFrontEndApplication {
 
 		SpringApplication.run(EShopFrontEndApplication.class, args);
 	}
-
 	
 }

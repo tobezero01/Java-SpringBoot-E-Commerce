@@ -14,7 +14,7 @@ import java.util.*;
 @Service
 @Transactional
 public class CategoryService {
-    public static final int ROOT_CATEGORIES_PER_PAGE  = 3;
+    public static final int ROOT_CATEGORIES_PER_PAGE  = 1;
     @Autowired
     private CategoryRepository categoryRepository;
 
