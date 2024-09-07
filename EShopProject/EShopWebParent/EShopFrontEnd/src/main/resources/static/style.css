@@ -89,3 +89,25 @@
                     font-size: 14px; /* Kích thước chữ */
                     font-weight: bold; /* Đậm chữ */
                 }
+
+
+        /*customer front end*/
+        /* Hiệu ứng hover cho card */
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-10px); /* Làm card nhô lên khi hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+        }
+
+        /* Hiệu ứng hover cho ảnh */
+        .hover-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .hover-img:hover {
+            transform: scale(1.1); /* Phóng to ảnh khi hover */
+            filter: brightness(1.2); /* Làm sáng ảnh */
+        }
