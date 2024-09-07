@@ -6,9 +6,21 @@
 	<div th:replace="navigation :: header_menu"></div>
 
 	<div class="container-fluid">
-		<h1>Welcome to my EShop</h1>
-	</div>
+		<div>
+			<h1>Shopping by Categories</h1>
+		</div>
+		<div class="row">
+			<div class="col" th:each="category : ${listCategories}">
+				<div>
+					<img th:src="@{${category.imagePath}}" style="max-width : 80px" />
 
+				</div>
+				<div>
+					<a th:href="@{'/c/' + ${cat.alias}}">[[${category.name}]]</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div th:replace="navigation :: footer_menu"></div>
 </div>
 </body>

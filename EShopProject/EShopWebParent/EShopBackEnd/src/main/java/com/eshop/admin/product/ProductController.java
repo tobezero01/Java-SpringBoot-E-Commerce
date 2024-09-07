@@ -33,7 +33,6 @@ import java.util.logging.Logger;
 @Controller
 public class ProductController {
 
-    private static final Logger LOGGER = (Logger) LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     private ProductService productService;

@@ -1,0 +1,13 @@
+package com.eshop.category;
+
+import com.eshop.common.entity.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
+
+    @Query("Select c from Category c Where c.enabled = true Order by c.name ASC")
+    public List<Category> findAllEnabled();
+}
