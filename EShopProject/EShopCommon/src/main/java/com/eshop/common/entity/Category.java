@@ -33,6 +33,9 @@ public class Category {
     @JoinColumn(name = "parent_id")
     private Category parent;
 
+    @Column(name = "all_parent_ids", length = 256, nullable = true)
+    private String allParentIDs;
+
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
     private Set<Category> children = new HashSet<>();
 
@@ -96,6 +99,14 @@ public class Category {
     public Category(String name, Category parent) {
         this(name);
         this.parent = parent;
+    }
+
+    public String getAllParentIDs() {
+        return allParentIDs;
+    }
+
+    public void setAllParentIDs(String allParentIDs) {
+        this.allParentIDs = allParentIDs;
     }
 
     public Category(Integer id) {

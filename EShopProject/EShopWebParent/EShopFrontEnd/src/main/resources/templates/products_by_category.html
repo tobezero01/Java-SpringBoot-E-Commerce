@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="fragments :: page_head('Home - Eshop ', 'none')" />
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')" />
 <body>
 <div>
 	<div th:replace="navigation :: header_menu"></div>
 
 	<div class="container-fluid">
-		<div>
-			<h1>Product in Category</h1>
+		<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
+			<div class="row">
+				<div class="col">
+					<nav>
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item">
+								<a th:href="@{/}">Home</a>
+							</li>
+							<th:block th:each="parent : ${listCategoryParents}">
+								<li class="breadcrumb-item">
+									<a th:href="@{'/c/' + ${parent.alias}}">[[${parent.name}]]</a>
+								</li>
+							</th:block>
+						</ol>
+					</nav>
+				</div>
+			</div>
 		</div>
 
 	</div>
