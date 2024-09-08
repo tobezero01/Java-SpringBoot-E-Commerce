@@ -20,40 +20,24 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/c/{category_alias}")
-    public String viewCategoryByFirstPage(@PathVariable("category_alias") String alias ,
-                                     Model model ) {
-        return viewCategoryByPage(alias, model, 1);
-    }
 
-    @GetMapping("/c/{category_alias}/page/{pageNum}")
-    public String viewCategoryByPage(@PathVariable("category_alias") String alias ,
-                               Model model,
-                               @PathVariable("pageNum") int pageNum) {
+    @GetMapping("/c/{category_alias}")
+    public String viewCategoryByPage(@PathVariable("category_alias") String alias,
+                                     Model model) {
         Category category = categoryService.getCategory(alias);
-        if( category == null) {
+        if (category == null) {
             return "error/404";
         }
-        List<Category> listCategoryParents =categoryService.getCategoryParents(category);
+        List<Category> listCategoryParents = categoryService.getCategoryParents(category);
 
-        Page<Product> pageProducts = productService.listByCategory(1, category.getId());
-        List<Product> listProducts = pageProducts.getContent();
-
-
-        long startCount = (pageNum - 1) *ProductService.PRODUCT_PER_PAGE +1;
-        long endCount = startCount + ProductService.PRODUCT_PER_PAGE -1;
-        endCount = (endCount > pageProducts.getTotalElements()) ? pageProducts.getTotalElements() : endCount;
-
-        model.addAttribute("currentPage" , pageNum);
-        model.addAttribute("totalPages" , pageProducts.getTotalPages());
-        model.addAttribute("startCount" , startCount);
-        model.addAttribute("endCount" , endCount);
-        model.addAttribute("totalItems" , pageProducts.getTotalElements());
+        List<Product> listProducts =productService.listByCategory(category.getId());
 
         model.addAttribute("pageTitle", category.getName());
         model.addAttribute("listCategoryParents", listCategoryParents);
         model.addAttribute("listProducts", listProducts);
+        model.addAttribute("category", category);
 
         return "products_by_category";
     }
+
 }

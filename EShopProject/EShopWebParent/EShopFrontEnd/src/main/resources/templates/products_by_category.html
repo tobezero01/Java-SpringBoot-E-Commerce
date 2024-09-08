@@ -6,6 +6,7 @@
 	<div th:replace="navigation :: header_menu"></div>
 
 	<div class="container-fluid">
+
 		<div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
 			<div class="row">
 				<div class="col">
@@ -24,6 +25,20 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<th:block th:each="product : ${listProducts}">
+				<div class="col">
+					<div>
+						<img th:src="@{${product.mainImagePath}}" />
+						</br>
+						<b>[[${product.name}]]</b>
+					</div>
+				</div>
+			</th:block>
+		</div>
+
+<!--		<div th:replace="fragments : pagination('/c/' + ${category.alias})"></div>-->
 
 	</div>
 	<div th:replace="navigation :: footer_menu"></div>

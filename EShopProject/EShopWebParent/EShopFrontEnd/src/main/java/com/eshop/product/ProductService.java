@@ -8,6 +8,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class ProductService {
@@ -15,11 +17,8 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Page<Product> listByCategory(int pageNum , Integer categoryId) {
-        String categoryIdMatch = "-" + String.valueOf(categoryId) + "-";
-        Pageable pageable = PageRequest.of(pageNum, PRODUCT_PER_PAGE);
-
-        return productRepository.listByCategory(categoryId, categoryIdMatch, pageable);
+    public List<Product> listByCategory( Integer categoryId) {
+        return productRepository.listByCategory(categoryId);
     }
 
 }
