@@ -1,5 +1,6 @@
 package com.eshop.admin.category;
 
+import com.eshop.admin.exception.CategoryNotFoundException;
 import com.eshop.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

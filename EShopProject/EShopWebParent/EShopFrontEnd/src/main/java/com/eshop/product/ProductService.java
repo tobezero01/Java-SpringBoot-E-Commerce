@@ -1,10 +1,8 @@
 package com.eshop.product;
 
 import com.eshop.common.entity.Product;
+import com.eshop.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,6 +17,14 @@ public class ProductService {
 
     public List<Product> listByCategory( Integer categoryId) {
         return productRepository.listByCategory(categoryId);
+    }
+
+    public Product getProduct(String alias) throws ProductNotFoundException {
+        Product product = productRepository.findByAlias(alias);
+        if(product == null) {
+            throw new ProductNotFoundException("Product not found with alias " + alias);
+        }
+        return product;
     }
 
 }

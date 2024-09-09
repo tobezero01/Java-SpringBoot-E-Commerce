@@ -1,4 +1,4 @@
-package com.eshop.admin.brand;
+package com.eshop.admin.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

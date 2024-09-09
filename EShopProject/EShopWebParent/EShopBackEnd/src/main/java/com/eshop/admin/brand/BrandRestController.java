@@ -1,5 +1,7 @@
 package com.eshop.admin.brand;
 
+import com.eshop.admin.exception.BrandNotFoundException;
+import com.eshop.admin.exception.BrandNotFoundRestException;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;

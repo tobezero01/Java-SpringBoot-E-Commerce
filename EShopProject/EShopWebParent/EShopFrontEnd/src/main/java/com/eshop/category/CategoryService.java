@@ -29,6 +29,8 @@ public class CategoryService {
     }
 
     public Category getCategory(String alias) {
+        Category category = categoryRepository.findByAliasEnabled(alias);
+
         return categoryRepository.findByAliasEnabled(alias);
     }
 
