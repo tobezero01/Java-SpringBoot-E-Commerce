@@ -37,6 +37,7 @@ public class Category {
     private String allParentIDs;
 
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
+    @OrderBy("name asc")
     private Set<Category> children = new HashSet<>();
 
     public Category() {
@@ -53,7 +54,6 @@ public class Category {
         Category copyCategory = new Category();
         copyCategory.setId(id);
         copyCategory.setName(name);
-
         return copyCategory;
     }
 

@@ -280,7 +280,15 @@ public class Product {
 
     @Transient
     public String getShortName() {
-        if(name.length() > 70) return name.substring(0, 70).concat("...");
+        if(name.length() > 50) return name.substring(0, 50).concat("...");
         return name;
+    }
+
+    @Transient
+    public float getDiscountPrice() {
+        if(discountPercent > 0) {
+            return price * (100 - discountPercent)/100;
+        }
+        return this.price;
     }
 }
