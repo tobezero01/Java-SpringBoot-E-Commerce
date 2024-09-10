@@ -32,12 +32,25 @@
         </div>
 
         <!-- Breadcrumb End -->
-
         <div class="row">
             <div class="col-sm">
                 <div>
-                    <img th:src="@{${product.mainImagePath}}" class="img-fluid" />
+                    <img id="bigImage" th:src="@{${product.mainImagePath}}" class="img-fluid" />
                 </div>
+
+                <div class="row justify-content-center mt-3">
+                    <div class="d-flex">
+                        <div>
+                            <img class="image-thumbnail" th:src="@{${product.mainImagePath}}" height="50">
+                        </div>
+                        <th:block th:each="extraImage : ${product.images}">
+                            <div class="m-2">
+                                <img class="image-thumbnail" th:src="@{${extraImage.imagePath}}" height="50px" width="50px">
+                            </div>
+                        </th:block>
+                    </div>
+                </div>
+
             </div>
             <div class="col-sm">
                 <div>
@@ -100,5 +113,15 @@
     </div>
     <div th:replace="navigation :: footer_menu"></div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function (){
+        bigImage = $("#bigImage");
+        $(".image-thumbnail").mouseover(function () {
+            currentImageSource = $(this).attr("src");
+            bigImage.attr("src" , currentImageSource);
+        });
+    });
+</script>
 </body>
 </html>
