@@ -4,11 +4,11 @@
 <body>
 <div>
 	<div th:replace="navigation :: header_menu"></div>
-
 	<div class="container-fluid">
 		<div class="mt-3 mb-3">
 			<h1>Shopping by Categories</h1>
 		</div>
+		<div th:replace="navigation :: search_nav"></div>
 		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
 			<div class="col" th:each="category : ${listCategories}">
 				<div class="card text-center h-100 shadow-sm hover-card">
