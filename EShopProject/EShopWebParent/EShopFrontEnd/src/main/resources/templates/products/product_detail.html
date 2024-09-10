@@ -35,17 +35,18 @@
         <div class="row">
             <div class="col-sm">
                 <div>
-                    <img id="bigImage" th:src="@{${product.mainImagePath}}" class="img-fluid" />
+                    <img id="bigImage" th:src="@{${product.mainImagePath}}" class="img-fluid" index="0"/>
                 </div>
 
                 <div class="row justify-content-center mt-3">
                     <div class="d-flex">
-                        <div>
-                            <img class="image-thumbnail" th:src="@{${product.mainImagePath}}" height="50">
+                        <div class="border m-2">
+                            <img class="image-thumbnail" th:src="@{${product.mainImagePath}}" height="50" index="0" />
                         </div>
-                        <th:block th:each="extraImage : ${product.images}">
-                            <div class="m-2">
-                                <img class="image-thumbnail" th:src="@{${extraImage.imagePath}}" height="50px" width="50px">
+                        <th:block th:each="extraImage, status : ${product.images}">
+                            <div class="m-2 border">
+                                <img class="image-thumbnail" th:src="@{${extraImage.imagePath}}"
+                                     height="50px" width="50px" th:index="${status.count}">
                             </div>
                         </th:block>
                     </div>
@@ -111,17 +112,32 @@
         </div>
 
     </div>
+
+    <div th:replace="products/images_carousel :: content"></div>
     <div th:replace="navigation :: footer_menu"></div>
 </div>
 
 <script type="text/javascript">
     $(document).ready(function (){
-        bigImage = $("#bigImage");
+        let bigImage = $("#bigImage");
+
+        // Hover thumbnail to change main image
         $(".image-thumbnail").mouseover(function () {
-            currentImageSource = $(this).attr("src");
-            bigImage.attr("src" , currentImageSource);
+            let currentImageSource = $(this).attr("src");
+            let currentImageIndex = $(this).attr("index");
+            bigImage.attr("src", currentImageSource);
+            bigImage.attr("index", currentImageIndex);
+        });
+
+        // Click on main image to open carousel modal
+        bigImage.on("click", function () {
+            $("#carouselModal").modal("show");
+            let imageIndex = parseInt(bigImage.attr("index"));
+            $("#carouselExampleIndicators").carousel(imageIndex);
         });
     });
 </script>
+
+
 </body>
 </html>

@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add product detail">
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="update image extra mini size">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/images_carousel.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" afterDir="false" />
     </list>
@@ -196,13 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00061" summary="endpoint create , edit and delete">
-      <created>1723831779272</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1723831779272</updated>
     </task>
     <task id="LOCAL-00062" summary="endpoint check unique">
       <created>1723837039273</created>
@@ -540,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725947456325</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="update image extra mini size">
+      <created>1725951113070</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1725951113071</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -556,7 +557,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="format code js" />
     <MESSAGE value="add entity product detail" />
     <MESSAGE value="add detail product component" />
     <MESSAGE value="add save product detail controller" />
@@ -581,7 +581,8 @@
     <MESSAGE value="test find product by alias" />
     <MESSAGE value="update package exception" />
     <MESSAGE value="add product detail" />
-    <option name="LAST_COMMIT_MESSAGE" value="add product detail" />
+    <MESSAGE value="update image extra mini size" />
+    <option name="LAST_COMMIT_MESSAGE" value="update image extra mini size" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
