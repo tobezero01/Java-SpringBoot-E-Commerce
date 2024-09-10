@@ -1,6 +1,7 @@
 package com.eshop.category;
 
 import com.eshop.common.entity.Category;
+import com.eshop.exception.CategoryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,10 +29,12 @@ public class CategoryService {
         return listNoChildrenCategories;
     }
 
-    public Category getCategory(String alias) {
+    public Category getCategory(String alias) throws CategoryNotFoundException {
         Category category = categoryRepository.findByAliasEnabled(alias);
-
-        return categoryRepository.findByAliasEnabled(alias);
+        if (category == null) {
+            throw new CategoryNotFoundException("Category not found with alias " + alias);
+        }
+        return category;
     }
 
     public List<Category> getCategoryParents(Category child) {

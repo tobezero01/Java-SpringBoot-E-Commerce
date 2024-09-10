@@ -19,8 +19,9 @@ public class ProductRepositoryTests {
 
     @Test
     public void testFindByAlias() {
-        String alias = "something";
+        String alias = "canon-eos-m50";
         Product product = productRepository.findByAlias(alias);
+        System.out.println(product);
 
         assertThat(product).isNotNull();
     }

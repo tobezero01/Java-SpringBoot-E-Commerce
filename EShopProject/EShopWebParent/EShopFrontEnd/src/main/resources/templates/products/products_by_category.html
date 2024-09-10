@@ -7,6 +7,7 @@
 
     <div class="container-fluid">
 
+        <!-- Breadcrumb start -->
         <div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
             <div class="row">
                 <div class="col">
@@ -25,6 +26,8 @@
                 </div>
             </div>
         </div>
+        <!-- Breadcrumb End -->
+
 
         <div class="row text-center">
             <th:block th:each="category : ${category.children}">

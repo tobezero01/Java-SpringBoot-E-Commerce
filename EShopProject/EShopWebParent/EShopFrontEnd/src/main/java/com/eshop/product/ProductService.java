@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class ProductService {
     public static final int PRODUCT_PER_PAGE = 10;
     @Autowired
@@ -21,10 +20,11 @@ public class ProductService {
 
     public Product getProduct(String alias) throws ProductNotFoundException {
         Product product = productRepository.findByAlias(alias);
-        if(product == null) {
+        if (product == null) {
             throw new ProductNotFoundException("Product not found with alias " + alias);
         }
-        return product;
+        return product;  // Ensure this return is here
     }
+
 
 }
