@@ -1,117 +1,152 @@
+/* General link styles */
+a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit; /* Giữ màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu mượt mà */
+}
 
-        .icon-white{
-            color: while;
-        }
-        .icon-silver{
-            color: silver;
-        }
-        .icon-green{
-            color: green;
-        }
-        .icon-dark{
-            color: gray;
-        }
+a:hover {
+    text-decoration: underline; /* Hiệu ứng gạch chân khi hover */
+    color: #007bff; /* Màu sắc khi hover */
+}
 
-        .icon-orange{
-            color: orange;
-        }
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            text-align: center;
-            width: 100%;
-        }
-        .gradient-bg {
-            background: linear-gradient(45deg, #f5f5dc, #ff7043);
-        }
-        .navbar-nav .nav-link {
-            color: #333; /* Màu tối, có thể thay đổi thành màu khác */
-        }
-        .navbar-nav .nav-item :hover {
-            color: rgb(60, 179, 113) /* Màu chữ khi hover, có thể thay đổi nếu cần */
-        }
+/* Icon colors */
+.icon-white { color: white; }
+.icon-silver { color: silver; }
+.icon-green { color: green; }
+.icon-dark { color: gray; }
+.icon-orange { color: orange; }
 
-        .main-body {
-            background-color: #f8f9fa;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
 
-        .login-container {
-            max-width: 400px;
-            width: 100%;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+/* Gradient background */
+.gradient-bg {
+    background: linear-gradient(45deg, #f5f5dc, #ff7043);
+}
 
-        .login-container img {
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 20px;
-        }
+/* Navbar */
+.navbar-nav .nav-link {
+    color: #333; /* Màu chữ cho nav-link */
+}
 
-        .login-container .btn-primary {
-            width: 100%;
-        }
+.navbar-nav .nav-item:hover .nav-link {
+    color: rgb(60, 179, 113); /* Màu chữ khi hover */
+}
 
-        .login-container input[type="email"],
-        .login-container input[type="password"] {
-            margin-bottom: 15px;
-        }
+/* Inline container */
+.inline-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
 
-        /*
-        .footer {
-            position: absolute;
-            bottom: -10%;
-            text-align: center;
-            width: 100%;
-        }*/
+.inline-container div {
+    margin-right: 10px; /* Khoảng cách giữa các phần tử */
+}
 
-        .inline-container {
-                display: flex;
-                align-items: center; /* Căn giữa theo chiều dọc */
-            }
+/* Custom badge */
+.custom-badge {
+    background-color: #FFDAB9; /* Màu nền cam nhạt */
+    color: #8B4513; /* Màu chữ nâu đậm */
+    padding: 5px 10px; /* Khoảng cách giữa nội dung và viền */
+    border-radius: 12px; /* Bo tròn góc */
+    font-size: 14px; /* Kích thước chữ */
+    font-weight: bold; /* Đậm chữ */
+}
 
-            .inline-container div {
-                margin-right: 10px; /* Khoảng cách giữa các phần tử */
-            }
-        .custom-badge {
-                    background-color: #FFDAB9; /* Màu nền cam nhạt */
-                    color: #8B4513; /* Màu chữ nâu đậm */
-                    padding: 5px 10px; /* Khoảng cách giữa nội dung và viền */
-                    border-radius: 12px; /* Bo tròn góc */
-                    font-size: 14px; /* Kích thước chữ */
-                    font-weight: bold; /* Đậm chữ */
-                }
+/* Hover effects for cards and images */
+.hover-card, .hover-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.hover-card:hover {
+    transform: translateY(-10px); /* Làm card nhô lên khi hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
+}
 
-        /*customer front end*/
-        /* Hiệu ứng hover cho card */
-        .hover-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.hover-img:hover {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+    filter: brightness(1.2); /* Làm sáng ảnh */
+}
 
-        .hover-card:hover {
-            transform: translateY(-10px); /* Làm card nhô lên khi hover */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ */
-        }
+/* Product card */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
 
-        /* Hiệu ứng hover cho ảnh */
-        .hover-img {
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
 
-        .hover-img:hover {
-            transform: scale(1.1); /* Phóng to ảnh khi hover */
-            filter: brightness(1.2); /* Làm sáng ảnh */
-        }
+.product-price {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
 
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
 
+/* Product image container */
+.image-container {
+    width: 100%;
+    aspect-ratio: 1/1 ; /* Đặt tỷ lệ 2:3 */
+    overflow: hidden;
+}
 
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Giữ tỷ lệ và không cắt hình ảnh */
+    max-height: 200px; /* Đặt chiều cao tối đa */
+}
 
+.border-custom {
+    border: 2px solid #e0e0e0;
+    padding: 10px;
+}
+
+/* Category item */
+.category-item {
+    width: 250px;  /* Kích thước vòng tròn nền */
+    height: 250px; /* Kích thước vòng tròn nền */
+    border-radius: 50%; /* Hình tròn */
+    background-color: #f0f8ff; /* Màu sắc nhạt cho background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Canh giữa nội dung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+}
+
+.category-item:hover {
+    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+}
+
+.category-item img {
+    max-width: 80%; /* Điều chỉnh kích thước hình ảnh */
+    max-height: 80%; /* Điều chỉnh kích thước hình ảnh */
+    object-fit: contain;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    background: none;
+}
+
+/* Responsive images */
+.img-fluid {
+    max-height: 200px; /* Giới hạn chiều cao hình ảnh */
+    object-fit: contain; /* Giữ tỷ lệ và không cắt hình ảnh */
+}

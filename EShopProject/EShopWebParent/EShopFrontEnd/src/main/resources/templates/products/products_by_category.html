@@ -6,7 +6,6 @@
     <div th:replace="navigation :: header_menu"></div>
 
     <div class="container-fluid">
-
         <!-- Breadcrumb start -->
         <div th:if="${listCategoryParents != null && !listCategoryParents.empty}">
             <div class="row">
@@ -28,39 +27,48 @@
         </div>
         <!-- Breadcrumb End -->
 
-
-        <div class="row text-center">
+        <div class="row text-center mb-4">
             <th:block th:each="category : ${category.children}">
-                <div class="col" th:if="${category.enabled == true}">
-                    <a th:href="@{'/c/' + ${category.alias}}">
-                        <img th:src="@{${category.imagePath}}" height="100px"/>
-                        </br>
-                        <b>[[${category.name}]]</b>
-                    </a>
+                <div class="col-md-3" th:if="${category.enabled == true}">
+                    <div class="category-item">
+                        <a th:href="@{'/c/' + ${category.alias}}">
+                            <img th:src="@{${category.imagePath}}" class="img-fluid mb-2" />
+                            <br />
+                            <b>[[${category.name}]]</b>
+                        </a>
+                    </div>
                 </div>
             </th:block>
         </div>
+
+
         <div class="row">
             <th:block th:each="product : ${listProducts}">
-                <div class="col">
-                    <a th:href="@{'/d/' + ${product.alias}}">
-                        <img th:src="@{${product.mainImagePath}}"/>
-                        </br>
-                        <b>[[${product.shortName}]]</b>
-                    </a>
-                    <div th:if="${product.discountPercent <= 0 }">
-                        <span>$ [[${product.price}]]</span>
-                    </div>
-                    <div th:if="${product.discountPercent > 0 }">
-                        <span style="font-size : larger ; color : darkred">$ [[${product.discountPrice}]]</span>
-                        <del><span>$ [[${product.price}]]</span></del>
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card product-card h-100 border-custom">
+                        <a th:href="@{'/d/' + ${product.alias}}">
+                            <div class="image-container">
+                                <img th:src="@{${product.mainImagePath}}" class="card-img-top img-fluid" />
+                            </div>
+                        </a>
+                        <div class="card-body text-center">
+                            <a th:href="@{'/d/' + ${product.alias}}">
+                                <h5 class="card-title">[[${product.shortName}]]</h5>
+                            </a>
+                            <div th:if="${product.discountPercent <= 0 }">
+                                <span class="product-price">$ [[${product.price}]]</span>
+                            </div>
+                            <div th:if="${product.discountPercent > 0 }">
+                                <span class="product-price text-danger">$ [[${product.discountPrice}]]</span>
+                                <del class="text-muted"><span>$ [[${product.price}]]</span></del>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </th:block>
         </div>
-
-
     </div>
+
     <div th:replace="navigation :: footer_menu"></div>
 </div>
 </body>
