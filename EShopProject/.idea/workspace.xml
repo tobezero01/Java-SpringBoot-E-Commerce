@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add setting entity repo and unit test">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-10.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/CurrencyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/setting/CurrencyRepositoryTests.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add Currency enity , repo and unitTest">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/general.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/settings.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShop_Backend.log.2024-09-07.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/CurrencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/CurrencyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShop_Backend.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,10 +29,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -69,7 +72,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/main/resources/templates",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -81,11 +84,11 @@
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\settings" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static" />
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\products" />
@@ -105,7 +108,21 @@
       <recent name="com.eshop.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CurrencyRepositoryTests.testCreateCurrencies">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
+    <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
+      <module name="EShopBackEnd" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/EShopWebParent/EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EShopFrontEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.EShopFrontEndApplication" />
       <module name="EShopFrontEnd" />
@@ -131,22 +148,6 @@
       <option name="PACKAGE_NAME" value="com.eshop.admin.setting" />
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.CurrencyRepositoryTests" />
       <option name="METHOD_NAME" value="testCreateCurrencies" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductRepositoryTests.testFindByAlias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.product" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.product.ProductRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindByAlias" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,18 +187,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
       <item itemvalue="JUnit.SettingRepositoryTests.testCreateCurrencySettings" />
       <item itemvalue="JUnit.SettingRepositoryTests.testCreateGeneralSetting" />
-      <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
         <item itemvalue="JUnit.SettingRepositoryTests.testCreateCurrencySettings" />
         <item itemvalue="JUnit.SettingRepositoryTests.testCreateGeneralSetting" />
         <item itemvalue="Application.EShopFrontEndApplication" />
-        <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
       </list>
     </recent_temporary>
   </component>
@@ -209,13 +210,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00066" summary="add product list all service and controller">
-      <created>1723909426382</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1723909426382</updated>
     </task>
     <task id="LOCAL-00067" summary="endpoint sort, filter ,pagination brand">
       <created>1723913171511</created>
@@ -553,7 +547,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726128666479</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="add Currency enity , repo and unitTest">
+      <created>1726137604426</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1726137604426</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +570,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add link detail product modal" />
     <MESSAGE value="start coding modal detail (error ) fix later" />
     <MESSAGE value="add sample data Product" />
     <MESSAGE value="add repo query search anf filter product" />
@@ -594,7 +594,8 @@
     <MESSAGE value="endpoint for search product function" />
     <MESSAGE value="edit frontdend" />
     <MESSAGE value="add setting entity repo and unit test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add setting entity repo and unit test" />
+    <MESSAGE value="add Currency enity , repo and unitTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Currency enity , repo and unitTest" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
