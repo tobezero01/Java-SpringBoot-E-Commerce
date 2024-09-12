@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="edit frontdend">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/SettingCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/setting/SettingRepositoryTests.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add setting entity repo and unit test">
+      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-10.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/CurrencyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/setting/CurrencyRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-03.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/navigation.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,21 +105,7 @@
       <recent name="com.eshop.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SettingRepositoryTests.testCreateCurrencySettings">
-    <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
-      <module name="EShopBackEnd" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/EShopWebParent/EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CurrencyRepositoryTests.testCreateCurrencies">
     <configuration name="EShopFrontEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.EShopFrontEndApplication" />
       <module name="EShopFrontEnd" />
@@ -132,6 +116,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CurrencyRepositoryTests.testCreateCurrencies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.setting.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.setting" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.CurrencyRepositoryTests" />
+      <option name="METHOD_NAME" value="testCreateCurrencies" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,18 +186,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.EShopFrontEndApplication" />
-      <item itemvalue="Application.EShopBackEndApplication" />
+      <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
       <item itemvalue="JUnit.SettingRepositoryTests.testCreateCurrencySettings" />
       <item itemvalue="JUnit.SettingRepositoryTests.testCreateGeneralSetting" />
       <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
         <item itemvalue="JUnit.SettingRepositoryTests.testCreateCurrencySettings" />
         <item itemvalue="JUnit.SettingRepositoryTests.testCreateGeneralSetting" />
         <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.ProductRepositoryTests.testFindByAlias" />
-        <item itemvalue="Application.EShopBackEndApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -209,13 +209,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00065" summary="add product service and controller">
-      <created>1723907286850</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1723907286851</updated>
     </task>
     <task id="LOCAL-00066" summary="add product list all service and controller">
       <created>1723909426382</created>
@@ -553,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1725984667140</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="add setting entity repo and unit test">
+      <created>1726128666478</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1726128666479</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -569,7 +569,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code edit product (fix bug later)" />
     <MESSAGE value="add link detail product modal" />
     <MESSAGE value="start coding modal detail (error ) fix later" />
     <MESSAGE value="add sample data Product" />
@@ -594,7 +593,8 @@
     <MESSAGE value="end carousel product detail" />
     <MESSAGE value="endpoint for search product function" />
     <MESSAGE value="edit frontdend" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit frontdend" />
+    <MESSAGE value="add setting entity repo and unit test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add setting entity repo and unit test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
