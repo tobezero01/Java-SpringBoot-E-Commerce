@@ -2,6 +2,8 @@ package com.eshop.common.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "settings")
 public class Setting {
@@ -18,6 +20,10 @@ public class Setting {
     private SettingCategory category;
 
     public Setting() {
+    }
+
+    public Setting(String key) {
+        this.key = key;
     }
 
     public Setting(String key, String value, SettingCategory category) {
@@ -53,5 +59,29 @@ public class Setting {
 
     public void setCategory(SettingCategory category) {
         this.category = category;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if(o == null) return false;
+        if(getClass() != o.getClass()) return false;
+        Setting other = (Setting) o;
+        if(key == null) {
+            if(other.key != null) {
+                return false;
+            }
+        }else if (!key.equals(other.key)){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prima = 31;
+        int result = 1;
+        result = prima * result + ((key == null) ? 0 : key.hashCode());
+        return result;
     }
 }
