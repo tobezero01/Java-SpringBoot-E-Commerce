@@ -3,7 +3,7 @@
 <body>
 
 <div th:fragment="content">
-    <form th:action="@{/settings/save_general}" method="post">
+    <form th:action="@{/settings/save_general}" method="post" enctype="multipart/form-data">
 
         <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Site name</label>
@@ -22,7 +22,7 @@
         <div class="form-group row mb-3">
             <label class="col-sm-3 col-form-label">Site Logo</label>
             <div class="col-sm-9">
-                <img id="thumbnail" th:src="@{'/images/' + ${SITE_LOGO}}" alt="Site logo thumbnail" class="img-fluid" style="max-width:120px">
+                <img id="thumbnail" th:src="@{${SITE_LOGO}}" alt="Site logo thumbnail" class="img-fluid" style="max-width:120px">
                 <input class="mb-2" type="file" id="fileImage" accept="image/png , image/jpeg"
                        name="fileImage" />
 
@@ -44,18 +44,18 @@
             <label class="col-sm-3 col-form-label">Currency Symbol Position </label>
             <div class="col-sm-9">
                 <select name="CURRENCY_SYMBOL_POSITION" class="form-control">
-                    <option value="Before price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'before')">Before price</option>
-                    <option value="After price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'after')">After price</option>
+                    <option value="Before price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'Before price')">Before price</option>
+                    <option value="After price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'After price')">After price</option>
                 </select>
             </div>
         </div>
 
         <div class="form-group row mb-3">
-            <label class="col-sm-3 col-form-label">Currency Symbol Position </label>
+            <label class="col-sm-3 col-form-label"> Thousand Point Type </label>
             <div class="col-sm-9">
-                <select name="CURRENCY_SYMBOL_POSITION" class="form-control">
-                    <option value="Before price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'before')">Before price</option>
-                    <option value="After price" th:selected="(${CURRENCY_SYMBOL_POSITION} == 'after')">After price</option>
+                <select name="THOUSAND_POINT_TYPE" class="form-control">
+                    <option value="POINT" th:selected="(${THOUSAND_POINT_TYPE} == 'POINT')">Point (.)</option>
+                    <option value="COMMA" th:selected="(${THOUSAND_POINT_TYPE} == 'COMMA')">Comma (,)</option>
                 </select>
             </div>
         </div>
@@ -76,8 +76,8 @@
                 <select name="DECIMAL_DIGITS" class="form-control">
                     <option value="1" th:selected="(${DECIMAL_DIGITS} == 1)">1</option>
                     <option value="2" th:selected="(${DECIMAL_DIGITS} == 2)">2</option>
-                    <option value="3" th:selected="(${DECIMAL_DIGITS} == 3)">2</option>
-                    <option value="4" th:selected="(${DECIMAL_DIGITS} == 4)">2</option>
+                    <option value="3" th:selected="(${DECIMAL_DIGITS} == 3)">3</option>
+                    <option value="4" th:selected="(${DECIMAL_DIGITS} == 4)">4</option>
                 </select>
             </div>
         </div>
