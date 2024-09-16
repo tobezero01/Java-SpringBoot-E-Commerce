@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}"/>
-    <title>[[${title}]]</title>
+    <title>[[${title}]] - [[${SITE_NAME}]]</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
@@ -14,7 +14,13 @@
 <div th:fragment="footer" class="text-center m-3">
     <p>EShop - Copyright &copy; EShop Ltd.</p>
 </div>
-
+<div th:fragment="price(product_price)" >
+    <span class="product-price">
+        <span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>
+        [[${#numbers.formatDecimal(product_price, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]
+        <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" th:remove="tag">[[${CURRENCY_SYMBOL}]]</span>
+    </span>
+</div>
 <div th:fragment="pagination(pageName)">
     <div class="text-center m-1" th:if="${totalItems > 0}">
         <span>Showing Items #[[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
@@ -28,17 +34,20 @@
             <ul class="pagination justify-content-center">
                 <!-- Link đến trang đầu tiên -->
                 <li th:classappend="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link" th:href="@{${pageName} + '/page/1' + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">First</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/1' + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">First</a>
                 </li>
 
                 <!-- Link đến trang trước -->
                 <li th:classappend="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link" th:href="@{${pageName} + '/page/' + (${currentPage - 1}) + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Previous</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/' + (${currentPage - 1}) + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Previous</a>
                 </li>
 
                 <!-- Link đến trang 1 nếu trang hiện tại lớn hơn 2 -->
                 <li th:if="${currentPage > 2}" class="page-item">
-                    <a class="page-link" th:href="@{${pageName} + '/page/1' + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">1</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/1' + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">1</a>
                 </li>
 
                 <!-- Dấu chấm trước trang hiện tại nếu có nhiều hơn 3 trang -->
@@ -49,7 +58,8 @@
                 <!-- Link đến các trang lân cận -->
                 <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
                     th:classappend="${currentPage == i} ? 'page-item active' : 'page-item'">
-                    <a class="page-link" th:href="@{${pageName} + '/page/' + ${i} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">[[${i}]]</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/' + ${i} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">[[${i}]]</a>
                 </li>
 
                 <!-- Dấu chấm sau trang hiện tại nếu còn nhiều trang hơn -->
@@ -59,17 +69,20 @@
 
                 <!-- Link đến trang cuối nếu trang hiện tại nhỏ hơn tổng số trang trừ 1 -->
                 <li th:if="${currentPage < totalPages - 1}" class="page-item">
-                    <a class="page-link" th:href="@{${pageName} + '/page/' + ${totalPages} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">[[${totalPages}]]</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/' + ${totalPages} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">[[${totalPages}]]</a>
                 </li>
 
                 <!-- Link đến trang tiếp theo -->
                 <li th:classappend="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link" th:href="@{${pageName} + '/page/' + (${currentPage + 1}) + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Next</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/' + (${currentPage + 1}) + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Next</a>
                 </li>
 
                 <!-- Link đến trang cuối cùng -->
                 <li th:classappend="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link" th:href="@{${pageName} + '/page/' + ${totalPages} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Last</a>
+                    <a class="page-link"
+                       th:href="@{${pageName} + '/page/' + ${totalPages} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Last</a>
                 </li>
             </ul>
         </nav>

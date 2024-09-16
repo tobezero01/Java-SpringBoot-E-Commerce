@@ -28,11 +28,11 @@
                                 <h5 class="card-title">[[${product.shortName}]]</h5>
                             </a>
                             <div th:if="${product.discountPercent <= 0 }">
-                                <span class="product-price">$ [[${product.price}]]</span>
+                                <div th:replace="fragments :: price(${product.price})"></div>
                             </div>
-                            <div th:if="${product.discountPercent > 0 }">
-                                <span class="product-price text-danger">$ [[${product.discountPrice}]]</span>
-                                <del class="text-muted"><span>$ [[${product.price}]]</span></del>
+                            <div th:if="${product.discountPercent > 0 }" class="d-flex">
+                                <span class="product-price text-danger"><div th:replace="fragments :: price(${product.discountPrice})"></div></span>
+                                <del class="text-muted"><div th:replace="fragments :: price(${product.price})"></div></del>
                             </div>
                         </div>
                     </div>
