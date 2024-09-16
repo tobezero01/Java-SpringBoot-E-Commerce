@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint manage general setting">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/setting/SettingRepositoryTests.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add end test Setting in FE">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Setting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/setting",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -104,7 +101,7 @@
       <recent name="com.eshop.security" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SettingRepositoryTests.testFindByTwoCategories">
+  <component name="RunManager" selected="Application.EShopFrontEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -112,6 +109,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.eshop.admin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EShopFrontEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eshop.EShopFrontEndApplication" />
+      <module name="EShopFrontEnd" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,22 +162,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettingRepositoryTests.testCreateGeneralSetting" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.setting.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.SettingRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateGeneralSetting" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SettingRepositoryTests.testFindByTwoCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopFrontEnd" />
       <extension name="coverage">
@@ -185,18 +180,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
+      <item itemvalue="Application.EShopFrontEndApplication" />
       <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
       <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
       <item itemvalue="JUnit.SettingRepositoryTests.testCreateCurrencySettings" />
-      <item itemvalue="JUnit.SettingRepositoryTests.testCreateGeneralSetting" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
         <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
         <item itemvalue="JUnit.SettingRepositoryTests.testCreateCurrencySettings" />
-        <item itemvalue="JUnit.SettingRepositoryTests.testCreateGeneralSetting" />
       </list>
     </recent_temporary>
   </component>
@@ -208,13 +203,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00070" summary="list view products add icon detail">
-      <created>1724043267837</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1724043267837</updated>
     </task>
     <task id="LOCAL-00071" summary="update brand repo findAll">
       <created>1724043601642</created>
@@ -552,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726201907019</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="add end test Setting in FE">
+      <created>1726473957633</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1726473957634</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -568,7 +563,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add pagination, filter and search in product module" />
     <MESSAGE value="fix model detail product" />
     <MESSAGE value="end point filter sort and pagination" />
     <MESSAGE value="base config authentication for product" />
@@ -593,7 +587,8 @@
     <MESSAGE value="update form-control for setting Module" />
     <MESSAGE value="add settingBag entity" />
     <MESSAGE value="endpoint manage general setting" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint manage general setting" />
+    <MESSAGE value="add end test Setting in FE" />
+    <option name="LAST_COMMIT_MESSAGE" value="add end test Setting in FE" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
