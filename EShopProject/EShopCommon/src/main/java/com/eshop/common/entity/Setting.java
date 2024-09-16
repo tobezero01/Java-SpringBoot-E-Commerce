@@ -84,4 +84,13 @@ public class Setting {
         result = prima * result + ((key == null) ? 0 : key.hashCode());
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Setting{" +
+                "key='" + key + '\'' +
+                ", value='" + value + '\'' +
+                ", category=" + category +
+                '}';
+    }
 }
