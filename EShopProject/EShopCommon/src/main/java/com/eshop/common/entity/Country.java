@@ -28,6 +28,9 @@ public class Country {
         this.name = name;
         this.code = code;
     }
+    public Country(String name) {
+        this.name = name;
+    }
 
     public Integer getId() {
         return id;
@@ -51,14 +54,6 @@ public class Country {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public Set<State> getStates() {
-        return states;
-    }
-
-    public void setStates(Set<State> states) {
-        this.states = states;
     }
 
     @Override
