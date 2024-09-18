@@ -71,8 +71,8 @@ public class CountryRestControllerTests {
 
         assertThat(country1.isPresent());
         Country savedCountry = country1.get();
-
         assertThat(savedCountry.getName()).isEqualTo(countryName);
+
     }
 
     @Test
