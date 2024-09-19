@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code country Rest layer with mockMvc Testing">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-16.0.gz" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="fix bug : login view">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/countries_settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/countries.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-10.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/setting/country/CountryRestControllerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/setting/country/CountryRestControllerTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/country/CountryRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/country/CountryRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/settings.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +27,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -150,17 +150,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CurrencyRepositoryTests.testCreateCurrencies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CountryRestControllerTests.testListCountries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.setting.*" />
+          <option name="PATTERN" value="com.eshop.admin.setting.country.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.CurrencyRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateCurrencies" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.setting.country" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.country.CountryRestControllerTests" />
+      <option name="METHOD_NAME" value="testListCountries" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,17 +185,17 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
       <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
       <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
-      <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
         <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
         <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
-        <item itemvalue="JUnit.CurrencyRepositoryTests.testCreateCurrencies" />
       </list>
     </recent_temporary>
   </component>
@@ -207,13 +207,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00075" summary="javascript call apirest set categories by brandId">
-      <created>1724255968801</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1724255968801</updated>
     </task>
     <task id="LOCAL-00076" summary="add file richtext editor">
       <created>1724473982470</created>
@@ -551,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726650027583</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="fix bug : login view">
+      <created>1726669694587</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1726669694587</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code refactor" />
     <MESSAGE value="customer home page setup" />
     <MESSAGE value="add list categories for customer" />
     <MESSAGE value="fig image category error" />
@@ -592,7 +591,8 @@
     <MESSAGE value="apply general setting" />
     <MESSAGE value="add Country , State enity , repo and Unit Test" />
     <MESSAGE value="code country Rest layer with mockMvc Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="code country Rest layer with mockMvc Testing" />
+    <MESSAGE value="fix bug : login view" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug : login view" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

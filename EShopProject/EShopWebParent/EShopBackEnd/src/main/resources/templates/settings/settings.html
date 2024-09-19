@@ -60,7 +60,7 @@
                     <div th:replace=" settings/general :: content"></div>
                 </div>
                 <div class="tab-pane p-3" id="countries" role="tabpanel">
-                    <h2>Countries</h2>
+                    <div th:replace=" settings/countries :: content"></div>
                 </div>
                 <div class="tab-pane p-3" id="states" role="tabpanel">
                     <h2>States</h2>
@@ -76,15 +76,27 @@
         </div>
     </div>
 
+    <div class="toast bg-warning" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000">
+        <div role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-dark">
+                <span id="toastMessage"></span>
+            </div>
+        </div>
+    </div>
+
     <!-- footer -->
     <div th:replace="fragments :: footer"></div>
     <script type="text/javascript">
 
         MAX_FILE_SIZE = 1004800;
-
+        contextPath = "[[@{/}]]";
+        var csrfHeaderName = "[[${_csrf.headerName}]]";
+        var csrfValue = "[[${_csrf.token}]]";
     </script>
 
     <script th:src="@{/js/common_form.js}"></script>
+    <script th:src="@{/js/countries_settings.js}"></script>
+
 </body>
 
 </html>
