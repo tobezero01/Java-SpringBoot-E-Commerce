@@ -5,8 +5,8 @@ import com.eshop.common.entity.State;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class StateRestController {
@@ -17,11 +17,9 @@ public class StateRestController {
     @GetMapping("/states/list_by_country/{id}")
     public List<StateDTO> listByCountry(@PathVariable("id") Integer countryId) {
         List<State> listStates = stateRepository.findByCountryOrderByNameAsc(new Country(countryId));
-        List<StateDTO> result= new ArrayList<>();
-        for (State state : listStates) {
-            result.add(new StateDTO(state.getId(), state.getName()));
-        }
-        return result;
+        return listStates.stream()
+                .map(state -> new StateDTO(state.getId(), state.getName()))
+                .collect(Collectors.toList());
     }
 
     @PostMapping("/states/save")
@@ -34,5 +32,4 @@ public class StateRestController {
     public void delete(@PathVariable("id") Integer id) {
         stateRepository.deleteById(id);
     }
-
 }

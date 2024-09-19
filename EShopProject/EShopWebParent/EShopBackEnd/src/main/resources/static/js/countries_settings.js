@@ -53,7 +53,7 @@ function deleteCountry() {
             $("#dropDownCountries option[value='" + optionValue + "']").remove();
             changeFormStateToNew();
         }).done(function (){
-            showToastMessage("All country have been deleted");
+            showToastMessage("The country have been deleted");
         }).fail(function() {
             showToastMessage("ERROR : Could not connect to server or encountered an error");
         });
@@ -78,7 +78,7 @@ function updateCountry() {
     }).done(function(countryId) {
         $("#dropDownCountries option:selected").text(countryName);
         $("#dropDownCountries option:selected").val(countryId + "-" + countryCode);
-        showToastMessage("All country have been updated successfully");
+        showToastMessage("The country have been updated successfully");
         changeFormStateToNew();
     }).fail(function() {
         showToastMessage("ERROR : Could not connect to server or encountered an error");
@@ -101,7 +101,7 @@ function addCountry() {
         contentType: 'application/json'
     }).done(function(countryId) {
         selectNewlyAddedCountry(countryId , countryCode, countryName);
-        showToastMessage("All country have been added successfully");
+        showToastMessage("The country have been added successfully");
     }).fail(function() {
         showToastMessage("ERROR : Could not connect to server or encountered an error");
     });
