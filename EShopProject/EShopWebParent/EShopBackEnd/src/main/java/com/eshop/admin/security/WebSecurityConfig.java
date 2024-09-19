@@ -44,7 +44,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(
                         configuration -> configuration
-                                .requestMatchers("/users/**").hasAuthority("Admin")
+                                .requestMatchers("/users/**", "/settings/**","/countries/**","/states/**" ).hasAuthority("Admin")
                                 .requestMatchers("/categories/**", "/brands/**").hasAnyAuthority("Admin", "Editor")
                                 .requestMatchers("/products/new" , "/products/delete/**").hasAnyAuthority("Admin", "Editor")
                                 .requestMatchers("/products/edit/**", "/products/save", "/products/check_unique").hasAnyAuthority("Admin", "Editor", "Salesperson")

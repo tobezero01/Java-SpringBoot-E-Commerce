@@ -121,11 +121,15 @@ var buttonLoad4States, dropDownCountry4States, dropDownStates, buttonAddState, b
     function deleteState() {
         var stateId = dropDownStates.val();
         var url = contextPath + "states/delete/" + stateId;
-
-        $.get(url, function () {
+        $.ajax({
+            type: 'DELETE',
+            url: url,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader(csrfHeaderName, csrfValue);  // Thêm header CSRF để bảo vệ form
+            }
+        }).done(function () {
             $("#dropDownStates option[value='" + stateId + "']").remove();
             changeFormStateToNew();
-        }).done(function () {
             showToastMessage("State deleted successfully");
         }).fail(function () {
             showToastMessage("ERROR: Could not delete state");

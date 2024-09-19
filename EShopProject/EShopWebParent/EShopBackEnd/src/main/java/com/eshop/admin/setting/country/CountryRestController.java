@@ -22,7 +22,7 @@ public class CountryRestController {
         return String.valueOf(savedCountry.getId());
     }
 
-    @GetMapping("/countries/delete/{id}")
+    @DeleteMapping("/countries/delete/{id}")
     public void delete(@PathVariable("id") Integer id) {
         countryRepository.deleteById(id);
     }

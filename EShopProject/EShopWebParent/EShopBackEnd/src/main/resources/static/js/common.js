@@ -1,11 +1,12 @@
 
- $(document).ready(function () {
+        $(document).ready(function () {
             $("#logoutLink").on("click", function(e) {
                 e.preventDefault();
                 document.logoutForm.submit();
             });
 
             customizeDropDownMenu();
+            customizeTabs();
         });
 
 
@@ -23,4 +24,18 @@
             $(".dropdown > a").click(function() {
                 location.href = this.href;
             });
+        }
+
+        function customizeTabs() {
+                var url = document.location.toString();
+
+                // Kiểm tra nếu URL chứa ký tự #
+                if (url.match('#')) {
+                    $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+                }
+
+                // Cập nhật URL khi chuyển tab
+                $('.nav-tabs a').on('shown.bs.tab', function (e) {
+                    window.location.hash = e.target.hash;
+                });
         }
