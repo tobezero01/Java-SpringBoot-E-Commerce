@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="manage Country with restController and js">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-18.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/state/StateDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/state/StateRestController.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add dto and restController State">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/setting/state/StateRestControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,7 @@
       <recent name="com.eshop" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopBackEndApplication">
+  <component name="RunManager" selected="JUnit.StateRestControllerTests.testListByCountries">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -164,17 +163,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SettingRepositoryTests.testFindByTwoCategories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopFrontEnd" />
+    <configuration name="StateRestControllerTests.testListByCountries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.setting.*" />
+          <option name="PATTERN" value="com.eshop.admin.setting.state.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.setting" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.setting.SettingRepositoryTests" />
-      <option name="METHOD_NAME" value="testFindByTwoCategories" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.setting.state" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.state.StateRestControllerTests" />
+      <option name="METHOD_NAME" value="testListByCountries" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,17 +182,17 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="JUnit.StateRestControllerTests.testListByCountries" />
       <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
       <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
-      <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StateRestControllerTests.testListByCountries" />
         <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
         <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
         <item itemvalue="Application.EShopFrontEndApplication" />
-        <item itemvalue="JUnit.SettingRepositoryTests.testFindByTwoCategories" />
       </list>
     </recent_temporary>
   </component>
@@ -205,13 +204,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00077" summary="add shipping and description">
-      <created>1724476189757</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1724476189757</updated>
     </task>
     <task id="LOCAL-00078" summary="add new product first code">
       <created>1724480032663</created>
@@ -549,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1726748387442</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="add dto and restController State">
+      <created>1726755285835</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1726755285835</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -565,7 +564,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add list categories for customer" />
     <MESSAGE value="fig image category error" />
     <MESSAGE value="test category by alias enabled" />
     <MESSAGE value="edit html index" />
@@ -590,7 +588,8 @@
     <MESSAGE value="code country Rest layer with mockMvc Testing" />
     <MESSAGE value="fix bug : login view" />
     <MESSAGE value="manage Country with restController and js" />
-    <option name="LAST_COMMIT_MESSAGE" value="manage Country with restController and js" />
+    <MESSAGE value="add dto and restController State" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dto and restController State" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
