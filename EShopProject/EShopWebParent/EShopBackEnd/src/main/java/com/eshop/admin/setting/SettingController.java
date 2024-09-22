@@ -62,7 +62,6 @@ public class SettingController {
     private void saveCurrencySymbol(HttpServletRequest request, GeneralSettingBag settingBag) {
         Integer currencyId = Integer.parseInt(request.getParameter("CURRENCY_ID"));
         Optional<Currency> findByIdResult = currencyRepository.findById(currencyId);
-
         if (findByIdResult.isPresent()) {
             Currency currency = findByIdResult.get();
             settingBag.updateCurrencySymbol(currency.getSymbol());
@@ -79,4 +78,19 @@ public class SettingController {
         settingService.saveAll(listSettings);
     }
 
+    @PostMapping("/settings/save_mail_server")
+    public String saveMailServerSettings(HttpServletRequest request , RedirectAttributes redirectAttributes) {
+        List<Setting> mailServerSettings = settingService.getMailServerSettings();
+        updateSettingValueFromForm(request, mailServerSettings);
+        redirectAttributes.addFlashAttribute("message", "Mail server settings have been saved");
+        return "redirect:/settings";
+    }
+
+    @PostMapping("/settings/save_mail_templates")
+    public String saveMailTemplatesSettings(HttpServletRequest request , RedirectAttributes redirectAttributes) {
+        List<Setting> mailTemplateSettings = settingService.getMailTemplateSettings();
+        updateSettingValueFromForm(request, mailTemplateSettings);
+        redirectAttributes.addFlashAttribute("message", "Mail templates settings have been saved");
+        return "redirect:/settings";
+    }
 }
