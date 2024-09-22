@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface SettingRepository extends JpaRepository<Setting, String> {
 
     public List<Setting> findByCategory(SettingCategory category);
