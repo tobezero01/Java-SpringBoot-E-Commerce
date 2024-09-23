@@ -18,8 +18,6 @@ public class SettingService {
 
 
     public List<Setting> getGeneralSettings() {
-
-
         return settingRepository.findByTwoCategories(SettingCategory.GENERAL, SettingCategory.CURRENCY);
     }
 
@@ -27,4 +25,10 @@ public class SettingService {
         settingRepository.saveAll(settings);
     }
 
+    public EmailSettingBag getEmailSettings() {
+        List<Setting> settings = settingRepository.findByCategory(SettingCategory.MAIL_SERVER);
+        settings.addAll(settingRepository.findByCategory(SettingCategory.MAIL_TEMPLATES));
+
+        return new EmailSettingBag(settings);
+    }
 }

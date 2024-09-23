@@ -203,4 +203,8 @@ public class Customer {
                 ", country=" + country.getName() +
                 '}';
     }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
