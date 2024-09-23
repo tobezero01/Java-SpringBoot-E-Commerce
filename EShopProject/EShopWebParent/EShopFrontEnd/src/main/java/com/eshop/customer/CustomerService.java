@@ -38,6 +38,7 @@ public class CustomerService {
 
         String randomCode = RandomString.make(64);
         customer.setVerificationCode(randomCode);
+        System.out.println(1111);
         customerRepository.save(customer);
     }
 
@@ -46,5 +47,15 @@ public class CustomerService {
         customer.setPassword(encode);
     }
 
+    public boolean verify(String verificationCode) {
+        Customer customer = customerRepository.findByVerificationCode(verificationCode);
+
+        if (customer == null || customer.isEnabled()) {
+            return false;
+        } else  {
+            customerRepository.enable(customer.getId());
+            return true;
+        }
+    }
 
 }

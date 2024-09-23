@@ -68,8 +68,20 @@ var buttonLoad4States, dropDownCountry4States, dropDownStates, buttonAddState, b
             showToastMessage("ERROR: Could not load states");
         });
     }
+    function validateFormState() {
+            formState = document.getElementById("formState");
+            if (!formState.checkValidity()) {
+                formState.reportValidity();
+                return false;
+            }
+            return true;
+    }
+
 
     function addState() {
+
+        if(!validateFormState()) return;
+
         var url = contextPath + "states/save";
         var stateName = fieldStateName.val();
         var selectedCountry = $("#dropDownCountryForStates option:selected");

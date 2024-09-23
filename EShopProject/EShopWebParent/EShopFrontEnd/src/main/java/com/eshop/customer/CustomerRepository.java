@@ -15,7 +15,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("select c from Customer c Where c.verificationCode = ?1")
     public Customer findByVerificationCode(String code);
 
-    @Query("Update Customer c Set c.enabled = true Where c.id = ?1")
+    @Query("Update Customer c Set c.enabled = true And c.verificationCode = null Where c.id = ?1")
     @Modifying
-    public void enabled(Integer id);
+    public void enable(Integer id);
 }

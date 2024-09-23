@@ -43,7 +43,7 @@ public class Customer {
     @Column(name = "postal_code", length = 10, nullable = false)
     private String postalCode;
 
-    @Column(name = "verification_code", length = 54)
+    @Column(name = "verification_code", length = 128)
     private String verificationCode;
 
     private boolean enabled;

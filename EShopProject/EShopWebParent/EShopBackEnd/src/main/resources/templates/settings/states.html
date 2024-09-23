@@ -28,17 +28,19 @@
         </div>
     </div>
 
-    <div class="form-group row">
-        <label class="col-sm-3 col-form-label mt-2" id="labelStateName">States/provinces name</label>
-        <div class="col-sm-5">
-            <input type="text" class="form-control mt-2" id="fieldStateName">
+    <form id="formState">
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label mt-2" id="labelStateName">States/provinces name</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control mt-2" id="fieldStateName" required minlength="3" maxlength="45">
+            </div>
+            <div class="col-sm-4 mt-2">
+                <input type="button" value="Add" id="buttonAddState" class="btn btn-secondary me-2">
+                <input type="button" value="Update" id="buttonUpdateState" class="btn btn-secondary me-2" disabled="disabled">
+                <input type="button" value="Delete" id="buttonDeleteState" class="btn btn-secondary" disabled="disabled">
+            </div>
         </div>
-        <div class="col-sm-4 mt-2">
-            <input type="button" value="Add" id="buttonAddState" class="btn btn-secondary me-2">
-            <input type="button" value="Update" id="buttonUpdateState" class="btn btn-secondary me-2" disabled="disabled">
-            <input type="button" value="Delete" id="buttonDeleteState" class="btn btn-secondary" disabled="disabled">
-        </div>
-    </div>
+    </form>
 
 </div>
 

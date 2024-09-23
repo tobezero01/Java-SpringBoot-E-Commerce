@@ -89,8 +89,19 @@ function updateCountry() {
         showToastMessage("ERROR : Could not connect to server or encountered an error");
     });
 }
+function validateFormCountry() {
+        formCountry = document.getElementById("formCountry");
+        if (!formCountry.checkValidity()) {
+            formCountry.reportValidity();
+            return false;
+        }
+        return true;
+}
 
 function addCountry() {
+
+    if (!validateFormCountry()) return;
+
     url = contextPath + "countries/save";  // Đường dẫn API để lưu quốc gia
     countryName = fieldCountryName.val();  // Lấy giá trị từ trường "Tên quốc gia"
     countryCode = fieldCountryCode.val();  // Lấy giá trị từ trường "Mã quốc gia"
