@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="refactor validation">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/exception/CustomerNotFoundException.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add layer for customer management module">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-23.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/customers/customer_detail_modal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/customers/customer_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/customers/customers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-16.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/categories/category_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,30 +67,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/main/resources/templates/register",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/customers&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\customers" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\register" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\settings\mail_templates" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\settings" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates" />
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\products" />
@@ -98,14 +104,14 @@
       <recent name="com.eshop.admin.brand" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.eshop.admin.customer" />
       <recent name="com.eshop.admin.exception" />
       <recent name="com.eshop.setting" />
       <recent name="com.eshop.customer" />
       <recent name="com.eshop.admin.setting.state" />
-      <recent name="com.eshop.admin.setting.country" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopFrontEndApplication">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -191,8 +197,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.StateRestControllerTests.testListByCountries" />
         <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
         <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
@@ -207,13 +213,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00085" summary="format code js">
-      <created>1724525157001</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1724525157002</updated>
     </task>
     <task id="LOCAL-00086" summary="add entity product detail">
       <created>1724607220988</created>
@@ -551,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727092301874</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="add layer for customer management module">
+      <created>1727116487644</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1727116487644</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update image extra mini size" />
     <MESSAGE value="end carousel product detail" />
     <MESSAGE value="endpoint for search product function" />
     <MESSAGE value="edit frontdend" />
@@ -592,7 +597,8 @@
     <MESSAGE value="manage Email settings" />
     <MESSAGE value="code verify email part 1" />
     <MESSAGE value="refactor validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor validation" />
+    <MESSAGE value="add layer for customer management module" />
+    <option name="LAST_COMMIT_MESSAGE" value="add layer for customer management module" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -13,7 +13,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
     @Query("Select c From Customer c Where CONCAT(c.email, ' ', c.firstName, ' ', c.lastName , ' ', "
     + "c.addressLine1, ' ', c.addressLine2, ' ', c.city, ' ', c.state, ' ', "
-    + "c.postalCode, ' ', c.country.nam) Like %?1%")
+    + "c.postalCode, ' ', c.country.name) Like %?1%")
     public Page<Customer> findAll(String keyWord, Pageable pageable);
 
     @Query("Update Customer c SET c.enabled = ?2 Where c.id = ?1")

@@ -204,6 +204,7 @@ public class Customer {
                 '}';
     }
 
+    @Transient
     public String getFullName() {
         return firstName + " " + lastName;
     }
