@@ -4,11 +4,9 @@ import jakarta.persistence.*;
 
 import java.util.Date;
 
-
 @Entity
 @Table(name = "customers")
 public class Customer {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -177,7 +175,6 @@ public class Customer {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
-
 
     public Country getCountry() {
         return country;

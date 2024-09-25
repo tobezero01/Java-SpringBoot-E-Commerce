@@ -27,7 +27,6 @@ spring:
             scope:
               - email
               - profile
-
 server:
   port: 80
   servlet:
