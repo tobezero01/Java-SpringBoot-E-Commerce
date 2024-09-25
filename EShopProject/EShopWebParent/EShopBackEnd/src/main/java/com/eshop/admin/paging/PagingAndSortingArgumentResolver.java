@@ -11,7 +11,6 @@ public class PagingAndSortingArgumentResolver implements HandlerMethodArgumentRe
     public boolean supportsParameter(MethodParameter parameter) {
         return parameter.getParameterAnnotation(PagingAndSortingParam.class) != null;
     }
-
     @Override
     public Object resolveArgument(MethodParameter parameter,
                                   ModelAndViewContainer model,

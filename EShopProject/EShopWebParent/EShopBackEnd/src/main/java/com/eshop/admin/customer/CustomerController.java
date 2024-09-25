@@ -5,10 +5,7 @@ import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +32,7 @@ public class CustomerController {
 
         return "customers/customers";
     }
+
 
     @GetMapping("/customers/{id}/enabled/{status}")
     public String updateCustomerEnabledStatus(@PathVariable("id") Integer id,

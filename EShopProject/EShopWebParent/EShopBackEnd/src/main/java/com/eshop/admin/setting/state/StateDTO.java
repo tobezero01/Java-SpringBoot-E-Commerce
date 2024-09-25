@@ -1,7 +1,6 @@
 package com.eshop.admin.setting.state;
 
 public class StateDTO {
-
     private Integer id;
     private String name;
 

@@ -13,7 +13,6 @@ import org.supercsv.io.ICsvBeanWriter;
 import org.supercsv.prefs.CsvPreference;
 
 public class UserCsvExporter extends AbstractExporter {
-
 	//file download can open with excel
 	public void export(List<User> listUsers, HttpServletResponse response ) throws IOException {
 		super.setResponseHeader(response,"text/csv",".csv" , "users_");

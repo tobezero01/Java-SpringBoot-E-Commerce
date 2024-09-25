@@ -9,5 +9,6 @@ import java.util.List;
 
 @NoRepositoryBean
 public interface SearchRepository<T, ID> extends JpaRepository<T , ID> {
+
     public Page<T> findAll(String keyWord, Pageable pageable);
 }

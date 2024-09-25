@@ -13,7 +13,6 @@ import java.util.List;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
-
     @Query("Select c From Category c WHERE c.parent.id is null")
     public List<Category> findRootCategories(Sort sort);
 

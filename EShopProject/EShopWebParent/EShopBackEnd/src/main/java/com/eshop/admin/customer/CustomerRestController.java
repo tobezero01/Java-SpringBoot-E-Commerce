@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CustomerRestController {
-
     @Autowired private CustomerService customerService;
 
     @PostMapping("/customers/check_email")

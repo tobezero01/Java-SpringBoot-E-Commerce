@@ -13,7 +13,6 @@ import com.eshop.common.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-
 	@Query("Select u from User u WHERE u.email =:email ")
 	public User getUserByEmail(@Param("email") String email);
 

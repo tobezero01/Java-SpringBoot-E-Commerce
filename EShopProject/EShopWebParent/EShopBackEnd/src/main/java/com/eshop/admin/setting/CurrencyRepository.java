@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CurrencyRepository extends JpaRepository<Currency, Integer> {
-
     public List<Currency> findAllByOrderByNameAsc();
 }

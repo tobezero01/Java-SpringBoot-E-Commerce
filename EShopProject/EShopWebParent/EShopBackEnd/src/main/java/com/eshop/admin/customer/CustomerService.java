@@ -23,7 +23,6 @@ import java.util.NoSuchElementException;
 @Transactional
 public class CustomerService {
     public static final int CUSTOMERS_PER_PAGE = 10;
-
     @Autowired private CustomerRepository customerRepository;
     @Autowired private CountryRepository countryRepository;
     @Autowired private PasswordEncoder passwordEncoder;

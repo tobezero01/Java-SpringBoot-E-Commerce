@@ -12,7 +12,6 @@ import java.util.List;
 @Service
 @Transactional
 public class SettingService {
-
     @Autowired
     private SettingRepository settingRepository;
 

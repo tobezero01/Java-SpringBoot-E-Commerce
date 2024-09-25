@@ -4,7 +4,6 @@ public class CategoryDTO {
 
     private Integer id;
     private String name;
-
     public CategoryDTO() {
     }
 

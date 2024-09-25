@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-
     @Query("Select c From Customer c Where CONCAT(c.email, ' ', c.firstName, ' ', c.lastName , ' ', "
     + "c.addressLine1, ' ', c.addressLine2, ' ', c.city, ' ', c.state, ' ', "
     + "c.postalCode, ' ', c.country.name) Like %?1%")

@@ -14,7 +14,6 @@ public class PagingAndSortingHelper {
     private String sortDir;
     private String keyWord;
 
-
     public PagingAndSortingHelper(ModelAndViewContainer model, String listName, String sortField, String sortDir, String keyWord) {
         this.model = model;
         this.listName = listName;

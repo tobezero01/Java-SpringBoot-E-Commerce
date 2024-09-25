@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public interface BrandRepository extends JpaRepository <Brand , Integer>{
     public Long countById(Integer id) ;
-
     public Brand findByName(String name);
 
     @Query("Select b from Brand b where b.name LIKE %?1%")

@@ -22,7 +22,6 @@ import java.util.Optional;
 public class SettingController {
     @Autowired
     private SettingService settingService;
-
     @Autowired
     private CurrencyRepository currencyRepository;
 

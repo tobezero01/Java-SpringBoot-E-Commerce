@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-
     public Product findByName(String name);
 
     @Query("Update Product p Set p.enabled = ?2 Where p.id = ?1")

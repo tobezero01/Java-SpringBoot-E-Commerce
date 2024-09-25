@@ -17,7 +17,6 @@ import java.util.Set;
 
 @RestController
 public class BrandRestController {
-
     @Autowired
     private BrandService brandService;
 

@@ -15,7 +15,6 @@ public class EShopUserDetails implements UserDetails {
 
     private static final long serialVersionUID = 1;
     private User user;
-
     public EShopUserDetails(User user) {
         this.user = user;
     }

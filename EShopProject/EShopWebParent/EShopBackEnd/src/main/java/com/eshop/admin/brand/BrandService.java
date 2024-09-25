@@ -18,7 +18,6 @@ import java.util.NoSuchElementException;
 @Service
 @Transactional
 public class BrandService {
-
     public static final int BRANDS_PER_PAGE = 5;
     @Autowired
     private BrandRepository brandRepository;

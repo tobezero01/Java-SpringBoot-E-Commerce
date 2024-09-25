@@ -10,7 +10,6 @@ import java.util.List;
 public class CountryRestController {
     @Autowired
     private CountryRepository countryRepository;
-
     @GetMapping("/countries/list")
     public List<Country> listAll() {
         return countryRepository.findAllByOrderByNameAsc();
