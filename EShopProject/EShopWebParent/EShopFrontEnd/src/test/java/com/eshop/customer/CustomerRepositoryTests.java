@@ -21,4 +21,6 @@ public class CustomerRepositoryTests {
     public void testCreateCustomer1(){
         //...
     }
+
+    //test update authentication type
 }

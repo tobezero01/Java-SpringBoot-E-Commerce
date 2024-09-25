@@ -1,5 +1,6 @@
 package com.eshop.customer;
 
+import com.eshop.common.entity.AuthenticationType;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
 import com.eshop.setting.CountryRepository;
@@ -55,6 +56,12 @@ public class CustomerService {
         } else  {
             customerRepository.enable(customer.getId());
             return true;
+        }
+    }
+
+    public void updateAuthenticationType(Customer customer, AuthenticationType authenticationType) {
+        if(!customer.getAuthenticationType().equals(authenticationType) ) {
+            customerRepository.updateAuthenticationType(customer.getId(), authenticationType);
         }
     }
 

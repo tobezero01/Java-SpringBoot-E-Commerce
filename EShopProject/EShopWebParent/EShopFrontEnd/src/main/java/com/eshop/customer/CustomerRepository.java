@@ -1,5 +1,6 @@
 package com.eshop.customer;
 
+import com.eshop.common.entity.AuthenticationType;
 import com.eshop.common.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -18,4 +19,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("Update Customer c Set c.enabled = true And c.verificationCode = null Where c.id = ?1")
     @Modifying
     public void enable(Integer id);
+
+    @Query("Update Customer c Set c.authenticationType = ?2 Where c.id = ?1")
+    @Modifying
+    public void updateAuthenticationType(Integer customerId, AuthenticationType authenticationType);
 }
