@@ -203,13 +203,6 @@
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
     </task>
-    <task id="LOCAL-00096" summary="end point filter sort and pagination">
-      <created>1725373129660</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1725373129661</updated>
-    </task>
     <task id="LOCAL-00097" summary="base config authentication for product">
       <created>1725374556852</created>
       <option name="number" value="00097" />
@@ -546,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727271143635</updated>
     </task>
-    <option name="localTasksCounter" value="145" />
+    <task id="LOCAL-00145" summary="disabled push protection">
+      <created>1727271218236</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1727271218236</updated>
+    </task>
+    <option name="localTasksCounter" value="146" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
