@@ -28,7 +28,6 @@ spring:
               - email
               - profile
 
-
 server:
   port: 80
   servlet:
