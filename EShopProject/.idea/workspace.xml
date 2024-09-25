@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="update AuthenticationType for customer">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/application.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -207,27 +202,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00091" summary="start coding modal detail (error ) fix later">
-      <created>1724871435021</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1724871435021</updated>
-    </task>
-    <task id="LOCAL-00092" summary="add sample data Product">
-      <created>1724939119126</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1724939119127</updated>
-    </task>
-    <task id="LOCAL-00093" summary="add repo query search anf filter product">
-      <created>1724939217012</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1724939217012</updated>
     </task>
     <task id="LOCAL-00094" summary="add pagination, filter and search in product module">
       <created>1725120212732</created>
@@ -551,7 +525,28 @@
       <option name="project" value="LOCAL" />
       <updated>1727262943918</updated>
     </task>
-    <option name="localTasksCounter" value="140" />
+    <task id="LOCAL-00140" summary="prepare security oauth2 (gg cloud)">
+      <created>1727270305341</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1727270305341</updated>
+    </task>
+    <task id="LOCAL-00141" summary="error">
+      <created>1727270488199</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1727270488199</updated>
+    </task>
+    <task id="LOCAL-00142" summary="error">
+      <created>1727270548170</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1727270548170</updated>
+    </task>
+    <option name="localTasksCounter" value="143" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -567,8 +562,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="update form-control for setting Module" />
-    <MESSAGE value="add settingBag entity" />
     <MESSAGE value="endpoint manage general setting" />
     <MESSAGE value="add end test Setting in FE" />
     <MESSAGE value="add setting filter" />
@@ -592,7 +585,9 @@
     <MESSAGE value="refactor filter , sorting and paging Annotation" />
     <MESSAGE value="login logout for customer" />
     <MESSAGE value="update AuthenticationType for customer" />
-    <option name="LAST_COMMIT_MESSAGE" value="update AuthenticationType for customer" />
+    <MESSAGE value="prepare security oauth2 (gg cloud)" />
+    <MESSAGE value="error" />
+    <option name="LAST_COMMIT_MESSAGE" value="error" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1725722575225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
