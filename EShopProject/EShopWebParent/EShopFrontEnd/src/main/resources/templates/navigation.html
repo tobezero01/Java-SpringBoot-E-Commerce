@@ -23,7 +23,7 @@
                     <a class="nav-link" href="">Shipping &amp; Delivery</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="">Login</a>
+                    <a class="nav-link" th:href="@{/login}">Login</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" th:href="@{/register}">Register</a>
@@ -38,12 +38,45 @@
 
 <div th:fragment="search_nav" class="row mb-3">
     <div class="col-md">
+        <th:block sec:authorize="isAuthenticated()">
+            <form th:action="@{logout}" method="post" th:hidden="true" name="logoutForm">
+                <input type="submit" value="Logout">
+            </form>
+        </th:block>
+
         <nav class="navbar navbar-expand-sm bg-light">
             <div class="collapse navbar-collapse" id="searchNavbar">
                 <form class="form-inline d-flex" th:action="@{/search}" method="get">
                     <input type="search" name="keyWord" class="form-control me-2" placeholder="keyword" th:value="${keyWord}" required >
                     <input type="submit" class="ml-3 btn btn-outline-success " >
                 </form>
+
+                <ul class="navbar-nav">
+                    <th:block sec:authorize="isAuthenticated()">
+                       <li class="nav-item">
+                           <b><a class="nav-link" th:href="@{/customers}" sec:authentication="principal.fullName"></a></b>
+                       </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" >Addresses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" >Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" >Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" >Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" >Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="document.logoutForm.submit()">Logout</a>
+                        </li>
+
+                    </th:block>
+                </ul>
             </div>
         </nav>
     </div>

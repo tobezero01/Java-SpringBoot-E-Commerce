@@ -22,17 +22,38 @@ public class WebSecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**");
+        return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**" , "/webjars/**");
     }
-
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeHttpRequests(
                 configuration -> configuration
+                        .requestMatchers("/customers").authenticated()
                         .anyRequest().permitAll()
-        );
+        ).formLogin(login -> login
+                        .loginPage("/login")
+                        .usernameParameter("email")
+                        .permitAll()
+        ).logout( logout -> logout.permitAll()
+        ).rememberMe(remember -> remember
+                .key("1234567890_aBcDeFgHiJkLmNoPqRsTuVwXyZ")
+                .tokenValiditySeconds(14 * 24 * 68 * 60))
+        ;
         return httpSecurity.build();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return new CustomerUserDetailsService();
+    }
+
+    @Bean DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
+        authenticationProvider.setUserDetailsService(userDetailsService());
+        authenticationProvider.setPasswordEncoder(passwordEncoder());
+
+        return authenticationProvider;
     }
 
 }
