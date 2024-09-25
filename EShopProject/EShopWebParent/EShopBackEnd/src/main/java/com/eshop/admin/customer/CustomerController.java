@@ -1,6 +1,8 @@
 package com.eshop.admin.customer;
 
 import com.eshop.admin.exception.CustomerNotFoundException;
+import com.eshop.admin.paging.PagingAndSortingHelper;
+import com.eshop.admin.paging.PagingAndSortingParam;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -22,31 +24,14 @@ public class CustomerController {
 
     @GetMapping("/customers")
     public String listFirstPage(Model model) {
-        return listByPage(model, 1, "firstName", "asc", null);
+        return "redirect:/customers/page/1?sortField=firstName&sortDir=asc";
     }
 
     @GetMapping("/customers/page/{pageNum}")
     public String listByPage(Model model , @PathVariable("pageNum") int pageNum,
-                             @Param("sortField") String sortField ,
-                             @Param("sortDir") String sortDir,
-                             @Param("keyWord") String keyWord) {
-        Page<Customer> page = customerService.listByPage(pageNum, sortField, sortDir, keyWord);
-        List<Customer> listCustomers = page.getContent();
-
-        long startCount = (pageNum - 1) * CustomerService.CUSTOMERS_PER_PAGE + 1 ;
-        long endCount = startCount + CustomerService.CUSTOMERS_PER_PAGE - 1;
-        endCount = (endCount > page.getTotalElements()) ? page.getTotalElements() : endCount;
-
-        model.addAttribute("totalPages", page.getTotalPages());
-        model.addAttribute("totalItems", page.getTotalElements());
-        model.addAttribute("currentPage", pageNum);
-        model.addAttribute("listCustomers", listCustomers);
-        model.addAttribute("sortField",sortField);
-        model.addAttribute("sortDir", sortDir);
-        model.addAttribute("keyWord", keyWord);
-        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
-        model.addAttribute("startCount", startCount);
-        model.addAttribute("endCount", endCount);
+                             @PagingAndSortingParam(listName = "listCustomers")PagingAndSortingHelper helper
+                             ) {
+        customerService.listByPage(pageNum, helper);
 
         return "customers/customers";
     }

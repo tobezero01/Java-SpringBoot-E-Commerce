@@ -6,6 +6,8 @@ import java.util.Optional;
 
 import com.eshop.admin.FileUploadUtil;
 import com.eshop.admin.exception.UserNotFoundException;
+import com.eshop.admin.paging.PagingAndSortingHelper;
+import com.eshop.admin.paging.PagingAndSortingParam;
 import com.eshop.admin.user.UserService;
 import com.eshop.admin.user.export.UserCsvExporter;
 import com.eshop.admin.user.export.UserExcelExporter;
@@ -33,36 +35,15 @@ public class UserController {
 	private UserService userService;
 	
 	@GetMapping("/users")
-	public String listAll(Model model) {
-		return listByPage(1, model, "firstName", "asc","");
+	public String listFirstPage() {
+		return "redirect:/users/page/1?sortField=firstName&sortDir=asc";
 	}
 
 	@GetMapping("/users/page/{pageNum}")
-	public String listByPage(@PathVariable(name = "pageNum") int pageNum, Model model,
-							 @Param("sortField" ) String sortField, @Param("sortDir") String sortDir,
-							 @Param("keyWord") String keyWord
+	public String listByPage(@PagingAndSortingParam(listName = "listUsers") PagingAndSortingHelper helper,
+							 @PathVariable(name = "pageNum") int pageNum
 							 ) {
-		Page<User> page = userService.listByPage(pageNum, sortField,sortDir, keyWord);
-		List<User> listUsers = page.getContent();
-		long startCount = (pageNum-1)*UserService.USER_PER_PAGE + 1;
-		long endCount = startCount + UserService.USER_PER_PAGE -1;
-
-		if(endCount > page.getTotalElements()) {
-			endCount = page.getTotalElements();
-		}
-
-		String reverseSortDir = sortDir.equals("asc") ? "desc" : "asc";
-
-		model.addAttribute("totalPages", page.getTotalPages());
-		model.addAttribute("currentPage",pageNum);
-		model.addAttribute("startCount",startCount);
-		model.addAttribute("endCount", endCount);
-		model.addAttribute("totalItems", page.getTotalElements());
-		model.addAttribute("listUsers", listUsers);
-		model.addAttribute("sortField", sortField);
-		model.addAttribute("sortDir", sortDir);
-		model.addAttribute("reverseSortDir", reverseSortDir);
-		model.addAttribute("keyWord", keyWord);
+		userService.listByPage(pageNum , helper);
 		return "users/users";
 	}
 

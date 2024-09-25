@@ -6,6 +6,7 @@ import java.util.Optional;
 
 
 import com.eshop.admin.exception.UserNotFoundException;
+import com.eshop.admin.paging.PagingAndSortingHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -39,15 +40,17 @@ public class UserService {
 	public User getByEmail(String email) {
 		return userRepository.getUserByEmail(email);
 	}
-	public Page<User> listByPage(int pageNum , String sortField, String sortDir,  String keyWord) {
-		Sort sort = Sort.by(sortField);
-		sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+	public void listByPage(int pageNum , PagingAndSortingHelper helper) {
+		Sort sort = Sort.by(helper.getSortField());
+		sort = helper.getSortDir().equals("asc") ? sort.ascending() : sort.descending();
 		Pageable pageable = PageRequest.of(pageNum-1, USER_PER_PAGE, sort);
-
-		if(keyWord != null) {
-			return userRepository.findAll(keyWord , pageable);
+		Page<User> page = null;
+		if(helper.getKeyWord() != null) {
+			page = userRepository.findAll(helper.getKeyWord() , pageable);
+		} else {
+			page = userRepository.findAll(pageable);
 		}
-		return userRepository.findAll(pageable);
+		helper.updateModelAttributes(pageNum, page);
 	}
 	
 	public List<Role> listRoles() {

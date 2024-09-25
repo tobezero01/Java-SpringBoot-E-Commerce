@@ -1,7 +1,9 @@
 package com.eshop.admin.brand;
 
 import com.eshop.admin.exception.BrandNotFoundException;
+import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.common.entity.Brand;
+import com.eshop.common.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,14 +27,17 @@ public class BrandService {
         return brandRepository.findAll();
     }
 
-    public Page<Brand> listByPage(int pageNum, String sortField, String sortDir, String keyWord) {
-        Sort sort = Sort.by(sortField);
-        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-        Pageable pageable = PageRequest.of(pageNum - 1 , BRANDS_PER_PAGE, sort);
-        if(keyWord != null) {
-            return brandRepository.findAll(keyWord, pageable);
+    public void listByPage(int pageNum , PagingAndSortingHelper helper) {
+        Sort sort = Sort.by(helper.getSortField());
+        sort = helper.getSortDir().equals("asc") ? sort.ascending() : sort.descending();
+        Pageable pageable = PageRequest.of(pageNum-1, BRANDS_PER_PAGE, sort);
+        Page<Brand> page = null;
+        if(helper.getKeyWord() != null) {
+            page = brandRepository.findAll(helper.getKeyWord() , pageable);
+        } else {
+            page = brandRepository.findAll(pageable);
         }
-        return brandRepository.findAll(pageable);
+        helper.updateModelAttributes(pageNum, page);
     }
 
     public Brand save(Brand brand) {

@@ -2,7 +2,9 @@ package com.eshop.admin.customer;
 
 import ch.qos.logback.core.joran.conditional.IfAction;
 import com.eshop.admin.exception.CustomerNotFoundException;
+import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.setting.country.CountryRepository;
+import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +28,17 @@ public class CustomerService {
     @Autowired private CountryRepository countryRepository;
     @Autowired private PasswordEncoder passwordEncoder;
 
-    public Page<Customer> listByPage(int pageNum, String sortField, String sortDir, String keyWord) {
-        Sort sort = Sort.by(sortField);
-        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
-
-        Pageable pageable = PageRequest.of(pageNum - 1, CUSTOMERS_PER_PAGE, sort);
-
-        if (keyWord != null) {
-            return customerRepository.findAll(keyWord, pageable);
+    public void listByPage(int pageNum , PagingAndSortingHelper helper) {
+        Sort sort = Sort.by(helper.getSortField());
+        sort = helper.getSortDir().equals("asc") ? sort.ascending() : sort.descending();
+        Pageable pageable = PageRequest.of(pageNum-1, CUSTOMERS_PER_PAGE, sort);
+        Page<Customer> page = null;
+        if(helper.getKeyWord() != null) {
+            page = customerRepository.findAll(helper.getKeyWord() , pageable);
+        } else {
+            page = customerRepository.findAll(pageable);
         }
-        return customerRepository.findAll(pageable);
+        helper.updateModelAttributes(pageNum, page);
     }
 
     public void updateCustomerEnabledStatus(Integer id, boolean enabled) {
@@ -65,14 +68,17 @@ public class CustomerService {
     }
 
     public void save(Customer customerInForm) {
+        Customer customerInDb = customerRepository.findById(customerInForm.getId()).get();
         if(!customerInForm.getPassword().isEmpty()) {
             String encodePassword = passwordEncoder.encode(customerInForm.getPassword());
             customerInForm.setPassword(encodePassword);
         }
         else {
-            Customer customerInDb = customerRepository.findById(customerInForm.getId()).get();
             customerInForm.setPassword(customerInDb.getPassword());
         }
+        customerInForm.setEnabled(customerInDb.isEnabled());
+        customerInForm.setVerificationCode(customerInDb.getVerificationCode());
+        customerInForm.setCreatedTime(customerInDb.getCreatedTime());
         customerRepository.save(customerInForm);
     }
 
