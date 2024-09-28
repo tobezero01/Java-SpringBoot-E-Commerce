@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/5.3.1/css/bootstrap.min.css}" />
     <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/font/all.css}">
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
     <style>
@@ -42,11 +43,32 @@
             margin-bottom: 15px;
         }
 
+        .login-container .btn-google {
+            background-color: #db4437;
+            color: white;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .login-container .btn-facebook {
+            background-color: #3b5998;
+            color: white;
+            width: 100%;
+        }
+
         .footer {
             position: absolute;
             bottom: 10px;
             text-align: center;
             width: 100%;
+        }
+
+        .btn-google:hover {
+            background-color: #c23321;
+        }
+
+        .btn-facebook:hover {
+            background-color: #2d4373;
         }
     </style>
 </head>
@@ -55,6 +77,7 @@
     <div>
         <img th:src="@{/images/logo-removebg.png}" alt="Shop Logo" />
     </div>
+
 
     <form th:action="@{/login}" method="post">
         <div th:if="${param.error}">
@@ -77,8 +100,19 @@
             <p>
                 <input type="submit" value="Login" class="btn btn-primary"/>
             </p>
+            <div>Don't have an account ? <a th:href="@{/register}"><b>Sign in</b></a></div>
+        </div>
+        <div class="mt-3">
+            <a class="btn btn-google " th:href="@{/oauth2/authorization/google}">
+                 Continue with Google
+            </a>
+            <a class="btn btn-facebook" th:href="@{/oauth2/authorization/facebook}">
+                 Continue with Facebook
+            </a>
         </div>
     </form>
+
+
 </div>
 <div class="footer">
     <p>EShop Control Panel - Copyright &copy; EShop</p>

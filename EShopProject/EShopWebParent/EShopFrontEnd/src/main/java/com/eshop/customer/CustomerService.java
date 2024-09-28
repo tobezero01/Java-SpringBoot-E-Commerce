@@ -6,6 +6,7 @@ import com.eshop.common.entity.Customer;
 import com.eshop.setting.CountryRepository;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +22,14 @@ public class CustomerService {
     @Autowired private CustomerRepository customerRepository;
     @Autowired private CountryRepository countryRepository;
 
-    @Autowired private PasswordEncoder passwordEncoder;
+    @Autowired private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public CustomerService(  CustomerRepository customerRepository, CountryRepository countryRepository, PasswordEncoder passwordEncoder) {
+        this.customerRepository = customerRepository;
+        this.countryRepository = countryRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     public List<Country> listAllCountries() {
         return countryRepository.findAllByOrderByNameAsc();
@@ -36,6 +44,7 @@ public class CustomerService {
         encodePassword(customer);
         customer.setEnabled(false);
         customer.setCreatedTime(new Date());
+        customer.setAuthenticationType(AuthenticationType.DATABASE);
 
         String randomCode = RandomString.make(64);
         customer.setVerificationCode(randomCode);
@@ -60,8 +69,45 @@ public class CustomerService {
     }
 
     public void updateAuthenticationType(Customer customer, AuthenticationType authenticationType) {
-        if(!customer.getAuthenticationType().equals(authenticationType) ) {
+        if (customer.getAuthenticationType() == null || !customer.getAuthenticationType().equals(authenticationType)) {
             customerRepository.updateAuthenticationType(customer.getId(), authenticationType);
+        }
+    }
+
+
+    public Customer getCustomerByEmail(String email) {
+        return customerRepository.findByEmail(email);
+    }
+
+    public void addCustomerUponOAuthLogin( String name, String email, String countryCode) {
+        Customer customer = new Customer();
+        customer.setEmail(email);
+        setName(name, customer);
+        customer.setEnabled(true);
+        customer.setCreatedTime(new Date());
+        customer.setAuthenticationType(AuthenticationType.GOOGLE);
+        customer.setPassword("");
+        customer.setAddressLine1("");
+        customer.setCity("");
+        customer.setState("");
+        customer.setPhoneNumber("");
+        customer.setPostalCode("");
+        customer.setCountry(countryRepository.findByCode(countryCode));
+
+        customerRepository.save(customer);
+    }
+
+    private void setName(String name, Customer customer) {
+        String[] nameArray = name.split(" ");
+        if (nameArray.length < 2) {
+            customer.setFirstName(name);
+            customer.setLastName("");
+        } else {
+            String firstName = nameArray[0];
+            customer.setFirstName(firstName);
+
+            String lastName = name.replaceFirst(firstName , "");
+            customer.setLastName(lastName);
         }
     }
 

@@ -1,7 +1,5 @@
 package com.eshop.admin.paging;
 
-import com.eshop.admin.user.UserService;
-import com.eshop.common.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.web.method.support.ModelAndViewContainer;
 
