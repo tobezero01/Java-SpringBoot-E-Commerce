@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class CustomerOAuth2User implements OAuth2User {
     private OAuth2User oAuth2User;
+    private String fullName;
 
     public CustomerOAuth2User(OAuth2User user) {
         this.oAuth2User = user;
@@ -34,6 +35,11 @@ public class CustomerOAuth2User implements OAuth2User {
     }
 
     public String getFullName() {
-        return oAuth2User.getAttribute("name");
+
+        return fullName != null ? fullName : oAuth2User.getAttribute("name");
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 }

@@ -6,7 +6,6 @@ import com.eshop.common.entity.Customer;
 import com.eshop.setting.CountryRepository;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +24,7 @@ public class CustomerService {
     @Autowired private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public CustomerService(  CustomerRepository customerRepository, CountryRepository countryRepository, PasswordEncoder passwordEncoder) {
+    public CustomerService( CustomerRepository customerRepository, CountryRepository countryRepository, PasswordEncoder passwordEncoder) {
         this.customerRepository = customerRepository;
         this.countryRepository = countryRepository;
         this.passwordEncoder = passwordEncoder;
@@ -48,7 +47,6 @@ public class CustomerService {
 
         String randomCode = RandomString.make(64);
         customer.setVerificationCode(randomCode);
-        System.out.println(1111);
         customerRepository.save(customer);
     }
 
@@ -88,6 +86,7 @@ public class CustomerService {
         customer.setAuthenticationType(AuthenticationType.GOOGLE);
         customer.setPassword("");
         customer.setAddressLine1("");
+        customer.setAddressLine2("");
         customer.setCity("");
         customer.setState("");
         customer.setPhoneNumber("");
@@ -111,4 +110,24 @@ public class CustomerService {
         }
     }
 
+    public void update(Customer customerInForm) {
+        Customer customerInDb = customerRepository.findById(customerInForm.getId()).get();
+        if (customerInDb.getAuthenticationType().equals(AuthenticationType.DATABASE)) {
+            if(!customerInForm.getPassword().isEmpty()) {
+                String encodePassword = passwordEncoder.encode(customerInForm.getPassword());
+                customerInForm.setPassword(encodePassword);
+            }
+            else {
+                customerInForm.setPassword(customerInDb.getPassword());
+            }
+        } else {
+            customerInForm.setPassword(customerInDb.getPassword());
+        }
+
+        customerInForm.setEnabled(customerInDb.isEnabled());
+        customerInForm.setVerificationCode(customerInDb.getVerificationCode());
+        customerInForm.setCreatedTime(customerInDb.getCreatedTime());
+        customerInForm.setAuthenticationType(customerInDb.getAuthenticationType());
+        customerRepository.save(customerInForm);
+    }
 }

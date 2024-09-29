@@ -45,7 +45,7 @@ public class WebSecurityConfig {
         // Create the custom resolver with the prompt parameter
         OAuth2AuthorizationRequestResolver customResolver = new CustomAuthorizationRequestResolver(defaultResolver);
         httpSecurity.authorizeHttpRequests(authRequests -> authRequests
-                        .requestMatchers("/customers").authenticated()
+                        .requestMatchers("/account_details" , "/update_account_details").authenticated()
                         .anyRequest().permitAll()
                 )
                 .oauth2Login(oauth2 -> oauth2

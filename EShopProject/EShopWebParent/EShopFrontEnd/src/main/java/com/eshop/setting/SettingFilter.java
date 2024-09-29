@@ -25,7 +25,6 @@ public class SettingFilter implements Filter {
             return;
         }
 
-//        System.out.println(url);
         List<Setting> generalSettings = settingService.getGeneralSettings();
         generalSettings.forEach(setting -> {
             //System.out.println(setting);
