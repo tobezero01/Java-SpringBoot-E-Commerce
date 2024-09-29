@@ -18,6 +18,7 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestResolver;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -36,6 +37,7 @@ public class WebSecurityConfig {
         return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/webjars/**");
     }
 
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity, ClientRegistrationRepository clientRegistrationRepository) throws Exception {
         // Create the default OAuth2AuthorizationRequestResolver
@@ -47,6 +49,8 @@ public class WebSecurityConfig {
         httpSecurity.authorizeHttpRequests(authRequests -> authRequests
                         .requestMatchers("/account_details" , "/update_account_details").authenticated()
                         .anyRequest().permitAll()
+                )
+                .csrf(cs -> cs.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
                 )
                 .oauth2Login(oauth2 -> oauth2
                         .authorizationEndpoint(authorization -> authorization

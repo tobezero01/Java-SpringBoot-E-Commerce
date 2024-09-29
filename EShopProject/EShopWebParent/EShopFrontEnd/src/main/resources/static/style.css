@@ -93,14 +93,14 @@ a:hover {
 }
 
 .card-title {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
 }
 
 /* Product image container */
 .image-container {
     width: 100%;
-    aspect-ratio: 1/1 ; /* Đặt tỷ lệ 2:3 */
+    aspect-ratio: 10/9 ; /* Đặt tỷ lệ 2:3 */
     overflow: hidden;
 }
 
@@ -108,7 +108,7 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Giữ tỷ lệ và không cắt hình ảnh */
-    max-height: 200px; /* Đặt chiều cao tối đa */
+    max-height: 440px; /* Đặt chiều cao tối đa */
 }
 
 .border-custom {
@@ -118,9 +118,9 @@ a:hover {
 
 /* Category item */
 .category-item {
-    width: 250px;  /* Kích thước vòng tròn nền */
-    height: 250px; /* Kích thước vòng tròn nền */
-    border-radius: 50%; /* Hình tròn */
+    width: 225px;  /* Kích thước vòng tròn nền */
+    height: 225px; /* Kích thước vòng tròn nền */
+    border-radius: 70%; /* Hình tròn */
     background-color: #f0f8ff; /* Màu sắc nhạt cho background */
     display: flex;
     align-items: center;
@@ -135,8 +135,8 @@ a:hover {
 }
 
 .category-item img {
-    max-width: 80%; /* Điều chỉnh kích thước hình ảnh */
-    max-height: 80%; /* Điều chỉnh kích thước hình ảnh */
+    max-width: 70%; /* Điều chỉnh kích thước hình ảnh */
+    max-height: 70%; /* Điều chỉnh kích thước hình ảnh */
     object-fit: contain;
 }
 
@@ -147,6 +147,6 @@ a:hover {
 
 /* Responsive images */
 .img-fluid {
-    max-height: 200px; /* Giới hạn chiều cao hình ảnh */
+    max-height: 300px; /* Giới hạn chiều cao hình ảnh */
     object-fit: contain; /* Giữ tỷ lệ và không cắt hình ảnh */
 }
