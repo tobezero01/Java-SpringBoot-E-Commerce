@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="update account details">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-28.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/ForgotPasswordController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/exception/CustomerNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/customers/forgot_password_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/customers/reset_password_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/message.html" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="forgot password part 1">
+      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/CartItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/shoppingCart/CartItemRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/shoppingCart/CartItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/shoppingCart/CartItemRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +30,9 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -115,7 +109,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopFrontEndApplication">
+  <component name="RunManager" selected="JUnit.CartItemRepositoryTest.testFindByCustomer">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -144,49 +138,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountryRepositoryTests.testCreateCountry" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
+    <configuration name="CartItemRepositoryTest.testFindByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopFrontEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.setting.country.*" />
+          <option name="PATTERN" value="com.eshop.shoppingCart.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.setting.country" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.country.CountryRepositoryTests" />
-      <option name="METHOD_NAME" value="testCreateCountry" />
+      <option name="PACKAGE_NAME" value="com.eshop.shoppingCart" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.shoppingCart.CartItemRepositoryTest" />
+      <option name="METHOD_NAME" value="testFindByCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CountryRestControllerTests.testListCountries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
+    <configuration name="CartItemRepositoryTest.testSave2Item" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopFrontEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.setting.country.*" />
+          <option name="PATTERN" value="com.eshop.shoppingCart.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.setting.country" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.country.CountryRestControllerTests" />
-      <option name="METHOD_NAME" value="testListCountries" />
+      <option name="PACKAGE_NAME" value="com.eshop.shoppingCart" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.shoppingCart.CartItemRepositoryTest" />
+      <option name="METHOD_NAME" value="testSave2Item" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StateRestControllerTests.testListByCountries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
+    <configuration name="CartItemRepositoryTest.testSaveItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopFrontEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.admin.setting.state.*" />
+          <option name="PATTERN" value="com.eshop.shoppingCart.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.setting.state" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.setting.state.StateRestControllerTests" />
-      <option name="METHOD_NAME" value="testListByCountries" />
+      <option name="PACKAGE_NAME" value="com.eshop.shoppingCart" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.shoppingCart.CartItemRepositoryTest" />
+      <option name="METHOD_NAME" value="testSaveItem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -195,17 +189,17 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
-      <item itemvalue="JUnit.StateRestControllerTests.testListByCountries" />
-      <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
-      <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
+      <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
+      <item itemvalue="JUnit.CartItemRepositoryTest.testSave2Item" />
+      <item itemvalue="JUnit.CartItemRepositoryTest.testSaveItem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
+        <item itemvalue="JUnit.CartItemRepositoryTest.testSave2Item" />
+        <item itemvalue="JUnit.CartItemRepositoryTest.testSaveItem" />
         <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="Application.EShopBackEndApplication" />
-        <item itemvalue="JUnit.StateRestControllerTests.testListByCountries" />
-        <item itemvalue="JUnit.CountryRestControllerTests.testListCountries" />
-        <item itemvalue="JUnit.CountryRepositoryTests.testCreateCountry" />
       </list>
     </recent_temporary>
   </component>
@@ -217,13 +211,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00102" summary="fig image category error">
-      <created>1725719559637</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1725719559637</updated>
     </task>
     <task id="LOCAL-00103" summary="test category by alias enabled">
       <created>1725721440703</created>
@@ -561,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727596893348</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="forgot password part 1">
+      <created>1727607523931</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1727607523931</updated>
+    </task>
+    <option name="localTasksCounter" value="152" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -577,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code country Rest layer with mockMvc Testing" />
     <MESSAGE value="fix bug : login view" />
     <MESSAGE value="manage Country with restController and js" />
     <MESSAGE value="add dto and restController State" />
@@ -602,7 +595,8 @@
     <MESSAGE value="reload all file" />
     <MESSAGE value="endpoint login with google" />
     <MESSAGE value="update account details" />
-    <option name="LAST_COMMIT_MESSAGE" value="update account details" />
+    <MESSAGE value="forgot password part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="forgot password part 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

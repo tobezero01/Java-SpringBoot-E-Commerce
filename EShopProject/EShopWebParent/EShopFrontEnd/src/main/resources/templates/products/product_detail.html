@@ -101,10 +101,10 @@
             <div class="col-12">
                 <div><hr/></div>
                 <div>
-                    <h3>Product Details : </h3>
+                    <h3>Product Details </h3>
                 </div>
-                <th:block th:each="detail : ${product.details}">
-                    <b>[[${detail.name}]]</b>
+                <th:block th:each="detail : ${product.details}" class="d-block">
+                    <b>[[${detail.name}]] : </b>
                     <span>[[${detail.value}]]</span>
                 </th:block>
             </div>
