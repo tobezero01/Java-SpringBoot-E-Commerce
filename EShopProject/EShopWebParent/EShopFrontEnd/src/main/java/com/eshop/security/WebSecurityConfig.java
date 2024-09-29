@@ -75,8 +75,6 @@ public class WebSecurityConfig {
     }
 
 
-
-
     @Bean
     public UserDetailsService userDetailsService() {
         return new CustomerUserDetailsService();

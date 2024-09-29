@@ -3,6 +3,7 @@ package com.eshop.customer;
 import com.eshop.common.entity.AuthenticationType;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
+import com.eshop.exception.CustomerNotFoundException;
 import com.eshop.setting.CountryRepository;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -128,6 +129,37 @@ public class CustomerService {
         customerInForm.setVerificationCode(customerInDb.getVerificationCode());
         customerInForm.setCreatedTime(customerInDb.getCreatedTime());
         customerInForm.setAuthenticationType(customerInDb.getAuthenticationType());
+        customerInForm.setResetPasswordToken(customerInDb.getResetPasswordToken());
+
         customerRepository.save(customerInForm);
+    }
+
+    public String updateResetPasswordToTokenEmail(String email) throws CustomerNotFoundException {
+        Customer customer = customerRepository.findByEmail(email);
+        if(customer != null) {
+            String token = RandomString.make(30);
+            customer.setResetPasswordToken(token);
+            customerRepository.save(customer);
+
+            return token;
+        } else {
+            throw new CustomerNotFoundException("Could not find any customer with Email = " + email );
+        }
+    }
+
+    public Customer getByResetPasswordToken(String token) {
+        return customerRepository.findByResetPasswordToken(token);
+    }
+
+    public void updatePasswordToken(String token, String newPassword) throws CustomerNotFoundException {
+        Customer customer = customerRepository.findByResetPasswordToken(token);
+        if (customer == null) {
+            throw new CustomerNotFoundException("No customer found : invalid token");
+        }
+        customer.setPassword(newPassword);
+        customer.setResetPasswordToken(null);
+        encodePassword(customer);
+
+        customerRepository.save(customer);
     }
 }
