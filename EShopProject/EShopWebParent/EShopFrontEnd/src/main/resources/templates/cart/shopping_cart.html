@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head('Your Shopping Cart', 'none')"/>
+<body>
+<div>
+    <div th:replace="navigation :: header_menu"></div>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1 class="display-4"><b>Your Shopping Cart</b></h1>
+        </div>
+
+        <div class="row">
+            <!-- Cart Items Section -->
+            <div class="col-lg-8">
+                <th:block th:each="item, status : ${cartItems}">
+                    <div class="card mb-4 shadow-sm" th:with="product = ${item.product}">
+                        <div class="row g-0 p-3">
+                            <!-- Product Image -->
+                            <div class="col-md-3">
+                                <img th:src="@{${product.mainImagePath}}" class="img-fluid rounded-start"
+                                     alt="Product Image">
+                            </div>
+
+                            <!-- Product Details -->
+                            <div class="col-md-7 d-flex flex-column justify-content-between">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <a th:href="@{'/d/' + ${product.alias}}" target="_blank"
+                                           th:title="${product.name}">
+                                            [[${product.shortName}]]
+                                        </a>
+                                    </h5>
+                                    <div th:replace="cart/quantity_control :: quantity_control(${item.quantity}, ${product.id})"></div>
+                                    <div class="d-flex align-items-center mt-2">
+                                        <span th:if="${product.discountPercent <= 0 }" class="h5 text-primary">
+                                            <div th:replace="fragments :: price(${product.price})"></div>
+                                        </span>
+                                        <div th:if="${product.discountPercent > 0 }" class="d-flex align-items-center">
+                                            <del class="h6 text-muted">
+                                                <div th:replace="fragments :: price(${product.price})"></div>
+                                            </del>
+                                            <span class="h5 text-danger ms-3">
+                                                <div th:replace="fragments :: price(${product.discountPrice})"></div>
+                                            </span>
+                                            <span class="ms-2 text-danger">
+                                                ([[${product.discountPercent}]]% off)
+                                            </span>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center ms-3">
+                                    <div class=" d-flex text-muted">Subtotal :
+                                        <span class="h5 text-success"><div
+                                                th:replace="fragments :: price(${item.subtotal})"></div></span>
+                                    </div>
+                                    <a href="" class="btn btn-outline-danger">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+
+            <!-- Order Summary Section -->
+            <div class="col-lg-4">
+                <div class="card border-primary shadow-sm p-4">
+                    <h3 class="card-title">Order Summary</h3>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <span class="h5">Estimated Total:</span>
+                        <span class="h4 text-warning"><div
+                                th:replace="fragments :: price(${estimatedTotal})"></div></span>
+                    </div>
+                    <a href="" class="btn btn-primary btn-lg btn-block mt-3">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty Cart Message -->
+        <div class="row mt-5" th:if="${#lists.isEmpty(cartItems)}">
+            <div class="col-12 text-center">
+                <h3 class="text-muted">Your cart is empty. Start shopping now!</h3>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="navigation :: footer_menu"></div>
+</div>
+</body>
+</html>
