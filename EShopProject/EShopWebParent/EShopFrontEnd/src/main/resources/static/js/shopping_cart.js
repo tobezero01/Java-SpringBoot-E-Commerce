@@ -8,7 +8,38 @@ $(document).ready(function () {
         evt.preventDefault();
         increaseQuantity($(this));
     });
+
+    $(".linkRemove").on("click", function (evt) {
+            evt.preventDefault();
+            removeProductFromCart.call($(this));
+        });
 });
+
+function removeProductFromCart() {
+    var link = $(this);  // Lấy đối tượng link
+    var url = link.attr("href");  // Lấy URL từ href của thẻ link
+
+    $.ajax({
+        type: 'DELETE',
+        url: url,
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader(csrfHeaderName, csrfValue);  // Thêm CSRF header
+        }
+    }).done(function(response) {
+        var rowNumber = link.attr("rowNumber");  // Lấy rowNumber từ thuộc tính của thẻ
+        removeProductHTML(rowNumber);  // Xóa sản phẩm khỏi giao diện
+        updateTotal();  // Cập nhật tổng tiền
+        showModalDialog("Shopping Cart", response);  // Hiển thị modal với thông báo
+    })
+    .fail(function() {
+        showErrorModal("Error while removing product from shopping cart");
+    });
+}
+
+
+function removeProductHTML (rowNumber) {
+    $("#row" + rowNumber).remove();
+}
 
 function decreaseQuantity(link) {
     let productId = link.attr("pid");

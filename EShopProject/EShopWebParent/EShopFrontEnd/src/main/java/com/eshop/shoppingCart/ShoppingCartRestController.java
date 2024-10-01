@@ -7,6 +7,9 @@ import com.eshop.exception.CustomerNotFoundException;
 import com.eshop.exception.ShoppingCartException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,4 +56,16 @@ public class ShoppingCartRestController {
             return "You must login to change quantity";
         }
     }
+
+    @DeleteMapping("/cart/remove/{productId}")
+    public ResponseEntity<String> removeCartItem(@PathVariable("productId") Integer productId , HttpServletRequest request) {
+        try {
+            Customer customer = getAuthenticatedCustomer(request);
+            cartService.removeProduct(productId, customer);
+            return ResponseEntity.ok("The product has been removed from your cart");
+        } catch (CustomerNotFoundException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You must login to remove product");
+        }
+    }
+
 }

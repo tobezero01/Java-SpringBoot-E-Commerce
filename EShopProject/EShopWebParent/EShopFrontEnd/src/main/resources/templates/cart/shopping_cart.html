@@ -13,7 +13,7 @@
             <!-- Cart Items Section -->
             <div class="col-lg-8">
                 <th:block th:each="item, status : ${cartItems}">
-                    <div class="card mb-4 shadow-sm" th:with="product = ${item.product}">
+                    <div class="card mb-4 shadow-sm" th:with="product = ${item.product}" th:id="'row' + ${status.count}">
                         <div class="row g-0 p-3">
                             <!-- Product Image -->
                             <div class="col-md-3">
@@ -57,7 +57,7 @@
                                             <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}"  >[[${CURRENCY_SYMBOL}]]</span>
                                         </span>
                                     </div>
-                                    <a href="" class="btn btn-outline-danger">Delete</a>
+                                    <a th:href="@{'/cart/remove/' + ${product.id}}" th:rowNumber ="${status.count}" class="btn btn-outline-danger linkRemove">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -65,28 +65,32 @@
                 </th:block>
             </div>
 
-            <!-- Order Summary Section -->
-            <div class="col-lg-4">
-                <div class="card border-primary shadow-sm p-4">
-                    <h3 class="card-title">Order Summary</h3>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span class="h5">Estimated Total:</span>
-                        <span class="h4 text-warning">
+            <th:block th:unless="${#lists.isEmpty(cartItems)}">
+                <div class="col-lg-4">
+                    <div class="card border-primary shadow-sm p-4">
+                        <h3 class="card-title">Order Summary</h3>
+                        <hr>
+                        <div class="d-flex justify-content-between">
+                            <span class="h5">Estimated Total:</span>
+                            <span class="h4 text-warning">
                             <span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}"  >[[${CURRENCY_SYMBOL}]]</span>
                             <span th:id="total" >[[${estimatedTotal}]]</span>
                             <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}"  >[[${CURRENCY_SYMBOL}]]</span>
                         </span>
+                        </div>
+                            <a href="" class="btn btn-primary btn-lg btn-block mt-3">Proceed to Checkout</a>
+                        </div>
                     </div>
-                    <a href="" class="btn btn-primary btn-lg btn-block mt-3">Proceed to Checkout</a>
                 </div>
-            </div>
-        </div>
+            </th:block>
+            <!-- Order Summary Section -->
+
 
         <!-- Empty Cart Message -->
         <div class="row mt-5" th:if="${#lists.isEmpty(cartItems)}">
             <div class="col-12 text-center">
                 <h3 class="text-muted">Your cart is empty. Start shopping now!</h3>
+                <a th:href="@{/}" class="m-3 btn btn-primary">Return Home Page</a>
             </div>
         </div>
     </div>
