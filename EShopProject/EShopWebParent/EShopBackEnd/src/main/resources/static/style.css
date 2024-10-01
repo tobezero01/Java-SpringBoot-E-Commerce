@@ -1,4 +1,14 @@
+/* General link styles */
+a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit; /* Giữ màu chữ mặc định */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển đổi màu mượt mà */
+}
 
+a:hover {
+    text-decoration: none; /* Hiệu ứng gạch chân khi hover */
+    color: #007bff; /* Màu sắc khi hover */
+}
         .icon-white{
             color: while;
         }

@@ -4,6 +4,8 @@ import com.eshop.common.entity.CartItem;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.Product;
 import com.eshop.exception.ShoppingCartException;
+import com.eshop.product.ProductRepository;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,9 @@ import java.util.List;
 public class ShoppingCartService {
     @Autowired
     private CartItemRepository cartItemRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     public Integer addProductToCart(Integer productId, Integer quantity , Customer customer) throws ShoppingCartException {
         Integer updatedQuantity = quantity;
@@ -39,5 +44,12 @@ public class ShoppingCartService {
 
     public List<CartItem> listCartItems(Customer customer) {
         return cartItemRepository.findByCustomer(customer);
+    }
+
+    public float updateQuantity(Integer productId, Integer quantity, Customer customer) {
+        cartItemRepository.updateQuantity(quantity, customer.getId(), productId);
+        Product product = productRepository.findById(productId).get();
+        float subtotal = product.getDiscountPrice() * quantity;
+        return subtotal;
     }
 }

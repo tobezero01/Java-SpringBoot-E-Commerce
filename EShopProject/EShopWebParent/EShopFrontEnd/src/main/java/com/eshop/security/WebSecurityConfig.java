@@ -48,7 +48,6 @@ public class WebSecurityConfig {
         OAuth2AuthorizationRequestResolver customResolver = new CustomAuthorizationRequestResolver(defaultResolver);
         httpSecurity.authorizeHttpRequests(authRequests -> authRequests
                         .requestMatchers("/account_details" , "/update_account_details", "/cart").authenticated()
-
                         .anyRequest().permitAll()
                 )
                 .csrf(cs -> cs.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())

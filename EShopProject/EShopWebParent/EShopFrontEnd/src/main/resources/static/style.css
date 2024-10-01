@@ -6,7 +6,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline; /* Hiệu ứng gạch chân khi hover */
+    text-decoration: none; /* Hiệu ứng gạch chân khi hover */
     color: #007bff; /* Màu sắc khi hover */
 }
 

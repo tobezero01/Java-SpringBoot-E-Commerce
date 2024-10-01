@@ -46,14 +46,16 @@
                                                 ([[${product.discountPercent}]]% off)
                                             </span>
                                         </div>
-
                                     </div>
 
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center ms-3">
-                                    <div class=" d-flex text-muted">Subtotal :
-                                        <span class="h5 text-success"><div
-                                                th:replace="fragments :: price(${item.subtotal})"></div></span>
+                                    <div class="d-flex text-muted">Subtotal :
+                                        <span class="h5 text-success" >
+                                            <span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}"  >[[${CURRENCY_SYMBOL}]]</span>
+                                            <span th:id="'subtotal' + ${product.id}" class="subtotal">[[${item.subtotal}]]</span>
+                                            <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}"  >[[${CURRENCY_SYMBOL}]]</span>
+                                        </span>
                                     </div>
                                     <a href="" class="btn btn-outline-danger">Delete</a>
                                 </div>
@@ -70,8 +72,11 @@
                     <hr>
                     <div class="d-flex justify-content-between">
                         <span class="h5">Estimated Total:</span>
-                        <span class="h4 text-warning"><div
-                                th:replace="fragments :: price(${estimatedTotal})"></div></span>
+                        <span class="h4 text-warning">
+                            <span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}"  >[[${CURRENCY_SYMBOL}]]</span>
+                            <span th:id="total" >[[${estimatedTotal}]]</span>
+                            <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}"  >[[${CURRENCY_SYMBOL}]]</span>
+                        </span>
                     </div>
                     <a href="" class="btn btn-primary btn-lg btn-block mt-3">Proceed to Checkout</a>
                 </div>
@@ -86,7 +91,18 @@
         </div>
     </div>
 
+    <div th:replace="modal_fragments :: modal_dialog"></div>
+
     <div th:replace="navigation :: footer_menu"></div>
 </div>
+<script type="text/javascript">
+    var contextPath = "[[@{/}]]";
+    var csrfHeaderName = "[[${_csrf.headerName}]]";
+    var csrfValue = "[[${_csrf.token}]]";
+
+</script>
+<script type="text/javascript" th:src="@{/js/shopping_cart.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery.number.min.js}"></script>
+
 </body>
 </html>
