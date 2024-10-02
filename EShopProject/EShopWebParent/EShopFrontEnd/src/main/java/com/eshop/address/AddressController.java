@@ -97,5 +97,13 @@ public class AddressController {
         return "redirect:/address_book";
     }
 
+    @GetMapping("/address_book/default/{id}")
+    public String setDefaultAddress(@PathVariable(name = "id") Integer addressId,
+                             HttpServletRequest request  ) throws IOException {
 
+        Customer customer = getAuthenticatedCustomer(request);
+        addressService.setDefaultAddress(addressId, customer.getId());
+
+        return "redirect:/address_book";
+    }
 }

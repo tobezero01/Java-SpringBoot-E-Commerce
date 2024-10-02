@@ -28,4 +28,11 @@ public class AddressService {
     public void delete(Integer addressId , Integer customerId) {
         addressRepository.deleteByIdAndCustomer(addressId, customerId);
     }
+
+    public void setDefaultAddress(Integer defaultAddressId, Integer customerId) {
+        if (defaultAddressId > 0) {
+            addressRepository.setDefaultAddress(defaultAddressId);
+        }
+        addressRepository.setNonDefaultAddressForOthers(defaultAddressId, customerId);
+    }
 }
