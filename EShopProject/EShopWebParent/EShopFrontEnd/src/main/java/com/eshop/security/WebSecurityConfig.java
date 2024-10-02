@@ -48,7 +48,8 @@ public class WebSecurityConfig {
         // Create the custom resolver with the prompt parameter
         OAuth2AuthorizationRequestResolver customResolver = new CustomAuthorizationRequestResolver(defaultResolver);
         httpSecurity.authorizeHttpRequests(authRequests -> authRequests
-                        .requestMatchers("/account_details" , "/update_account_details", "/cart").authenticated()
+                        .requestMatchers("/account_details" , "/update_account_details",
+                                "/cart" , "/address_book/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .csrf(cs -> cs.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())

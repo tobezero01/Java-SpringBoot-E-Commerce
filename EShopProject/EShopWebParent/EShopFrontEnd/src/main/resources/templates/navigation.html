@@ -47,7 +47,7 @@
         <nav class="navbar navbar-expand-sm bg-light">
             <div class="collapse navbar-collapse" id="searchNavbar">
                 <form class="form-inline d-flex" th:action="@{/search}" method="get">
-                    <input type="search" name="keyWord" class="form-control me-2" placeholder="keyword" th:value="${keyWord}" required >
+                    <input type="search" name="keyWord" class="form-control me-2" placeholder="search product" th:value="${keyWord}" required >
                     <input type="submit" class="ml-3 btn btn-outline-success " >
                 </form>
 
@@ -57,7 +57,7 @@
                            <b><a class="nav-link" th:href="@{/account_details}" sec:authentication="principal.fullName"></a></b>
                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="" >Addresses</a>
+                            <a class="nav-link" th:href="@{/address_book}" >Addresses</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="" >Questions</a>

@@ -231,6 +231,22 @@ public class Customer {
         return firstName + " " + lastName;
     }
 
+    @Transient
+    public String getAddress() {
+        String address = firstName;
+
+        if (lastName != null && !lastName.isEmpty()) address += " " + lastName;
+        if (!addressLine1.isEmpty()) address += ", " + addressLine1;
+        if (addressLine2 != null && !addressLine2.isEmpty()) address += " " + addressLine2;
+        if (!city.isEmpty()) address += ", " + city;
+        if (state != null && !state.isEmpty()) address += " " + state;
+
+        address += country.getName();
+
+        if (!postalCode.isEmpty()) address += ". Postal Cdde : " + postalCode;
+        if (!phoneNumber.isEmpty()) address += ". Phone Number : " + phoneNumber;
+        return address;
+    }
 
 
 }

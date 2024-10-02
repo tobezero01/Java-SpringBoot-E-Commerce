@@ -116,22 +116,24 @@ a:hover {
     padding: 10px;
 }
 
-/* Category item */
 .category-item {
-    width: 225px;  /* Kích thước vòng tròn nền */
-    height: 225px; /* Kích thước vòng tròn nền */
-    border-radius: 70%; /* Hình tròn */
-    background-color: #f0f8ff; /* Màu sắc nhạt cho background */
+    width: 225px;
+    height: 225px;
+    border-radius: 70%;
+    background-color: #f0f8ff;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto; /* Canh giữa nội dung */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-    transition: transform 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+    margin: 0 auto;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1),
+                0 4px 6px rgba(0, 0, 0, 0.05); /* Bóng đa cấp tạo chiều sâu */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
 }
 
 .category-item:hover {
-    transform: scale(1.1); /* Phóng to nhẹ khi hover */
+    transform: translateY(-5px); /* Tạo hiệu ứng nổi nhẹ khi hover */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15),
+                0 5px 10px rgba(0, 0, 0, 0.05); /* Tăng độ sâu bóng khi hover */
 }
 
 .category-item img {
