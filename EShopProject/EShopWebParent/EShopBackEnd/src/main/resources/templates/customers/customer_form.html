@@ -101,7 +101,7 @@
                     <label for="state" class="col-sm-3 col-form-label">State/Province</label>
                     <div class="col-sm-9">
                         <input type="text" th:field="*{state}" class="form-control"  minlength="3"
-                               maxlength="64">
+                               maxlength="64" list="listStates">
                         <datalist id="listStates"></datalist>
                     </div>
                 </div>
@@ -137,38 +137,7 @@
 
     <script type="text/javascript">
         moduleUrl = "[[@{/customers}]]";
-
-        var dropDownCountries;
-        var dropDownStates;
-
-        $(document).ready(function () {
-            dropDownCountries = $("#country");
-            dropDownStates = $("#listStates");
-
-            dropDownCountries.on("change" , function () {
-                loadStates4Country();
-                $("#state").val("")".focus();
-            });
-            loadStates4Country();
-
-            $('#buttonCancel').click(function () {
-                window.location = moduleUrl;
-            });
-        });
-
-        function loadStates4Country() {
-            var selectedCountry = $("#country option:selected");
-            var countryId = selectedCountry.val();
-            var url =  "[[@{/states/list_by_country/}]]" + countryId;
-            $.get(url, function (responseJSON) {
-                dropDownStates.empty();
-                $.each(responseJSON, function (index, state) {
-                    $("<option>").val(state.name).text(state.name).appendTo(dropDownStates);
-                });
-            }).fail(function () {
-                showToastMessage("ERROR: Could not load states");
-            });
-        }
+        contextPath = "[[@{/}]]";
 
         function checkEmailUnique(form) {
             customerId = $("#id").val();
@@ -198,6 +167,7 @@
     </script>
 
     <script th:src="@{/js/common_form.js}"></script>
+    <script th:src="@{/js/common_form_country_state.js}"></script>
 
 </body>
 

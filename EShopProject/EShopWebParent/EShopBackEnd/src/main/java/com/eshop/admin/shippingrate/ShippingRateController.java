@@ -1,13 +1,9 @@
 package com.eshop.admin.shippingrate;
 
-import com.eshop.admin.FileUploadUtil;
-import com.eshop.admin.exception.BrandNotFoundException;
 import com.eshop.admin.exception.ShippingRateAlreadyExistsException;
 import com.eshop.admin.exception.ShippingRateNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;
-import com.eshop.common.entity.Brand;
-import com.eshop.common.entity.Category;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.ShippingRate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,7 +83,7 @@ public class ShippingRateController {
                                    Model model , RedirectAttributes redirectAttributes) {
         try {
             shippingRateService.updateCODSupport(id, supported);
-            redirectAttributes.addFlashAttribute("message" , "COD support for shipping rate ID = " + id + "has been updated successfully!");
+            redirectAttributes.addFlashAttribute("message" , "COD support for shipping rate ID = " + id + " has been updated successfully!");
         } catch (ShippingRateNotFoundException exception) {
             redirectAttributes.addFlashAttribute("message" , exception.getMessage());
         }
@@ -99,7 +95,7 @@ public class ShippingRateController {
                               Model model , RedirectAttributes redirectAttributes) throws IOException {
         try{
             shippingRateService.delete(id);
-            redirectAttributes.addFlashAttribute("message" , "The shipping rate ID = " + id + "has been deleted successfully!");
+            redirectAttributes.addFlashAttribute("message" , "The shipping rate ID = " + id + " has been deleted successfully!");
         } catch (ShippingRateNotFoundException exception) {
             redirectAttributes.addFlashAttribute("message", exception.getMessage());
         }
