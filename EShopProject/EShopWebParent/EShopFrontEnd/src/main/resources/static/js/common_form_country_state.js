@@ -19,7 +19,7 @@
         function loadStates4Country() {
             var selectedCountry = $("#country option:selected");
             var countryId = selectedCountry.val();
-            var url = contextPath +  "states/list_by_country/" + countryId;
+            var url = contextPath +  "settings/list_states_by_country/" + countryId;
 
             $.get(url, function(responseJSON) {
                 dropDownStates.empty();

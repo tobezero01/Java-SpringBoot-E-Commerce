@@ -16,4 +16,16 @@ public class AddressService {
     public List<Address> listAddressBook(Customer customer) {
         return addressRepository.findByCustomer(customer);
     }
+
+    public void save(Address address) {
+        addressRepository.save(address);
+    }
+
+    public Address get(Integer addressId , Integer customerId) {
+        return addressRepository.findByIdAndCustomer(addressId, customerId);
+    }
+
+    public void delete(Integer addressId , Integer customerId) {
+        addressRepository.deleteByIdAndCustomer(addressId, customerId);
+    }
 }
