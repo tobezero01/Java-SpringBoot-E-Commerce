@@ -241,12 +241,11 @@ public class Customer {
         if (!city.isEmpty()) address += ", " + city;
         if (state != null && !state.isEmpty()) address += " " + state;
 
-        address += country.getName();
+        address += ", " +  country.getName();
 
-        if (!postalCode.isEmpty()) address += ". Postal Cdde : " + postalCode;
+        if (!postalCode.isEmpty()) address += ". Postal Code : " + postalCode;
         if (!phoneNumber.isEmpty()) address += ". Phone Number : " + phoneNumber;
         return address;
     }
-
 
 }

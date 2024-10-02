@@ -7,28 +7,42 @@
     <div class="container-fluid mt-5">
         <div th:replace="navigation :: search_nav"></div>
         <div class="text-center mb-4">
-            <h1 class="display-4"><b>Your Shopping Cart</b></h1>
+            <h1 class="display-4"><b>Your Address Book</b></h1>
         </div>
 
         <div class="row m-1">
             <div class="col-sm-6">
-                <div class="card">
+                <div class="card" th:classappend="${usePrimaryAddressAsDefault ? ' bg-warning ' : ''}">
                     <div class="card-header">
                         <div class="row">
                             <div class="col">
-                                <b>Your Primary Address</b>
+                                <b>The Primary Address </b>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        [[${customer.fullName}]]
+                        [[${customer.address}]]
                     </div>
                 </div>
             </div>
+
+            <th:block th:each="address , status : ${listAddresses}">
+                <div class="col-sm-6">
+                    <div class="card" th:classappend="${address.defaultForShipping ? ' bg-warning ' : ''}">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col">
+                                    <b>Address [[${status.count}]]</b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            [[${address}]]
+                        </div>
+                    </div>
+                </div>
+            </th:block>
         </div>
-
-
-        <!-- Order Summary Section -->
 
 
     </div>
