@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code change default address">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/OrderDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/OrderRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add entity for order Module">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-25.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/category/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,33 +150,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartItemRepositoryTest.testSave2Item" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopFrontEnd" />
+    <configuration name="OrderRepositoryTests.createOrderWithMultipleProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.shoppingCart.*" />
+          <option name="PATTERN" value="com.eshop.admin.order.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.shoppingCart" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.shoppingCart.CartItemRepositoryTest" />
-      <option name="METHOD_NAME" value="testSave2Item" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.order" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.order.OrderRepositoryTests" />
+      <option name="METHOD_NAME" value="createOrderWithMultipleProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CartItemRepositoryTest.testSaveItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopFrontEnd" />
+    <configuration name="OrderRepositoryTests.createOrderWithSingleProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.eshop.shoppingCart.*" />
+          <option name="PATTERN" value="com.eshop.admin.order.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.shoppingCart" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.shoppingCart.CartItemRepositoryTest" />
-      <option name="METHOD_NAME" value="testSaveItem" />
+      <option name="PACKAGE_NAME" value="com.eshop.admin.order" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.order.OrderRepositoryTests" />
+      <option name="METHOD_NAME" value="createOrderWithSingleProduct" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -191,17 +185,17 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
+      <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
       <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
-      <item itemvalue="JUnit.CartItemRepositoryTest.testSave2Item" />
-      <item itemvalue="JUnit.CartItemRepositoryTest.testSaveItem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
+        <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
         <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
-        <item itemvalue="JUnit.CartItemRepositoryTest.testSave2Item" />
-        <item itemvalue="JUnit.CartItemRepositoryTest.testSaveItem" />
       </list>
     </recent_temporary>
   </component>
@@ -213,13 +207,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00113" summary="edit frontdend">
-      <created>1725984667140</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1725984667140</updated>
     </task>
     <task id="LOCAL-00114" summary="add setting entity repo and unit test">
       <created>1726128666478</created>
@@ -557,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1727874895192</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="add entity for order Module">
+      <created>1727958916437</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1727958916438</updated>
+    </task>
+    <option name="localTasksCounter" value="163" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -573,7 +567,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="refactor validation" />
     <MESSAGE value="add layer for customer management module" />
     <MESSAGE value="end point manage customer" />
     <MESSAGE value="fix bug with roles admin and editor" />
@@ -598,7 +591,8 @@
     <MESSAGE value="code address listing for Customer" />
     <MESSAGE value="add action (delete , edit, create ) for address module" />
     <MESSAGE value="code change default address" />
-    <option name="LAST_COMMIT_MESSAGE" value="code change default address" />
+    <MESSAGE value="add entity for order Module" />
+    <option name="LAST_COMMIT_MESSAGE" value="add entity for order Module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

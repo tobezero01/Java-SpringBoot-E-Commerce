@@ -77,6 +77,7 @@ public class Order {
         setCity(customer.getCity());
         setPostalCode(customer.getPostalCode());
         setState(customer.getState());
+        setCountry(customer.getCountry().getName());
     }
 
     public Integer getId() {
