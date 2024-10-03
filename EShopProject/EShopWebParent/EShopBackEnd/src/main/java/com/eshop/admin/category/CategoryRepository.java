@@ -13,22 +13,22 @@ import java.util.List;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
-    @Query("Select c From Category c WHERE c.parent.id is null")
-    public List<Category> findRootCategories(Sort sort);
+    @Query("SELECT c FROM Category c WHERE c.parent IS NULL")
+    List<Category> findRootCategories(Sort sort);
 
-    @Query("Select c From Category c WHERE c.parent.id is null")
-    public Page<Category> findRootCategories(Pageable pageable);
+    @Query("SELECT c FROM Category c WHERE c.parent IS NULL")
+    Page<Category> findRootCategories(Pageable pageable);
 
-    @Query("Select c FROM Category c WHERE c.name LIKE %?1%")
-    public Page<Category> search(String keyWord , Pageable pageable);
+    @Query("SELECT c FROM Category c WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', ?1, '%'))")
+    Page<Category> search(String keyWord, Pageable pageable);
 
-    public Category findByName(String name);
+    Category findByName(String name);
 
-    public Category findByAlias(String alias);
+    Category findByAlias(String alias);
 
-    @Query("Update Category c SET c.enabled = ?2 WHERE c.id = ?1")
     @Modifying
-    public void updateEnabledStatus(Integer id, boolean enabled);
+    @Query("UPDATE Category c SET c.enabled = ?2 WHERE c.id = ?1")
+    void updateEnabledStatus(Integer id, boolean enabled);
 
     public Long countById(Integer id);
 }

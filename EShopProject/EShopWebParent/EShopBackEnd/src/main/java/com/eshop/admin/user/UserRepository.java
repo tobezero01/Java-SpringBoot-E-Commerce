@@ -13,16 +13,16 @@ import com.eshop.common.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
-	@Query("Select u from User u WHERE u.email =:email ")
-	public User getUserByEmail(@Param("email") String email);
+	@Query("SELECT u FROM User u WHERE u.email = :email")
+	User getUserByEmail(@Param("email") String email);
 
-	public Long countById(Integer id);
+	Long countById(Integer id);
 
-	@Query("Update User u Set u.enabled = ?2 WHERE u.id = ?1 ")
 	@Modifying
-	public void updateEnableStatus(Integer id , boolean enabled);
+	@Query("UPDATE User u SET u.enabled = ?2 WHERE u.id = ?1")
+	void updateEnableStatus(Integer id, boolean enabled);
 
-	@Query("Select u from User u WHERE CONCAT(u.id, ' ', u.email, ' ', u.firstName, ' ' , u.lastName ) LIKE %?1% ")
-	public Page<User> findAll(String keyWord, Pageable pageable);
-	
+	@Query("SELECT u FROM User u WHERE " +
+			"LOWER(CONCAT(u.id, ' ', u.email, ' ', u.firstName, ' ', u.lastName)) LIKE LOWER(CONCAT('%', ?1, '%'))")
+	Page<User> findAll(String keyWord, Pageable pageable);
 }

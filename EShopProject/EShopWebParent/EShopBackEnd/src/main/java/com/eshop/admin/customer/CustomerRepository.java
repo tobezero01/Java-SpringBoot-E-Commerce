@@ -10,17 +10,17 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    @Query("Select c From Customer c Where CONCAT(c.email, ' ', c.firstName, ' ', c.lastName , ' ', "
-    + "c.addressLine1, ' ', c.addressLine2, ' ', c.city, ' ', c.state, ' ', "
-    + "c.postalCode, ' ', c.country.name) Like %?1%")
-    public Page<Customer> findAll(String keyWord, Pageable pageable);
+    @Query("SELECT c FROM Customer c WHERE CONCAT(LOWER(c.email), ' ', LOWER(c.firstName), ' ', LOWER(c.lastName), ' ', " +
+            "LOWER(c.addressLine1), ' ', LOWER(c.addressLine2), ' ', LOWER(c.city), ' ', LOWER(c.state), ' ', " +
+            "LOWER(c.postalCode), ' ', LOWER(c.country.name)) LIKE LOWER(CONCAT('%', ?1, '%'))")
+    Page<Customer> findAll(String keyWord, Pageable pageable);
 
-    @Query("Update Customer c SET c.enabled = ?2 Where c.id = ?1")
     @Modifying
-    public void updateEnabledStatus(Integer id, boolean enabled);
+    @Query("UPDATE Customer c SET c.enabled = ?2 WHERE c.id = ?1")
+    void updateEnabledStatus(Integer id, boolean enabled);
 
-    @Query("Select c From Customer c Where c.email = ?1")
-    public Customer findByEmail(String email);
+    @Query("SELECT c FROM Customer c WHERE c.email = ?1")
+    Customer findByEmail(String email);
 
-    public Long countById(Integer id);
+    Long countById(Integer id);
 }

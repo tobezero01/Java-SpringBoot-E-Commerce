@@ -11,15 +11,17 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ShippingRateRepository extends JpaRepository<ShippingRate , Integer> {
 
-    @Query("Select sr From ShippingRate sr Where sr.country.id = ?1 And sr.state = ?2")
-    public ShippingRate findByCountryAndState(Integer countryId , String state);
+    @Query("SELECT sr FROM ShippingRate sr WHERE sr.country.id = ?1 AND sr.state = ?2")
+    ShippingRate findByCountryAndState(Integer countryId, String state);
 
-    @Query("Update ShippingRate sr Set sr.codSupported = ?2 Where sr.id = ?1")
     @Modifying
-    public void updateCODSupport(Integer id, boolean enabled);
+    @Query("UPDATE ShippingRate sr SET sr.codSupported = ?2 WHERE sr.id = ?1")
+    void updateCODSupport(Integer id, boolean enabled);
 
-    @Query("Select sr From ShippingRate sr Where sr.country.name Like %?1% Or sr.state like %?1%")
-    public Page<ShippingRate> findAll(String keyWord, Pageable pageable);
+    @Query("SELECT sr FROM ShippingRate sr WHERE " +
+            "LOWER(sr.country.name) LIKE LOWER(CONCAT('%', ?1, '%')) OR " +
+            "LOWER(sr.state) LIKE LOWER(CONCAT('%', ?1, '%'))")
+    Page<ShippingRate> findAll(String keyWord, Pageable pageable);
 
-    public Long countById(Integer id);
+    Long countById(Integer id);
 }

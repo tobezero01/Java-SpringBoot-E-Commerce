@@ -14,9 +14,10 @@ public interface BrandRepository extends JpaRepository <Brand , Integer>{
     public Long countById(Integer id) ;
     public Brand findByName(String name);
 
-    @Query("Select b from Brand b where b.name LIKE %?1%")
+    @Query("SELECT b FROM Brand b WHERE (LOWER(b.name) LIKE LOWER(CONCAT('%', ?1, '%'))) OR (b.id LIKE %?1%)")
     public Page<Brand> findAll(String keyWord, Pageable pageable);
 
-    @Query("Select NEW Brand(b.id, b.name) From Brand b Order By b.name ASC")
+    @Query("SELECT new Brand(b.id, b.name) FROM Brand b ORDER BY LOWER(b.name) ASC")
     public List<Brand> findAll();
+
 }
