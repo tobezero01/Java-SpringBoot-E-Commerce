@@ -252,6 +252,11 @@ public class Order {
         return orderDetails;
     }
 
+    @Transient
+    public String getDestination() {
+        return city + ", "+ state + ", "+ country;
+    }
+
     public void setOrderDetails(Set<OrderDetail> orderDetails) {
         this.orderDetails = orderDetails;
     }

@@ -31,6 +31,7 @@ public class SettingService {
         return new GeneralSettingBag(settings);
     }
 
+
     public void saveAll(Iterable<Setting> settings) {
         settingRepository.saveAll(settings);
     }
@@ -41,5 +42,9 @@ public class SettingService {
 
     public List<Setting> getMailTemplateSettings() {
         return settingRepository.findByCategory(SettingCategory.MAIL_TEMPLATES);
+    }
+
+    public List<Setting> getCurrencySettings() {
+        return  settingRepository.findByCategory(SettingCategory.CURRENCY);
     }
 }

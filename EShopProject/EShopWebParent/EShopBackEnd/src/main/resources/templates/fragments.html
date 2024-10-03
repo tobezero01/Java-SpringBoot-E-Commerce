@@ -15,6 +15,8 @@
 </head>
 <body>
 
+
+
 <!--fragment table column filter-->
 <th th:fragment="column_link( url, fieldName , columnLabel)">
     <a class="text-dark"
@@ -135,5 +137,16 @@
         </nav>
     </div>
 </div>
+
+<div th:fragment="format_currency(amount)">
+    <span th:if="${CURRENCY_SYMBOL_POSITION == 'Before price'}" >[[${CURRENCY_SYMBOL}]]</span>
+    [[${#numbers.formatDecimal(amount, 1, THOUSANDS_POINT_TYPE, DECIMAL_DIGITS, DECIMAL_POINT_TYPE)}]]
+    <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}" >[[${CURRENCY_SYMBOL}]]</span>
+</div>
+
+<div th:fragment="format_time(dateTime)">
+    <span th:text="${#dates.format(dateTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+</div>
+
 </body>
 </html>
