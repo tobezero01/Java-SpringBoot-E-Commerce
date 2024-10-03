@@ -173,7 +173,6 @@ public class CategoryService {
                 }else {
                     return category2.getName().compareTo(category1.getName());
                 }
-
             }
         });
         sortedChildren.addAll(children);
