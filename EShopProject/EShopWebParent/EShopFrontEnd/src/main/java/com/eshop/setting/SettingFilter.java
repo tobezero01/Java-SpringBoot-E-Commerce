@@ -1,6 +1,6 @@
 package com.eshop.setting;
 
-import com.eshop.common.entity.Setting;
+import com.eshop.common.entity.setting.Setting;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.logging.LogRecord;
 
 @Component
 public class SettingFilter implements Filter {

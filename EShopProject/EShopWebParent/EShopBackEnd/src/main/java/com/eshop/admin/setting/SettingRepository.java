@@ -1,8 +1,7 @@
 package com.eshop.admin.setting;
 
-import com.eshop.common.entity.Setting;
-import com.eshop.common.entity.SettingCategory;
-import org.hibernate.type.descriptor.converter.spi.JpaAttributeConverter;
+import com.eshop.common.entity.setting.Setting;
+import com.eshop.common.entity.setting.SettingCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

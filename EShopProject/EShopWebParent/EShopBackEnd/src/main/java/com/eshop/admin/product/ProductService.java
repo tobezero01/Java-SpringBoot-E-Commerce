@@ -1,7 +1,7 @@
 package com.eshop.admin.product;
 
 import com.eshop.admin.exception.ProductNotFoundException;
-import com.eshop.common.entity.Product;
+import com.eshop.common.entity.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -2,10 +2,9 @@ package com.eshop.shoppingCart;
 
 import com.eshop.common.entity.CartItem;
 import com.eshop.common.entity.Customer;
-import com.eshop.common.entity.Product;
+import com.eshop.common.entity.product.Product;
 import com.eshop.exception.ShoppingCartException;
 import com.eshop.product.ProductRepository;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

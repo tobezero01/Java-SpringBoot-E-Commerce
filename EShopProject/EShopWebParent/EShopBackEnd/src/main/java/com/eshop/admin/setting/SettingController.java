@@ -2,7 +2,7 @@ package com.eshop.admin.setting;
 
 import com.eshop.admin.FileUploadUtil;
 import com.eshop.common.entity.Currency;
-import com.eshop.common.entity.Setting;
+import com.eshop.common.entity.setting.Setting;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

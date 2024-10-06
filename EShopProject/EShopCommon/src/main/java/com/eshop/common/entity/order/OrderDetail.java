@@ -1,5 +1,6 @@
-package com.eshop.common.entity;
+package com.eshop.common.entity.order;
 
+import com.eshop.common.entity.product.Product;
 import jakarta.persistence.*;
 
 @Entity

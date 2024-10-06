@@ -1,6 +1,11 @@
 package com.eshop.admin.order;
 
 import com.eshop.common.entity.*;
+import com.eshop.common.entity.order.Order;
+import com.eshop.common.entity.order.OrderDetail;
+import com.eshop.common.entity.order.OrderStatus;
+import com.eshop.common.entity.order.PaymentMethod;
+import com.eshop.common.entity.product.Product;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

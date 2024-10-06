@@ -2,8 +2,7 @@ package com.eshop.admin.order;
 
 import com.eshop.admin.exception.OrderNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
-import com.eshop.common.entity.Brand;
-import com.eshop.common.entity.Order;
+import com.eshop.common.entity.order.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

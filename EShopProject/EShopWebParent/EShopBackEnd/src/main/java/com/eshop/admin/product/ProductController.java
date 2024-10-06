@@ -6,7 +6,7 @@ import com.eshop.admin.category.CategoryService;
 import com.eshop.admin.exception.ProductNotFoundException;
 import com.eshop.admin.security.EShopUserDetails;
 import com.eshop.common.entity.Brand;
-import com.eshop.common.entity.Product;
+import com.eshop.common.entity.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;

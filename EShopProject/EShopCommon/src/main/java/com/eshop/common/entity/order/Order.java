@@ -1,5 +1,6 @@
-package com.eshop.common.entity;
+package com.eshop.common.entity.order;
 
+import com.eshop.common.entity.Customer;
 import jakarta.persistence.*;
 
 import java.util.Date;

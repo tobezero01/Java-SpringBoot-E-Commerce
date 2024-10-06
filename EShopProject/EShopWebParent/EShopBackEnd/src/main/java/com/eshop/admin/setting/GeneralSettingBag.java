@@ -1,7 +1,7 @@
 package com.eshop.admin.setting;
 
-import com.eshop.common.entity.Setting;
-import com.eshop.common.entity.SettingBag;
+import com.eshop.common.entity.setting.Setting;
+import com.eshop.common.entity.setting.SettingBag;
 
 import java.util.List;
 

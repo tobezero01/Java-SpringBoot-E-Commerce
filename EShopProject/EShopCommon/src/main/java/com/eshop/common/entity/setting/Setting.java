@@ -1,8 +1,6 @@
-package com.eshop.common.entity;
+package com.eshop.common.entity.setting;
 
 import jakarta.persistence.*;
-
-import java.util.Objects;
 
 @Entity
 @Table(name = "settings")

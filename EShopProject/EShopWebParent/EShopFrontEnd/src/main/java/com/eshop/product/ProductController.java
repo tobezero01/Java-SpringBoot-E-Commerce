@@ -2,7 +2,7 @@ package com.eshop.product;
 
 import com.eshop.category.CategoryService;
 import com.eshop.common.entity.Category;
-import com.eshop.common.entity.Product;
+import com.eshop.common.entity.product.Product;
 import com.eshop.exception.CategoryNotFoundException;
 import com.eshop.exception.ProductNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

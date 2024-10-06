@@ -1,6 +1,10 @@
-package com.eshop.common.entity;
+package com.eshop.common.entity.product;
 
 
+import com.eshop.common.entity.Brand;
+import com.eshop.common.entity.Category;
+import com.eshop.common.entity.product.ProductDetail;
+import com.eshop.common.entity.product.ProductImage;
 import jakarta.persistence.*;
 
 import java.util.*;

@@ -1,7 +1,7 @@
 package com.eshop.admin.setting;
 
-import com.eshop.common.entity.Setting;
-import com.eshop.common.entity.SettingCategory;
+import com.eshop.common.entity.setting.Setting;
+import com.eshop.common.entity.setting.SettingCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

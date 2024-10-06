@@ -1,6 +1,6 @@
 package com.eshop.admin.order;
 
-import com.eshop.common.entity.Order;
+import com.eshop.common.entity.order.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

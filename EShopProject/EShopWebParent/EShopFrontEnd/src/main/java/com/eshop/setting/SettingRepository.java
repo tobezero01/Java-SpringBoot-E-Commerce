@@ -1,10 +1,9 @@
 package com.eshop.setting;
 
-import com.eshop.common.entity.Setting;
-import com.eshop.common.entity.SettingCategory;
+import com.eshop.common.entity.setting.Setting;
+import com.eshop.common.entity.setting.SettingCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

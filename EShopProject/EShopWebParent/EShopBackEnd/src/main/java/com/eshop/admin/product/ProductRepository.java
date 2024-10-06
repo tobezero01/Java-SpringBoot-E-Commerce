@@ -1,5 +1,5 @@
 package com.eshop.admin.product;
-import com.eshop.common.entity.Product;
+import com.eshop.common.entity.product.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

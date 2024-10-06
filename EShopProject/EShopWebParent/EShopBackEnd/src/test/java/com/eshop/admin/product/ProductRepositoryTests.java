@@ -2,7 +2,7 @@ package com.eshop.admin.product;
 
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Category;
-import com.eshop.common.entity.Product;
+import com.eshop.common.entity.product.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
