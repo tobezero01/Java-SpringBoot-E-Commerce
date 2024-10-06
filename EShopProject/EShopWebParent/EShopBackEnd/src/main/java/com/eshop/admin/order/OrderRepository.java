@@ -24,5 +24,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
             "LOWER(o.customer.lastName) Like LOWER(CONCAT('%', ?1, '%'))")
     public Page<Order> findAll(String keyWord, Pageable pageable);
 
+    public Long countById(Integer id);
 
 }

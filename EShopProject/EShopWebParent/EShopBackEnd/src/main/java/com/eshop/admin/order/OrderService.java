@@ -47,4 +47,12 @@ public class OrderService {
     public Order get(Integer id) throws OrderNotFoundException {
         return orderRepository.findById(id).get();
     }
+
+    public void delete(Integer id) throws OrderNotFoundException {
+        Long count = orderRepository.countById(id);
+        if (count == null || count == 0) {
+            throw new OrderNotFoundException("Could not find any orders with Id = " + id);
+        }
+        orderRepository.deleteById(id);
+    }
 }
