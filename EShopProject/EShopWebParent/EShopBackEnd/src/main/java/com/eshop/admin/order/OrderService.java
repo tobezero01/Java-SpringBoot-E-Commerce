@@ -1,5 +1,6 @@
 package com.eshop.admin.order;
 
+import com.eshop.admin.exception.OrderNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Order;
@@ -41,5 +42,9 @@ public class OrderService {
             page = orderRepository.findAll(pageable);
         }
         helper.updateModelAttributes(pageNum, page);
+    }
+
+    public Order get(Integer id) throws OrderNotFoundException {
+        return orderRepository.findById(id).get();
     }
 }
