@@ -84,7 +84,20 @@
                             <span th:if="${CURRENCY_SYMBOL_POSITION == 'After price'}">[[${CURRENCY_SYMBOL}]]</span>
                         </span>
                         </div>
-                        <a href="" class="btn btn-primary btn-lg btn-block mt-3">Proceed to Checkout</a>
+                        <div >
+                            <div th:if="${shippingSupported}">
+                                <a href="" class="btn btn-primary w-100 btn-lg btn-block mt-3">Proceed to Checkout</a>
+                            </div>
+                            <div th:unless="${shippingSupported}" class="pt-2">
+                                <div><span class="h5 text-warning">No Shipping available for your location</span></div>
+                                <div th:if="${usePrimaryAddressAsDefault}" class="pt-3">
+                                    <a class="btn btn-outline-primary" th:href="@{/account_details(redirect=cart)}">Update your address</a>
+                                </div>
+                                <div th:unless="${usePrimaryAddressAsDefault}" class="pt-3">
+                                    <a class="btn btn-outline-success " th:href="@{/address_book}">Use Another Shipping Address</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </th:block>

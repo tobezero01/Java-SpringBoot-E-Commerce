@@ -15,6 +15,7 @@
             <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
             </div>
             <input type="hidden" th:field="*{id}">
+            <input type="hidden" name="redirect" th:value="${param.redirect}">
             <div class="border border-secondary rounded p-3">
 
                 <div class="form-group row mb-3">

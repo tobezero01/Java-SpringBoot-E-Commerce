@@ -6,6 +6,7 @@
     <div th:replace="navigation :: header_menu"></div>
     <div class="container-fluid mt-3">
         <div th:replace="navigation :: search_nav"></div>
+        <input type="hidden" name="redirect" th:value="${param.redirect}">
         <div class="text-center mb-4">
             <h1 class="display-4"><b>Your Address Book</b></h1>
             <div>
@@ -25,10 +26,14 @@
                             <div class="col">
                                 <b>The Primary Address </b> &nbsp;
                                 <th:block th:unless="${usePrimaryAddressAsDefault}">
-                                    <a th:href="@{/address_book/default/0}">
+                                    <a  th:href="@{'/address_book/default/0?redirect=' }">
                                         <span class="text-success">[Set as default]</span>
                                     </a>
+<!--                                    <a th:if="${param.redirect}" th:href="@{'/address_book/default/0?redirect=' + ${param.redirect} }">-->
+<!--                                        <span class="text-success">[Set as default]</span>-->
+<!--                                    </a>-->
                                 </th:block>
+
                                 <th:block th:if="${usePrimaryAddressAsDefault}">
                                     <span class="text-danger">[Default]</span>
                                 </th:block>
