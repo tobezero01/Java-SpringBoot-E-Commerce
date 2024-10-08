@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="update shoppingcart">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code checkout page">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-06.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-07.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/mail_templates/order_confirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/payment.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/CartItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-09-29.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/cart/shopping_cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/cart/shopping_cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/setting/SettingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/mail_templates/mail_templates.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/mail_templates/mail_templates.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/settings/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +33,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -67,20 +68,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propCompiler"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.admin.user" />
@@ -111,7 +112,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopFrontEndApplication">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -197,8 +198,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
         <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
         <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
@@ -213,13 +214,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00121" summary="apply general setting">
-      <created>1726485044151</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1726485044151</updated>
     </task>
     <task id="LOCAL-00122" summary="add Country , State enity , repo and Unit Test">
       <created>1726487384382</created>
@@ -557,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728278872509</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="code checkout page">
+      <created>1728315038895</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1728315038895</updated>
+    </task>
+    <option name="localTasksCounter" value="171" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -573,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="error" />
     <MESSAGE value="disabled push protection" />
     <MESSAGE value="fix error can not find entity class" />
     <MESSAGE value="reload all file" />
@@ -598,7 +598,8 @@
     <MESSAGE value="code delete order" />
     <MESSAGE value="code refactor 12 part 1" />
     <MESSAGE value="update shoppingcart" />
-    <option name="LAST_COMMIT_MESSAGE" value="update shoppingcart" />
+    <MESSAGE value="code checkout page" />
+    <option name="LAST_COMMIT_MESSAGE" value="code checkout page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

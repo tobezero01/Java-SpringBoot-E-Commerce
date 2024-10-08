@@ -29,7 +29,8 @@
                     <div class="card-body">
                         <p>
                             <b>Ship to:</b> &nbsp; [[${shippingAddress}]]
-                            <a class="text-decoration-underline" th:href="@{/address_book}">[Ship to another address]</a>
+                            <a class="text-decoration-none text-danger" th:href="@{/address_book}"
+                               title="Set default for the address you want to ship">[ Ship to another address ]</a>
                         </p>
                         <p><b>Days to deliver:</b>&nbsp; [[${checkoutInfo.deliverDays}]] days</p>
                         <p><b>Expected delivery date:</b> &nbsp; [[${checkoutInfo.deliverDate}]]</p>
