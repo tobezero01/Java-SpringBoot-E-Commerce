@@ -42,7 +42,7 @@ public class CustomerService {
 
     public void registerCustomer(Customer customer) {
         encodePassword(customer);
-        customer.setEnabled(false);
+        customer.setEnabled(true);
         customer.setCreatedTime(new Date());
         customer.setAuthenticationType(AuthenticationType.DATABASE);
 
