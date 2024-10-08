@@ -1,5 +1,6 @@
 package com.eshop.common.entity.order;
 
+import com.eshop.common.entity.Address;
 import com.eshop.common.entity.Customer;
 import jakarta.persistence.*;
 
@@ -260,5 +261,17 @@ public class Order {
 
     public void setOrderDetails(Set<OrderDetail> orderDetails) {
         this.orderDetails = orderDetails;
+    }
+
+    public void copyShippingAddress(Address address) {
+        setFirstName(address.getFirstName());
+        setLastName(address.getLastName());
+        setPhoneNumber(address.getPhoneNumber());
+        setAddressLine1(address.getAddressLine1());
+        setAddressLine2(address.getAddressLine2());
+        setCity(address.getCity());
+        setPostalCode(address.getPostalCode());
+        setState(address.getState());
+        setCountry(address.getCountry().getName());
     }
 }
