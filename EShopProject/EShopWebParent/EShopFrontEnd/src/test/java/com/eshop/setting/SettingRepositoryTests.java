@@ -2,6 +2,7 @@ package com.eshop.setting;
 
 import com.eshop.common.entity.setting.Setting;
 import com.eshop.common.entity.setting.SettingCategory;
+import com.eshop.setting.repository.SettingRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

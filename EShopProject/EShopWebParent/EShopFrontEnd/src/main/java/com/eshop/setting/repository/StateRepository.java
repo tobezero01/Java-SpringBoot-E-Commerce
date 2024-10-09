@@ -1,4 +1,4 @@
-package com.eshop.setting;
+package com.eshop.setting.repository;
 
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.State;

@@ -4,7 +4,7 @@ import com.eshop.common.entity.AuthenticationType;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
 import com.eshop.exception.CustomerNotFoundException;
-import com.eshop.setting.CountryRepository;
+import com.eshop.setting.repository.CountryRepository;
 import net.bytebuddy.utility.RandomString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

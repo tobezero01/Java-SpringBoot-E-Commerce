@@ -1,4 +1,4 @@
-package com.eshop.setting;
+package com.eshop.setting.repository;
 
 import com.eshop.common.entity.setting.Setting;
 import com.eshop.common.entity.setting.SettingCategory;
@@ -13,4 +13,6 @@ public interface SettingRepository extends JpaRepository<Setting, String> {
 
     @Query("Select s From Setting s Where s.category = ?1 Or s.category = ?2")
     public List<Setting> findByTwoCategories(SettingCategory catOne, SettingCategory catTwo);
+
+    public Setting findByKey(String key);
 }

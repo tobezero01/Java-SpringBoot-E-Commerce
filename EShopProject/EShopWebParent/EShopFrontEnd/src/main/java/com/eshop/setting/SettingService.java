@@ -1,7 +1,13 @@
 package com.eshop.setting;
 
+import com.eshop.common.entity.Currency;
 import com.eshop.common.entity.setting.Setting;
 import com.eshop.common.entity.setting.SettingCategory;
+import com.eshop.setting.repository.CurrencyRepository;
+import com.eshop.setting.repository.SettingRepository;
+import com.eshop.setting.settingBag.CurrencySettingBag;
+import com.eshop.setting.settingBag.EmailSettingBag;
+import com.eshop.setting.settingBag.PaymentSettingBag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +20,9 @@ public class SettingService {
 
     @Autowired
     private SettingRepository settingRepository;
+
+    @Autowired
+    private CurrencyRepository currencyRepository;
 
 
     public List<Setting> getGeneralSettings() {
@@ -34,5 +43,17 @@ public class SettingService {
     public CurrencySettingBag getCurrencySettings() {
         List<Setting> settings = settingRepository.findByCategory(SettingCategory.CURRENCY);
         return new CurrencySettingBag(settings);
+    }
+
+    public PaymentSettingBag getPaymentSettings() {
+        List<Setting> settings = settingRepository.findByCategory(SettingCategory.PAYMENT);
+        return new PaymentSettingBag(settings);
+    }
+
+    public String getCurrencyCode() {
+        Setting setting = settingRepository.findByKey("CURRENCY_ID");
+        Integer currencyId = Integer.parseInt(setting.getValue());
+        Currency currency = currencyRepository.findById(currencyId).get();
+        return currency.getCode();
     }
 }

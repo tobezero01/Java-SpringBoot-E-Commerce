@@ -2,6 +2,7 @@ package com.eshop.checkout;
 
 import jakarta.persistence.Transient;
 
+import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -10,7 +11,7 @@ public class CheckoutInfo {
     private float productCost;
     private float productTotal;
     private float shippingCostTotal;
-    private float paymentMethod;
+    private float paymentTotal;
     private int deliverDays;
     private boolean sodSupported;
 
@@ -20,6 +21,10 @@ public class CheckoutInfo {
 
     public void setProductCost(float productCost) {
         this.productCost = productCost;
+    }
+
+    public void setPaymentTotal(float paymentTotal) {
+        this.paymentTotal = paymentTotal;
     }
 
     @Transient
@@ -45,13 +50,6 @@ public class CheckoutInfo {
         this.shippingCostTotal = shippingCostTotal;
     }
 
-    public float getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(float paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
 
     public int getDeliverDays() {
         return deliverDays;
@@ -71,6 +69,12 @@ public class CheckoutInfo {
     @Transient
     public boolean isSodSupported() {
         return sodSupported;
+    }
+
+    @Transient
+    public String getPaymentTotal4Paypal() {
+        DecimalFormat format = new DecimalFormat("###,###.##");
+        return format.format(paymentTotal);
     }
 
     public void setSodSupported(boolean sodSupported) {

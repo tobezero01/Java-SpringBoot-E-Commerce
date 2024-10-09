@@ -4,16 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code place order with COD">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/CurrencySettingBag.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code send order confirmation Email">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/repository/CurrencyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/settingBag/PaymentSettingBag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/paypal/PaypalApiTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/Utility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/EmailSettingBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/EmailSettingBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/ForgotPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/customer/ForgotPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/CountryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/repository/CountryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/CurrencySettingBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/settingBag/CurrencySettingBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/EmailSettingBag.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/settingBag/EmailSettingBag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/repository/SettingRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/order_completed.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/order_completed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/StateRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/repository/StateRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/StateRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/StateRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/setting/SettingRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/setting/SettingRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +121,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopBackEndApplication">
+  <component name="RunManager" selected="JUnit.PaypalApiTests.testGetOrderDetails">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -135,22 +146,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CartItemRepositoryTest.testFindByCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopFrontEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.shoppingCart.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.shoppingCart" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.shoppingCart.CartItemRepositoryTest" />
-      <option name="METHOD_NAME" value="testFindByCustomer" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -187,20 +182,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PaypalApiTests.testGetOrderDetails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopFrontEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.paypal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.paypal" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.paypal.PaypalApiTests" />
+      <option name="METHOD_NAME" value="testGetOrderDetails" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
       <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
       <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
-      <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
         <item itemvalue="Application.EShopFrontEndApplication" />
+        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
         <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
-        <item itemvalue="JUnit.CartItemRepositoryTest.testFindByCustomer" />
       </list>
     </recent_temporary>
   </component>
@@ -212,13 +223,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00125" summary="manage Country with restController and js">
-      <created>1726748387441</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1726748387442</updated>
     </task>
     <task id="LOCAL-00126" summary="add dto and restController State">
       <created>1726755285835</created>
@@ -556,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728394773648</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="code send order confirmation Email">
+      <created>1728402597426</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1728402597426</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +583,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="endpoint login with google" />
     <MESSAGE value="update account details" />
     <MESSAGE value="forgot password part 1" />
     <MESSAGE value="code layout for cartItem" />
@@ -597,7 +607,8 @@
     <MESSAGE value="update setting module" />
     <MESSAGE value="fix verify email register" />
     <MESSAGE value="code place order with COD" />
-    <option name="LAST_COMMIT_MESSAGE" value="code place order with COD" />
+    <MESSAGE value="code send order confirmation Email" />
+    <option name="LAST_COMMIT_MESSAGE" value="code send order confirmation Email" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -6,7 +6,7 @@ import com.eshop.common.entity.Country;
 import com.eshop.common.entity.Customer;
 import com.eshop.security.CustomerUserDetails;
 import com.eshop.security.oauth.CustomerOAuth2User;
-import com.eshop.setting.EmailSettingBag;
+import com.eshop.setting.settingBag.EmailSettingBag;
 import com.eshop.setting.SettingService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -18,7 +18,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.authentication.RememberMeAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.UnsupportedEncodingException;
 import java.util.List;
-import java.util.Objects;
 
 @Controller
 public class CustomerController {

@@ -24,7 +24,7 @@ public class CheckoutService {
         checkoutInfo.setDeliverDays(shippingRate.getDays());
         checkoutInfo.setSodSupported(shippingRate.isCodSupported());
         checkoutInfo.setShippingCostTotal(shippingCostTotal);
-        checkoutInfo.setPaymentMethod(paymentTotal);
+        checkoutInfo.setPaymentTotal(paymentTotal);
         return checkoutInfo;
     }
 

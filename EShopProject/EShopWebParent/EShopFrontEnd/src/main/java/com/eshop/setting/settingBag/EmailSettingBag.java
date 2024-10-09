@@ -1,4 +1,4 @@
-package com.eshop.setting;
+package com.eshop.setting.settingBag;
 
 import com.eshop.common.entity.setting.Setting;
 import com.eshop.common.entity.setting.SettingBag;

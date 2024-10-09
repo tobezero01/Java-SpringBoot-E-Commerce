@@ -10,9 +10,10 @@ import com.eshop.common.entity.order.Order;
 import com.eshop.common.entity.order.PaymentMethod;
 import com.eshop.customer.CustomerService;
 import com.eshop.order.OrderService;
-import com.eshop.setting.CurrencySettingBag;
-import com.eshop.setting.EmailSettingBag;
+import com.eshop.setting.settingBag.CurrencySettingBag;
+import com.eshop.setting.settingBag.EmailSettingBag;
 import com.eshop.setting.SettingService;
+import com.eshop.setting.settingBag.PaymentSettingBag;
 import com.eshop.shipping.ShippingRateService;
 import com.eshop.shoppingCart.ShoppingCartService;
 import jakarta.mail.MessagingException;
@@ -61,6 +62,14 @@ public class CheckoutController {
         List<CartItem> cartItems = shoppingCartService.listCartItems(customer);
         CheckoutInfo checkoutInfo = checkoutService.prepareCheckout(cartItems, shippingRate);
 
+        PaymentSettingBag paymentSettings = settingService.getPaymentSettings();
+        String paypalClientId = paymentSettings.getClientId();
+
+        String currencyCode = settingService.getCurrencyCode();
+
+        model.addAttribute("paypalClientId",paypalClientId);
+        model.addAttribute("currencyCode",currencyCode);
+        model.addAttribute("customer",customer);
         model.addAttribute("checkoutInfo", checkoutInfo);
         model.addAttribute("cartItems",cartItems);
         return "checkout/checkout";

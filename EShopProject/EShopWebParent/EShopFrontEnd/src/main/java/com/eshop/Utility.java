@@ -1,8 +1,8 @@
 package com.eshop;
 
 import com.eshop.security.oauth.CustomerOAuth2User;
-import com.eshop.setting.CurrencySettingBag;
-import com.eshop.setting.EmailSettingBag;
+import com.eshop.setting.settingBag.CurrencySettingBag;
+import com.eshop.setting.settingBag.EmailSettingBag;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.security.authentication.RememberMeAuthenticationToken;

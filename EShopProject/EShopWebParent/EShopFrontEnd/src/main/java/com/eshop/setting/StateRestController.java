@@ -2,6 +2,7 @@ package com.eshop.setting;
 
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.State;
+import com.eshop.setting.repository.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
