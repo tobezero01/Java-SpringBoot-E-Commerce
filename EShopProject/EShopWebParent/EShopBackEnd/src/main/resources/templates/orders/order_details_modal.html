@@ -16,6 +16,9 @@
             <li class="nav-item" role="presentation">
                 <button class="nav-link" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab" >Shipping</button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#orderTrack" type="button" role="tab" >Track</button>
+            </li>
         </ul>
 
         <!-- Tab panes -->
@@ -198,6 +201,27 @@
                 </div>
             </div>
 
+            <div class="tab-pane p-3" id="orderTrack" role="tabpanel" aria-labelledby="track-tab" >
+                <div class="full-details">
+                    <table class="table table-striped table-bordered table-hover table-responsive-sm">
+                        <thead class="gradient-bg">
+                            <tr>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="track : ${order.orderTracks}">
+                                <td>[[${track.updatedTime}]]</td>
+                                <td>[[${track.status}]]</td>
+                                <td><i>[[${track.notes}]]</i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
         </div>
 
     </div>

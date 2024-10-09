@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add paypal function">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/paypal/PaypalAPIException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/paypal/PaypalOrderResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/paypal/PaypalService.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="paypal validate part 1">
+      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderTrack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-08.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-09.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/checkout/CheckoutController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/order/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-01.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_details_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_details_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/paypal/PaypalApiTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/paypal/PaypalApiTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PaypalApiTests.testGetOrderDetails">
+  <component name="RunManager" selected="JUnit.OrderRepositoryTests.testUpdateOrderTracks">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -141,22 +143,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderRepositoryTests.createOrderWithMultipleProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.order.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.order" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.order.OrderRepositoryTests" />
-      <option name="METHOD_NAME" value="createOrderWithMultipleProduct" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OrderRepositoryTests.createOrderWithSingleProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EShopBackEnd" />
       <extension name="coverage">
@@ -168,6 +154,22 @@
       <option name="PACKAGE_NAME" value="com.eshop.admin.order" />
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.order.OrderRepositoryTests" />
       <option name="METHOD_NAME" value="createOrderWithSingleProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderRepositoryTests.testUpdateOrderTracks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.order" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.order.OrderRepositoryTests" />
+      <option name="METHOD_NAME" value="testUpdateOrderTracks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -192,17 +194,17 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
       <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
-      <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
       <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
+        <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
         <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
         <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
-        <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithMultipleProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -214,13 +216,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00127" summary="add layout restController State testing">
-      <created>1726756319995</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1726756319995</updated>
     </task>
     <task id="LOCAL-00128" summary="endpoint manage state">
       <created>1726764389505</created>
@@ -558,7 +553,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728463784327</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="paypal validate part 1">
+      <created>1728469110852</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1728469110852</updated>
+    </task>
+    <option name="localTasksCounter" value="177" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -574,7 +576,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="forgot password part 1" />
     <MESSAGE value="code layout for cartItem" />
     <MESSAGE value="code add product to cart" />
     <MESSAGE value="edit view and add shopping_cart view" />
@@ -599,7 +600,8 @@
     <MESSAGE value="code place order with COD" />
     <MESSAGE value="code send order confirmation Email" />
     <MESSAGE value="add paypal function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add paypal function" />
+    <MESSAGE value="paypal validate part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="paypal validate part 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

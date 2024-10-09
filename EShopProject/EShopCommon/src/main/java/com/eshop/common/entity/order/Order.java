@@ -4,9 +4,7 @@ import com.eshop.common.entity.Address;
 import com.eshop.common.entity.Customer;
 import jakarta.persistence.*;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "orders")
@@ -50,7 +48,6 @@ public class Order {
     private float subtotal;
     private float tax;
     private float total;
-
     private int deliverDays;
     private Date deliverDate;
 
@@ -67,6 +64,10 @@ public class Order {
     @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
     private Set<OrderDetail> orderDetails = new HashSet<>();
 
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
+    @OrderBy("updatedTime ASC")
+    private List<OrderTrack> orderTracks = new ArrayList<>();
+
     public Order() {
     }
 
@@ -80,6 +81,14 @@ public class Order {
         setPostalCode(customer.getPostalCode());
         setState(customer.getState());
         setCountry(customer.getCountry().getName());
+    }
+
+    public List<OrderTrack> getOrderTracks() {
+        return orderTracks;
+    }
+
+    public void setOrderTracks(List<OrderTrack> orderTracks) {
+        this.orderTracks = orderTracks;
     }
 
     public Integer getId() {

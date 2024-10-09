@@ -54,7 +54,7 @@
                             </form>
                         </div>
                         <div id="paypal-button-container">
-                            <form th:action="${/process_paypal_order}" method="post" id="paypalForm">
+                            <form th:action="@{/process_paypal_order}" method="post" id="paypalForm">
                                 <input type="hidden" name="orderId" id="orderId"/>
                                 <input type="hidden" name="paymentMethod" value="PAYPAL" />
                             </form>
