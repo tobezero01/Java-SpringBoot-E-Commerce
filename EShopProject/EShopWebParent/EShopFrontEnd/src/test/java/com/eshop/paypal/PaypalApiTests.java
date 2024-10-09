@@ -1,5 +1,6 @@
 package com.eshop.paypal;
 
+import com.eshop.checkout.paypal.PaypalOrderResponse;
 import com.nimbusds.oauth2.sdk.util.MultivaluedMapUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.*;
@@ -30,8 +31,10 @@ public class PaypalApiTests {
         RestTemplate restTemplate = new RestTemplate();
 
         try {
-            ResponseEntity<String> response = restTemplate.exchange(requestURL, HttpMethod.GET, request, String.class);
-            System.out.println(response.getBody());
+            ResponseEntity<PaypalOrderResponse> response = restTemplate.exchange(requestURL, HttpMethod.GET, request, PaypalOrderResponse.class);
+            PaypalOrderResponse orderResponse = response.getBody();
+            System.out.println("Order ID = " + orderResponse.getId());
+            System.out.println("Validated : " + orderResponse.validate(orderId));
         } catch (HttpClientErrorException e) {
             System.out.println("Error occurred: " + e.getResponseBodyAsString());
         }

@@ -2,6 +2,8 @@ package com.eshop.checkout;
 
 import com.eshop.Utility;
 import com.eshop.address.AddressService;
+import com.eshop.checkout.paypal.PaypalAPIException;
+import com.eshop.checkout.paypal.PaypalService;
 import com.eshop.common.entity.Address;
 import com.eshop.common.entity.CartItem;
 import com.eshop.common.entity.Customer;
@@ -42,6 +44,7 @@ public class CheckoutController {
     @Autowired private ShoppingCartService shoppingCartService;
     @Autowired private OrderService orderService;
     @Autowired private SettingService settingService;
+    @Autowired private PaypalService paypalService;
 
     @GetMapping("/checkout")
     public String showCheckoutPage(Model model , HttpServletRequest request) {
@@ -140,6 +143,28 @@ public class CheckoutController {
 
         helper.setText(content, true);
         mailSender.send(message);
+    }
+
+    @PostMapping("/process_paypal_order")
+    public String processPaypalOrder(HttpServletRequest request, Model model) throws UnsupportedEncodingException, MessagingException{
+        String orderId = request.getParameter("orderId");
+        String pageTitle = "Checkout Failure";
+        String message = null;
+        try {
+            if (paypalService.validateOrder(orderId) ) {
+                return placeOrder(request);
+            } else {
+                pageTitle = "Checkout Failure";
+                message = "ERROR: Transaction could not be completed because order information is invalid";
+            }
+        }catch (PaypalAPIException e) {
+            message = "ERROR: Transaction fail due to Error: " + e.getMessage();
+        }
+
+        model.addAttribute("pageTitle", pageTitle);
+        model.addAttribute("message", message);
+
+        return "message";
     }
 
 }
