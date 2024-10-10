@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="paypal validate part 1">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderTrack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-08.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-09.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_form_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_form_shipping.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-01.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_details_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/order_details_modal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders/orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/checkout/checkout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +30,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -114,7 +110,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderRepositoryTests.testUpdateOrderTracks">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -194,15 +190,15 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
+      <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
       <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
       <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
-      <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
         <item itemvalue="Application.EShopFrontEndApplication" />
-        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
         <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
       </list>

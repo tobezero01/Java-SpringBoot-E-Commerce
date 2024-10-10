@@ -4,6 +4,8 @@ import com.eshop.common.entity.Address;
 import com.eshop.common.entity.Customer;
 import jakarta.persistence.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Entity
@@ -298,5 +300,11 @@ public class Order {
         if (!postalCode.isEmpty()) address += ". Postal Code : " + postalCode;
         if (!phoneNumber.isEmpty()) address += ". Phone Number : " + phoneNumber;
         return address;
+    }
+
+    @Transient
+    public String getDeliverDateOnForm() {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return dateFormat.format(this.deliverDate);
     }
 }

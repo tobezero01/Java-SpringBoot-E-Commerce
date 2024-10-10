@@ -4,6 +4,7 @@ import com.eshop.admin.exception.OrderNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;
 import com.eshop.admin.setting.SettingService;
+import com.eshop.common.entity.Country;
 import com.eshop.common.entity.order.Order;
 import com.eshop.common.entity.setting.Setting;
 import jakarta.servlet.http.HttpServletRequest;
@@ -74,4 +75,22 @@ public class OrderController {
         }
         return defaultRedirect;
     }
+
+    @GetMapping("/orders/edit/{id}")
+    public String editOrder(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
+        try {
+            Order order = orderService.get(id);
+            List<Country> listCountries = orderService.listAllCountries();
+            model.addAttribute("listCountries",listCountries);
+            model.addAttribute("order", order);
+            model.addAttribute("pageTitle", "Edit Order (ID = " + id + " )");
+
+            return "orders/order_form";
+        } catch (OrderNotFoundException exception) {
+            redirectAttributes.addFlashAttribute("message", exception.getMessage());
+            return defaultRedirect;
+        }
+    }
 }
+
+

@@ -2,6 +2,8 @@ package com.eshop.admin.order;
 
 import com.eshop.admin.exception.OrderNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
+import com.eshop.admin.setting.country.CountryRepository;
+import com.eshop.common.entity.Country;
 import com.eshop.common.entity.order.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,6 +13,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class OrderService {
@@ -19,6 +23,8 @@ public class OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
+
+    @Autowired private CountryRepository countryRepository;
 
     public void listByPage(int pageNum , PagingAndSortingHelper helper) {
         String sortField = helper.getSortField();
@@ -53,5 +59,9 @@ public class OrderService {
             throw new OrderNotFoundException("Could not find any orders with Id = " + id);
         }
         orderRepository.deleteById(id);
+    }
+
+    public List<Country> listAllCountries() {
+        return countryRepository.findAllByOrderByNameAsc();
     }
 }
