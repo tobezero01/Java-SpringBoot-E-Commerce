@@ -4,10 +4,12 @@ import com.eshop.admin.exception.CustomerNotFoundException;
 import com.eshop.admin.exception.ShippingRateAlreadyExistsException;
 import com.eshop.admin.exception.ShippingRateNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
+import com.eshop.admin.product.ProductRepository;
 import com.eshop.admin.setting.country.CountryRepository;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.ShippingRate;
+import com.eshop.common.entity.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,11 +25,13 @@ import java.util.NoSuchElementException;
 @Transactional
 public class ShippingRateService {
     public static final int RATES_PER_PAGE = 7;
+    public static final int DIM_DIVISOR = 139;
     @Autowired
     private ShippingRateRepository shippingRateRepository;
-
     @Autowired
     private CountryRepository countryRepository;
+
+    @Autowired private ProductRepository productRepository;
 
     public void listByPage(int pageNum , PagingAndSortingHelper helper) {
         Sort sort = Sort.by(helper.getSortField());
@@ -82,5 +86,20 @@ public class ShippingRateService {
             throw new ShippingRateNotFoundException("Could not find shipping rate with ID " + id);
         }
         shippingRateRepository.deleteById(id);
+    }
+
+    public float calculateShippingCost(Integer productId, Integer countryId, String state) throws ShippingRateNotFoundException {
+        ShippingRate shippingRate = shippingRateRepository.findByCountryAndState(countryId , state);
+
+        if (shippingRate == null) {
+            throw new ShippingRateNotFoundException("No Shipping rate found for the given " +
+                    "destination. You have to enter shipping cost manually" );
+        }
+
+        Product product = productRepository.findById(productId).get();
+        float dimWeight = (product.getLength() * product.getHeight() * product.getWidth()) / DIM_DIVISOR;
+        float finalWeight = product.getWeight() > dimWeight ? product.getWeight() : dimWeight;
+
+        return finalWeight * shippingRate.getRate();
     }
 }
