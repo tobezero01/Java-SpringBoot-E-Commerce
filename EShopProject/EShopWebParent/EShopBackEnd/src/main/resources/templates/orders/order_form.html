@@ -48,12 +48,11 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div class="tab-pane active p-3" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                        <div th:replace="orders/order_form_overview :: content">
-                        </div>
+                        <div th:replace="orders/order_form_overview :: content"></div>
                     </div>
 
                     <div class="tab-pane p-3" id="products" role="tabpanel" aria-labelledby="products-tab">
-
+                        <div th:replace="orders/order_form_product :: content"></div>
                     </div>
 
                     <div class="tab-pane p-3" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
@@ -96,7 +95,9 @@
     </script>
 
     <script th:src="@{/js/common_form.js}"></script>
+    <script th:src="@{/js/order_form_overview_product.js}"></script>
     <script th:src="@{/js/common_form_country_state.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-number@2.1.6/jquery.number.min.js"></script>
 </body>
 
 </html>
