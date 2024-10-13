@@ -1,7 +1,11 @@
 package com.eshop.common.entity.order;
 
 import jakarta.persistence.*;
+import org.springframework.data.domain.Page;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -63,5 +67,20 @@ public class OrderTrack {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    @Transient
+    public String getUpdatedTimeInForm() {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+        return format.format(this.updatedTime);
+    }
+
+    public void setUpdatedTimeInForm(String dataString) {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+        try {
+            this.updatedTime = format.parse(dataString);
+        } catch (ParseException exception) {
+            exception.printStackTrace();
+        }
     }
 }
