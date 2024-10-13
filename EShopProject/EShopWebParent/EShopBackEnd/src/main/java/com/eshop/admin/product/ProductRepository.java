@@ -24,4 +24,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
             "LOWER(p.brand.name) LIKE LOWER(CONCAT('%', ?1, '%')) OR " +
             "LOWER(p.category.name) LIKE LOWER(CONCAT('%', ?1, '%'))")
     Page<Product> findAll(String keyWord, Pageable pageable);
+
+    @Query("SELECT p From Product p WHERE p.name LIKE LOWER(CONCAT('%', ?1, '%'))")
+    public Page<Product> searchProductsByName(String keyWord, Pageable pageable);
 }

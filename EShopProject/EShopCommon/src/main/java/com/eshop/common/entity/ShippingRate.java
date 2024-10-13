@@ -8,7 +8,6 @@ public class ShippingRate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private float rate;
     private int days;
 

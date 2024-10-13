@@ -1,6 +1,7 @@
 package com.eshop.admin.product;
 
 import com.eshop.admin.exception.ProductNotFoundException;
+import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.common.entity.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -90,6 +91,19 @@ public class ProductService {
 
     public Product get(Integer id) throws ProductNotFoundException {
         return productRepository.findById(id).get();
+    }
+
+    public void searchProduct(int pageNum, PagingAndSortingHelper helper) {
+        String keyWord = helper.getKeyWord();
+        String sortField = "name";
+        String sortDir = helper.getSortDir();
+
+        Sort sort = Sort.by(sortField);
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+        Pageable pageable = PageRequest.of(pageNum - 1 , PRODUCTS_BY_PAGE, sort);
+
+        Page<Product> page = productRepository.searchProductsByName(keyWord, pageable);
+        helper.updateModelAttributes(pageNum, page);
     }
 
 }

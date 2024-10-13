@@ -4,7 +4,8 @@
 <div th:fragment="content" class="container mt-4">
     <div id="productList">
         <th:block th:each="detail, status : ${order.orderDetails}">
-            <div class="border rounded mb-4 p-3 shadow-sm">
+            <div class="border rounded mb-4 p-3 shadow-sm" >
+                <input type="hidden" name="productId" th:value="${detail.product.id}" class="hiddenProductId">
                 <div class="row">
                     <!-- Hình ảnh sản phẩm -->
                     <div class="col-lg-3 col-md-4 col-12">
@@ -66,9 +67,10 @@
                 </div>
             </div>
         </th:block>
-        <div class="pt-2 ">
-            <a value="Add" class="btn btn-primary ">Add the product</a>
-        </div>
+
+    </div>
+    <div class="pt-2 ">
+        <a th:href="@{/orders/search_product}" id="linkAddProduct" value="Add" class="btn btn-primary ">Add a product</a>
     </div>
 </div>
 </body>

@@ -66,6 +66,8 @@ public class WebSecurityConfig {
                                 .key("AbcDefgHijKnmlOqprs_1234567890")
                                 .tokenValiditySeconds(7 * 24 * 60 * 60)
                 );
+        httpSecurity.headers(header -> header.frameOptions(
+                frameOptionsConfig -> frameOptionsConfig.sameOrigin()));
 
 
         return httpSecurity.build();
