@@ -5,6 +5,7 @@
     <div id="productList">
         <th:block th:each="detail, status : ${order.orderDetails}">
             <div class="border rounded mb-4 p-3 shadow-sm" th:id="'row' + ${status.count}">
+                <input type="hidden" name="detailId" th:value="${detail.id}" >
                 <input type="hidden" name="productId" th:value="${detail.product.id}" class="hiddenProductId">
                 <div class="row">
                     <!-- Hình ảnh sản phẩm -->
@@ -22,6 +23,7 @@
                                 <td class="fw-bold">Product Cost:</td>
                                 <td>
                                     <input type="text" required class="form-control cost-input"
+                                           name="productDetailCost"
                                            th:rowNumber="${status.count}"
                                            th:value="${detail.productCost}" style="max-width: 250px"/>
                                 </td>
@@ -30,6 +32,7 @@
                                 <td class="fw-bold">Quantity:</td>
                                 <td>
                                     <input type="number" step="1" min="1" max="5" required class="form-control quantity-input"
+                                           name="quantity"
                                            th:value="${detail.quantity}" th:rowNumber="${status.count}"
                                            th:id="'quantity' + ${status.count}"
                                            placeholder="Select quantity" style="max-width: 250px"/>
@@ -39,6 +42,7 @@
                                 <td class="fw-bold">Unit Price:</td>
                                 <td>
                                     <input type="text" required class="form-control price-input"
+                                           name="productPrice"
                                            th:id="'price' + ${status.count}"
                                            th:rowNumber="${status.count}"
                                            th:value="${detail.unitPrice}" style="max-width: 250px"/>
@@ -48,6 +52,7 @@
                                 <td class="fw-bold">Subtotal:</td>
                                 <td>
                                     <input type="text" readonly class="form-control subtotal-input"
+                                           name="productSubtotal"
                                            th:id="'subtotal' + ${status.count}"
                                            th:value="${detail.subtotal}" style="max-width: 250px"/>
                                 </td>
@@ -56,6 +61,7 @@
                                 <td class="fw-bold">Shipping Cost:</td>
                                 <td>
                                     <input type="text" required class="form-control ship-input"
+                                           name="shippingCost"
                                            th:rowNumber="${status.count}"
                                            th:value="${detail.shippingCost}" style="max-width: 250px"/>
                                 </td>

@@ -1,5 +1,7 @@
 package com.eshop.common.entity.order;
 
+import jakarta.persistence.Transient;
+
 public enum OrderStatus {
 
     NEW {
@@ -64,4 +66,8 @@ public enum OrderStatus {
     };
 
     public abstract String defaultDescription();
+
+    public String getDefaultDescription() {
+        return defaultDescription();
+    }
 }

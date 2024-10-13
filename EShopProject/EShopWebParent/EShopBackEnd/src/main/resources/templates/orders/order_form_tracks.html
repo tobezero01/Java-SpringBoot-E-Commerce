@@ -34,7 +34,7 @@
                                     th:rowNumber="${status.count}" th:disabled="${isTrackWithStatusNew}"
                                     th:id="${isTrackWithStatusNew ? 'trackStatusOptions' : ''}">
                                 <th:block th:each="os : ${T(com.eshop.common.entity.order.OrderStatus).values()}">
-                                    <option th:value="${os}" th:text="${os}" th:selected="${os == track.status}"
+                                    <option th:value="${os}" th:text="${os}" th:selected="${os == track.status.toString()}"
                                             th:defaultDescription="${os.defaultDescription}">
                                     </option>
                                 </th:block>

@@ -84,6 +84,7 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
     subtotalId = "subtotal" + nextCount;
     blankId = "blankLine" + nextCount;
     htmlCode = `            <div class="border rounded mb-4 p-3 shadow-sm" id="${rowId}">
+                                 <input type="hidden" name="detailId" value="0" >
                                 <input type="hidden" name="productId" value="${productId}" class="hiddenProductId">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-12">
@@ -99,6 +100,7 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
                                                 <td class="fw-bold">Product Cost:</td>
                                                 <td>
                                                     <input type="text" required class="form-control cost-input"
+                                                            name="productDetailCost"
                                                            rowNumber="${nextCount}"
                                                            value="${productCost}" style="max-width: 250px"/>
                                                 </td>
@@ -109,6 +111,7 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
                                                     <input type="number" step="1" min="1" max="5" required class="form-control quantity-input"
                                                            value="1" rowNumber="${nextCount}"
                                                            id="${quantityId}"
+                                                           name="quantity"
                                                            placeholder="Select quantity" style="max-width: 250px"/>
                                                 </td>
                                             </tr>
@@ -118,6 +121,7 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
                                                     <input type="text" required class="form-control price-input"
                                                            id="${priceId}"
                                                            rowNumber="${nextCount}"
+                                                           name="productPrice"
                                                            value="${productPrice}" style="max-width: 250px"/>
                                                 </td>
                                             </tr>
@@ -126,6 +130,7 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
                                                 <td>
                                                     <input type="text" readonly class="form-control subtotal-input"
                                                            id="${subtotalId}"
+                                                           name="productSubtotal"
                                                            value="${productPrice}" style="max-width: 250px"/>
                                                 </td>
                                             </tr>
@@ -134,6 +139,7 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
                                                 <td>
                                                     <input type="text" required class="form-control ship-input"
                                                            rowNumber="${nextCount}"
+                                                           name="shippingCost"
                                                            value="${shippingCost}" style="max-width: 250px"/>
                                                 </td>
                                             </tr>

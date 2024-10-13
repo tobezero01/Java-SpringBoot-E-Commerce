@@ -5,6 +5,7 @@ import com.eshop.common.entity.Customer;
 import jakarta.persistence.*;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -63,10 +64,10 @@ public class Order {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<OrderDetail> orderDetails = new HashSet<>();
 
-    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL, orphanRemoval = true)
     @OrderBy("updatedTime ASC")
     private List<OrderTrack> orderTracks = new ArrayList<>();
 
@@ -303,8 +304,17 @@ public class Order {
     }
 
     @Transient
-    public String getDeliverDateOnForm() {
+    public String getDeliverDateInForm() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return dateFormat.format(this.deliverDate);
+    }
+
+    public void setDeliverDateInForm(String dataString) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            this.deliverDate = dateFormat.parse(dataString);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }

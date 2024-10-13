@@ -134,3 +134,45 @@ function formatNumberForField(fieldRef) {
     }
 }
 
+
+// save order
+
+function processFormBeforeSubmit() {
+    setCountryName();
+
+    removeThousandSeparatorForField(fieldProductCost);
+    removeThousandSeparatorForField(fieldShippingCost);
+    removeThousandSeparatorForField(fieldSubtotal);
+    removeThousandSeparatorForField(fieldTax);
+    removeThousandSeparatorForField(fieldTotal);
+
+    $(".cost-input").each(function (e) {
+        removeThousandSeparatorForField($(this));
+    });
+
+    $(".price-input").each(function (e) {
+        removeThousandSeparatorForField($(this));
+    });
+
+    $(".subtotal-input").each(function (e) {
+        removeThousandSeparatorForField($(this));
+    });
+
+    $(".ship-input").each(function (e) {
+        removeThousandSeparatorForField($(this));
+    });
+
+}
+
+function removeThousandSeparatorForField(fieldRef) {
+    fieldRef.val(fieldRef.val().replace(",", ""));
+}
+
+function setCountryName() {
+    selectedCountry = $("#country option:selected");
+    countryName = selectedCountry.text();
+    $("#countryName").val(countryName);
+}
+
+
+
