@@ -14,6 +14,7 @@ $(document).ready(function() {
 function addProduct(productId, productName) {
     $("#addProductModal").modal('hide');
     getShippingCost(productId);
+    updateOrderAmount();
 }
 
 function getProductInfo(productId, shippingCost) {
@@ -26,6 +27,7 @@ function getProductInfo(productId, shippingCost) {
         productPrice = $.number(productJson.price, 2);
         htmlCode = insertProductCode(productId,productName,mainImagePath, productCost,productPrice, shippingCost);
         $("#productList").append(htmlCode);
+        updateOrderAmount();
     }).fail(function(err) {
         showWarningModal(err.responseJSON ? err.responseJSON.message : "Failed to get product info");
     });
@@ -78,8 +80,10 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
     nextCount = $(".hiddenProductId").length + 1;
     quantityId = "quantity" + nextCount;
     priceId = "price" + nextCount;
+    rowId = "row" + nextCount;
     subtotalId = "subtotal" + nextCount;
-    htmlCode = `            <div class="border rounded mb-4 p-3 shadow-sm">
+    blankId = "blankLine" + nextCount;
+    htmlCode = `            <div class="border rounded mb-4 p-3 shadow-sm" id="${rowId}">
                                 <input type="hidden" name="productId" value="${productId}" class="hiddenProductId">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 col-12">
@@ -135,10 +139,14 @@ function insertProductCode(productId, productName, mainImagePath, productCost, p
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <a value="Delete" class="btn btn-danger pt-2">Delete</a>
+                                        <a value="Delete" class="btn btn-danger pt-2 linkRemove"
+                                                                   rowNumber="${nextCount}" href=""
+                                                                    >Delete</a>
                                     </div>
                                 </div>
                             </div>
+                                        <div id="${blankId}" class="row">&nbsp;</div>
+
 `;
 return htmlCode;
 }

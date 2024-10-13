@@ -4,7 +4,7 @@
 <div th:fragment="content" class="container mt-4">
     <div id="productList">
         <th:block th:each="detail, status : ${order.orderDetails}">
-            <div class="border rounded mb-4 p-3 shadow-sm" >
+            <div class="border rounded mb-4 p-3 shadow-sm" th:id="'row' + ${status.count}">
                 <input type="hidden" name="productId" th:value="${detail.product.id}" class="hiddenProductId">
                 <div class="row">
                     <!-- Hình ảnh sản phẩm -->
@@ -62,10 +62,13 @@
                             </tr>
                             </tbody>
                         </table>
-                        <a value="Delete" class="btn btn-danger pt-2">Delete</a>
+                        <a value="Delete" class="btn btn-danger pt-2 linkRemove"
+                           th:rowNumber="${status.count}" href=""
+                            >Delete</a>
                     </div>
                 </div>
             </div>
+            <div th:id="'blankLine' + ${status.count}" class="row">&nbsp;</div>
         </th:block>
 
     </div>
