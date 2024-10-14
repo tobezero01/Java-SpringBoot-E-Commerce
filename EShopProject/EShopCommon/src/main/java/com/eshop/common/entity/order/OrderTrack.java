@@ -71,7 +71,8 @@ public class OrderTrack {
 
     @Transient
     public String getUpdatedTimeInForm() {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+        if (this.updatedTime == null) this.updatedTime =  new Date();
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss"); // Sửa 'hh' thành 'HH'
         return format.format(this.updatedTime);
     }
 

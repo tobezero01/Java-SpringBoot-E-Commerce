@@ -15,7 +15,8 @@
                     <div class="form-group row">
                         <label class="col-form-label">Time</label>
                         <div class="col">
-                            <input type="datetime-local" name="trackDate" th:value="${track.updatedTimeInForm}"
+                            <input type="datetime-local" name="trackDate"
+                                   th:value="${track.updatedTimeInForm}"
                                    class="form-control"
                                    th:readonly="${isTrackWithStatusNew}"
                                    th:required="${!isTrackWithStatusNew}"
