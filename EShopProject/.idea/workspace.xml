@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="code refactor">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderDetailRepositoryTest.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="prepare repo for FindOrderBetweenTime">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/MasterOrderReportService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/report/ReportRestControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/repository/OrderDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/order/repository/OrderDetailRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/order/OrderRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-07.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +110,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopBackEndApplication">
+  <component name="RunManager" selected="JUnit.ReportRestControllerTest.testGetReportDateLast7Days">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
@@ -133,22 +135,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderRepositoryTests.createOrderWithSingleProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="EShopBackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.eshop.admin.order.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.eshop.admin.order" />
-      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.order.OrderRepositoryTests" />
-      <option name="METHOD_NAME" value="createOrderWithSingleProduct" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -185,20 +171,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ReportRestControllerTest.testGetReportDateLast7Days" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EShopBackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eshop.admin.report.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.eshop.admin.report" />
+      <option name="MAIN_CLASS_NAME" value="com.eshop.admin.report.ReportRestControllerTest" />
+      <option name="METHOD_NAME" value="testGetReportDateLast7Days" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
-      <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
+      <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
       <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
       <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
         <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
         <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
-        <item itemvalue="JUnit.OrderRepositoryTests.createOrderWithSingleProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -210,13 +212,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00137" summary="refactor filter , sorting and paging Annotation">
-      <created>1727247477851</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1727247477851</updated>
     </task>
     <task id="LOCAL-00138" summary="login logout for customer">
       <created>1727258879992</created>
@@ -554,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728922207408</updated>
     </task>
-    <option name="localTasksCounter" value="186" />
+    <task id="LOCAL-00186" summary="prepare repo for FindOrderBetweenTime">
+      <created>1728923983878</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1728923983878</updated>
+    </task>
+    <option name="localTasksCounter" value="187" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +572,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code change default address" />
     <MESSAGE value="add entity for order Module" />
     <MESSAGE value="add createTests for Order repository" />
     <MESSAGE value="update repository" />
@@ -595,7 +596,8 @@
     <MESSAGE value="fix save order DONE!" />
     <MESSAGE value="fix order track" />
     <MESSAGE value="code refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactor" />
+    <MESSAGE value="prepare repo for FindOrderBetweenTime" />
+    <option name="LAST_COMMIT_MESSAGE" value="prepare repo for FindOrderBetweenTime" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
