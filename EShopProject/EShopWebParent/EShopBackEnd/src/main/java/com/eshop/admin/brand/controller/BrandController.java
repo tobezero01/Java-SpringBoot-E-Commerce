@@ -1,6 +1,7 @@
-package com.eshop.admin.brand;
+package com.eshop.admin.brand.controller;
 
 import com.eshop.admin.FileUploadUtil;
+import com.eshop.admin.brand.BrandService;
 import com.eshop.admin.category.CategoryService;
 import com.eshop.admin.exception.BrandNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
@@ -8,8 +9,6 @@ import com.eshop.admin.paging.PagingAndSortingParam;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Category;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;

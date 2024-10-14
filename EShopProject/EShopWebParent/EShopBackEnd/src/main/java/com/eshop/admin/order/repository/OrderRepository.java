@@ -1,4 +1,4 @@
-package com.eshop.admin.order;
+package com.eshop.admin.order.repository;
 
 import com.eshop.common.entity.order.Order;
 import org.springframework.data.domain.Page;

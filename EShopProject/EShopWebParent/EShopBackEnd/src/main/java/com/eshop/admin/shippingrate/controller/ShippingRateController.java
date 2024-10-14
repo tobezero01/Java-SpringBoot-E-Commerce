@@ -1,9 +1,10 @@
-package com.eshop.admin.shippingrate;
+package com.eshop.admin.shippingrate.controller;
 
 import com.eshop.admin.exception.ShippingRateAlreadyExistsException;
 import com.eshop.admin.exception.ShippingRateNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;
+import com.eshop.admin.shippingrate.ShippingRateService;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.ShippingRate;
 import org.springframework.beans.factory.annotation.Autowired;

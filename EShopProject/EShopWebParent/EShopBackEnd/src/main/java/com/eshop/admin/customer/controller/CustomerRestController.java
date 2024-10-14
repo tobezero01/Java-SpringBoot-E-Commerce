@@ -1,5 +1,6 @@
-package com.eshop.admin.customer;
+package com.eshop.admin.customer.controller;
 
+import com.eshop.admin.customer.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PostMapping;

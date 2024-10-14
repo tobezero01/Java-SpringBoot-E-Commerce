@@ -1,5 +1,6 @@
 package com.eshop.common.entity.order;
 
+import com.eshop.common.entity.Category;
 import com.eshop.common.entity.product.Product;
 import jakarta.persistence.*;
 
@@ -29,6 +30,14 @@ public class OrderDetail {
     private Order order;
 
     public OrderDetail() {
+    }
+
+    public OrderDetail(String categoryName, int quantity, float productCost, float shippingCost, float subtotal) {
+        this.product.setCategory(new Category(categoryName));
+        this.quantity = quantity;
+        this.productCost = productCost;
+        this.shippingCost = shippingCost;
+        this.subtotal = subtotal;
     }
 
     public Integer getId() {

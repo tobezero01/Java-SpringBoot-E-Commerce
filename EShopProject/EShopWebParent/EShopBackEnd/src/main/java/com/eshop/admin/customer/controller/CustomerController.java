@@ -1,5 +1,6 @@
-package com.eshop.admin.customer;
+package com.eshop.admin.customer.controller;
 
+import com.eshop.admin.customer.CustomerService;
 import com.eshop.admin.exception.CustomerNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;

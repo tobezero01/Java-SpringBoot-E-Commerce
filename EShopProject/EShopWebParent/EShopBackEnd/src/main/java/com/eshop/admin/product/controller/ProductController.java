@@ -1,9 +1,10 @@
-package com.eshop.admin.product;
+package com.eshop.admin.product.controller;
 
 import com.eshop.admin.FileUploadUtil;
 import com.eshop.admin.brand.BrandService;
 import com.eshop.admin.category.CategoryService;
 import com.eshop.admin.exception.ProductNotFoundException;
+import com.eshop.admin.product.ProductService;
 import com.eshop.admin.security.EShopUserDetails;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.product.Product;

@@ -1,6 +1,8 @@
-package com.eshop.admin.product;
+package com.eshop.admin.product.controller;
 
 import com.eshop.admin.exception.ProductNotFoundException;
+import com.eshop.admin.product.ProductDTO;
+import com.eshop.admin.product.ProductService;
 import com.eshop.common.entity.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;

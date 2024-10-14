@@ -72,7 +72,7 @@ function generateTrackCode() {
                     <div class="col">
                         <select name="trackStatus" class="form-control dropdownStatus" id="trackStatusOptions"
                                 style="max-width: 150px" rowNumber="${nextCount}">
-                            <option value="NEW">NEW</option>
+                                <option value="NEW">NEW</option>
                                 <option value="CANCELLED">CANCELLED</option>
                                 <option value="PROCESSING">PROCESSING</option>
                                 <option value="PACKAGED">PACKAGED</option>

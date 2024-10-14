@@ -1,5 +1,6 @@
 package com.eshop.admin.order;
 
+import com.eshop.admin.order.repository.OrderRepository;
 import com.eshop.common.entity.*;
 import com.eshop.common.entity.order.*;
 import com.eshop.common.entity.product.Product;
@@ -19,7 +20,8 @@ import java.util.List;
 @Rollback(value = false)
 public class OrderRepositoryTests {
 
-    @Autowired OrderRepository orderRepository;
+    @Autowired
+    OrderRepository orderRepository;
 
     @Autowired
     EntityManager entityManager;

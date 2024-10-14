@@ -1,4 +1,4 @@
-package com.eshop.admin.order;
+package com.eshop.admin.order.controller;
 
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;
