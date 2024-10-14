@@ -1,27 +1,28 @@
 $(document).ready(function () {
     // Sự kiện xóa track
-    $("#trackList").on("click", ".linkRemoveTrack", function(e) {
+    $("#trackList").on("click", ".linkRemoveTrack", function (e) {
         e.preventDefault();
         deleteTrack($(this));
         updateTrackCountNumber();
     });
 
-    // Sự kiện thêm mới track - sửa lại đúng phần tử
-    $("#linkAddTrack").click(function(e) {
+    // Sự kiện thêm mới track
+    $("#linkAddTrack").click(function (e) {
         e.preventDefault();
         addNewTrackRecord();
     });
 
-    // Sự kiện thay đổi trạng thái
-    $("#trackList").on("change", ".dropdownStatus", function(e) {
+    // Sự kiện thay đổi trạng thái với delegated event
+    $("#trackList").on("change", ".dropdownStatus", function (e) {
         let dropdownList = $(this);
         let rowNumber = dropdownList.attr("rowNumber");
         let selectedOption = $("option:selected", dropdownList);
         let defaultNote = selectedOption.attr("defaultDescription");
 
-        $("#trackNote" + rowNumber).text(defaultNote);
+        $("#trackNote" + rowNumber).val(defaultNote); // Thay đổi từ .text() sang .val() cho textarea
     });
 });
+
 
 function deleteTrack(link) {
     let rowNumber = link.attr("rowNumber");
@@ -47,6 +48,9 @@ function generateTrackCode() {
     let trackNoteId = "trackNote" + nextCount;
     let currentDateTime = formatCurrentDateTime();
 
+    // Sao chép nội dung dropdown từ phần tử có ID 'trackStatusOptions'
+    let statusOptions = $("#trackStatusOptions").html() || '';
+
     return `
         <div class="border rounded mb-4 p-3 shadow-sm" id="${rowId}">
             <input type="hidden" name="trackId" value="0" class="hiddenTrackId">
@@ -66,9 +70,18 @@ function generateTrackCode() {
                 <div class="form-group row">
                     <label class="col-form-label">Status</label>
                     <div class="col">
-                        <select name="trackStatus" class="form-control dropdownStatus" required
+                        <select name="trackStatus" class="form-control dropdownStatus" id="trackStatusOptions"
                                 style="max-width: 150px" rowNumber="${nextCount}">
-                            ${$("#trackStatusOptions").html()}
+                            <option value="NEW">NEW</option>
+                                <option value="CANCELLED">CANCELLED</option>
+                                <option value="PROCESSING">PROCESSING</option>
+                                <option value="PACKAGED">PACKAGED</option>
+                                <option value="PICKED">PICKED</option>
+                                <option value="SHIPPING">SHIPPING</option>
+                                <option value="DELIVERED">DELIVERED</option>
+                                <option value="RETURNED">RETURNED</option>
+                                <option value="PAID">PAID</option>
+                                <option value="REFUNDED">REFUNDED</option>
                         </select>
                     </div>
                 </div>
@@ -90,6 +103,7 @@ function generateTrackCode() {
         <div id="${emptyLineId}" class="row">&nbsp;</div>
     `;
 }
+
 
 
 

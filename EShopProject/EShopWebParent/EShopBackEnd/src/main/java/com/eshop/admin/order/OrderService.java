@@ -5,6 +5,8 @@ import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.setting.country.CountryRepository;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.order.Order;
+import com.eshop.common.entity.order.OrderStatus;
+import com.eshop.common.entity.order.OrderTrack;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,6 +15,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Service
@@ -67,6 +71,7 @@ public class OrderService {
 
     public void save(Order orderInForm) {
         Order orderInDB = orderRepository.findById(orderInForm.getId()).get();
+
         orderInForm.setOrderTime(orderInDB.getOrderTime());
         orderInForm.setCustomer(orderInDB.getCustomer());
 

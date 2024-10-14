@@ -3,6 +3,7 @@ package com.eshop.admin.order;
 import com.eshop.admin.exception.OrderNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
 import com.eshop.admin.paging.PagingAndSortingParam;
+import com.eshop.admin.security.EShopUserDetails;
 import com.eshop.admin.setting.SettingService;
 import com.eshop.common.entity.Country;
 import com.eshop.common.entity.order.Order;
@@ -14,6 +15,7 @@ import com.eshop.common.entity.setting.Setting;
 import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -44,12 +46,20 @@ public class OrderController {
     }
 
     @GetMapping("/orders/page/{pageNum}")
-    public String listByPage(@PathVariable(name = "pageNum") int pageNum ,
+    public String listByPage(@PathVariable(name = "pageNum") int pageNum,
                              @PagingAndSortingParam(listName = "listOrders") PagingAndSortingHelper helper,
-                             HttpServletRequest request
+                             HttpServletRequest request,
+                             @AuthenticationPrincipal EShopUserDetails loggedUser
     ) {
-        orderService.listByPage(pageNum,helper );
+        orderService.listByPage(pageNum, helper);
         loadCurrencySetting(request);
+
+        if (loggedUser.hasRole("Shipper") &&
+                !loggedUser.hasRole("Admin") &&
+                !loggedUser.hasRole("Salesperson")) {
+            return "orders/orders_shipper";
+        }
+
         return "orders/orders";
     }
 
@@ -61,38 +71,39 @@ public class OrderController {
     }
 
     @GetMapping("/orders/detail/{id}")
-    public String viewDetails (@PathVariable("id") Integer id, Model model,
-                               RedirectAttributes redirectAttributes, HttpServletRequest request) {
+    public String viewDetails(@PathVariable("id") Integer id, Model model,
+                              RedirectAttributes redirectAttributes, HttpServletRequest request) {
         try {
             Order order = orderService.get(id);
             loadCurrencySetting(request);
-            model.addAttribute("order" , order);
+            model.addAttribute("order", order);
             return "orders/order_details_modal";
         } catch (OrderNotFoundException e) {
-            redirectAttributes.addFlashAttribute("message" , e.getMessage());
+            redirectAttributes.addFlashAttribute("message", e.getMessage());
             return defaultRedirect;
         }
     }
 
     @GetMapping("/orders/delete/{id}")
-    public String deleteOrder (@PathVariable("id") Integer id, Model model,
-                               RedirectAttributes redirectAttributes) {
+    public String deleteOrder(@PathVariable("id") Integer id, Model model,
+                              RedirectAttributes redirectAttributes) {
         try {
             orderService.delete(id);
-            redirectAttributes.addFlashAttribute("message", "The order ID = " + id + " has been deleted") ;
+            redirectAttributes.addFlashAttribute("message", "The order ID = " + id + " has been deleted");
         } catch (OrderNotFoundException e) {
-            redirectAttributes.addFlashAttribute("message" , e.getMessage());
+            redirectAttributes.addFlashAttribute("message", e.getMessage());
             return defaultRedirect;
         }
         return defaultRedirect;
     }
 
     @GetMapping("/orders/edit/{id}")
-    public String editOrder(@PathVariable("id") Integer id, Model model, RedirectAttributes redirectAttributes) {
+    public String editOrder(@PathVariable("id") Integer id, Model model,
+                            RedirectAttributes redirectAttributes) {
         try {
             Order order = orderService.get(id);
             List<Country> listCountries = orderService.listAllCountries();
-            model.addAttribute("listCountries",listCountries);
+            model.addAttribute("listCountries", listCountries);
             model.addAttribute("order", order);
             model.addAttribute("pageTitle", "Edit Order (ID = " + id + " )");
 
@@ -110,37 +121,48 @@ public class OrderController {
         updateProductDetails(order, request);
         updateOrderTracks(order, request);
         orderService.save(order);
-        redirectAttributes.addFlashAttribute("message" , "The Order ID " + order.getId() + " has been updated successfully");
+        redirectAttributes.addFlashAttribute("message", "The Order ID " + order.getId() + " has been updated successfully");
 
         return defaultRedirect;
     }
 
-    private void updateOrderTracks(Order order, HttpServletRequest request)  {
-        String [] trackIds = request.getParameterValues("trackId");
-        String [] trackStatuses = request.getParameterValues("trackStatus");
-        String [] trackDates = request.getParameterValues("trackDate");
-        String [] trackNotes = request.getParameterValues("trackNotes");
+    private void updateOrderTracks(Order order, HttpServletRequest request) {
+        String[] trackIds = request.getParameterValues("trackId");
+        String[] trackStatuses = request.getParameterValues("trackStatus");
+        String[] trackDates = request.getParameterValues("trackDate");
+        String[] trackNotes = request.getParameterValues("trackNotes");
 
         List<OrderTrack> orderTracks = order.getOrderTracks();
         DateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
 
-        for (int i = 0; i < trackIds.length; i++) {
-            OrderTrack trackRecord = new OrderTrack();
-            Integer trackId = Integer.parseInt(trackIds[i]);
-            if (trackId > 0) trackRecord.setId(trackId);
 
-            trackRecord.setOrder(order);
-            trackRecord.setStatus(OrderStatus.valueOf(trackStatuses[i]));
-            trackRecord.setNotes(trackNotes[i]);
-            try {
-                trackRecord.setUpdatedTime(formatDate.parse(trackDates[i]));
-            } catch (ParseException exception) {
-                exception.printStackTrace();
+        // Kiểm tra xem trackIds có phải là null không
+        if (trackIds != null && trackStatuses != null && trackIds.length > 0  ) {
+            for (int i = 0; i < trackIds.length; i++) {
+                OrderTrack trackRecord = new OrderTrack();
+                Integer trackId = Integer.parseInt(trackIds[i]);
+                if (trackId > 0) trackRecord.setId(trackId);
+
+                trackRecord.setOrder(order);
+                trackRecord.setStatus(OrderStatus.valueOf(trackStatuses[i]));
+                trackRecord.setNotes(trackNotes[i]);
+                try {
+                    trackRecord.setUpdatedTime(formatDate.parse(trackDates[i]));
+                } catch (ParseException exception) {
+                    exception.printStackTrace();
+                }
+                orderTracks.add(trackRecord);
             }
+        } else {
+            // Nếu không có track nào, có thể thêm một track mặc định
+            OrderTrack trackRecord = new OrderTrack();
+            trackRecord.setOrder(order);
+            trackRecord.setStatus(OrderStatus.NEW);
+            trackRecord.setNotes("NEW");
             orderTracks.add(trackRecord);
         }
-
     }
+
 
     private void updateProductDetails(Order order, HttpServletRequest request) {
         String[] detailIds = request.getParameterValues("detailId");
