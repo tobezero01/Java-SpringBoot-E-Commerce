@@ -38,13 +38,13 @@ public class MasterOrderReportService {
         System.out.println("End time = " + endTime);
 
         dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        return getReportDataByDateRange(startTime, endTime);
+        return getReportDataByDateRange(startTime, endTime, "days");
     }
 
-    private List<ReportItem> getReportDataByDateRange(Date startTime, Date endTime) {
+    private List<ReportItem> getReportDataByDateRange(Date startTime, Date endTime, String period) {
         List<Order> listOrders = orderRepository.findByOrderTimeBetween(startTime, endTime);
         printRawDate(listOrders);
-        List<ReportItem> listReportItems =  createReportData(startTime, endTime);
+        List<ReportItem> listReportItems =  createReportData(startTime, endTime, period);
 
         calculateSalesForReportData(listOrders, listReportItems);
 
@@ -77,7 +77,7 @@ public class MasterOrderReportService {
         });
     }
 
-    private List<ReportItem> createReportData(Date startTime, Date endTime) {
+    private List<ReportItem> createReportData(Date startTime, Date endTime, String period) {
         List<ReportItem> listReportItems = new ArrayList<>();
         Calendar startDate = Calendar.getInstance();
         startDate.setTime(startTime);
@@ -90,7 +90,11 @@ public class MasterOrderReportService {
 
         listReportItems.add(new ReportItem(dataString));
         do {
-            startDate.add(Calendar.DAY_OF_MONTH, 1);
+            if (period.equals("days")) {
+                startDate.add(Calendar.DAY_OF_MONTH, 1);
+            } else if (period.equals("months")) {
+                startDate.add(Calendar.MONTH, 1);
+            }
             currentDate = startDate.getTime();
             dataString = dateFormat.format(currentDate);
             listReportItems.add(new ReportItem(dataString));
@@ -106,5 +110,24 @@ public class MasterOrderReportService {
         });
     }
 
+
+    public List<ReportItem> getReportDataLast6Months() {
+        return getReportDataLastXMonth(6);
+    }
+    public List<ReportItem> getReportDataLastYears() {
+        return getReportDataLastXMonth(12);
+    }
+
+    private List<ReportItem> getReportDataLastXMonth(int months) {
+        Date endTime = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.MONTH, -(months - 1));
+        Date startTime = calendar.getTime();
+        System.out.println("Start time = " + startTime);
+        System.out.println("End time = " + endTime);
+
+        dateFormat = new SimpleDateFormat("yyyy-MM");
+        return getReportDataByDateRange(startTime, endTime, "months");
+    }
 
 }

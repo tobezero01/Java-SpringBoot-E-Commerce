@@ -731,3 +731,571 @@ Consider defining a bean of type 'com.eshop.admin.report.MasterOrderReportServic
 2024-10-16T20:47:39.789+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
 2024-10-16T20:47:39.789+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
 2024-10-16T20:47:39.912+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 2.256 seconds (process running for 2426.98)
+2024-10-16T20:54:47.316+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "fragments :: page_head('Sales Report - EShop Admin', 'tag')" found in template reports/reports, line 4, col 7. Please use the complete syntax of fragment expressions instead ("~{fragments :: page_head('Sales Report - EShop Admin', 'tag')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T20:54:47.326+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "navigation :: menu" found in template reports/reports, line 8, col 6. Please use the complete syntax of fragment expressions instead ("~{navigation :: menu}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T20:54:47.355+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "reports/sales_by_date :: content" found in template reports/reports, line 43, col 26. Please use the complete syntax of fragment expressions instead ("~{reports/sales_by_date :: content}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T20:54:47.357+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "fragments :: footer" found in template reports/reports, line 57, col 10. Please use the complete syntax of fragment expressions instead ("~{fragments :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:01:21.860+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "fragments :: page_head('Sales Report - EShop Admin', 'tag')" found in template reports/reports, line 4, col 7. Please use the complete syntax of fragment expressions instead ("~{fragments :: page_head('Sales Report - EShop Admin', 'tag')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:01:21.862+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "navigation :: menu" found in template reports/reports, line 8, col 6. Please use the complete syntax of fragment expressions instead ("~{navigation :: menu}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:01:21.875+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "reports/sales_by_date :: content" found in template reports/reports, line 43, col 26. Please use the complete syntax of fragment expressions instead ("~{reports/sales_by_date :: content}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:01:21.875+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][reports/reports] Deprecated unwrapped fragment expression "fragments :: footer" found in template reports/reports, line 57, col 10. Please use the complete syntax of fragment expressions instead ("~{fragments :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:02:56.253+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-1][reports/reports] Deprecated unwrapped fragment expression "fragments :: page_head('Sales Report - EShop Admin', 'tag')" found in template reports/reports, line 4, col 7. Please use the complete syntax of fragment expressions instead ("~{fragments :: page_head('Sales Report - EShop Admin', 'tag')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:02:56.257+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-1][reports/reports] Deprecated unwrapped fragment expression "navigation :: menu" found in template reports/reports, line 8, col 6. Please use the complete syntax of fragment expressions instead ("~{navigation :: menu}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:02:56.282+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-1][reports/reports] Deprecated unwrapped fragment expression "reports/sales_by_date :: content" found in template reports/reports, line 43, col 26. Please use the complete syntax of fragment expressions instead ("~{reports/sales_by_date :: content}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:02:56.283+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-1][reports/reports] Deprecated unwrapped fragment expression "fragments :: footer" found in template reports/reports, line 57, col 10. Please use the complete syntax of fragment expressions instead ("~{fragments :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:05:50.774+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-9] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-9][reports/reports] Deprecated unwrapped fragment expression "fragments :: page_head('Sales Report - EShop Admin', 'tag')" found in template reports/reports, line 4, col 7. Please use the complete syntax of fragment expressions instead ("~{fragments :: page_head('Sales Report - EShop Admin', 'tag')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:05:50.777+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-9] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-9][reports/reports] Deprecated unwrapped fragment expression "navigation :: menu" found in template reports/reports, line 8, col 6. Please use the complete syntax of fragment expressions instead ("~{navigation :: menu}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:05:50.797+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-9] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-9][reports/reports] Deprecated unwrapped fragment expression "reports/sales_by_date :: content" found in template reports/reports, line 43, col 26. Please use the complete syntax of fragment expressions instead ("~{reports/sales_by_date :: content}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:05:50.798+07:00  WARN 17808 --- [EShopBackEnd] [http-nio-8080-exec-9] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-9][reports/reports] Deprecated unwrapped fragment expression "fragments :: footer" found in template reports/reports, line 57, col 10. Please use the complete syntax of fragment expressions instead ("~{fragments :: footer}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-10-16T21:09:14.662+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:09:14.662+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:09:14.662+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:09:15.552+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.a.c.c.C.[.[localhost].[/EShopAdmin]    : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [55D2F08D4DBD6E10C0170D4CEFBB33DA]
+2024-10-16T21:09:15.709+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:09:15.709+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:09:16.924+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:09:17.286+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:17.286+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:17.286+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:17.286+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:17.394+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 2.781 seconds (process running for 3724.462)
+2024-10-16T21:09:38.042+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:09:38.043+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:09:38.044+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:09:38.607+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:09:38.607+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:09:39.408+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:09:39.705+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:39.705+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:39.705+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:39.705+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:09:39.793+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.784 seconds (process running for 3746.861)
+2024-10-16T21:09:58.381+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:09:58.381+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:09:58.381+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:09:59.092+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:09:59.093+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:10:00.365+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:10:00.639+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:00.639+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:00.639+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:00.639+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:00.725+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 2.38 seconds (process running for 3767.793)
+2024-10-16T21:10:24.556+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:10:24.556+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:10:24.556+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:10:25.366+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:10:25.367+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:10:26.467+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:10:26.865+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:26.867+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:26.867+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:26.867+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:10:26.979+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 2.459 seconds (process running for 3794.047)
+2024-10-16T21:11:42.408+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:11:42.409+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:11:42.409+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:11:42.977+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:11:42.977+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:11:43.724+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+2024-10-16T21:11:43.744+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.eshop.admin.report.ReportRestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@5156c9e4]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:436) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:417) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findInjectionMetadata(PersistenceAnnotationBeanPostProcessor.java:376) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:353) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/eshop/admin/report/MasterOrderReportService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752) ~[spring-core-6.1.11.jar:6.1.11]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.eshop.admin.report.MasterOrderReportService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 31 common frames omitted
+
+2024-10-16T21:11:47.389+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:11:47.390+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:11:47.390+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:11:47.977+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:11:47.977+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:11:48.869+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:11:49.284+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:11:49.285+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:11:49.285+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:11:49.285+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:11:49.425+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 2.064 seconds (process running for 3876.494)
+2024-10-16T21:12:16.249+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:12:16.249+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:12:16.249+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:12:16.846+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:12:16.846+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:12:17.606+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportRestController': Unsatisfied dependency expressed through field 'masterOrderReportService': No qualifying bean of type 'com.eshop.admin.report.MasterOrderReportService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-10-16T21:12:17.630+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field masterOrderReportService in com.eshop.admin.report.ReportRestController required a bean of type 'com.eshop.admin.report.MasterOrderReportService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.eshop.admin.report.MasterOrderReportService' in your configuration.
+
+2024-10-16T21:13:00.334+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:13:00.334+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:13:00.335+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:13:01.007+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:13:01.007+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:13:01.710+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+2024-10-16T21:13:01.739+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.eshop.admin.report.ReportRestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@241fcf11]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:436) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:417) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findInjectionMetadata(PersistenceAnnotationBeanPostProcessor.java:376) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:353) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/eshop/admin/report/MasterOrderReportService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752) ~[spring-core-6.1.11.jar:6.1.11]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.eshop.admin.report.MasterOrderReportService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 31 common frames omitted
+
+2024-10-16T21:13:37.152+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:13:37.152+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:13:37.152+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:13:37.732+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:13:37.732+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:13:38.526+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:13:38.786+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:13:38.786+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:13:38.786+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:13:38.786+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:13:38.868+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.745 seconds (process running for 3985.937)
+2024-10-16T21:14:03.666+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:14:03.667+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:14:03.667+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:14:04.236+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:14:04.236+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:14:05.036+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+2024-10-16T21:14:05.062+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.eshop.admin.report.ReportRestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@15f869f8]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:436) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:417) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findInjectionMetadata(PersistenceAnnotationBeanPostProcessor.java:376) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:353) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/eshop/admin/report/MasterOrderReportService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752) ~[spring-core-6.1.11.jar:6.1.11]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.eshop.admin.report.MasterOrderReportService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 31 common frames omitted
+
+2024-10-16T21:14:46.619+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:14:46.619+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:14:46.620+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:14:47.075+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:14:47.075+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:14:47.851+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:14:48.130+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:14:48.131+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:14:48.132+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:14:48.132+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:14:48.329+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.725 seconds (process running for 4055.397)
+2024-10-16T21:15:19.467+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:15:19.468+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:15:19.468+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:15:20.059+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:15:20.059+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:15:20.784+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+2024-10-16T21:15:20.805+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.eshop.admin.report.ReportRestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@58c43b13]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:436) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:417) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findInjectionMetadata(PersistenceAnnotationBeanPostProcessor.java:376) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:353) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/eshop/admin/report/MasterOrderReportService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752) ~[spring-core-6.1.11.jar:6.1.11]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.eshop.admin.report.MasterOrderReportService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 31 common frames omitted
+
+2024-10-16T21:15:23.322+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:15:23.323+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:15:23.323+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:15:23.698+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:15:23.698+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:15:24.290+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:15:24.535+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:15:24.536+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:15:24.536+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:15:24.536+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:15:24.602+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.298 seconds (process running for 4091.671)
+2024-10-16T21:16:21.128+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:16:21.128+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:16:21.128+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:16:21.890+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:16:21.890+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:16:22.838+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:16:23.126+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:16:23.127+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:16:23.127+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:16:23.127+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:16:23.226+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 2.132 seconds (process running for 4150.295)
+2024-10-16T21:17:01.393+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:17:01.394+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:17:01.394+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:17:02.024+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:17:02.024+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:17:02.886+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportRestController': Unsatisfied dependency expressed through field 'masterOrderReportService': No qualifying bean of type 'com.eshop.admin.report.MasterOrderReportService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-10-16T21:17:02.910+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field masterOrderReportService in com.eshop.admin.report.ReportRestController required a bean of type 'com.eshop.admin.report.MasterOrderReportService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.eshop.admin.report.MasterOrderReportService' in your configuration.
+
+2024-10-16T21:17:08.568+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:17:08.569+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:17:08.569+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:17:09.127+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:17:09.128+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:17:09.849+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reportRestController': Unsatisfied dependency expressed through field 'masterOrderReportService': No qualifying bean of type 'com.eshop.admin.report.MasterOrderReportService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-10-16T21:17:09.869+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field masterOrderReportService in com.eshop.admin.report.ReportRestController required a bean of type 'com.eshop.admin.report.MasterOrderReportService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.eshop.admin.report.MasterOrderReportService' in your configuration.
+
+2024-10-16T21:17:11.336+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:17:11.336+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:17:11.336+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:17:11.766+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:17:11.766+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:17:12.474+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:17:12.766+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:17:12.766+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:17:12.766+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:17:12.766+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:17:12.849+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.533 seconds (process running for 4199.917)
+2024-10-16T21:19:25.577+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:19:25.577+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:19:25.578+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:19:26.175+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:19:26.175+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:19:27.047+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+2024-10-16T21:19:27.067+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.eshop.admin.report.ReportRestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@175930a6]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:436) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:417) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findInjectionMetadata(PersistenceAnnotationBeanPostProcessor.java:376) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:353) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/eshop/admin/report/MasterOrderReportService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752) ~[spring-core-6.1.11.jar:6.1.11]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.eshop.admin.report.MasterOrderReportService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 31 common frames omitted
+
+2024-10-16T21:19:28.570+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:19:28.570+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:19:28.570+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:19:29.069+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:19:29.070+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:19:29.808+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:19:30.084+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:19:30.084+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:19:30.085+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:19:30.085+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:19:30.164+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.619 seconds (process running for 4337.232)
+2024-10-16T21:29:15.888+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:29:15.888+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:29:15.888+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:29:16.469+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:29:16.469+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:29:17.179+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+2024-10-16T21:29:17.207+07:00 ERROR 17808 --- [EShopBackEnd] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reportRestController' defined in file [D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes\com\eshop\admin\report\ReportRestController.class]: Post-processing of merged bean definition failed
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:577) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:971) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.11.jar:6.1.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.2.8.jar:3.2.8]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.2.8.jar:3.2.8]
+	at com.eshop.admin.EShopBackEndApplication.main(EShopBackEndApplication.java:11) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.eshop.admin.report.ReportRestController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3bb464df]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:757) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.util.ReflectionUtils.doWithLocalFields(ReflectionUtils.java:689) ~[spring-core-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.buildPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:436) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findPersistenceMetadata(PersistenceAnnotationBeanPostProcessor.java:417) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.findInjectionMetadata(PersistenceAnnotationBeanPostProcessor.java:376) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor.postProcessMergedBeanDefinition(PersistenceAnnotationBeanPostProcessor.java:353) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyMergedBeanDefinitionPostProcessors(AbstractAutowireCapableBeanFactory.java:1103) ~[spring-beans-6.1.11.jar:6.1.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:574) ~[spring-beans-6.1.11.jar:6.1.11]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: com/eshop/admin/report/MasterOrderReportService
+	at java.base/java.lang.Class.getDeclaredFields0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredFields(Class.java:3297) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredFields(Class.java:2371) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredFields(ReflectionUtils.java:752) ~[spring-core-6.1.11.jar:6.1.11]
+	... 27 common frames omitted
+Caused by: java.lang.ClassNotFoundException: com.eshop.admin.report.MasterOrderReportService
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.2.8.jar:3.2.8]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[na:na]
+	... 31 common frames omitted
+
+2024-10-16T21:29:19.738+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:29:19.738+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:29:19.738+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:29:20.224+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:29:20.224+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:29:20.940+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:29:21.442+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:21.442+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:21.442+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:21.442+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:21.567+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.86 seconds (process running for 4928.635)
+2024-10-16T21:29:46.331+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Starting EShopBackEndApplication using Java 17.0.6 with PID 17808 (D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\target\classes started by ducnh in D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd)
+2024-10-16T21:29:46.331+07:00 DEBUG 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Running with Spring Boot v3.2.8, Spring v6.1.11
+2024-10-16T21:29:46.331+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-16T21:29:46.866+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-16T21:29:46.867+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-10-16T21:29:47.674+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-16T21:29:47.941+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/webjars/**'], Ant [pattern='/webjars/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:47.942+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/css/**'], Ant [pattern='/css/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:47.942+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/js/**'], Ant [pattern='/js/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:47.942+07:00  WARN 17808 --- [EShopBackEnd] [restartedMain] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Deferred [Mvc [pattern='/images/**'], Ant [pattern='/images/**']]. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2024-10-16T21:29:48.025+07:00  INFO 17808 --- [EShopBackEnd] [restartedMain] c.eshop.admin.EShopBackEndApplication    : Started EShopBackEndApplication in 1.73 seconds (process running for 4955.093)

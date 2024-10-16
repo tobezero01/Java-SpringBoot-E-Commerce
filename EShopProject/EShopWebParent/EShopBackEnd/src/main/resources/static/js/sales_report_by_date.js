@@ -15,6 +15,7 @@ $(document).ready(function () {
         period = $(this).attr("period");
         loadSalesReportByDate(period);
     });
+
 });
 
 function loadSalesReportByDate(period) {
@@ -77,12 +78,12 @@ function drawChart(period) {
     var salesChart = new google.visualization.ColumnChart(document.getElementById('chart_sales_by_date'));
     salesChart.draw(data, chartOptions);
 
-   var days = getDays(period);
+   var denominator = getDenominator(period);
 
     $("#textTotalGrossSales").text("$" + $.number(totalGrossSales, 2));
     $("#textTotalNetSales").text("$" + $.number(totalNetSales, 2));
-    $("#textAvgGrossSales").text("$" + $.number(totalGrossSales / days, 2));
-    $("#textAvgNetSales").text("$" + $.number(totalNetSales / days, 2));
+    $("#textAvgGrossSales").text("$" + $.number(totalGrossSales / denominator, 2));
+    $("#textAvgNetSales").text("$" + $.number(totalNetSales / denominator, 2));
     $("#textTotalOrders").text(totalOrders);
 
 }
@@ -90,11 +91,16 @@ function drawChart(period) {
 function getChartTitle(period) {
     if(period == "last_7_days") return 'Sales in last 7 days';
     if(period == "last_28_days") return 'Sales in last 28 days';
+    if(period == "last_6_months") return 'Sales in last 6 months';
+    if(period == "last_years") return 'Sales in last years';
     return 'Sales in last 7 days';
 }
 
-function getDays(period) {
+function getDenominator(period) {
     if(period == "last_7_days") return 7;
     if(period == "last_28_days") return 28;
+    if(period == "last_6_months") return 6;
+    if(period == "last_years") return 12;
     return 7;
 }
+

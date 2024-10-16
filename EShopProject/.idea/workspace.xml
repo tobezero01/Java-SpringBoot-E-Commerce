@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="calculate report info for 7 days">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-14.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-15.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/sales_report_by_date.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports/reports.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports/sales_by_date.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EShop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../EShop.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add sales by 7,28 days">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-08.0.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/MasterOrderReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/MasterOrderReportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/sales_report_by_date.js" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/sales_report_by_date.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports/sales_by_date.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports/sales_by_date.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +108,7 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopFrontEndApplication">
+  <component name="RunManager" selected="Application.EShopBackEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="22" />
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
@@ -204,8 +195,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="Application.EShopFrontEndApplication" />
         <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
         <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
         <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
@@ -220,13 +211,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00139" summary="update AuthenticationType for customer">
-      <created>1727262943918</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1727262943918</updated>
     </task>
     <task id="LOCAL-00140" summary="prepare security oauth2 (gg cloud)">
       <created>1727270305341</created>
@@ -564,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728932592783</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="add sales by 7,28 days">
+      <created>1729087601305</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1729087601306</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -580,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add createTests for Order repository" />
     <MESSAGE value="update repository" />
     <MESSAGE value="list order" />
     <MESSAGE value="endpoint detail order" />
@@ -605,7 +595,8 @@
     <MESSAGE value="code refactor" />
     <MESSAGE value="prepare repo for FindOrderBetweenTime" />
     <MESSAGE value="calculate report info for 7 days" />
-    <option name="LAST_COMMIT_MESSAGE" value="calculate report info for 7 days" />
+    <MESSAGE value="add sales by 7,28 days" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sales by 7,28 days" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
