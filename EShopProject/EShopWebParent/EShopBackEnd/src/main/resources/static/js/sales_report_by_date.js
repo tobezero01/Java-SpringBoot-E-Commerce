@@ -85,7 +85,6 @@ function drawChart(period) {
     $("#textAvgGrossSales").text("$" + $.number(totalGrossSales / denominator, 2));
     $("#textAvgNetSales").text("$" + $.number(totalNetSales / denominator, 2));
     $("#textTotalOrders").text(totalOrders);
-
 }
 
 function getChartTitle(period) {
