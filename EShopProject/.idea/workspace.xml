@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="prepare repo for FindOrderBetweenTime">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/MasterOrderReportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/test/java/com/eshop/admin/report/ReportRestControllerTest.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="calculate report info for 7 days">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-14.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-15.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/sales_report_by_date.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports/reports.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports/sales_by_date.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EShop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../EShop.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-07.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-08.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/MasterOrderReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/MasterOrderReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/report/ReportRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/templates/navigation.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,9 +37,9 @@
       <list>
         <option value="AnnotationType" />
         <option value="Enum" />
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -65,31 +72,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/orders&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopBackEnd/src/main/resources/templates/reports",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.checkout.paypal" />
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\reports" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopBackEnd\src\main\resources\templates\orders" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\checkout" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static\js" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static" />
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\products" />
@@ -110,8 +117,9 @@
       <recent name="com.eshop.customer" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ReportRestControllerTest.testGetReportDateLast7Days">
-    <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.EShopFrontEndApplication">
+    <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="22" />
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
       <module name="EShopBackEnd" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/EShopWebParent/EShopBackEnd" />
@@ -190,15 +198,15 @@
     <list>
       <item itemvalue="Application.EShopBackEndApplication" />
       <item itemvalue="Application.EShopFrontEndApplication" />
-      <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
       <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
       <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
+      <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
-        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="Application.EShopFrontEndApplication" />
+        <item itemvalue="Application.EShopBackEndApplication" />
+        <item itemvalue="JUnit.ReportRestControllerTest.testGetReportDateLast7Days" />
         <item itemvalue="JUnit.OrderRepositoryTests.testUpdateOrderTracks" />
         <item itemvalue="JUnit.PaypalApiTests.testGetOrderDetails" />
       </list>
@@ -212,13 +220,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00138" summary="login logout for customer">
-      <created>1727258879992</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1727258879992</updated>
     </task>
     <task id="LOCAL-00139" summary="update AuthenticationType for customer">
       <created>1727262943918</created>
@@ -556,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1728923983878</updated>
     </task>
-    <option name="localTasksCounter" value="187" />
+    <task id="LOCAL-00187" summary="calculate report info for 7 days">
+      <created>1728932592783</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1728932592783</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -572,7 +580,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="add entity for order Module" />
     <MESSAGE value="add createTests for Order repository" />
     <MESSAGE value="update repository" />
     <MESSAGE value="list order" />
@@ -597,7 +604,8 @@
     <MESSAGE value="fix order track" />
     <MESSAGE value="code refactor" />
     <MESSAGE value="prepare repo for FindOrderBetweenTime" />
-    <option name="LAST_COMMIT_MESSAGE" value="prepare repo for FindOrderBetweenTime" />
+    <MESSAGE value="calculate report info for 7 days" />
+    <option name="LAST_COMMIT_MESSAGE" value="calculate report info for 7 days" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -608,6 +616,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EShopProject$EShopBackEndApplication.ic" NAME="EShopBackEndApplication Coverage Results" MODIFIED="1727847866875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+
+<div th:fragment="content">
+    <div>
+        <button period="last_7_days" class="btn btn-primary button_sales_by_date"> Last 7 Days</button>
+        <button period="last_28_days" class="btn btn-primary button_sales_by_date"> Last 28 Days</button>
+    </div>
+    <div class="mt-2 justify-content-between" id="chart_sales_by_date"></div>
+
+    <div class="row mt-2 d-flex justify-content-between">
+        <div class="col-sm-2 mt-2">
+            <div class="card">
+                <div class="card-header"><b>Total Gross Sales</b></div>
+                <div class="card-body">
+                    <span class="h5" id="textTotalGrossSales"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 mt-2">
+            <div class="card">
+                <div class="card-header"><b>Total Net Sales</b></div>
+                <div class="card-body">
+                    <span class="h5" id="textTotalNetSales"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 mt-2">
+            <div class="card">
+                <div class="card-header"><b>Avg. Gross Sales</b></div>
+                <div class="card-body">
+                    <span class="h5" id="textAvgGrossSales"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 mt-2">
+            <div class="card">
+                <div class="card-header"><b>Avg. Net Sales</b></div>
+                <div class="card-body">
+                    <span class="h5" id="textAvgNetSales"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 mt-2">
+            <div class="card">
+                <div class="card-header"><b>Orders</b></div>
+                <div class="card-body">
+                    <span class="h5" id="textTotalOrders"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
