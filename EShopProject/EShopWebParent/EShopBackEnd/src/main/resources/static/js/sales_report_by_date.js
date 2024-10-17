@@ -1,52 +1,70 @@
 var data;
 var chartOptions;
-var totalNetSales ;
-var totalGrossSales ;
+var totalNetSales;
+var totalGrossSales;
 var totalOrders;
 var MILLISECONDS_A_DAYS = 24 * 60 * 60 * 1000;
 
-$(document).ready(function () {
-    $(".button_sales_by_date").on("click" , function() {
-        divCustomDateRange = $("#divCustomDateRange");
-        startDateField = document.getElementById('startDate');
-        endDateField = document.getElementById('endDate');
+var startDateField;  // Khai báo biến toàn cục
+var endDateField;    // Khai báo biến toàn cục
 
-        $(".button_sales_by_date").each(function(e) {
+$(document).ready(function () {
+    // Khởi tạo các trường ngày khi tài liệu được tải
+    startDateField = document.getElementById('startDate');
+    endDateField = document.getElementById('endDate');
+
+    $(".button_sales_by_date").on("click", function () {
+        var divCustomDateRange = $("#divCustomDateRange");
+
+        $(".button_sales_by_date").each(function () {
             $(this).removeClass("btn-primary").addClass("btn-light");
         });
         $(this).removeClass("btn-light").addClass("btn-primary");
 
-        period = $(this).attr("period");
-        if(period) {
+        var period = $(this).attr("period");
+        if (period) {
             loadSalesReportByDate(period);
             divCustomDateRange.addClass("d-none");
         } else {
             divCustomDateRange.removeClass("d-none");
         }
-
     });
+
     initCustomDateRange();
 
-    $("#buttonViewReportByDateRange").on("click", function() {
+    $("#buttonViewReportByDateRange").on("click", function () {
         validateDateRange();
     });
-
 });
+
 
 
 
 function validateDateRange() {
     days = calculateDay();
-    alert(days);
+    startDateField.setCustomValidity("");
+    
+    if(days >= 7 && days <= 30) {
+        loadSalesReportByDate("custom");
+    } else {
+        startDateField.setCustomValidity("Dates must be in the range of 7 ... 30 days");
+        startDateField.reportValidity();
+    }
 }
 
 
 
-function calculateDay() { 
-    startDate = startDateField.val();
-    endDate = endDateField.val();
-    differentInMilliseconds = endDate - startDate;
-    return differentInMilliseconds / MILLISECONDS_A_DAYS;
+function calculateDay() {
+    var startDate = startDateField.valueAsDate;
+    var endDate = endDateField.valueAsDate;  // Sửa lại thành `valueAsDate`
+    
+    if (!startDate || !endDate) {
+        alert("Please choose both Start Date and End Date");
+        return 0;
+    }
+
+    var differenceInMilliseconds = endDate - startDate;
+    return differenceInMilliseconds / MILLISECONDS_A_DAYS;
 }
 
 
@@ -63,7 +81,13 @@ function initCustomDateRange() {
 
 
 function loadSalesReportByDate(period) {
-    requestUrl = contextPath + "reports/sales_by_date/" + period;
+    if (period == "custom") {
+        startDate = $("#startDate").val();
+        endDate = $("#endDate").val();
+        requestUrl = contextPath + "reports/sales_by_date/" + startDate + "/" + endDate;
+    } else {
+        requestUrl = contextPath + "reports/sales_by_date/" + period;
+    }
     $.get(requestUrl, function(responseJSON) {
         prepareChartData(responseJSON);
         customizeChart(period);
@@ -144,6 +168,8 @@ function getChartTitle(period) {
     if(period == "last_28_days") return 'Sales in last 28 days';
     if(period == "last_6_months") return 'Sales in last 6 months';
     if(period == "last_years") return 'Sales in last years';
+    if(period == "custom") return 'Custom Date Range';
+
     return 'Sales in last 7 days';
 }
 
@@ -154,6 +180,7 @@ function getDenominator(period) {
     if(period == "last_28_days") return 28;
     if(period == "last_6_months") return 6;
     if(period == "last_years") return 12;
+    if(period == "custom") return calculateDays();
     return 7;
 }
 
