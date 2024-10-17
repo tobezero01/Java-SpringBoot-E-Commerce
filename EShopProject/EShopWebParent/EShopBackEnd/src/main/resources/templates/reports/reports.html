@@ -46,6 +46,7 @@
                     <div th:replace=" reports/sales_report_fragment :: content('_category')"></div>
                 </div>
                 <div class="tab-pane p-3" id="product" role="tabpanel">
+                    <div th:replace=" reports/sales_report_fragment :: content('_product')"></div>
                 </div>
             </div>
 
@@ -64,13 +65,14 @@
         var csrfValue = "[[${_csrf.token}]]";
 
         $(document).ready(function () {
-            google.charts.load('current', {'packages' : ['corechart'] });
+            google.charts.load('current', {'packages' : ['corechart', 'table'] });
             google.charts.setOnLoadCallback(loadSalesReportByDate);
         });
 
     </script>
     <script  th:src="@{/js/sales_report_by_date.js}"> </script>
     <script  th:src="@{/js/sales_report_by_category.js}"> </script>
+    <script  th:src="@{/js/sales_report_by_product.js}"> </script>
     <script  th:src="@{/js/sales_report_common.js}"> </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-number@2.1.6/jquery.number.min.js"></script>
 

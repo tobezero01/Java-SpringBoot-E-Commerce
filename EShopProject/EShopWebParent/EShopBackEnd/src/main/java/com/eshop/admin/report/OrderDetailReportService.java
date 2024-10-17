@@ -21,6 +21,8 @@ public class OrderDetailReportService extends AbstractReportService{
 
         if (reportType.equals(ReportType.CATEGORY) ) {
             orderDetailList = orderDetailRepository.findWithCategoryAndTimeBetween(startDate,endDate);
+        }else if (reportType.equals(ReportType.PRODUCT)){
+            orderDetailList = orderDetailRepository.findWithProductAndTimeBetween(startDate,endDate);
         }
         
         //printRawData(orderDetailList);
@@ -30,6 +32,8 @@ public class OrderDetailReportService extends AbstractReportService{
             String identifier = "";
             if (reportType.equals(ReportType.CATEGORY)) {
                 identifier = detail.getProduct().getCategory().getName();
+            }else if (reportType.equals(ReportType.PRODUCT)){
+                identifier = detail.getProduct().getShortName();
             }
             ReportItem reportItem = new ReportItem(identifier);
 
@@ -61,7 +65,7 @@ public class OrderDetailReportService extends AbstractReportService{
     private void printRawData(List<OrderDetail> orderDetailList) {
         for (OrderDetail detail : orderDetailList) {
             System.out.printf("%d, %-20s, %10.2f, %10.2f, %10.2f \n",
-                    detail.getQuantity(), detail.getProduct().getCategory().getName(),
+                    detail.getQuantity(), detail.getProduct().getShortName(),
                     detail.getSubtotal(), detail.getProductCost(), detail.getShippingCost());
         }
     }
