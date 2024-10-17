@@ -2,7 +2,7 @@ var data;
 var chartOptions;
 var totalNetSales;
 var totalGrossSales;
-var totalOrders;
+var totalItems;
 
 $(document).ready(function () {
     setupButtonEventHandler("_date", loadSalesReportByDate);
@@ -41,18 +41,16 @@ function prepareChartDataForSalesByDate(responseJSON) {
 
     totalGrossSales = 0.0;
     totalNetSales = 0.0;
-    totalOrders = 0;
+    totalItems = 0;
 
     $.each(responseJSON, function(index, reportItem) {
         data.addRows([[reportItem.identifier, reportItem.grossSales, reportItem.netSales, reportItem.ordersCount]]);
         totalGrossSales += parseFloat(reportItem.grossSales);
         totalNetSales += parseFloat(reportItem.netSales);
-        totalOrders += parseInt(reportItem.ordersCount);
+        totalItems += parseInt(reportItem.ordersCount);
     });
 
 }
-
-
 
 function customizeChartForSalesByDate(period) {
     chartOptions = {

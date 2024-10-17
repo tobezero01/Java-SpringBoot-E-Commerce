@@ -15,6 +15,7 @@ import java.util.List;
 @RestController
 public class ReportRestController {
     @Autowired private MasterOrderReportService masterOrderReportService;
+    @Autowired private OrderDetailReportService orderDetailReportService;
 
     @GetMapping("/reports/sales_by_date/{period}")
     public List<ReportItem> getReportDataByDatePeriod(@PathVariable("period") String period) {
@@ -36,6 +37,33 @@ public class ReportRestController {
         Date endTime = dateFormat.parse(endDate);
 
         return masterOrderReportService.getReportDataByDateRange(startTime, endTime, ReportType.DAY);
+    }
+
+    @GetMapping("/reports/{groupBy}/{period}")
+    public List<ReportItem> getReportDataByCategoryAndProduct(@PathVariable("groupBy") String groupBy ,
+                                                      @PathVariable("period") String period) throws ParseException {
+        ReportType reportType = ReportType.valueOf(groupBy.toUpperCase());
+        switch (period) {
+            case "last_7_days" : return orderDetailReportService.getReportDataLast7Days(reportType);
+            case "last_28_days" : return orderDetailReportService.getReportDataLast28Days(reportType);
+            case "last_6_months" : return orderDetailReportService.getReportDataLast6Months(reportType);
+            case "last_years" : return orderDetailReportService.getReportDataLastYears(reportType);
+            default: return orderDetailReportService.getReportDataLast7Days(reportType);
+        }
+
+    }
+
+    @GetMapping("/reports/{groupBy}/{startDate}/{endDate}")
+    public List<ReportItem> getReportDataByDatePeriod(@PathVariable("groupBy") String groupBy,
+                                                      @PathVariable("startDate") String startDate ,
+                                                      @PathVariable("endDate") String endDate) throws ParseException {
+        ReportType reportType = ReportType.valueOf(groupBy.toUpperCase());
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date startTime = dateFormat.parse(startDate);
+        Date endTime = dateFormat.parse(endDate);
+
+        return orderDetailReportService.getReportDataByDateRange(startTime, endTime, reportType);
     }
 
 }

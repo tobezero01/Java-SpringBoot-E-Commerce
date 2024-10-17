@@ -28,19 +28,19 @@ function setupButtonEventHandler(reportType, callbackFunction) {
     initCustomDateRange(reportType);
 
     $("#buttonViewReportByDateRange"+ reportType).on("click", function () {
-        validateDateRange(reportType);
+        validateDateRange(reportType, callbackFunction);
     });
 }
 
 
-function validateDateRange(reportType) {
+function validateDateRange(reportType, callbackFunction) {
     startDateField = document.getElementById("startDate" + reportType);
 
     days = calculateDays(reportType);
     startDateField.setCustomValidity("");
     
     if(days >= 7 && days <= 30) {
-        loadSalesReportByDate("custom");
+        callbackFunction("custom");
     } else {
         startDateField.setCustomValidity("Dates must be in the range of 7 ... 30 days");
         startDateField.reportValidity();
@@ -102,7 +102,7 @@ function setSellAmount(period, reportType,labelTotalItems) {
     $("#textAvgGrossSales"+ reportType).text("$" + $.number(totalGrossSales / denominator, 2));
     $("#textAvgNetSales"+ reportType).text("$" + $.number(totalNetSales / denominator, 2));
     $("#labelTotalItems"+ reportType).text(labelTotalItems);
-    $("#textTotalOrders"+ reportType).text(totalOrders);
+    $("#textTotalOrders"+ reportType).text(totalItems);
 }
 
 function formatChartData(data, columnIndex1,columnIndex2) {

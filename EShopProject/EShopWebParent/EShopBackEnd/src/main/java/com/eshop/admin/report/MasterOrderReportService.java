@@ -21,7 +21,7 @@ public class MasterOrderReportService extends AbstractReportService{
 
     protected List<ReportItem> getReportDataByDateRangeInternal(Date startTime, Date endTime, ReportType reportType) {
         List<Order> listOrders = orderRepository.findByOrderTimeBetween(startTime, endTime);
-        printRawDate(listOrders);
+        //printRawDate(listOrders);
         List<ReportItem> listReportItems =  createReportData(startTime, endTime, reportType);
 
         calculateSalesForReportData(listOrders, listReportItems);
@@ -66,21 +66,23 @@ public class MasterOrderReportService extends AbstractReportService{
 
         Date currentDate = startDate.getTime();
         String dataString = dateFormat.format(currentDate);
-
         listReportItems.add(new ReportItem(dataString));
+
         do {
             if (reportType.equals(ReportType.DAY)) {
                 startDate.add(Calendar.DAY_OF_MONTH, 1);
             } else if (reportType.equals(ReportType.MONTH)) {
                 startDate.add(Calendar.MONTH, 1);
             }
+
             currentDate = startDate.getTime();
             dataString = dateFormat.format(currentDate);
             listReportItems.add(new ReportItem(dataString));
-
         } while (startDate.before(endDate));
+
         return listReportItems;
     }
+
 
     private void printRawDate(List<Order> listOrders) {
         listOrders.forEach(order -> {
@@ -88,8 +90,5 @@ public class MasterOrderReportService extends AbstractReportService{
                     order.getId(), order.getOrderTime(), order.getTotal(), order.getProductCost());
         });
     }
-
-
-
 
 }

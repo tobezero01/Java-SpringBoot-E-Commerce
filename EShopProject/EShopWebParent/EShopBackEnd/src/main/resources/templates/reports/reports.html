@@ -11,7 +11,7 @@
 <div class="container-fluid">
 
     <div>
-        <h1>Site Setting </h1>
+        <h1>Sales Report</h1>
     </div>
 
     <!-- form user -->
@@ -43,7 +43,7 @@
                     <div th:replace=" reports/sales_report_fragment :: content('_date')"></div>
                 </div>
                 <div class="tab-pane p-3" id="category" role="tabpanel">
-                    <h2>sales by category</h2>
+                    <div th:replace=" reports/sales_report_fragment :: content('_category')"></div>
                 </div>
                 <div class="tab-pane p-3" id="product" role="tabpanel">
                 </div>
@@ -70,6 +70,7 @@
 
     </script>
     <script  th:src="@{/js/sales_report_by_date.js}"> </script>
+    <script  th:src="@{/js/sales_report_by_category.js}"> </script>
     <script  th:src="@{/js/sales_report_common.js}"> </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-number@2.1.6/jquery.number.min.js"></script>
 
