@@ -41,6 +41,12 @@ public class MasterOrderReportService {
         return getReportDataByDateRange(startTime, endTime, "days");
     }
 
+    public List<ReportItem> getReportDataByDateRange(Date startTime, Date endTime) {
+        dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        return getReportDataByDateRange(startTime, endTime, "days");
+    }
+
     private List<ReportItem> getReportDataByDateRange(Date startTime, Date endTime, String period) {
         List<Order> listOrders = orderRepository.findByOrderTimeBetween(startTime, endTime);
         printRawDate(listOrders);
@@ -76,6 +82,7 @@ public class MasterOrderReportService {
                     reportItem.getIdentifier(), reportItem.getGrossSales(), reportItem.getNetSales(), reportItem.getOrdersCount());
         });
     }
+
 
     private List<ReportItem> createReportData(Date startTime, Date endTime, String period) {
         List<ReportItem> listReportItems = new ArrayList<>();

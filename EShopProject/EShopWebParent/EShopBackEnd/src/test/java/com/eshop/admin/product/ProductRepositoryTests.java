@@ -115,4 +115,7 @@ public class ProductRepositoryTests {
         assertThat(savedProduct.getDetails()).isNotEmpty();
     }
 
+    
+    
+
 }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head('Manage Customers - Admin', 'none')">
+</head>
+
+<body>
+
+<!-- nav bar-->
+<div th:replace="navigation :: menu"></div>
+<div>
+
+    <!-- Body -->
+    <div class="container-fluid">
+        <div>
+            <div class="pb-3">
+                <h1>Manage Customers</h1>
+                <!--            <a class="btn btn-primary btn-info" th:href="@{/customers/new}">Create New customer</a>-->
+                <!--            <a class="btn btn-primary btn-danger" th:href="@{/customers/export/csv}">Export to CSV</a>-->
+                <!--            <a class="btn btn-primary btn-warning" th:href="@{/customers/export/excel}">Export to Excel</a>-->
+            </div>
+        </div>
+
+
+        <!-- search form and message-->
+        <div th:replace="fragments :: search_form_and_message('/customers/page/1')"></div>
+
+
+        <div class="pt-2">
+            <table class="table table-responsive-xl table-bordered table-striped table-hover ">
+                <thead class=" gradient-bg">
+                <tr>
+                    <!-- Call fragment -->
+                    <th th:replace="fragments :: column_link('/customers','id', 'Id')"></th>
+                    <th th:replace="fragments :: column_link('/customers','firstName', 'First Name')"></th>
+                    <th th:replace="fragments :: column_link('/customers','lastName', 'Last Name')"></th>
+                    <th th:replace="fragments :: column_link('/customers','email', 'Email')"></th>
+                    <th th:replace="fragments :: column_link('/customers','city', 'City')"></th>
+                    <th th:replace="fragments :: column_link('/customers','state', 'State')"></th>
+                    <th th:replace="fragments :: column_link('/customers','country', 'Country')"></th>
+                    <th th:replace="fragments :: column_link('/customers','enabled', 'Enabled')"></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="customer : ${listCustomers}">
+                    <td>[[${customer.id}]]</td>
+                    <td>[[${customer.firstName}]]</td>
+                    <td>[[${customer.lastName}]]</td>
+                    <td class="hideable-column">[[${customer.email}]]</td>
+                    <td class="hideable-column">[[${customer.city}]]</td>
+                    <td class="hideable-column">[[${customer.state}]]</td>
+                    <td>[[${customer.country.name}]]</td>
+
+                    <td>
+                        <div th:replace="fragments :: status(${customer.enabled} ,'customer' ,'/customers/' + ${customer.id})"></div>
+                    </td>
+                    <td>
+                        <div class="inline-container">
+                            <a class="linkCustomerDetail fas fa-file-alt fa-2x icon-green"
+                               th:href="@{'/customers/detail/' + ${customer.id}}"
+                               title="View detail for this customer"></a>
+                            &nbsp;
+                            &nbsp;
+                            <div th:replace="fragments :: edit('customer' ,'/customers/edit/' + ${customer.id})"></div>
+                            &nbsp;
+                            <div th:replace="fragments :: elseDelete('customer' ,'/customers/delete/' + ${customer.id}, ${customer.id})"></div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+    <div class="modal fade" id="detailModal">
+        <div class="modal-dialog modal-xl bg-white">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+
+    <div th:replace="modal_fragments :: confirm_modal"></div>
+    <div th:replace="fragments :: footer"></div>
+
+    <script th:src="@{/js/common_list.js}"></script>
+</div>
+<script>
+    moduleUrl = "[[@{/customers}]]";
+    $(document).ready(function() {
+        $(".link-delete").on("click", function(e) {
+            e.preventDefault();
+            showDeleteConfirmModal($(this) , 'customer');
+        });
+        handleLinkViewCustomerDetails();
+    });
+
+    function handleLinkViewCustomerDetails() {
+        $(".linkCustomerDetail").on("click", function (e) {
+            e.preventDefault();
+            linkDetailUrl = $(this).attr("href");
+            $("#detailModal").modal('show').find(".modal-content").load(linkDetailUrl);
+        });
+    }
+
+
+</script>
+
+</body>
+
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <head th:replace="fragments :: page_head('Settings - EShop', 'tag')"></head>
+    <link rel="stylesheet" th:href="@{/richtext/richtext.min.css}"/>
+    <script th:src="@{/richtext/jquery.richtext.min.js}"></script>
+</head>
+<body>
+
+<!-- nav bar -->
+<div th:replace="navigation :: menu"></div>
+
+<!-- body -->
+<div class="container-fluid">
+
+    <div>
+        <h1>Site Setting </h1>
+    </div>
+
+    <div th:if="${message != null}" class="alert alert-success pt-3" th:text="${message}" >
+    </div>
+
+    <!-- form user -->
+    <div>
+
+        <div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="settingTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#general" type="button"
+                            role="tab">General
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#countries" type="button" role="tab">
+                        Countries
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#states" type="button" role="tab">
+                        States
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mailServer" type="button" role="tab">
+                        Mail Server
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#mailTemplates" type="button" role="tab">
+                        Mail Templates
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#payment" type="button" role="tab">
+                        Payment
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active p-3" id="general" role="tabpanel">
+                    <div th:replace=" settings/general :: content"></div>
+                </div>
+                <div class="tab-pane p-3" id="countries" role="tabpanel">
+                    <div th:replace=" settings/countries :: content"></div>
+                </div>
+                <div class="tab-pane p-3" id="states" role="tabpanel">
+                    <div th:replace=" settings/states :: content"></div>
+                </div>
+                <div class="tab-pane p-3" id="mailServer" role="tabpanel">
+                    <div th:replace=" settings/mail_server :: content"></div>
+                </div>
+                <div class="tab-pane p-3" id="mailTemplates" role="tabpanel">
+                    <div th:replace=" settings/mail_templates/mail_templates :: content"></div>
+                </div>
+                <div class="tab-pane p-3" id="payment" role="tabpanel">
+                    <div th:replace=" settings/payment :: content"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="toast bg-warning" role="alert" aria-live="polite" aria-atomic="true" data-bs-delay="3000">
+        <div role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body text-dark">
+                <span id="toastMessage"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div th:replace="fragments :: footer"></div>
+    <script type="text/javascript">
+
+        MAX_FILE_SIZE = 1004800;
+        contextPath = "[[@{/}]]";
+        var csrfHeaderName = "[[${_csrf.headerName}]]";
+        var csrfValue = "[[${_csrf.token}]]";
+
+        $(document).ready(function () {
+            $("#customerVerificationContent").richText();
+            $("#orderConfirmationContent").richText();
+        });
+    </script>
+
+    <script th:src="@{/js/common_form.js}"></script>
+    <script th:src="@{/js/countries_settings.js}"></script>
+    <script th:src="@{/js/states_settings.js}"></script>
+
+</body>
+
+</html>

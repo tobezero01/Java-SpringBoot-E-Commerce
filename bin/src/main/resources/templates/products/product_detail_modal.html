@@ -1,0 +1,136 @@
+<div class="modal-header">
+    <h3 class="modal-title">Product detail</h3>
+    <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
+</div>
+
+<div>
+
+    <div class="">
+        <div class=" p-3" >
+            <div class="border p-2">
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Product name</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.name}" class="form-control" readonly >
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Alias</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.alias}" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Brands </label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.brand.name}" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Categories </label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.category.name}" class="form-control" readonly>
+
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Enabled</label>
+                    <div class="col-sm-10">
+                        <input class="form-check-input" type="checkbox" th:checked="${product.enabled}" onclick="return false;"/>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">In-Stock</label>
+                    <div class="col-sm-10">
+                        <input class="form-check-input" type="checkbox" th:checked="${product.inStock}" onclick="return false;"/>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Cost</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.cost}" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Price</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.price}" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Discount</label>
+                    <div class="col-sm-10">
+                        <input type="text" th:value="${product.discountPercent}" class="form-control" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Update time</label>
+                    <div class="col-sm-10">
+                        <span th:text="${#dates.format(product.updatedTime, 'yyyy-MM-dd HH:mm:ss')}"></span>
+                    </div>
+                </div>
+            </div>
+
+
+<!--            description-->
+            <div class="pb-2 pt-2">
+                <label class="pb-2"> <b>Short Description</b> </label>
+                <div class="border p-2" th:utext="${product.shortDescription}"></div>
+            </div>
+
+            <div class="pb-2">
+                <label class="pb-2"> <b>Full Description</b> </label>
+                <div class="border p-2" th:utext="${product.fullDescription}"></div>
+            </div>
+
+<!--            Images-->
+
+<!--            Detail-->
+
+<!--            Shipping-->
+            <label class="pb-2"><b>Shipping</b></label>
+            <div class="border p-2">
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Length (inch)</label>
+                    <div class="col-sm-10">
+                        <input type="number" readonly class="form-control" th:value="${product.length}">
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Width (inch)</label>
+                    <div class="col-sm-10">
+                        <input type="number" readonly class="form-control" th:value="${product.width}">
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Height (inch)</label>
+                    <div class="col-sm-10">
+                        <input type="number" readonly class="form-control" th:value="${product.height}">
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label class="col-sm-2 col-form-label">Weight (pound)</label>
+                    <div class="col-sm-10">
+                        <input type="number" readonly class="form-control" th:value="${product.weight}">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+</div>

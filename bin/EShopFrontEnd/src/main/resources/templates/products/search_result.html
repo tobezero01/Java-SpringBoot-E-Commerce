@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')"/>
+<body>
+<div>
+    <div th:replace="navigation :: header_menu"></div>
+
+    <div class="container-fluid">
+        <div th:replace="navigation :: search_nav"></div>
+
+        <div th:if="${totalItems > 0}">
+          <h2>Search Results For '[[${keyWord}]]'</h2>
+        </div>
+        <div th:unless="${totalItems > 0}">
+            <h2>No Products Found For '[[${keyWord}]]'</h2>
+        </div>
+        <div class="row">
+            <th:block th:each="product : ${listResult}">
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card product-card h-100 border-custom">
+                        <a th:href="@{'/d/' + ${product.alias}}">
+                            <div class="image-container">
+                                <img th:src="@{${product.mainImagePath}}" class="card-img-top img-fluid" />
+                            </div>
+                        </a>
+                        <div class="card-body text-center">
+                            <a th:href="@{'/d/' + ${product.alias}}">
+                                <h5 class="card-title">[[${product.shortName}]]</h5>
+                            </a>
+                            <div th:if="${product.discountPercent <= 0 }">
+                                <div th:replace="fragments :: price(${product.price})"></div>
+                            </div>
+                            <div th:if="${product.discountPercent > 0 }" class="d-flex">
+                                <span class="product-price text-danger"><div th:replace="fragments :: price(${product.discountPrice})"></div></span>
+                                <del class="text-muted"><div th:replace="fragments :: price(${product.price})"></div></del>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+
+    </div>
+
+
+    <!--Pagination start-->
+    <div>
+        <div class="text-center m-1" th:if="${totalItems > 0}">
+            <span>Showing Items #[[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+        </div>
+        <div class="text-center m-1" th:unless="${totalItems > 0}">
+            <span>No Items found</span>
+        </div>
+        <div th:if="${totalItems > 0}">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <!-- Link to the first page -->
+                    <li th:classappend="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{/search/page/1(keyWord=${keyWord})}">First</a>
+                    </li>
+                    <!-- Link to the previous page -->
+                    <li th:classappend="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{/search/page/{pageNum}(pageNum=${currentPage - 1}, keyWord=${keyWord})}">Previous</a>
+                    </li>
+
+                    <!-- Link to the first page if current page is greater than 2 -->
+                    <li th:if="${currentPage > 2}" class="page-item">
+                        <a class="page-link" th:href="@{/search/page/1(keyWord=${keyWord})}">1</a>
+                    </li>
+
+                    <!-- Dots before the current page -->
+                    <li th:if="${currentPage > 3}" class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+
+                    <!-- Links for the current, previous, and next pages -->
+                    <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
+                        th:classappend="${currentPage == i} ? 'page-item active' : 'page-item'">
+                        <a class="page-link" th:href="@{/search/page/{pageNum}(pageNum=${i}, keyWord=${keyWord})}">[[${i}]]</a>
+                    </li>
+
+                    <!-- Dots after the current page -->
+                    <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+
+                    <!-- Link to the last page if current page is less than total pages minus 1 -->
+                    <li th:if="${currentPage < totalPages - 1}" class="page-item">
+                        <a class="page-link" th:href="@{/search/page/{pageNum}(pageNum=${totalPages}, keyWord=${keyWord})}">[[${totalPages}]]</a>
+                    </li>
+
+                    <!-- Link to the next page -->
+                    <li th:classappend="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{/search/page/{pageNum}(pageNum=${currentPage + 1}, keyWord=${keyWord})}">Next</a>
+                    </li>
+
+                    <!-- Link to the last page -->
+                    <li th:classappend="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link" th:href="@{/search/page/{pageNum}(pageNum=${totalPages}, keyWord=${keyWord})}">Last</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!--Pagination End-->
+
+    <div th:replace="navigation :: footer_menu"></div>
+</div>
+
+
+</body>
+</html>

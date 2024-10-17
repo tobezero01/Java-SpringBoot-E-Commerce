@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments :: page_head('Home - Eshop Admin', 'none')">
+</head>
+<body>
+
+<div>
+    <div th:replace="navigation :: menu"></div>
+
+    <div class="container-fluid">
+        Welcome
+        <a th:href="@{/account}" sec:authentication="principal.username"></a>
+          <span sec:authentication="principal.authorities"></span>
+    </div>
+
+    <div th:replace="fragments :: footer"></div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+            $("#logoutLink").on("click", function(e) {
+                e.preventDefault();
+                document.logoutForm.submit();
+            });
+        });
+</script>
+</body>
+</html>

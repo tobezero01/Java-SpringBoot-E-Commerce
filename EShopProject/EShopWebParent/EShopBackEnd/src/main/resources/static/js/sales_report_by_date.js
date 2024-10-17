@@ -3,9 +3,13 @@ var chartOptions;
 var totalNetSales ;
 var totalGrossSales ;
 var totalOrders;
+var MILLISECONDS_A_DAYS = 24 * 60 * 60 * 1000;
 
 $(document).ready(function () {
     $(".button_sales_by_date").on("click" , function() {
+        divCustomDateRange = $("#divCustomDateRange");
+        startDateField = document.getElementById('startDate');
+        endDateField = document.getElementById('endDate');
 
         $(".button_sales_by_date").each(function(e) {
             $(this).removeClass("btn-primary").addClass("btn-light");
@@ -13,10 +17,50 @@ $(document).ready(function () {
         $(this).removeClass("btn-light").addClass("btn-primary");
 
         period = $(this).attr("period");
-        loadSalesReportByDate(period);
+        if(period) {
+            loadSalesReportByDate(period);
+            divCustomDateRange.addClass("d-none");
+        } else {
+            divCustomDateRange.removeClass("d-none");
+        }
+
+    });
+    initCustomDateRange();
+
+    $("#buttonViewReportByDateRange").on("click", function() {
+        validateDateRange();
     });
 
 });
+
+
+
+function validateDateRange() {
+    days = calculateDay();
+    alert(days);
+}
+
+
+
+function calculateDay() { 
+    startDate = startDateField.val();
+    endDate = endDateField.val();
+    differentInMilliseconds = endDate - startDate;
+    return differentInMilliseconds / MILLISECONDS_A_DAYS;
+}
+
+
+
+function initCustomDateRange() {
+    toDate = new Date();
+    endDateField.valueAsDate = toDate;
+
+    fromDate = new Date();
+    fromDate.setDate(toDate.getDate() - 30);
+    startDateField.valueAsDate = fromDate;
+}
+
+
 
 function loadSalesReportByDate(period) {
     requestUrl = contextPath + "reports/sales_by_date/" + period;
@@ -27,6 +71,8 @@ function loadSalesReportByDate(period) {
     });
 
 }
+
+
 
 function prepareChartData(responseJSON) {
     data = new google.visualization.DataTable();
@@ -47,6 +93,8 @@ function prepareChartData(responseJSON) {
     });
 
 }
+
+
 
 function customizeChart(period) {
     chartOptions = {
@@ -74,6 +122,8 @@ function customizeChart(period) {
 
 }
 
+
+
 function drawChart(period) {
     var salesChart = new google.visualization.ColumnChart(document.getElementById('chart_sales_by_date'));
     salesChart.draw(data, chartOptions);
@@ -87,6 +137,8 @@ function drawChart(period) {
     $("#textTotalOrders").text(totalOrders);
 }
 
+
+
 function getChartTitle(period) {
     if(period == "last_7_days") return 'Sales in last 7 days';
     if(period == "last_28_days") return 'Sales in last 28 days';
@@ -94,6 +146,8 @@ function getChartTitle(period) {
     if(period == "last_years") return 'Sales in last years';
     return 'Sales in last 7 days';
 }
+
+
 
 function getDenominator(period) {
     if(period == "last_7_days") return 7;

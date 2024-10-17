@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="fragments :: page_head('Error - Page', 'none')">
+</head>
+<body>
+
+<div>
+    <div th:replace="navigation :: menu"></div>
+
+    <div class="container-fluid">
+        <h2>Sorry. The server has encountered an error while processing your request!</h2>
+    </div>
+
+    <div th:replace="fragments :: footer"></div>
+</div>
+
+
+</body>
+</html>

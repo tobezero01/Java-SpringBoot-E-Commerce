@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head('Home - Eshop', 'none')" />
+<body>
+<div>
+	<div th:replace="navigation :: header_menu"></div>
+	<div class="container-fluid">
+		<div class="mt-3 mb-3">
+			<h1>Shopping by Categories</h1>
+		</div>
+		<div th:replace="navigation :: search_nav"></div>
+		<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+			<div class="col" th:each="category : ${listCategories}">
+				<div class="card text-center h-100 shadow-sm hover-card">
+					<div class="card-body d-flex flex-column align-items-center justify-content-center">
+						<!-- Thẻ div bọc hình ảnh để đảm bảo chiều cao cố định và căn giữa -->
+						<div class="image-container mb-3">
+							<img th:src="@{${category.imagePath}}" class="img-fluid hover-img" />
+						</div>
+						<h5 class="card-title mt-auto">
+							<a th:href="@{'/c/' + ${category.alias}}" class="text-decoration-none text-dark">[[${category.name}]]</a>
+						</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div th:replace="navigation :: footer_menu"></div>
+</div>
+</body>
+</html>

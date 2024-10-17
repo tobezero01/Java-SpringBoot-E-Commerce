@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')">
+</head>
+
+<body>
+
+<!-- nav bar -->
+<div th:replace="navigation :: header_menu"></div>
+<div class="container-fluid">
+    <div th:replace="navigation :: search_nav"></div>
+</div>
+
+<!-- body -->
+<div class="container-fluid">
+    <div class="text-center mb-4">
+        <h1 class="display-4"><b>[[${pageTitle}]]</b></h1>
+    </div>
+
+    <div>
+        <form th:action="@{/address_book/save}" th:object="${address}" method="post"
+              style="max-width: 800px; margin: 0 auto;">
+            <input type="hidden" th:field="*{id}"/>
+            <input type="hidden" th:field="*{defaultForShipping}"/>
+            <div class="border border-secondary rounded p-3">
+
+                <div class="form-group row mb-3">
+                    <label for="firstName" class="col-sm-3 col-form-label">First name</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{firstName}" class="form-control" required minlength="3"
+                               maxlength="64">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="lastName" class="col-sm-3 col-form-label">Last name</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{lastName}" class="form-control" required minlength="3"
+                               maxlength="64">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="phoneNumber" class="col-sm-3 col-form-label">Phone Number</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{phoneNumber}" class="form-control" required minlength="8"
+                               maxlength="15">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="addressLine1" class="col-sm-3 col-form-label">Address Line 1</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{addressLine1}" class="form-control" required minlength="6"
+                               maxlength="64">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="addressLine2" class="col-sm-3 col-form-label">Address Line 2</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{addressLine2}" class="form-control" minlength="6"
+                               maxlength="64">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="city" class="col-sm-3 col-form-label">City</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{city}" class="form-control" required minlength="3"
+                               maxlength="64">
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="country" class="col-sm-3 col-form-label">Country</label>
+                    <div class="col-sm-9">
+                        <select th:field="*{country}" class="form-control">
+                            <option th:each="country : ${listCountries}" th:value="${country.id}">[[${country.name}]]
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="state" class="col-sm-3 col-form-label">State/Province</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{state}" class="form-control" minlength="3"
+                               maxlength="64" list="listStates">
+                        <datalist id="listStates"></datalist>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <label for="postalCode" class="col-sm-3 col-form-label">Postal Code</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{postalCode}" class="form-control" minlength="3"
+                               maxlength="64">
+                    </div>
+                </div>
+
+
+                <div class="form-group row pt-4">
+                    <div class="col-sm-9 offset-sm-3">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                        <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Model dialog duplicated -->
+    <div th:replace="modal_fragments :: modal_dialog"></div>
+
+    <!-- footer -->
+    <div th:replace="fragments :: footer"></div>
+
+    <!-- redirect cancel btn to /address_book-->
+
+    <script type="text/javascript">
+        moduleUrl = "[[@{/address_book}]]";
+        contextPath = "[[@{/}]]";
+
+    </script>
+
+    <script th:src="@{/js/common_form.js}"></script>
+    <script th:src="@{/js/common_form_country_state.js}"></script>
+
+</body>
+
+</html>
