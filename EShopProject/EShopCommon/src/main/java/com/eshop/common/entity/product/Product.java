@@ -68,6 +68,8 @@ public class Product {
     @OneToMany(mappedBy = "product" , cascade = CascadeType.ALL)
     private List<ProductDetail> details = new ArrayList<>();
 
+    private int reviewCount;
+    private float averageRating;
     public Product() {
     }
 
@@ -242,6 +244,22 @@ public class Product {
 
     public List<ProductDetail> getDetails() {
         return details;
+    }
+
+    public int getReviewCount() {
+        return reviewCount;
+    }
+
+    public void setReviewCount(int reviewCount) {
+        this.reviewCount = reviewCount;
+    }
+
+    public float getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(float averageRating) {
+        this.averageRating = averageRating;
     }
 
     public void setDetails(List<ProductDetail> details) {

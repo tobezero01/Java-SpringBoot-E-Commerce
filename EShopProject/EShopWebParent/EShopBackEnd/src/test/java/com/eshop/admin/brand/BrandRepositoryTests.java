@@ -1,6 +1,5 @@
 package com.eshop.admin.brand;
 
-import com.eshop.admin.brand.BrandRepository;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Category;
 import org.junit.jupiter.api.Test;
