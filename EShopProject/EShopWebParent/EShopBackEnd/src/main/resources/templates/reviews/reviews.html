@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head('Manage Review', 'none')">
+</head>
+
+<body>
+<!-- nav bar-->
+<div th:replace="navigation :: menu"></div>
+<div>
+    <div class="container-fluid">
+        <div>
+            <div class="pb-3">
+                <h1>Manage reviews</h1>
+            </div>
+        </div>
+
+
+        <!-- search form and message-->
+        <div th:replace="fragments :: search_form_and_message('/reviews/page/1')"></div>
+
+
+        <div class="pt-2">
+            <table class="table table-responsive-xl table-bordered table-striped table-hover ">
+                <thead class="gradient-bg">
+                <tr>
+                    <!-- Call fragment -->
+                    <th th:replace="fragments :: column_link('/reviews','id', 'Id')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','product', 'Product')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','customer', 'Customer')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','rating', 'Rating')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','reviewTime', 'Review Time')"></th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="review : ${listReviews}">
+                    <td>[[${review.id}]]</td>
+                    <td>
+                        <a class="link-detail-product" th:href="@{'/products/detail/' + ${review.product.id}}">
+                            [[${review.product.shortName}]]
+                        </a>
+                    </td>
+                    <td>
+                        <a class="link-detail-customer" th:href="@{'/customers/detail/' + ${review.customer.id}}">
+                            [[${review.customer.fullName}]]
+                        </a>
+                    </td>
+                    <td>[[${review.rating}]]<i class="fa fa-star"></i></td>
+                    <td>[[${review.reviewTime}]]</td>
+
+                    <td>
+                        <div class="inline-container">
+                            <a class="link-detail-review fas fa-file-alt fa-2x icon-green "
+                               th:href="@{'/reviews/detail/' + ${review.id}}"
+                               title="View detail for this Review">
+                            </a>
+                            &nbsp;
+                            &nbsp;
+                            <div th:replace="fragments :: edit('review' ,'/reviews/edit/' + ${review.id})"></div>
+                            &nbsp;
+                            &nbsp;
+                            <div th:replace="fragments :: elseDelete('review' ,'/reviews/delete/' + ${review.id}, ${review.id})"></div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div th:replace="fragments :: pagination('/reviews')"></div>
+
+    </div>
+    <div class="modal fade" id="detailModal">
+        <div class="modal-dialog modal-xl bg-white">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="customerDetailModal">
+        <div class="modal-dialog modal-xl bg-white">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="productDetailModal">
+        <div class="modal-dialog modal-xl bg-white">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="modal_fragments :: confirm_modal"></div>
+    <div th:replace="fragments :: footer"></div>
+
+    <script th:src="@{/js/common_list.js}"></script>
+</div>
+<!-- Body -->
+
+<script>
+    moduleUrl = "[[@{/reviews}]]";
+    $(document).ready(function() {
+        handleLinkViewProductDetails();
+        handleLinkViewCustomerDetails();
+        handleLinkViewReviewDetails();
+        handleLinkDelete();
+    });
+
+    function handleLinkViewCustomerDetails() {
+        $(".link-detail-customer").on("click", function (e) {
+            e.preventDefault();
+            linkDetailUrl = $(this).attr("href");
+            $("#customerDetailModal").modal('show').find(".modal-content").load(linkDetailUrl);
+        });
+    }
+
+    function handleLinkDelete() {
+        $(".link-delete").on("click", function(e) {
+            e.preventDefault();
+            showDeleteConfirmModal($(this) , 'review');
+        });
+    }
+
+    function handleLinkViewProductDetails() {
+        $(".link-detail-product").on("click", function (e) {
+            e.preventDefault();
+            linkDetailUrl = $(this).attr("href");
+            $("#productDetailModal").modal('show').find(".modal-content").load(linkDetailUrl);
+        });
+    }
+
+    function handleLinkViewReviewDetails() {
+        $(".link-detail-review").on("click", function (e) {
+            e.preventDefault();
+            linkDetailUrl = $(this).attr("href");
+            $("#detailModal").modal('show').find(".modal-content").load(linkDetailUrl);
+        });
+    }
+
+</script>
+
+</body>
+
+</html>

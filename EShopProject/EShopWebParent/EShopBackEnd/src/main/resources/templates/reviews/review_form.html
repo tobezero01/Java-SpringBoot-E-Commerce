@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(${pageTitle}, 'none')">
+</head>
+
+<body>
+
+<!-- nav bar -->
+<div th:replace="navigation :: menu"></div>
+
+<!-- body -->
+<div class="container-fluid">
+
+    <div>
+        <h1>Manage review | [[${pageTitle}]] </h1>
+    </div>
+
+
+    <!-- form user -->
+    <div>
+        <form th:action="@{/reviews/save}" th:object="${review}" method="post"
+              onsubmit="return checkEmailUnique(this)"
+              style="max-width: 800px; margin: 0 auto;">
+            <input type="hidden" th:field="*{id}"/>
+            <div class="border border-secondary rounded p-3">
+
+                <div class="form-group row mb-3">
+                    <label  class="col-sm-3 col-form-label">Product</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:value="${review.product.name}" class="form-control" readonly >
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label  class="col-sm-3 col-form-label">Customer</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:value="${review.customer.fullName}" class="form-control" readonly>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label  class="col-sm-3 col-form-label">Rating</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:value="${review.rating}" class="form-control" readonly >
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label  class="col-sm-3 col-form-label">Review Time</label>
+                    <div class="col-sm-9">
+                        <span  th:text="${#dates.format(review.reviewTime, 'yyyy-MM-dd HH:mm:sss')}" class="form-control" ></span>
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label  class="col-sm-3 col-form-label">HeadLine</label>
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{headLine}" class="form-control" minlength="10" maxlength="128" required >
+                    </div>
+                </div>
+                <div class="form-group row mb-3">
+                    <label  class="col-sm-3 col-form-label">Comment</label>
+                    <div class="col-sm-9">
+                        <textarea rows="3" th:field="*{comment}" class="form-control" minlength="10" maxlength="128" required ></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row pt-4">
+                    <div class="col-sm-9 offset-sm-3">
+                        <input type="submit" value="Save" class="btn btn-primary">
+                        <input type="button" id="buttonCancel" value="Cancel" class="btn btn-secondary">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Model dialog duplicated -->
+    <div th:replace="modal_fragments :: modal_dialog"></div>
+
+    <!-- footer -->
+    <div th:replace="fragments :: footer"></div>
+
+    <!-- redirect cancel btn to /reviews-->
+
+    <script type="text/javascript">
+        moduleUrl = "[[@{/reviews}]]";
+        contextPath = "[[@{/}]]";
+
+
+    </script>
+
+    <script th:src="@{/js/common_form.js}"></script>
+
+</body>
+
+</html>
