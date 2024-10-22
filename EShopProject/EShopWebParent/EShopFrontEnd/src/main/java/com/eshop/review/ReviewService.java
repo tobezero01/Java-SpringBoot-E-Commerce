@@ -2,6 +2,7 @@ package com.eshop.review;
 
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.Review;
+import com.eshop.common.entity.product.Product;
 import com.eshop.exception.ReviewNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -37,5 +38,11 @@ public class ReviewService {
             throw new ReviewNotFoundException("Customer doesn't have any reviews with ID = " + reviewId);
         }
         return review;
+    }
+
+    public Page<Review> list3MostRecentReviewByProduct(Product product) {
+        Sort sort = Sort.by("reviewTime").descending();
+        Pageable pageable = PageRequest.of(0,3, sort);
+        return reviewRepository.findByProduct(product, pageable);
     }
 }

@@ -2,9 +2,11 @@ package com.eshop.product;
 
 import com.eshop.category.CategoryService;
 import com.eshop.common.entity.Category;
+import com.eshop.common.entity.Review;
 import com.eshop.common.entity.product.Product;
 import com.eshop.exception.CategoryNotFoundException;
 import com.eshop.exception.ProductNotFoundException;
+import com.eshop.review.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -22,6 +24,9 @@ public class ProductController {
     private CategoryService categoryService;
     @Autowired
     private ProductService productService;
+
+    @Autowired
+    private ReviewService reviewService;
 
 
     @GetMapping("/c/{category_alias}")
@@ -52,8 +57,10 @@ public class ProductController {
         try {
             Product product = productService.getProduct(alias);
             List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
+            Page<Review> listReviews = reviewService.list3MostRecentReviewByProduct(product);
             model.addAttribute("listCategoryParents", listCategoryParents);
             model.addAttribute("product", product);
+            model.addAttribute("listReviews", listReviews);
             model.addAttribute("pageTitle", product.getShortName());
             return "products/product_detail";
         } catch (ProductNotFoundException e) {

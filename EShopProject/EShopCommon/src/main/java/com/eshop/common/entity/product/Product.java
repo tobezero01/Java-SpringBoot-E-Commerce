@@ -262,6 +262,11 @@ public class Product {
         this.averageRating = averageRating;
     }
 
+    @Transient
+    public String getURI() {
+        return "/d/" + this.alias + "/";
+    }
+
     public void setDetails(List<ProductDetail> details) {
         this.details = details;
     }

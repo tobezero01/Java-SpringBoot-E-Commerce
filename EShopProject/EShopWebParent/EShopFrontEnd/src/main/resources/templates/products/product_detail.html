@@ -121,6 +121,8 @@
         </div>
     </div>
 
+    <div th:replace="products/product_top_reviews :: content"></div>
+
     <div th:replace="products/images_carousel :: content"></div>
     <div th:replace="modal_fragments :: modal_dialog"></div>
     <div th:replace="navigation :: footer_menu"></div>
@@ -131,6 +133,9 @@
     var productId = "[[${product.id}]]";
     var csrfHeaderName = "[[${_csrf.headerName}]]";
     var csrfValue = "[[${_csrf.token}]]";
+
+    decimalSeparator = "[[${DECIMAL_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
+    thousandSeparator = "[[${THOUSAND_POINT_TYPE == 'COMMA' ? ',' : '.'}]]";
 
     $(document).ready(function () {
         let bigImage = $("#bigImage");
@@ -147,6 +152,8 @@
             let imageIndex = parseInt(bigImage.attr("index"));
             $("#carouselExampleIndicators").carousel(imageIndex);
         });
+
+        formatRatingNumber();
     });
 
     $(".product-detail-rating-star").rating({
@@ -155,6 +162,12 @@
         showCaption : false,
         theme: 'krajee-svg'
     });
+
+    function formatRatingNumber() {
+        ratingText = $("#ratingNumber").text();
+        formatRating = $.number(ratingText, 2 ,decimalSeparator, thousandSeparator);
+        $("#ratingNumber").text(formatRating);
+    };
 
 </script>
 
