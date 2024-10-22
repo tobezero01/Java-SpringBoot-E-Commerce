@@ -18,6 +18,7 @@ import java.security.PublicKey;
 @Transactional
 public class ReviewService {
     public static final int REVIEWS_PER_PAGE = 5;
+    public static final int REVIEWS_BY_PRODUCT_PER_PAGE = 5;
     @Autowired
     private ReviewRepository reviewRepository;
 
@@ -43,6 +44,14 @@ public class ReviewService {
     public Page<Review> list3MostRecentReviewByProduct(Product product) {
         Sort sort = Sort.by("reviewTime").descending();
         Pageable pageable = PageRequest.of(0,3, sort);
+        return reviewRepository.findByProduct(product, pageable);
+    }
+
+    public Page<Review> listByProduct(Product product, int pageNum, String sortField, String sortDir) {
+        Sort sort = Sort.by(sortField);
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+        Pageable pageable = PageRequest.of(pageNum - 1,REVIEWS_BY_PRODUCT_PER_PAGE, sort );
+
         return reviewRepository.findByProduct(product, pageable);
     }
 }

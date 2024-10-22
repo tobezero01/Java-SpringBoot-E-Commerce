@@ -3,8 +3,11 @@ package com.eshop.review;
 import com.eshop.Utility;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.Review;
+import com.eshop.common.entity.product.Product;
 import com.eshop.customer.CustomerService;
+import com.eshop.exception.ProductNotFoundException;
 import com.eshop.exception.ReviewNotFoundException;
+import com.eshop.product.ProductService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,6 +26,8 @@ public class ReviewController {
 
     @Autowired private ReviewService reviewService;
     @Autowired private CustomerService customerService;
+
+    @Autowired private ProductService productService;
 
     @GetMapping("/reviews")
     public String listFirstPage(Model model) {
@@ -71,6 +76,47 @@ public class ReviewController {
             redirectAttributes.addFlashAttribute(e.getMessage());
             return defaultRedirect;
         }
+    }
+
+    @GetMapping("/ratings/{productAlias}/page/{pageNum}")
+    public String listByProduct(Model model,
+                                @PathVariable(name = "productAlias") String productAlias,
+                                @PathVariable(name = "pageNum") int pageNum,
+                                String sortField, String sortDir) {
+        Product product = null;
+
+        try {
+            product = productService.getProduct(productAlias);
+        } catch (ProductNotFoundException e) {
+            return "error/404";
+        }
+        Page<Review> page = reviewService.listByProduct(product, pageNum, sortField, sortDir);
+        List<Review> listReviews = page.getContent();
+
+        long startCount = (pageNum - 1) * ReviewService.REVIEWS_BY_PRODUCT_PER_PAGE;
+        long endCount = startCount + ReviewService.REVIEWS_BY_PRODUCT_PER_PAGE - 1;
+        if (endCount > page.getTotalElements()) {
+            endCount = page.getTotalElements();
+        }
+
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("totalItems", page.getTotalElements());
+        model.addAttribute("currentPage", pageNum);
+        model.addAttribute("sortField", sortField);
+        model.addAttribute("sortDir", sortDir);
+        model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
+        model.addAttribute("startCount", startCount);
+        model.addAttribute("endCount", endCount);
+        model.addAttribute("listReviews", listReviews);
+        model.addAttribute("pageTitle", "Reviews for " + product.getShortName());
+        model.addAttribute("product", product);
+
+        return "reviews/review_product";
+    }
+
+    @GetMapping("/ratings/{productAlias}")
+    public String listByProductFirstPage(Model model, @PathVariable(name = "productAlias") String productAlias) {
+        return listByProduct(model, productAlias, 1, "reviewTime", "desc");
     }
 
     private Customer getAuthenticatedCustomer(HttpServletRequest request) {

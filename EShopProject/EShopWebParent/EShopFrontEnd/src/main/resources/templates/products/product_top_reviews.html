@@ -42,7 +42,9 @@
     </div>
 
     <div class="row m-1">
-        <a href="" class="ml-3">View all [[${product.reviewCount}]] ratings</a>
+        <a th:href="@{'/ratings/' + ${product.alias}}" class="text-info">
+            View all [[${product.reviewCount}]] ratings
+        </a>
     </div>
 
     <div class="row">
