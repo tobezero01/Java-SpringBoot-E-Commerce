@@ -27,6 +27,13 @@
                             <a th:href="@{'/d/' + ${product.alias}}">
                                 <h5 class="card-title">[[${product.shortName}]]</h5>
                             </a>
+                            <div class="d-flex flex-wrap ">
+                                <input type="text" class="product-detail-rating-star" dir="ltr" data-size="3"
+                                       th:value="${product.averageRating}">
+                                <div class="mt-2 ms-2">
+                                    [[${product.reviewCount}]]
+                                </div>
+                            </div>
                             <div th:if="${product.discountPercent <= 0 }">
                                 <div th:replace="fragments :: price(${product.price})"></div>
                             </div>
@@ -106,7 +113,14 @@
 
     <div th:replace="navigation :: footer_menu"></div>
 </div>
-
+<script>
+    $(".product-detail-rating-star").rating({
+        displayOnly : true,
+        hoverOnClera : false,
+        showCaption : false,
+        theme: 'krajee-svg'
+    });
+</script>
 
 </body>
 </html>

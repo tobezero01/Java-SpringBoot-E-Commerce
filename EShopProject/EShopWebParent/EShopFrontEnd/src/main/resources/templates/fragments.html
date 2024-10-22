@@ -15,9 +15,22 @@
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.min.js}"></script>
     <!-- Bootstrap JS từ webjars -->
     <script th:src="@{/webjars/bootstrap/5.3.1/js/bootstrap.bundle.min.js}"></script>
+
+    <!-- Rating Star -->
+    <link th:href="@{/rating/css/star-rating.css}" media="all" rel="stylesheet" type="text/css" />
+    <script th:src="@{/rating/js/star-rating.js}" type="text/javascript"></script>
+    <link th:href="@{/rating/themes/krajee-svg/theme.css}" media="all" rel="stylesheet" type="text/css" />
+    <script th:src="@{/rating/themes/krajee-svg/theme.js}"></script>
 </head>
 
 <body>
+<th th:fragment="column_link( url, fieldName , columnLabel)">
+    <a class="text-dark"
+       th:href="@{${url} + '/page/' + ${currentPage} +'?sortField=' + ${fieldName} +'&sortDir=' + ${sortField != fieldName ? sortDir : reverseSortDir} + ${keyWord != null ? '&keyWord=' + keyWord : ''}} ">[[${columnLabel}]]</a>
+    <span th:if="${sortField == fieldName}"
+          th:class="${sortDir == 'asc' ? 'fas fa-sort-up' : 'fas fa-sort-down'}">
+        </span>
+</th>
 
 <div th:fragment="footer" class="text-center m-3">
     <p>EShop - Copyright &copy; EShop Ltd.</p>
@@ -49,62 +62,53 @@
     <div th:if="${totalItems > 0}">
         <nav>
             <ul class="pagination justify-content-center">
-                <!-- Link đến trang đầu tiên -->
-                <li th:classappend="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                <!-- Link to the first page -->
+                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/1' + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">First</a>
+                       th:href="@{${pageName} + '/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''} }">First</a>
                 </li>
-
-                <!-- Link đến trang trước -->
-                <li th:classappend="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                <!-- Link to the previous page -->
+                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/' + (${currentPage - 1}) + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Previous</a>
+                       th:href="@{${pageName} +'/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Previous</a>
                 </li>
-
-                <!-- Link đến trang 1 nếu trang hiện tại lớn hơn 2 -->
+                <!-- Link to the first page if current page is greater than 2 -->
                 <li th:if="${currentPage > 2}" class="page-item">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/1' + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">1</a>
+                       th:href="@{${pageName} +'/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">1</a>
                 </li>
-
-                <!-- Dấu chấm trước trang hiện tại nếu có nhiều hơn 3 trang -->
+                <!-- Dots before the current page -->
                 <li th:if="${currentPage > 3}" class="page-item disabled">
                     <a class="page-link">...</a>
                 </li>
-
-                <!-- Link đến các trang lân cận -->
+                <!-- Links for the current, previous, and next page -->
                 <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
-                    th:classappend="${currentPage == i} ? 'page-item active' : 'page-item'">
+                    th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/' + ${i} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">[[${i}]]</a>
+                       th:href="@{${pageName} +'/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${i}]]</a>
                 </li>
-
-                <!-- Dấu chấm sau trang hiện tại nếu còn nhiều trang hơn -->
+                <!-- Dots after the current page -->
                 <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
                     <a class="page-link">...</a>
                 </li>
-
-                <!-- Link đến trang cuối nếu trang hiện tại nhỏ hơn tổng số trang trừ 1 -->
+                <!-- Link to the last page if current page is less than total pages minus 1 -->
                 <li th:if="${currentPage < totalPages - 1}" class="page-item">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/' + ${totalPages} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">[[${totalPages}]]</a>
+                       th:href="@{${pageName} +'/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">[[${totalPages}]]</a>
                 </li>
-
-                <!-- Link đến trang tiếp theo -->
-                <li th:classappend="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                <!-- Link to the next page -->
+                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/' + (${currentPage + 1}) + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Next</a>
+                       th:href="@{${pageName} +'/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Next</a>
                 </li>
-
-                <!-- Link đến trang cuối cùng -->
-                <li th:classappend="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                <!-- Link to the last page -->
+                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
                     <a class="page-link"
-                       th:href="@{${pageName} + '/page/' + ${totalPages} + (${keyWord != null} ? ('?keyWord=' + ${keyWord}) : '')}">Last</a>
+                       th:href="@{${pageName} +'/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${keyWord != null ? '&keyWord=' + keyWord : ''}}">Last</a>
                 </li>
             </ul>
         </nav>
     </div>
-
 </div>
 </body>
 </html>

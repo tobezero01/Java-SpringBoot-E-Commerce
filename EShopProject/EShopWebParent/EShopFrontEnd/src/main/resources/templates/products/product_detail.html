@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="fragments :: page_head(${pageTitle}, 'none')"/>
+<head>
+    <head th:replace="fragments :: page_head(${pageTitle}, 'none')"/>
+</head>
+
 <body>
 <div>
     <div th:replace="navigation :: header_menu"></div>
@@ -48,7 +51,16 @@
 
             <div class="col-md-6">
                 <h2 class="font-weight-bold text-dark">[[${product.name}]]</h2>
-                <p class="text-muted">Brand: <span class="text-primary">[[${product.brand.name}]]</span></p>
+                <div class="row pb-2 d-flex ">
+                    <div class="col-sm">
+                        <input type="text" class="product-detail-rating-star" dir="ltr" data-size="3"
+                        th:value="${product.averageRating}">
+                    </div>
+                    <div class="col-sm mt-2">
+                        [[${product.reviewCount}]] rating(s)
+                    </div>
+                </div>
+                <p class="text-muted">Brand: <span class="text-primary"><b>[[${product.brand.name}]]</b></span></p>
 
                 <!-- Price Section -->
                 <div class="d-flex align-items-center mt-2">
@@ -136,6 +148,14 @@
             $("#carouselExampleIndicators").carousel(imageIndex);
         });
     });
+
+    $(".product-detail-rating-star").rating({
+        displayOnly : true,
+        hoverOnClera : false,
+        showCaption : false,
+        theme: 'krajee-svg'
+    });
+
 </script>
 
 <script type="text/javascript" th:src="@{/js/quantity_control.js}"></script>

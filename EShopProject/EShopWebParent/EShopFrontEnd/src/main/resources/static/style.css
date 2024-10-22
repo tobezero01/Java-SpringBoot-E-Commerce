@@ -152,3 +152,11 @@ a:hover {
     max-height: 300px; /* Giới hạn chiều cao hình ảnh */
     object-fit: contain; /* Giữ tỷ lệ và không cắt hình ảnh */
 }
+
+
+/* Rating star */
+.product-detail-rating-star {
+        font-size: 10px; /* Adjust size here */
+        width: 80px; /* Optional: adjust width */
+        height: 30px; /* Optional: adjust height */
+    }

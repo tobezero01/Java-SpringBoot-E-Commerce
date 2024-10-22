@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(' Reviews for customer', 'none')">
+</head>
+
+<body>
+<!-- nav bar-->
+<div th:replace="navigation :: header_menu"></div>
+<div>
+    <div class="container-fluid">
+        <div th:replace="navigation :: search_nav"></div>
+        <div>
+            <div class="pb-3">
+                <h1> Your reviews</h1>
+            </div>
+        </div>
+        <form th:action="@{'/reviews/page/1'}" class="form-inline d-flex flex-wrap">
+            <input type="hidden" name="sortField" th:value="${sortField}">
+            <input type="hidden" name="sortDir" th:value="${sortDir}">
+            <label class="my-1 mr-2"> <b>Filters &nbsp;&nbsp; </b></label>
+            <input type="search" name="keyWord" th:value="${keyWord}" class="form-control mb-2 mr-sm-2"
+                   style="max-width:300px" required/>
+            &nbsp;&nbsp;
+            <input type="submit" value="Search" class="btn btn-primary mb-2 mr-sm-2"/>
+            &nbsp;&nbsp;
+            <input type="button" value="Clear" class="btn btn-secondary mb-2" onclick="clearFilter()"/>
+        </form>
+
+        <div class="pt-2">
+            <table class="table table-responsive-xl table-bordered table-striped table-hover ">
+                <thead class="gradient-bg">
+                <tr>
+                    <!-- Call fragment -->
+                    <th th:replace="fragments :: column_link('/reviews','id', 'Id')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','product', 'Product')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','headLine', 'Head Line')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','rating', 'Rating')"></th>
+                    <th th:replace="fragments :: column_link('/reviews','reviewTime', 'Review Time')"></th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="review : ${listReviews}">
+                    <td>[[${review.id}]]</td>
+                    <td>
+                        <a class="link-detail-product" th:href="@{'/d/' + ${review.product.alias}}">
+                            [[${review.product.shortName}]]
+                        </a>
+                    </td>
+                    <td>[[${review.headLine}]]</td>
+                    <td>[[${review.rating}]]<b> *</b></td>
+                    <td>[[${review.reviewTime}]]</td>
+
+                    <td>
+                        <div class="inline-container">
+                            <a class="link-detail-review btn btn-danger "
+                               th:href="@{'/reviews/detail/' + ${review.id}}"
+                               title="View detail for this Review"> Detail
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div th:replace="fragments :: pagination('/reviews')"></div>
+
+    </div>
+    <div class="modal fade" id="detailModal">
+        <div class="modal-dialog modal-xl bg-white">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="navigation :: footer_menu"></div>
+
+</div>
+<!-- Body -->
+
+<script>
+    moduleUrl = "[[@{/reviews}]]";
+    $(document).ready(function() {
+        handleLinkViewReviewDetails();
+    });
+
+    function clearFilter() {
+        window.location = moduleUrl ;
+    }
+
+
+    function handleLinkViewReviewDetails() {
+        $(".link-detail-review").on("click", function (e) {
+            e.preventDefault();
+            linkDetailUrl = $(this).attr("href");
+            $("#detailModal").modal('show').find(".modal-content").load(linkDetailUrl);
+        });
+    }
+
+</script>
+
+</body>
+
+</html>

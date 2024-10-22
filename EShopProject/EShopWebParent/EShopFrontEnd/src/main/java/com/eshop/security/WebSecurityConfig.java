@@ -38,7 +38,6 @@ public class WebSecurityConfig {
         return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/webjars/**");
     }
 
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity, ClientRegistrationRepository clientRegistrationRepository) throws Exception {
         // Create the default OAuth2AuthorizationRequestResolver
@@ -50,7 +49,7 @@ public class WebSecurityConfig {
         httpSecurity.authorizeHttpRequests(authRequests -> authRequests
                         .requestMatchers("/account_details" , "/update_account_details",
                                 "/cart" , "/address_book/**", "/checkout" ,
-                                "/place_order", "/process_paypal_order").authenticated()
+                                "/place_order", "/process_paypal_order", "/reviews/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .csrf(cs -> cs.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())

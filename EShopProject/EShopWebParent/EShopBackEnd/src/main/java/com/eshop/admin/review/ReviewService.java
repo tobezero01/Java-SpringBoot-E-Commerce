@@ -3,6 +3,7 @@ package com.eshop.admin.review;
 import com.eshop.admin.brand.BrandRepository;
 import com.eshop.admin.exception.ReviewNotFoundException;
 import com.eshop.admin.paging.PagingAndSortingHelper;
+import com.eshop.admin.product.ProductRepository;
 import com.eshop.common.entity.Brand;
 import com.eshop.common.entity.Review;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class ReviewService {
     public static final int REVIEW_PER_PAGE = 5;
     @Autowired
     private ReviewRepository reviewRepository;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     public void listByPage(int pageNum , PagingAndSortingHelper helper) {
         Sort sort = Sort.by(helper.getSortField());
@@ -48,6 +52,7 @@ public class ReviewService {
         Review reviewInDB = reviewRepository.findById(reviewInForm.getId()).get();
         reviewInDB.setHeadLine(reviewInForm.getHeadLine());
         reviewInDB.setComment(reviewInForm.getComment());
+        productRepository.updateReviewCountAndAverageRating(reviewInDB.getProduct().getId());
         reviewRepository.save(reviewInDB);
     }
 
