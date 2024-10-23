@@ -311,6 +311,7 @@ public class Order {
         return address;
     }
 
+
     @Transient
     public String getDeliverDateInForm() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -324,6 +325,69 @@ public class Order {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+    }
+
+    @Transient
+    public String getProductNames() {
+        String productNames = "";
+        productNames = "<ul>";
+
+        for (OrderDetail detail : orderDetails) {
+            productNames += "<li>" + detail.getProduct().getShortName() + "</li>";
+        }
+
+        productNames += "</ul>";
+        return productNames;
+    }
+
+    @Transient
+    public boolean isReturned() {
+        return hasStatus(OrderStatus.RETURNED);
+    }
+    @Transient
+    public boolean isReturnRequested() {
+        return hasStatus(OrderStatus.RETURN_REQUESTED);
+    }
+    @Transient
+    public boolean isShipping() {
+        return hasStatus(OrderStatus.SHIPPING);
+    }
+    @Transient
+    public boolean isPaid() {
+        return hasStatus(OrderStatus.PAID);
+    }
+    @Transient
+    public boolean isPackaged() {
+        return hasStatus(OrderStatus.PACKAGED);
+    }
+    @Transient
+    public boolean isCanceled() {
+        return hasStatus(OrderStatus.CANCELLED);
+    }
+    @Transient
+    public boolean isProcessing() {
+        return hasStatus(OrderStatus.PROCESSING);
+    }
+    @Transient
+    public boolean isPicked() {
+        return hasStatus(OrderStatus.PICKED);
+    }
+    @Transient
+    public boolean isRefunded() {
+        return hasStatus(OrderStatus.REFUNDED);
+    }
+    @Transient
+    public boolean isDelivered() {
+        return hasStatus(OrderStatus.DELIVERED);
+    }
+
+    public boolean hasStatus(OrderStatus status) {
+        for (OrderTrack aTrack : orderTracks) {
+            if (aTrack.getStatus().equals(status) ) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

@@ -2,8 +2,10 @@ package com.eshop.review;
 
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.Review;
+import com.eshop.common.entity.order.OrderStatus;
 import com.eshop.common.entity.product.Product;
 import com.eshop.exception.ReviewNotFoundException;
+import com.eshop.order.OrderDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,6 +23,9 @@ public class ReviewService {
     public static final int REVIEWS_BY_PRODUCT_PER_PAGE = 5;
     @Autowired
     private ReviewRepository reviewRepository;
+
+    @Autowired
+    private OrderDetailRepository orderDetailRepository;
 
     public Page<Review> listByCustomerByPage(Customer customer, String keyWord, int pageNum,
                                              String sortField, String sortDir) {
@@ -53,5 +58,16 @@ public class ReviewService {
         Pageable pageable = PageRequest.of(pageNum - 1,REVIEWS_BY_PRODUCT_PER_PAGE, sort );
 
         return reviewRepository.findByProduct(product, pageable);
+    }
+
+    public boolean didCustomerReviewProduct(Customer customer, Integer productId) {
+        Long count = reviewRepository.countByCustomerAndProduct(customer.getId(), productId);
+        return count > 0;
+    }
+
+    public boolean canCustomerReviewProduct(Customer customer, Integer productId) {
+        Long count = orderDetailRepository.countByProductAndCustomerAndOrderStatus(productId, customer.getId(), OrderStatus.DELIVERED);
+        return count > 0;
+
     }
 }

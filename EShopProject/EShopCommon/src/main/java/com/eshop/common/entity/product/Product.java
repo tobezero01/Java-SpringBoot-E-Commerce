@@ -267,6 +267,9 @@ public class Product {
         return "/d/" + this.alias + "/";
     }
 
+    @Transient private boolean customerCanReview;
+    @Transient private boolean reviewedByCustomer;
+
     public void setDetails(List<ProductDetail> details) {
         this.details = details;
     }
@@ -327,5 +330,19 @@ public class Product {
         return this.price;
     }
 
+    public boolean isCustomerCanReview() {
+        return customerCanReview;
+    }
 
+    public void setCustomerCanReview(boolean customerCanReview) {
+        this.customerCanReview = customerCanReview;
+    }
+
+    public boolean isReviewedByCustomer() {
+        return reviewedByCustomer;
+    }
+
+    public void setReviewedByCustomer(boolean reviewedByCustomer) {
+        this.reviewedByCustomer = reviewedByCustomer;
+    }
 }

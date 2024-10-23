@@ -10,6 +10,10 @@ import com.eshop.common.entity.order.OrderStatus;
 import com.eshop.common.entity.order.PaymentMethod;
 import com.eshop.common.entity.product.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +25,7 @@ import java.util.Set;
 @Transactional
 public class OrderService {
 
+    public static final int ORDERS_PER_PAGE = 5;
     @Autowired private OrderRepository orderRepository;
 
     public Order createOrder(Customer customer, Address address, List<CartItem> cartItems,
@@ -66,5 +71,17 @@ public class OrderService {
         }
 
         return orderRepository.save(newOrder);
+    }
+
+    public Page<Order> listForCustomerByPage(Customer customer, int pageNum,
+                                             String sortField, String sortDir, String keyWord) {
+        Sort sort = Sort.by(sortField);
+        sort = sortDir.equals("asc") ? sort.ascending() : sort.descending();
+
+        Pageable pageable = PageRequest.of(pageNum - 1, ORDERS_PER_PAGE, sort);
+        if (keyWord != null) {
+            return orderRepository.findALl(keyWord, customer.getId(), pageable);
+        }
+        return orderRepository.findAll(customer.getId(), pageable);
     }
 }

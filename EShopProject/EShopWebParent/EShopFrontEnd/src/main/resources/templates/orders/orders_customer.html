@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="fragments :: page_head(' Your Orders', 'none')">
+</head>
+
+<body>
+<!-- nav bar-->
+<div th:replace="navigation :: header_menu"></div>
+<div>
+    <div class="container-fluid">
+        <div th:replace="navigation :: search_nav"></div>
+        <div>
+            <div class="pb-3">
+                <h1> Your Orders</h1>
+            </div>
+        </div>
+        <form th:action="@{'/orders/page/1'}" class="form-inline d-flex flex-wrap">
+            <input type="hidden" name="sortField" th:value="${sortField}">
+            <input type="hidden" name="sortDir" th:value="${sortDir}">
+            <label class="my-1 mr-2"> <b>Filters &nbsp;&nbsp; </b></label>
+            <input type="search" name="orderKeyword" th:value="${orderKeyword}" class="form-control mb-2 mr-sm-2"
+                   style="max-width:300px" required/>
+            &nbsp;&nbsp;
+            <input type="submit" value="Search" class="btn btn-primary mb-2 mr-sm-2"/>
+            &nbsp;&nbsp;
+            <input type="button" value="Clear" class="btn btn-secondary mb-2" onclick="clearFilter()"/>
+        </form>
+
+        <div class="pt-2">
+            <table class="table table-responsive-xl table-bordered table-striped table-hover ">
+                <thead class="gradient-bg">
+                <tr>
+                    <!-- Call fragment -->
+                    <th th:replace="fragments :: column_link('/orders','id', 'Id')"></th>
+                    <th th:replace="fragments :: column_link('/orders','orderTime', 'Order Time')"></th>
+                    <th>Products</th>
+                    <th th:replace="fragments :: column_link('/orders','total', 'Total')"></th>
+                    <th th:replace="fragments :: column_link('/orders','status', 'Status')"></th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="order : ${listOrders}">
+                    <td th:text="${order.id}">ID</td>
+                    <td>
+                        <div th:replace="fragments :: format_time(${order.orderTime})">Order Time</div>
+                    </td>
+                    <td th:utext="${order.productNames}"></td>
+                    <td>
+                        <div th:replace="fragments :: format_currency(${order.total})">Total</div>
+                    </td>
+                    <td><span>[[${order.status}]]</span></td>
+
+                    <td>
+                        <div class="inline-container">
+                            <a class="btn btn-danger " title="View detail for this Review"> Detail</a>
+                            <th:block th:unless="${order.returnRequested}">
+                              &nbsp;&nbsp;
+                              <a class="btn btn-info " href="" title="Return this order">ReOrder</a>
+                            </th:block>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="text-center m-1" th:if="${totalItems > 0}">
+        <span>Showing Items #[[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+    </div>
+    <div class="text-center m-1" th:unless="${totalItems > 0}">
+        <span>No Items found</span>
+    </div>
+
+    <div th:if="${totalItems > 0}">
+        <nav>
+            <ul class="pagination justify-content-center">
+                <!-- Link to the first page -->
+                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{ '/orders/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''} }">First</a>
+                </li>
+                <!-- Link to the previous page -->
+                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{'/orders/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Previous</a>
+                </li>
+                <!-- Link to the first page if current page is greater than 2 -->
+                <li th:if="${currentPage > 2}" class="page-item">
+                    <a class="page-link"
+                       th:href="@{'/orders/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">1</a>
+                </li>
+                <!-- Dots before the current page -->
+                <li th:if="${currentPage > 3}" class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+                <!-- Links for the current, previous, and next page -->
+                <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
+                    th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
+                    <a class="page-link"
+                       th:href="@{'/orders/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">[[${i}]]</a>
+                </li>
+                <!-- Dots after the current page -->
+                <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
+                    <a class="page-link">...</a>
+                </li>
+                <!-- Link to the last page if current page is less than total pages minus 1 -->
+                <li th:if="${currentPage < totalPages - 1}" class="page-item">
+                    <a class="page-link"
+                       th:href="@{'/orders/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">[[${totalPages}]]</a>
+                </li>
+                <!-- Link to the next page -->
+                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{'/orders/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Next</a>
+                </li>
+                <!-- Link to the last page -->
+                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                    <a class="page-link"
+                       th:href="@{'/orders/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Last</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+  <div class="modal fade" id="detailModal">
+        <div class="modal-dialog modal-xl bg-white">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="navigation :: footer_menu"></div>
+
+</div>
+<!-- Body -->
+
+<script>
+    moduleUrl = "[[@{/orders}]]";
+    $(document).ready(function() {
+        handleLinkViewReviewDetails();
+    });
+
+    function clearFilter() {
+        window.location = moduleUrl ;
+    }
+
+
+    function handleLinkViewReviewDetails() {
+        $(".link-detail-review").on("click", function (e) {
+            e.preventDefault();
+            linkDetailUrl = $(this).attr("href");
+            $("#detailModal").modal('show').find(".modal-content").load(linkDetailUrl);
+        });
+    }
+
+
+
+</script>
+
+</body>
+
+</html>

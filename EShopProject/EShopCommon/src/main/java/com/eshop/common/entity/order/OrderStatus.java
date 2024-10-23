@@ -52,6 +52,12 @@ public enum OrderStatus {
             return "Products were returned";
         }
     },
+    RETURN_REQUESTED {
+        @Override
+        public String defaultDescription() {
+            return "Customer sent request to return purchase";
+        }
+    },
     PAID {
         @Override
         public String defaultDescription() {
