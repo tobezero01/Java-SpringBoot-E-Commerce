@@ -14,4 +14,5 @@ public interface OrderDetailRepository extends JpaRepository<OrderDetail, Intege
     public Long countByProductAndCustomerAndOrderStatus(Integer productId, Integer customerId, OrderStatus status);
 
 
+
 }

@@ -22,9 +22,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="">Shipping &amp; Delivery</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" th:href="@{/login}">Login</a>
-                </li>
+                <th:block sec:authorize="!isAuthenticated()">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" th:href="@{/login}">Login</a>
+                    </li>
+                <th:block sec:authorize="isAuthenticated()">
                 <li class="nav-item dropdown">
                     <a class="nav-link" th:href="@{/register}">Register</a>
                 </li>
@@ -47,7 +49,8 @@
         <nav class="navbar navbar-expand-sm bg-light">
             <div class="collapse navbar-collapse" id="searchNavbar">
                 <form class="form-inline d-flex" th:action="@{/search}" method="get">
-                    <input type="search" name="keyWord" class="form-control me-2" placeholder="search product" th:value="${keyWord}" required >
+                    <input type="search" name="keyWord" class="form-control me-2"
+                           placeholder="search product" th:value="${keyWord}" required >
                     <input type="submit" class="ml-3 btn btn-outline-success " >
                 </form>
 

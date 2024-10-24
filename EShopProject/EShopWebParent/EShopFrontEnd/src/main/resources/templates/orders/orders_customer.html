@@ -53,10 +53,11 @@
 
                     <td>
                         <div class="inline-container">
-                            <a class="btn btn-danger " title="View detail for this Review"> Detail</a>
+                            <a class="btn btn-danger linkDetail" th:href="@{'/orders/detail/' + ${order.id}}"
+                               title="View detail for this Review"> Detail</a>
                             <th:block th:unless="${order.returnRequested}">
-                              &nbsp;&nbsp;
-                              <a class="btn btn-info " href="" title="Return this order">ReOrder</a>
+                                &nbsp;&nbsp;
+                                <a class="btn btn-info " href="" title="Return this order">ReOrder</a>
                             </th:block>
                         </div>
                     </td>
@@ -66,65 +67,70 @@
         </div>
 
     </div>
-    <div class="text-center m-1" th:if="${totalItems > 0}">
-        <span>Showing Items #[[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
-    </div>
-    <div class="text-center m-1" th:unless="${totalItems > 0}">
-        <span>No Items found</span>
+
+
+    <!-- Pagination-->
+    <div>
+        <div class="text-center m-1" th:if="${totalItems > 0}">
+            <span>Showing Items #[[${startCount}]] to [[${endCount}]] of [[${totalItems}]]</span>
+        </div>
+        <div class="text-center m-1" th:unless="${totalItems > 0}">
+            <span>No Items found</span>
+        </div>
+
+        <div th:if="${totalItems > 0}">
+            <nav>
+                <ul class="pagination justify-content-center">
+                    <!-- Link to the first page -->
+                    <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link"
+                           th:href="@{ '/orders/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''} }">First</a>
+                    </li>
+                    <!-- Link to the previous page -->
+                    <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link"
+                           th:href="@{'/orders/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Previous</a>
+                    </li>
+                    <!-- Link to the first page if current page is greater than 2 -->
+                    <li th:if="${currentPage > 2}" class="page-item">
+                        <a class="page-link"
+                           th:href="@{'/orders/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">1</a>
+                    </li>
+                    <!-- Dots before the current page -->
+                    <li th:if="${currentPage > 3}" class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                    <!-- Links for the current, previous, and next page -->
+                    <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
+                        th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
+                        <a class="page-link"
+                           th:href="@{'/orders/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">[[${i}]]</a>
+                    </li>
+                    <!-- Dots after the current page -->
+                    <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                    <!-- Link to the last page if current page is less than total pages minus 1 -->
+                    <li th:if="${currentPage < totalPages - 1}" class="page-item">
+                        <a class="page-link"
+                           th:href="@{'/orders/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">[[${totalPages}]]</a>
+                    </li>
+                    <!-- Link to the next page -->
+                    <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link"
+                           th:href="@{'/orders/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Next</a>
+                    </li>
+                    <!-- Link to the last page -->
+                    <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
+                        <a class="page-link"
+                           th:href="@{'/orders/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Last</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
 
-    <div th:if="${totalItems > 0}">
-        <nav>
-            <ul class="pagination justify-content-center">
-                <!-- Link to the first page -->
-                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{ '/orders/page/1?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''} }">First</a>
-                </li>
-                <!-- Link to the previous page -->
-                <li th:class="${currentPage > 1} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/orders/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Previous</a>
-                </li>
-                <!-- Link to the first page if current page is greater than 2 -->
-                <li th:if="${currentPage > 2}" class="page-item">
-                    <a class="page-link"
-                       th:href="@{'/orders/page/' + 1+ '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">1</a>
-                </li>
-                <!-- Dots before the current page -->
-                <li th:if="${currentPage > 3}" class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-                <!-- Links for the current, previous, and next page -->
-                <li th:each="i : ${#numbers.sequence(currentPage - 1 > 1 ? currentPage - 1 : 1, currentPage + 1 < totalPages ? currentPage + 1 : totalPages)}"
-                    th:class="${currentPage == i} ? 'page-item active' : 'page-item'">
-                    <a class="page-link"
-                       th:href="@{'/orders/page/' + ${i} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">[[${i}]]</a>
-                </li>
-                <!-- Dots after the current page -->
-                <li th:if="${currentPage < totalPages - 2}" class="page-item disabled">
-                    <a class="page-link">...</a>
-                </li>
-                <!-- Link to the last page if current page is less than total pages minus 1 -->
-                <li th:if="${currentPage < totalPages - 1}" class="page-item">
-                    <a class="page-link"
-                       th:href="@{'/orders/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">[[${totalPages}]]</a>
-                </li>
-                <!-- Link to the next page -->
-                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/orders/page/' + ${currentPage + 1} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Next</a>
-                </li>
-                <!-- Link to the last page -->
-                <li th:class="${currentPage < totalPages} ? 'page-item' : 'page-item disabled'">
-                    <a class="page-link"
-                       th:href="@{'/orders/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir='+${sortDir}+ ${orderKeyword != null ? '&orderKeyword=' + orderKeyword : ''}}">Last</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-  <div class="modal fade" id="detailModal">
+    <div class="modal fade" id="detailModal">
         <div class="modal-dialog modal-xl bg-white">
             <div class="modal-content">
             </div>
@@ -139,7 +145,7 @@
 <script>
     moduleUrl = "[[@{/orders}]]";
     $(document).ready(function() {
-        handleLinkViewReviewDetails();
+        handleLinkDetails();
     });
 
     function clearFilter() {
@@ -147,13 +153,14 @@
     }
 
 
-    function handleLinkViewReviewDetails() {
-        $(".link-detail-review").on("click", function (e) {
+    function handleLinkDetails() {
+        $(".linkDetail").on("click", function (e) {
             e.preventDefault();
             linkDetailUrl = $(this).attr("href");
             $("#detailModal").modal('show').find(".modal-content").load(linkDetailUrl);
         });
     }
+
 
 
 

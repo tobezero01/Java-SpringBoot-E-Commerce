@@ -84,4 +84,8 @@ public class OrderService {
         }
         return orderRepository.findAll(customer.getId(), pageable);
     }
+
+    public Order getOrder(Integer id, Customer customer) {
+        return orderRepository.findByIdAndCustomer(id, customer);
+    }
 }

@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.security.PublicKey;
 import java.util.List;
 
 @Controller
@@ -61,6 +62,15 @@ public class OrderController {
         String email = Utility.getMailOfAuthenticatedCustomer(request);
 
         return customerService.getCustomerByEmail(email);
+    }
+
+    @GetMapping("/orders/detail/{id}")
+    public String viewOrderDetails(Model model, HttpServletRequest request,
+                                   @PathVariable(name = "id") Integer id) {
+        Customer customer = getAuthenticatedCustomer(request);
+        Order order = orderService.getOrder(id, customer);
+        model.addAttribute("order", order);
+        return "orders/orders_detail_modal";
     }
 
 }

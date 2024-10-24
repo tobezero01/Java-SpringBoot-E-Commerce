@@ -1,6 +1,8 @@
 package com.eshop.order;
 
+import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;
+import com.eshop.setting.settingBag.CurrencySettingBag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,4 +19,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
 
     @Query("SELECT o FROM Order o WHERE o.customer.id = ?1")
     public Page<Order> findAll(Integer customerId, Pageable pageable);
+
+    public Order findByIdAndCustomer(Integer id, Customer customer);
 }

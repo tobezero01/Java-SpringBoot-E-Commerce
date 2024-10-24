@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<body>
+<div th:fragment="content(statusVar, label)" class="col">
+    <th:block th:with="btnType = ${statusVar ? 'btn-success' : 'btn-dark'}">
+        <i th:class="'btn ' +  ${btnType}" style="pointer-events: none;">[[${label}]]</i>
+    </th:block>
+    <div>&nbsp;</div>
+</div>
+</body>
+</html>
