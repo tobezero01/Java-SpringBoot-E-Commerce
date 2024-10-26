@@ -6,6 +6,8 @@ import com.eshop.common.entity.order.OrderStatus;
 import com.eshop.common.entity.product.Product;
 import com.eshop.exception.ReviewNotFoundException;
 import com.eshop.order.OrderDetailRepository;
+import com.eshop.product.ProductRepository;
+import com.eshop.product.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,7 +16,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.security.PublicKey;
+import java.util.Date;
+
 
 @Service
 @Transactional
@@ -23,9 +26,10 @@ public class ReviewService {
     public static final int REVIEWS_BY_PRODUCT_PER_PAGE = 5;
     @Autowired
     private ReviewRepository reviewRepository;
-
     @Autowired
     private OrderDetailRepository orderDetailRepository;
+    @Autowired
+    private ProductRepository productRepository;
 
     public Page<Review> listByCustomerByPage(Customer customer, String keyWord, int pageNum,
                                              String sortField, String sortDir) {
@@ -69,5 +73,14 @@ public class ReviewService {
         Long count = orderDetailRepository.countByProductAndCustomerAndOrderStatus(productId, customer.getId(), OrderStatus.DELIVERED);
         return count > 0;
 
+    }
+    
+    public Review save(Review review) {
+        review.setReviewTime(new Date());
+        Review savedReview = reviewRepository.save(review);
+        Integer productId = savedReview.getProduct().getId();
+
+        productRepository.updateReviewCountAndAverageRating(productId);
+        return savedReview;
     }
 }

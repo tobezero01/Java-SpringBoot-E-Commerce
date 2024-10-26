@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <head th:replace="fragments :: page_head('Review Done', 'none')"/>
+</head>
+
+<body>
+<div>
+    <div th:replace="navigation :: header_menu"></div>
+
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+    <div class="container-xxl d-flex justify-content-center align-items-center min-vh-100">
+        <div class="text-center" style="max-width: 600px;">
+            <div th:replace="navigation :: search_nav"></div>
+
+            <h2>Write your review</h2>
+
+            <div class="my-3">
+                <img th:src="@{${review.product.mainImagePath}}" style="max-height: 250px;">
+            </div>
+
+            <div>
+                <h4>[[${review.product.name}]]</h4>
+                <div>&nbsp;</div>
+                <div class="mb-2">
+                    <span class="h4 text-success">Your review has been posted!</span>
+                </div>
+            </div>
+
+            <div class="border border-secondary rounded p-3 text-center mt-3">
+                <p>
+                    <input type="text" th:value="${review.rating}" class="product-rating-star" dir="ltr"
+                           data-size="md">
+                </p>
+                <p>
+                    <input type="text" th:value="${review.headLine}" class="form-control" readonly>
+                </p>
+                <p>
+                    <textarea rows="3" cols="10" readonly>[[${review.comment}]]</textarea>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="navigation :: footer_menu"></div>
+</div>
+
+<script type="text/javascript">
+    var contextPath = "[[@{/}]]";
+    var csrfHeaderName = "[[${_csrf.headerName}]]";
+    var csrfValue = "[[${_csrf.token}]]";
+
+    $(".product-rating-star").rating({
+        displayOnly: true,
+        hoverOnClear: false,
+        showCaption: false,
+        theme: 'krajee-svg'
+    });
+</script>
+
+</body>
+</html>

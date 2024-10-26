@@ -50,7 +50,7 @@ public class WebSecurityConfig {
                         .requestMatchers("/account_details" , "/update_account_details",
                                 "/cart" , "/address_book/**", "/checkout" ,
                                 "/place_order", "/process_paypal_order", "/reviews/**", "/orders/**",
-                                "/write_review/**").authenticated()
+                                "/write_review/**","/port_review").authenticated()
                         .anyRequest().permitAll()
                 )
                 .csrf(cs -> cs.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
