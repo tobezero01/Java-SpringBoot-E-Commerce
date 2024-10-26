@@ -28,7 +28,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query("SELECT p From Product p WHERE p.name LIKE LOWER(CONCAT('%', ?1, '%'))")
     public Page<Product> searchProductsByName(String keyWord, Pageable pageable);
 
-
     @Query("UPDATE Product p " +
             "SET p.averageRating = COALESCE((SELECT AVG(r.rating) FROM Review r WHERE r.product.id = ?1), 0), " +
             "p.reviewCount = (SELECT COUNT(r.id) FROM Review r WHERE r.product.id = ?1) " +

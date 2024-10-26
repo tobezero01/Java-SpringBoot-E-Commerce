@@ -21,6 +21,8 @@ public class Review {
 
     private int rating;
 
+    private int votes;
+
     @Column(nullable = false)
     private Date reviewTime;
 
@@ -91,6 +93,14 @@ public class Review {
         this.customer = customer;
     }
 
+    public int getVotes() {
+        return votes;
+    }
+
+    public void setVotes(int votes) {
+        this.votes = votes;
+    }
+
     @Override
     public String toString() {
         return "Review{" +
@@ -103,4 +113,6 @@ public class Review {
                 ", customer=" + customer.getFullName() +
                 '}';
     }
+
+
 }

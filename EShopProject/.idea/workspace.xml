@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add view to write review product">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_done.html" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint review product">
+      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/ReviewVote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/ReviewVoteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/ReviewVoteService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/VoteResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/VoteType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +32,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -112,11 +114,11 @@
       <recent name="com.eshop.admin.brand" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.eshop.review.vote" />
       <recent name="com.eshop.exception" />
       <recent name="com.eshop.admin.exception" />
       <recent name="com.eshop.admin.customer" />
       <recent name="com.eshop.setting" />
-      <recent name="com.eshop.customer" />
     </key>
   </component>
   <component name="RunManager" selected="Application.EShopFrontEndApplication">
@@ -222,13 +224,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00154" summary="edit view and add shopping_cart view">
-      <created>1727684296451</created>
-      <option name="number" value="00154" />
-      <option name="presentableId" value="LOCAL-00154" />
-      <option name="project" value="LOCAL" />
-      <updated>1727684296451</updated>
     </task>
     <task id="LOCAL-00155" summary="update product quantity">
       <created>1727757764620</created>
@@ -566,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729940551257</updated>
     </task>
-    <option name="localTasksCounter" value="203" />
+    <task id="LOCAL-00203" summary="endpoint review product">
+      <created>1729942977645</created>
+      <option name="number" value="00203" />
+      <option name="presentableId" value="LOCAL-00203" />
+      <option name="project" value="LOCAL" />
+      <updated>1729942977645</updated>
+    </task>
+    <option name="localTasksCounter" value="204" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -582,7 +584,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="code edit product information in a order" />
     <MESSAGE value="calculate shipping rate for the order" />
     <MESSAGE value="add product to a order" />
     <MESSAGE value="delete product to a order view" />
@@ -607,7 +608,8 @@
     <MESSAGE value="return order function" />
     <MESSAGE value="return_order" />
     <MESSAGE value="add view to write review product" />
-    <option name="LAST_COMMIT_MESSAGE" value="add view to write review product" />
+    <MESSAGE value="endpoint review product" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint review product" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

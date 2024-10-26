@@ -38,7 +38,7 @@ public class ProductController {
 
     @GetMapping("/c/{category_alias}")
     public String viewCategoryByPage(@PathVariable("category_alias") String alias,
-                                     Model model)  {
+                                     Model model) {
         try {
             Category category = categoryService.getCategory(alias);
             List<Category> listCategoryParents = categoryService.getCategoryParents(category);
@@ -68,12 +68,14 @@ public class ProductController {
             Page<Review> listReviews = reviewService.list3MostRecentReviewByProduct(product);
 
             Customer customer = getAuthenticatedCustomer(request);
-            boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
-            if (customerReviewed) {
-                model.addAttribute("customerReviewed",customerReviewed );
-            } else {
-                boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
-                model.addAttribute("customerCanReview",customerCanReview );
+            if (customer != null) {
+                boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+                if (customerReviewed) {
+                    model.addAttribute("customerReviewed", true);
+                } else {
+                    boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+                    model.addAttribute("customerCanReview", customerCanReview);
+                }
             }
 
             model.addAttribute("listCategoryParents", listCategoryParents);
@@ -88,7 +90,7 @@ public class ProductController {
 
     @GetMapping("/search")
     public String searchFirstPage(@Param("keyWord") String keyWord, Model model) {
-        return search(keyWord, model,1);
+        return search(keyWord, model, 1);
     }
 
     @GetMapping("/search/page/{pageNum}")
