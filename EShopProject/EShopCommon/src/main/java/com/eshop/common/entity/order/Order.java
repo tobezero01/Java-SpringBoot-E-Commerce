@@ -58,6 +58,7 @@ public class Order {
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
+    @Column(length = 50)
     private OrderStatus status;
 
     @ManyToOne

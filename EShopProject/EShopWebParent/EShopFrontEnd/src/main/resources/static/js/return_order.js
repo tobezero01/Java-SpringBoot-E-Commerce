@@ -1,0 +1,85 @@
+var returnModal;
+var modalTitle;
+var fieldNote;
+var orderId;
+var divReason;
+var divMessage;
+var firstButton;
+var secondButton;
+
+$(document).ready(function() {
+    returnModal = $("#returnModal");
+    modalTitle = $("#returnOrderModelTitle");
+    fieldNote = $("#returnNote");
+    divReason = $("#divReason");
+    divMessage = $("#divMessage");
+    firstButton = $("#firstButton");
+    secondButton = $("#secondButton");
+    handleReturnOrderLink();
+
+});
+
+function showReturnModal(link) {
+    divMessage.hide();
+    divReason.show();
+    firstButton.show();
+    secondButton.text("Cancel");
+    fieldNote.val("");
+
+    orderId = link.attr("orderId");
+    returnModal.modal('show');
+    modalTitle.text("Return Order ID #" + orderId);
+
+}
+
+function showMessageModal(message) {
+    divReason.hide();
+    firstButton.hide();
+    secondButton.text("Close");
+    divMessage.text(message);
+    divMessage.show();
+}
+
+function handleReturnOrderLink() {
+    $(".linkReturnOrder").on("click", function(e) {
+            e.preventDefault();
+           showReturnModal($(this));
+        });
+}
+
+function submitReturnOrderForm() {
+    reason = $("input[name='returnReason']:checked").val();
+    note = fieldNote.val();
+    sendReturnOrderRequest(reason, note);
+    return false;
+}
+
+function sendReturnOrderRequest(reason, note) {
+    requestURL = contextPath + "orders/return";
+    requestBody = { orderId : orderId , reason : reason , note : note };
+
+    $.ajax({
+            type: 'POST',
+            url: requestURL,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader(csrfHeaderName, csrfValue);  // Add CSRF header
+            },
+            data : JSON.stringify(requestBody),
+            contentType : 'application/json'
+        }).done(function(returnResponse) {
+            showMessageModal("The request has been sent!!!");
+            updateStatusTextAndHideReturnButton(orderId);
+        })
+        .fail(function(err) {
+            showMessageModal(err);
+        });
+}
+
+function updateStatusTextAndHideReturnButton(orderId) {
+    $(".textOrderStatus" + orderId).each(function() {
+        $(this).text("RETURN_REQUESTED");
+    });
+    $(".linkReturn" + orderId).each(function() {
+        $(this).hide();
+    });
+}

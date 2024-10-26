@@ -49,15 +49,19 @@
                     <td>
                         <div th:replace="fragments :: format_currency(${order.total})">Total</div>
                     </td>
-                    <td><span>[[${order.status}]]</span></td>
+                    <td><span th:class="'textOrderStatus' + ${order.id}">[[${order.status}]]</span></td>
 
                     <td>
                         <div class="inline-container">
                             <a class="btn btn-danger linkDetail" th:href="@{'/orders/detail/' + ${order.id}}"
                                title="View detail for this Review"> Detail</a>
-                            <th:block th:unless="${order.returnRequested}">
+                            <th:block th:if="${order.returnRequested == false &&
+                            order.delivered == true && order.returned == false}">
                                 &nbsp;&nbsp;
-                                <a class="btn btn-info " href="" title="Return this order">ReOrder</a>
+                                <a class="btn btn-info linkReturnOrder"
+                                   th:classappend="'linkReturn' + ${order.id}"
+                                   th:orderId="${order.id}"
+                                   href="" title="Return this order">ReOrder</a>
                             </th:block>
                         </div>
                     </td>
@@ -130,6 +134,8 @@
         </div>
     </div>
 
+    <div th:replace="orders/return_order_modal :: content"></div>
+
     <div class="modal fade" id="detailModal">
         <div class="modal-dialog modal-xl bg-white">
             <div class="modal-content">
@@ -137,19 +143,25 @@
         </div>
     </div>
 
+
     <div th:replace="navigation :: footer_menu"></div>
 
 </div>
 <!-- Body -->
 
+<script type="text/javascript" th:src="@{/js/return_order.js}"></script>
+<script type="text/javascript" th:src="@{/js/common_form.js}"></script>
 <script>
-    moduleUrl = "[[@{/orders}]]";
+    var contextPath = "[[@{/}]]";
+    var csrfHeaderName = "[[${_csrf.headerName}]]";
+    var csrfValue = "[[${_csrf.token}]]";
+
     $(document).ready(function() {
         handleLinkDetails();
     });
 
     function clearFilter() {
-        window.location = moduleUrl ;
+        window.location = "[[@{/orders}]]" ;
     }
 
 
