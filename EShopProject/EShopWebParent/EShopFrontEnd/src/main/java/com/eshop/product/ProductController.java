@@ -1,12 +1,16 @@
 package com.eshop.product;
 
+import com.eshop.Utility;
 import com.eshop.category.CategoryService;
 import com.eshop.common.entity.Category;
+import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.Review;
 import com.eshop.common.entity.product.Product;
+import com.eshop.customer.CustomerService;
 import com.eshop.exception.CategoryNotFoundException;
 import com.eshop.exception.ProductNotFoundException;
 import com.eshop.review.ReviewService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
@@ -27,6 +31,9 @@ public class ProductController {
 
     @Autowired
     private ReviewService reviewService;
+
+    @Autowired
+    private CustomerService customerService;
 
 
     @GetMapping("/c/{category_alias}")
@@ -53,11 +60,22 @@ public class ProductController {
 
     //detail product
     @GetMapping("/d/{product_alias}")
-    public String viewProductDetail(@PathVariable("product_alias") String alias, Model model) {
+    public String viewProductDetail(@PathVariable("product_alias") String alias,
+                                    Model model, HttpServletRequest request) {
         try {
             Product product = productService.getProduct(alias);
             List<Category> listCategoryParents = categoryService.getCategoryParents(product.getCategory());
             Page<Review> listReviews = reviewService.list3MostRecentReviewByProduct(product);
+
+            Customer customer = getAuthenticatedCustomer(request);
+            boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+            if (customerReviewed) {
+                model.addAttribute("customerReviewed",customerReviewed );
+            } else {
+                boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+                model.addAttribute("customerCanReview",customerCanReview );
+            }
+
             model.addAttribute("listCategoryParents", listCategoryParents);
             model.addAttribute("product", product);
             model.addAttribute("listReviews", listReviews);
@@ -97,4 +115,9 @@ public class ProductController {
         return "products/search_result";
     }
 
+    private Customer getAuthenticatedCustomer(HttpServletRequest request) {
+        String email = Utility.getMailOfAuthenticatedCustomer(request);
+
+        return customerService.getCustomerByEmail(email);
+    }
 }

@@ -115,6 +115,14 @@
                                             <div th:replace="fragments :: format_currency(${detail.unitPrice})"></div>
                                             = <div th:replace="fragments :: format_currency(${detail.subtotal})"></div>
                                         </div>
+
+                                        <div th:if="${!product.reviewedByCustomer && product.customerCanReview}">
+                                            <a th:href="@{'/write_review/product/' + ${product.id}}" class="btn btn-primary"> Write Review</a>
+                                        </div>
+
+                                        <div th:if="${product.reviewedByCustomer }">
+                                            <a th:href="@{'/reviews/page/1?sortField=reviewTime&sortDir=desc&keyWord=' + ${#strings.substring(product.shortName, 0, 15)}}" class="btn btn-warning"> See your Review</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

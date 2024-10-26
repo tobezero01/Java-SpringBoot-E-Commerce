@@ -47,6 +47,16 @@
         </a>
     </div>
 
+    <div th:if="${customerReviewed}" class="row m-1" >
+        <span class="text-success">You already reviewed this product.</span>
+    </div>
+    <div th:if="${customerCanReview}" class="row m-1" >
+        You purchased and got this product.
+        <b>
+            <a th:href="@{'/write_review/product/' + ${product.id}}">Write your reviews now.</a>
+        </b>
+
+    </div>
     <div class="row">
         <div class="col">
             <hr />

@@ -48,10 +48,8 @@ function generateTrackCode() {
     let trackNoteId = "trackNote" + nextCount;
     let currentDateTime = formatCurrentDateTime();
 
-    // Sao chép nội dung dropdown từ phần tử có ID 'trackStatusOptions'
-    let statusOptions = $("#trackStatusOptions").html() || '';
 
-    return `
+    htmlCode =  `
         <div class="border rounded mb-4 p-3 shadow-sm" id="${rowId}">
             <input type="hidden" name="trackId" value="0" class="hiddenTrackId">
             <div class="col-2">
@@ -72,16 +70,10 @@ function generateTrackCode() {
                     <div class="col">
                         <select name="trackStatus" class="form-control dropdownStatus" id="trackStatusOptions"
                                 style="max-width: 150px" rowNumber="${nextCount}">
-                                <option value="NEW">NEW</option>
-                                <option value="CANCELLED">CANCELLED</option>
-                                <option value="PROCESSING">PROCESSING</option>
-                                <option value="PACKAGED">PACKAGED</option>
-                                <option value="PICKED">PICKED</option>
-                                <option value="SHIPPING">SHIPPING</option>
-                                <option value="DELIVERED">DELIVERED</option>
-                                <option value="RETURNED">RETURNED</option>
-                                <option value="PAID">PAID</option>
-                                <option value="REFUNDED">REFUNDED</option>
+                                `;
+    htmlCode += $("#trackStatusOptions").clone().html();
+    htmlCode +=
+                                `
                         </select>
                     </div>
                 </div>
@@ -102,6 +94,8 @@ function generateTrackCode() {
         </div>
         <div id="${emptyLineId}" class="row">&nbsp;</div>
     `;
+
+    return htmlCode;
 }
 
 

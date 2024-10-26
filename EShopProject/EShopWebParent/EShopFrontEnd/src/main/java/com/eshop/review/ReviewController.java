@@ -119,6 +119,36 @@ public class ReviewController {
         return listByProduct(model, productAlias, 1, "reviewTime", "desc");
     }
 
+    @GetMapping("/write_review/product/{productId}")
+    public String showViewForm(@PathVariable("productId") Integer productId, Model model,
+                               HttpServletRequest request) {
+        Review review = new Review();
+        Product product  = null;
+
+        try {
+            product = productService.getProduct(productId);
+        } catch (ProductNotFoundException e) {
+            return "error/404";
+        }
+
+        Customer customer = getAuthenticatedCustomer(request);
+        boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+        if (customerReviewed) {
+            model.addAttribute("customerReviewed", true);
+        } else {
+            boolean customerCanReview = reviewService.canCustomerReviewProduct(customer, product.getId());
+            if (customerCanReview) {
+                model.addAttribute("customerCanReview",true );
+            } else {
+                model.addAttribute("NoReviewPermission", true);
+            }
+        }
+
+        model.addAttribute("product", product);
+        model.addAttribute("review", review);
+        return "reviews/review_form";
+    }
+
     private Customer getAuthenticatedCustomer(HttpServletRequest request) {
         String email = Utility.getMailOfAuthenticatedCustomer(request);
 

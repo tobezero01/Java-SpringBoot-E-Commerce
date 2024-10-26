@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class ProductService {
@@ -26,7 +27,17 @@ public class ProductService {
         if (product == null) {
             throw new ProductNotFoundException("Product not found with alias " + alias);
         }
-        return product;  // Ensure this return is here
+        return product;
+    }
+
+    public Product getProduct(Integer id) throws ProductNotFoundException {
+        try {
+            Product product = productRepository.findById(id).get();
+            return product;
+        } catch (NoSuchElementException ex) {
+            throw new ProductNotFoundException("Product not found with ID " + id);
+        }
+
     }
 
     public Page<Product> search(String keyWord, int pageNum) {

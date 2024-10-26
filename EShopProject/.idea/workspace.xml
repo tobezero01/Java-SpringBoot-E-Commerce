@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="return order function">
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/static/js/return_order.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/orders/return_order_modal.html" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="return_order">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-24.0.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/orders/orders_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/orders/orders_customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-17.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-18.0.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/order_form_track.js" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/static/js/order_form_track.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/order/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/order/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/orders/orders_detail_modal.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/orders/orders_detail_modal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_top_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_top_reviews.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +38,8 @@
         <option value="AnnotationType" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -218,13 +228,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00152" summary="code layout for cartItem">
-      <created>1727630228729</created>
-      <option name="number" value="00152" />
-      <option name="presentableId" value="LOCAL-00152" />
-      <option name="project" value="LOCAL" />
-      <updated>1727630228730</updated>
     </task>
     <task id="LOCAL-00153" summary="code add product to cart">
       <created>1727641963759</created>
@@ -562,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729841621308</updated>
     </task>
-    <option name="localTasksCounter" value="201" />
+    <task id="LOCAL-00201" summary="return_order">
+      <created>1729915963740</created>
+      <option name="number" value="00201" />
+      <option name="presentableId" value="LOCAL-00201" />
+      <option name="project" value="LOCAL" />
+      <updated>1729915963741</updated>
+    </task>
+    <option name="localTasksCounter" value="202" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,7 +588,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="paypal validate part 1" />
     <MESSAGE value="add view edit orders" />
     <MESSAGE value="code edit product information in a order" />
     <MESSAGE value="calculate shipping rate for the order" />
@@ -603,7 +612,8 @@
     <MESSAGE value="code order listing for customer" />
     <MESSAGE value="View order detail for customer" />
     <MESSAGE value="return order function" />
-    <option name="LAST_COMMIT_MESSAGE" value="return order function" />
+    <MESSAGE value="return_order" />
+    <option name="LAST_COMMIT_MESSAGE" value="return_order" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

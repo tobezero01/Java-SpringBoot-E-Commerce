@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <head th:replace="fragments :: page_head('Write review Product', 'none')"/>
+</head>
+
+<body>
+<div>
+    <div th:replace="navigation :: header_menu"></div>
+
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+    <div class="container-xxl text-center">
+        <div th:replace="navigation :: search_nav"></div>
+
+        <h2>Write your review</h2>
+
+        <div><img th:src="@{${product.mainImagePath}}" style="max-height : 250px"></div>
+
+        <div>
+            <div><h4>[[${product.name}]]</h4></div>
+            <div th:if="${customerReviewed}">
+                <span class="text-success">You already reviewed this product</span>
+            </div>
+
+            <div th:if="${NoReviewPermission}">
+                <span class="text-danger">You can't review this product because you did not purchase it, or you have not received</span>
+            </div>
+
+        </div>
+
+        <form th:if="${customerCanReview}" th:action="@{/port_review}" method="post" th:object="${review}"
+              style="max-width : 600px; margin : 0 auto;">
+            <div class="border border-secondary rounded p-3">
+                <p>
+                    <input type="text" th:field="*{rating}" class="product-rating-star" data-step="1" dir="ltr"
+                           data-size="md">
+                </p>
+                <p>
+                    <input type="text" th:field="*{headLine}" class="form-control" required minlength="10"
+                           maxlength="128" placeholder="Headline or Summary">
+                </p>
+                <p>
+                    <textarea th:field="*{comment}" rows="3" cols="10" class="form-control"
+                              required placeholder="Comment details">
+                    </textarea>
+                </p>
+                <p>
+                    <input type="submit" value="Post Review" class="btn btn-primary">
+                </p>
+            </div>
+        </form>
+
+    </div>
+
+
+    <div th:replace="navigation :: footer_menu"></div>
+</div>
+
+<script type="text/javascript">
+    var contextPath = "[[@{/}]]";
+    var csrfHeaderName = "[[${_csrf.headerName}]]";
+    var csrfValue = "[[${_csrf.token}]]";
+
+    $(".product-rating-star").rating({
+        hoverOnClear : false,
+        theme: 'krajee-svg'
+    });
+
+
+</script>
+
+</body>
+</html>
