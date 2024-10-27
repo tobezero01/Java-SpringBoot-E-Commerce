@@ -33,6 +33,11 @@
                 </div>
             </div>
         </div>
+        <div class="mt-4 mb-2">
+            <a class="btn btn-primary" th:href="@{'/ratings/' + ${product.alias} + '/page/' + ${currentPage} + '?sortField=votes&sortDir=desc'}">Sort by most voted</a>
+            &nbsp;
+            <a class="btn btn-success" th:href="@{'/ratings/' + ${product.alias} + '/page/' + ${currentPage} + '?sortField=reviewTime&sortDir=desc'}">Sort by most recent</a>
+        </div>
 
         <div th:replace="reviews/reviews_votes :: content"></div>
     </div>

@@ -51,7 +51,7 @@ public class ReviewService {
     }
 
     public Page<Review> list3MostRecentReviewByProduct(Product product) {
-        Sort sort = Sort.by("reviewTime").descending();
+        Sort sort = Sort.by("votes").descending();
         Pageable pageable = PageRequest.of(0,3, sort);
         return reviewRepository.findByProduct(product, pageable);
     }

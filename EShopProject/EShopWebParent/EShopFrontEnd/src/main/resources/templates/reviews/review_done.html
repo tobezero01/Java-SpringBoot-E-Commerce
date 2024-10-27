@@ -10,10 +10,9 @@
     <div th:replace="navigation :: header_menu"></div>
 
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
+    <div class="container-fluid" th:replace="navigation :: search_nav"></div>
     <div class="container-xxl d-flex justify-content-center align-items-center min-vh-100">
         <div class="text-center" style="max-width: 600px;">
-            <div th:replace="navigation :: search_nav"></div>
 
             <h2>Write your review</h2>
 
