@@ -51,10 +51,12 @@
                     </div>
 
                     <div>
-                        <a class="far fa-thumbs-up linkVoteReview me-2" th:reviewId="${review.id}"
+                        <a class=" fa-thumbs-up linkVoteReview me-2" th:reviewId="${review.id}"
+                           th:classappend="${review.upVotedByCurrentCustomer ? 'fas' : 'far'}"
                            th:id="'linkVoteUp-' + ${review.id}" th:href="@{'/vote_review/' + ${review.id} + '/up'}"></a>
                         <span class="me-2" th:id="'voteCount-' + ${review.id}">[[${review.votes}]] votes</span>
                         <a class="far fa-thumbs-down linkVoteReview " th:reviewId="${review.id}"
+                           th:classappend="${review.downVotedByCurrentCustomer ? 'fas' : 'far'}"
                            th:id="'linkVoteDown-' + ${review.id}" th:href="@{'/vote_review/' + ${review.id} + '/down'}"></a>
                     </div>
 

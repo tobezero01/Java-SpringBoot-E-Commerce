@@ -4,6 +4,7 @@ import com.eshop.common.entity.product.Product;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name = "reviews")
@@ -22,6 +23,12 @@ public class Review {
     private int rating;
 
     private int votes;
+
+    @Transient
+    private boolean upVotedByCurrentCustomer;
+
+    @Transient
+    private boolean downVotedByCurrentCustomer;
 
     @Column(nullable = false)
     private Date reviewTime;
@@ -114,5 +121,32 @@ public class Review {
                 '}';
     }
 
+    public boolean isUpVotedByCurrentCustomer() {
+        return upVotedByCurrentCustomer;
+    }
 
+    public void setUpVotedByCurrentCustomer(boolean upVotedByCurrentCustomer) {
+        this.upVotedByCurrentCustomer = upVotedByCurrentCustomer;
+    }
+
+    public boolean isDownVotedByCurrentCustomer() {
+        return downVotedByCurrentCustomer;
+    }
+
+    public void setDownVotedByCurrentCustomer(boolean downVotedByCurrentCustomer) {
+        this.downVotedByCurrentCustomer = downVotedByCurrentCustomer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Review review)) return false;
+
+        return getId().equals(review.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getId().hashCode();
+    }
 }

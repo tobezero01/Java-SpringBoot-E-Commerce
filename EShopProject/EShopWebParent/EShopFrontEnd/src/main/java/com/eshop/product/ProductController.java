@@ -10,6 +10,7 @@ import com.eshop.customer.CustomerService;
 import com.eshop.exception.CategoryNotFoundException;
 import com.eshop.exception.ProductNotFoundException;
 import com.eshop.review.ReviewService;
+import com.eshop.review.vote.ReviewVoteService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -28,12 +29,12 @@ public class ProductController {
     private CategoryService categoryService;
     @Autowired
     private ProductService productService;
-
     @Autowired
     private ReviewService reviewService;
-
     @Autowired
     private CustomerService customerService;
+    @Autowired
+    private ReviewVoteService voteService;
 
 
     @GetMapping("/c/{category_alias}")
@@ -70,6 +71,7 @@ public class ProductController {
             Customer customer = getAuthenticatedCustomer(request);
             if (customer != null) {
                 boolean customerReviewed = reviewService.didCustomerReviewProduct(customer, product.getId());
+                voteService.markReviewsVotedForProductByCustomer(listReviews.getContent(), product.getId(), customer.getId());
                 if (customerReviewed) {
                     model.addAttribute("customerReviewed", true);
                 } else {
