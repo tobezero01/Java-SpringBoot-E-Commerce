@@ -11,7 +11,7 @@ public class ReviewVote {
     private Integer id;
 
     private static final int VOTE_UP_POINT = 1;
-    private static final int VOTE_DOWN_POINT = 1;
+    private static final int VOTE_DOWN_POINT = -1;
 
     private int votes;
 

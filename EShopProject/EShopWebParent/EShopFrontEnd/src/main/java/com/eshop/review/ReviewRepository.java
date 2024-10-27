@@ -29,8 +29,8 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
             "r.product.id = ?2")
     public Long countByCustomerAndProduct(Integer customerId, Integer productId);
 
-    @Query("UPDATE Review r SET r.votes = (SELECT SUM(v.votes) FROM ReviewVote v " +
-            "WHERE v.review.id = ?1) WHERE r.id = ?1")
+    @Query("UPDATE Review r SET r.votes = COALESCE ((SELECT SUM(v.votes) FROM ReviewVote v " +
+            "WHERE v.review.id = ?1), 0) WHERE r.id = ?1")
     @Modifying
     public void updateVoteCount(Integer reviewId);
 

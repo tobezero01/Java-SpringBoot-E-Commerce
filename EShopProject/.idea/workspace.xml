@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="endpoint review product">
-      <change afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/ReviewVote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/ReviewVoteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/ReviewVoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/VoteResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/VoteType.java" afterDir="false" />
+    <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="add vote layer (repo and service )">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/ControllerHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/vote/ReviewVoteRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/static/js/review_vote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/reviews_votes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/review/ReviewRepositoryTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/review/vote/ReviewVoteRestControllerTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/product/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/product/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/ReviewVote.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopCommon/src/main/java/com/eshop/common/entity/ReviewVote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/review/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/java/com/eshop/setting/SettingFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_top_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/products/product_top_reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews/review_product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,29 +78,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/main/resources/templates/orders&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_directory_selection": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/test/java/com/eshop/review",
+    "last_opened_file_path": "D:/java/EShop/EShopProject/EShopWebParent/EShopFrontEnd/src/main/resources/templates/reviews",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.eshop.checkout.paypal" />
       <recent name="com.eshop.admin.user" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\reviews" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\orders" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static" />
-      <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\templates\reviews" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static\rating\themes" />
       <recent name="D:\java\EShop\EShopProject\EShopWebParent\EShopFrontEnd\src\main\resources\static\rating" />
     </key>
@@ -224,13 +227,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1722540378994</updated>
-    </task>
-    <task id="LOCAL-00155" summary="update product quantity">
-      <created>1727757764620</created>
-      <option name="number" value="00155" />
-      <option name="presentableId" value="LOCAL-00155" />
-      <option name="project" value="LOCAL" />
-      <updated>1727757764621</updated>
     </task>
     <task id="LOCAL-00156" summary="code refactor remove @Param rest Controller">
       <created>1727792192031</created>
@@ -568,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729942977645</updated>
     </task>
-    <option name="localTasksCounter" value="204" />
+    <task id="LOCAL-00204" summary="add vote layer (repo and service )">
+      <created>1729961577459</created>
+      <option name="number" value="00204" />
+      <option name="presentableId" value="LOCAL-00204" />
+      <option name="project" value="LOCAL" />
+      <updated>1729961577459</updated>
+    </task>
+    <option name="localTasksCounter" value="205" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -584,7 +587,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="calculate shipping rate for the order" />
     <MESSAGE value="add product to a order" />
     <MESSAGE value="delete product to a order view" />
     <MESSAGE value="code track record" />
@@ -609,7 +611,8 @@
     <MESSAGE value="return_order" />
     <MESSAGE value="add view to write review product" />
     <MESSAGE value="endpoint review product" />
-    <option name="LAST_COMMIT_MESSAGE" value="endpoint review product" />
+    <MESSAGE value="add vote layer (repo and service )" />
+    <option name="LAST_COMMIT_MESSAGE" value="add vote layer (repo and service )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

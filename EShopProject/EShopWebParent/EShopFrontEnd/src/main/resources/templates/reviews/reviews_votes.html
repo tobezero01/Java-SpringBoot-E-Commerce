@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <style>
+        .product-detail-rating-star {
+            font-size: 20px; /* Adjust star size */
+            width: 60px;
+            height: 40px;
+        }
+        hr {
+            border-top: 1px solid #ddd;
+        }
+        #review {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .review-container {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div th:fragment="content" class="container-fluid mt-3 border p-2">
+    <div class="row m-3">
+        <div class="col">
+            <th:block th:each="review : ${listReviews}">
+                <div class="review-container">
+                    <div class="row align-items-center">
+                        <div class="col-auto">
+                            <input type="text" class="product-detail-rating-star" dir="ltr" data-size="2"
+                                   th:value="${review.rating}" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col">
+                            <b>[[${review.headLine}]]</b>
+                        </div>
+                        <div >
+                            <i>[[${review.comment}]]</i>
+                        </div>
+                    </div>
+
+                    <div class="row mt-1">
+                        <div class="col-auto">
+                            <small class="text-muted d-flex flex-wrap ">
+                                <div>[[${review.customer.fullName}]]</div>&nbsp;
+                                <div  th:replace="fragments :: format_time(${review.reviewTime})"></div>
+                            </small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a class="far fa-thumbs-up linkVoteReview me-2" th:reviewId="${review.id}"
+                           th:id="'linkVoteUp-' + ${review.id}" th:href="@{'/vote_review/' + ${review.id} + '/up'}"></a>
+                        <span class="me-2" th:id="'voteCount-' + ${review.id}">[[${review.votes}]] votes</span>
+                        <a class="far fa-thumbs-down linkVoteReview " th:reviewId="${review.id}"
+                           th:id="'linkVoteDown-' + ${review.id}" th:href="@{'/vote_review/' + ${review.id} + '/down'}"></a>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <hr />
+                        </div>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</div>
+</body>
+</html>
