@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9de44161-89a8-4581-ab36-d7d5d26005ea" name="Changes" comment="refactor and sort review">
+      <change afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-11-17.0.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-19.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-22.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-23.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/EShop_Backend.log.2024-10-24.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/review/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/EShopWebParent/EShopBackEnd/src/main/java/com/eshop/admin/review/ReviewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +115,7 @@
       <recent name="com.eshop.setting" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EShopBackEndApplication">
+  <component name="RunManager" selected="Application.EShopFrontEndApplication">
     <configuration name="EShopBackEndApplication" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="22" />
       <option name="MAIN_CLASS_NAME" value="com.eshop.admin.EShopBackEndApplication" />
@@ -205,8 +202,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="Application.EShopFrontEndApplication" />
+        <item itemvalue="Application.EShopBackEndApplication" />
         <item itemvalue="JUnit.ReviewRepositoryTest.testUpdateReview" />
         <item itemvalue="JUnit.ReviewRepositoryTest.testCreateMultipleReviewsForOneCustomer" />
         <item itemvalue="JUnit.ReviewRepositoryTest.testCreateReview" />
