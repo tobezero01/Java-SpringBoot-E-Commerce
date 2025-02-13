@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EShop.iml" filepath="$PROJECT_DIR$/EShop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EShopProject/EShopWebParent/EShopBackEnd/EShopBackEnd.iml" filepath="$PROJECT_DIR$/EShopProject/EShopWebParent/EShopBackEnd/EShopBackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EShopProject/EShopCommon/EShopCommon.iml" filepath="$PROJECT_DIR$/EShopProject/EShopCommon/EShopCommon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EShopProject/EShopWebParent/EShopFrontEnd/EShopFrontEnd.iml" filepath="$PROJECT_DIR$/EShopProject/EShopWebParent/EShopFrontEnd/EShopFrontEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EShopProject/EShopProject.iml" filepath="$PROJECT_DIR$/EShopProject/EShopProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EShopProject/EShopWebParent/EShopWebParent.iml" filepath="$PROJECT_DIR$/EShopProject/EShopWebParent/EShopWebParent.iml" />
     </modules>
   </component>
 </project>

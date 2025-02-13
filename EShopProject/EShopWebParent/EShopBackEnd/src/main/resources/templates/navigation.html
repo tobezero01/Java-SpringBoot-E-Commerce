@@ -22,7 +22,7 @@
                 <th:block sec:authorize="hasAuthority('Admin')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           th:href="@{/users}">Users</a>
+                           href="">Users</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" th:href="@{/users/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/users}">View all</a>
@@ -33,7 +33,7 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Editor')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           th:href="@{/categories}">Categories</a>
+                           href="">Categories</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" th:href="@{/categories/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/categories}">View all</a>
@@ -44,7 +44,7 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Editor')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           th:href="@{/brands}">Brands</a>
+                           href="">Brands</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" th:href="@{/brands/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/brands}">View all</a>
@@ -55,7 +55,7 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Editor','Salesperson','Shipper')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           th:href="@{/products}">Products</a>
+                           >Products</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" sec:authorize="hasAnyAuthority('Admin','Editor')" th:href="@{/products/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/products}">View all</a>
