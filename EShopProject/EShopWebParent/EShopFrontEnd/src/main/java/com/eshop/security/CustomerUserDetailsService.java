@@ -16,7 +16,7 @@ public class CustomerUserDetailsService implements UserDetailsService {
         Customer customer = customerRepository.findByEmail(email);
 
         if (customer == null) {
-            throw new UsernameNotFoundException("No Customer Found width the Email : " + email);
+            throw new UsernameNotFoundException("No Customer Found with the Email : " + email);
         }
 
         return new CustomerUserDetails(customer);
