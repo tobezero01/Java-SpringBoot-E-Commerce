@@ -21,8 +21,8 @@
 
                 <th:block sec:authorize="hasAuthority('Admin')">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           href="">Users</a>
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" 
+                           th:href="@{/users}" >Users</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" th:href="@{/users/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/users}">View all</a>
@@ -33,7 +33,7 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Editor')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           href="">Categories</a>
+                          th:href="@{/categories}" >Categories</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" th:href="@{/categories/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/categories}">View all</a>
@@ -44,7 +44,7 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Editor')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           href="">Brands</a>
+                            th:href="@{/brands}">Brands</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" th:href="@{/brands/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/brands}">View all</a>
@@ -55,7 +55,7 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Editor','Salesperson','Shipper')">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                           >Products</a>
+                           th:href="@{/products}" >Products</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" sec:authorize="hasAnyAuthority('Admin','Editor')" th:href="@{/products/new}">Create New</a>
                             <a class="dropdown-item" th:href="@{/products}">View all</a>
@@ -91,18 +91,6 @@
                 <th:block sec:authorize="hasAnyAuthority('Admin','Salesperson','Shipper')">
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/orders}">Orders</a>
-                </li>
-                </th:block>
-
-                <th:block sec:authorize="hasAnyAuthority('Admin','Editor')">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/articles}">Articles</a>
-                </li>
-                </th:block>
-
-                <th:block sec:authorize="hasAnyAuthority('Admin','Editor')">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/menus}">Menus</a>
                 </li>
                 </th:block>
 
