@@ -12,14 +12,6 @@
         <module name="EShopCommon" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="EShop" target="17" />
-      <module name="EShopBackEnd" target="17" />
-      <module name="EShopCommon" target="17" />
-      <module name="EShopFrontEnd" target="17" />
-      <module name="EShopProject" target="1.5" />
-      <module name="EShopWebParent" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

@@ -13,23 +13,19 @@
         </button>
         <div id="topNavbar" class="collapse navbar-collapse" style="margin-left:10px">
             <ul class="navbar-nav me-auto ">
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="">Careers</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="">Shipping &amp; Delivery</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/contact}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/shippingAndDelivery}">Shipping &amp; Delivery</a></li>
                 <th:block sec:authorize="!isAuthenticated()">
                     <li class="nav-item dropdown">
                         <a class="nav-link" th:href="@{/login}">Login</a>
                     </li>
-                <th:block sec:authorize="isAuthenticated()">
+                </th:block>
+                <th:block sec:authorize="!isAuthenticated()">
                 <li class="nav-item dropdown">
                     <a class="nav-link" th:href="@{/register}">Register</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="">Contact</a>
-                </li>
+                </th:block>
+
             </ul>
         </div>
     </nav>
@@ -88,13 +84,13 @@
             <div id="bottomNavbar" class="collapse navbar-collapse" style="margin-left:10px">
                 <ul class="navbar-nav me-auto ">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="">About us</a>
+                        <a class="nav-link" th:href="@{/about}">About us</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="">Privacy Notice</a>
+                        <a class="nav-link" th:href="@{/privacy}">Privacy Notice</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="">Returns &amp; Refunds</a>
+                        <a class="nav-link" th:href="@{/returnsPolicy}">Returns &amp; Refunds</a>
                     </li>
                 </ul>
             </div>

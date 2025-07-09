@@ -76,12 +76,12 @@ public class ProductController {
             return "redirect:/products";
         }
 
-        setMainImageName(mainImageMultipart , product);
-        setExtraImageNames(extraImageMultipart , product);
+        //setMainImageName(mainImageMultipart , product);
+        //setExtraImageNames(extraImageMultipart , product);
         setProductDetails(detailNames, detailValues, product);
 
         Product savedProduct = productService.save(product);
-        saveUploadImages(mainImageMultipart , extraImageMultipart, savedProduct);
+        //saveUploadImages(mainImageMultipart , extraImageMultipart, savedProduct);
 
         redirectAttributes.addFlashAttribute("message", "The product has been saved successfully");
         return "redirect:/products";

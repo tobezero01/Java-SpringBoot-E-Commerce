@@ -62,7 +62,6 @@ public class UserExcelExporter extends AbstractExporter {
 		font.setFontHeight(12);
 		cellStyle.setFont(font);
 
-
 		for (User user : listUsers) {
 			XSSFRow row = sheet.createRow(rowIndex++);
 			int indexColumn = 0;
@@ -77,16 +76,13 @@ public class UserExcelExporter extends AbstractExporter {
 	public void export(List<User> listUsers, HttpServletResponse response ) throws IOException {
 		super.setResponseHeader(response, "application/octet-stream", ".xlsx", "users_");
 
-
 		writeHeaderLine();
 		writeDataLine(listUsers);
-
 
 		ServletOutputStream outputStream = response.getOutputStream();
 		workbook.write(outputStream);
 		workbook.close();
 		outputStream.close();
 	}
-
 
 }

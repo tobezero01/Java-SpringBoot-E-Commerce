@@ -50,8 +50,6 @@ function prepareChartDataForSalesByProduct(responseJSON) {
 }
 
 
-
-
 function customizeChartForSalesByProduct() {
     chartOptions = {
         height : 360,

@@ -18,7 +18,7 @@
             </div>
 
             <th:block th:each="productImage, status : ${product.images}">
-                <div class="col border m-3 p-2" th:id="${'divExtraImage' + ${status.index}}">
+                <div class="col border m-3 p-2" th:id="'divExtraImage' + ${status.index}">
                     <div th:id="extraImageHeader0">
                         <label>Extra Image [[${status.index + 1}]] : [[${productImage.name}]]</label>
                         <a name="linkRemoveExtraImage" class="btn fas fa-times-circle fa-2x icon-dark float-right"
@@ -26,7 +26,7 @@
                         </a>
                     </div>
                     <div class="m-2">
-                        <img th:src="@{${productImage.imagePath}}" th:id="${'extraThumbnail' + ${status.index}}"
+                        <img th:src="@{${productImage.imagePath}}" th:id="'extraThumbnail' + ${status.index}"
                              th:alt="'Extra image #' + ${status.index+1}+ 'preview'" class="img-fluid">
                     </div>
                     <div>

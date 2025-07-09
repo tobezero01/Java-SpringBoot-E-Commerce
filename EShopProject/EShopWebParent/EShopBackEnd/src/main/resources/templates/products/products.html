@@ -50,7 +50,7 @@
                         <img th:src="@{${product.mainImagePath}}" style="max-width : 80px">
                     </td>
                     <td>
-                        <a class="link-detail" th:href="@{'/products/detail/' + ${product.id}}"
+                        <a class="link-detail linkProductDetail" th:href="@{'/products/detail/' + ${product.id}}"
                            title="View details for this product">
                             [[${product.shortName}]]
                         </a>
