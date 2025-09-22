@@ -1,0 +1,147 @@
+package com.eshop.client.controller;
+
+
+import com.eshop.client.dto.request.*;
+import com.eshop.client.dto.response.*;
+import com.eshop.client.helper.GoogleVerifier;
+import com.eshop.client.repository.CustomerRepository;
+import com.eshop.client.security.CustomerUserDetails;
+import com.eshop.client.security.CustomerUserDetailsService;
+import com.eshop.client.security.jwt.JwtTokenService;
+import com.eshop.common.entity.Customer;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/api/auth")
+@RequiredArgsConstructor
+public class AuthController {
+
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenService jwtTokenService;
+    private final CustomerUserDetailsService userDetailsService;
+    private final CustomerRepository customerRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final GoogleVerifier googleVerifier;
+
+    // --- LOGIN (DATABASE) ---
+    @PostMapping("/login")
+    public ResponseEntity<JwtResponse> login(@RequestBody @Valid LoginRequest request) {
+        Authentication auth = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(request.email(), request.password())
+        );
+        CustomerUserDetails user = (CustomerUserDetails) auth.getPrincipal();
+
+        Map<String, Object> claims = new java.util.HashMap<>();
+        claims.put("fullName", user.getFullName() == null ? "" : user.getFullName());
+        String token = jwtTokenService.generateAccessToken(user, claims);
+
+        return ResponseEntity.ok(new JwtResponse("Bearer ", token, jwtTokenService.getAccessTokenTtlSeconds(), user.getFullName()));
+    }
+
+    // --- ME ---
+    @GetMapping("/me")
+    public ResponseEntity<?> me() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !auth.isAuthenticated() || "anonymousUser".equals(auth.getPrincipal()))
+            return ResponseEntity.status(401).body(Map.of("code",401,"message","Unauthorized"));
+        CustomerUserDetails userDetails = (CustomerUserDetails) userDetailsService.loadUserByUsername(auth.getName());
+        Customer customer = userDetails.getCustomer();
+        return ResponseEntity.ok(new MeResponse(customer.getId(), customer.getEmail(), customer.getFirstName(), customer.getLastName()
+                , customer.getPhoneNumber(), customer.getAddress()));
+    }
+
+    @PostMapping("/google")
+    public ResponseEntity<JwtResponse> loginGoogle(@RequestBody @Valid GoogleSignInRequest request) throws Exception {
+        GoogleIdToken.Payload payload = googleVerifier.verify(request.idToken());
+        String email = payload.getEmail();
+        Customer customer = customerRepository.findByEmail(email);
+        if (customer == null){
+            Customer ncustomer = new Customer();
+            ncustomer.setEmail(email);
+            ncustomer.setFirstName((String) payload.get("given_name"));
+            ncustomer.setLastName((String) payload.get("family_name"));
+            ncustomer.setEnabled(true); // email đã xác thực bởi Google
+            customer = customerRepository.save(ncustomer);
+        }
+        CustomerUserDetails principal = new CustomerUserDetails(customer);
+
+        List<String> roles = principal.getAuthorities()
+                .stream().map(GrantedAuthority::getAuthority).toList();
+        Map<String, Object> claims = new java.util.HashMap<>();
+        claims.put("fullName", principal.getFullName() == null ? "" : principal.getFullName());
+        String token = jwtTokenService.generateAccessToken(principal, claims);
+        return ResponseEntity.ok(new JwtResponse("Bearer ", token, jwtTokenService.getAccessTokenTtlSeconds(), principal.getFullName()));
+    }
+
+    // --- REGISTER ---
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody @Valid RegisterRequest request) {
+        if (customerRepository.findByEmail(request.email()) != null) {
+            return ResponseEntity.status(409).body(Map.of("code",409,"message","Email already exists"));
+        }
+        Customer customer = new Customer();
+        customer.setEmail(request.email());
+        customer.setFirstName(request.firstName());
+        customer.setLastName(request.lastName());
+        customer.setPassword(passwordEncoder.encode(request.password()));
+        customer.setEnabled(false); // đợi verify
+        customer.setVerificationCode(UUID.randomUUID().toString());
+        customerRepository.save(customer);
+
+        // TODO: gửi email verify với link /api/auth/verify?code=...
+        return ResponseEntity.ok(new SimpleMessageResponse(true, "Please check your email to verify the account"));
+    }
+
+    // --- VERIFY EMAIL ---
+    @GetMapping("/verify")
+    public ResponseEntity<?> verify(@RequestParam("code") String code) {
+        Optional<Customer> opt = Optional.ofNullable(customerRepository.findByVerificationCode(code));
+        if (opt.isEmpty()) return ResponseEntity.badRequest().body(Map.of("code",400,"message","Invalid code"));
+        Customer customer = opt.get();
+        customer.setEnabled(true);
+        customer.setVerificationCode(null);
+        customerRepository.save(customer);
+        return ResponseEntity.ok(new VerifyResponse(true));
+    }
+
+    // --- FORGOT PASSWORD ---
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestBody @Valid ForgotPasswordRequest request ) {
+        Customer option = customerRepository.findByEmail(request.email());
+        if (option != null && option.isEnabled()) {
+            Customer customer = option;
+            customer.setResetPasswordToken(UUID.randomUUID().toString());
+            customerRepository.save(customer);
+            // TODO: gửi email chứa token
+        }
+        // Trả 200 kể cả khi email không tồn tại để tránh lộ thông tin
+        return ResponseEntity.ok(new SimpleMessageResponse(true, "If the email exists, we have sent instructions to reset password"));
+    }
+
+    // --- RESET PASSWORD ---
+    @PostMapping("/reset-password")
+    public ResponseEntity<?> resetPassword(@RequestBody @Valid ResetPasswordRequest request) {
+        Customer option = customerRepository.findByResetPasswordToken(request.token());
+        if (option == null) return ResponseEntity.badRequest().body(Map.of("code",400,"message","Invalid or expired token"));
+        Customer customer = option;
+        customer.setPassword(passwordEncoder.encode(request.newPassword()));
+        customer.setResetPasswordToken(null);
+        customerRepository.save(customer);
+        return ResponseEntity.ok(new SimpleMessageResponse(true, "Password has been reset"));
+    }
+}

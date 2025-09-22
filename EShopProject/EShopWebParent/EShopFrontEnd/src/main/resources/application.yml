@@ -30,7 +30,7 @@ spring:
               - email
               - profile
 server:
-  port: 80
+  port: 8686
   servlet:
     context-path: /EShop
 logging:

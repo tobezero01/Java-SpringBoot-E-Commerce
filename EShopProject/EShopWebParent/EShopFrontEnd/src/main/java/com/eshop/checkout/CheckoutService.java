@@ -32,7 +32,7 @@ public class CheckoutService {
         float shippingCostTotal = 0.0f;
         for (CartItem item : cartItems) {
             Product product = item.getProduct();
-            float dimWeight = (product.getLength()*product.getWeight()*product.getHeight()) / DIM_DIVISOR;
+            float dimWeight = (product.getLength()*product.getWidth()*product.getHeight()) / DIM_DIVISOR;
             float finalWeight = product.getWeight() > dimWeight ? product.getWeight() : dimWeight;
             float shippingCost = finalWeight * item.getQuantity() * shippingRate.getRate();
 

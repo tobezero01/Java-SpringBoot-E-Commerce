@@ -34,6 +34,7 @@
 	<modules>
 		<module>EShopBackEnd</module>
 		<module>EShopFrontEnd</module>
+		<module>Web-page-for-customer</module>
 	</modules>
 	
 	<dependencies>

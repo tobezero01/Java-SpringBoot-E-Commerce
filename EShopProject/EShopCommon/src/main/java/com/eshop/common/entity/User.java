@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.*;
-import org.springframework.transaction.annotation.Transactional;
+import lombok.Builder;
 
 @Entity
 @Table(name = "users")

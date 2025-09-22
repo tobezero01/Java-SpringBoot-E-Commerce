@@ -28,7 +28,6 @@ public class ReviewController {
     @GetMapping("/reviews/page/{pageNum}")
     public String listByPage(@PathVariable(name = "pageNum") int pageNum,
                              @PagingAndSortingParam(listName = "listReviews") PagingAndSortingHelper helper
-
     ) {
         reviewService.listByPage(pageNum, helper);
         return "reviews/reviews";

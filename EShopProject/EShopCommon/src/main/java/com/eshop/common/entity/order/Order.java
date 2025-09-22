@@ -72,6 +72,12 @@ public class Order {
     @OrderBy("updatedTime ASC")
     private List<OrderTrack> orderTracks = new ArrayList<>();
 
+    @Column(name = "order_number", length = 32, nullable = false, unique = true)
+    private String orderNumber;
+
+    @Column(name = "note", length = 256)
+    private String note;
+
     public Order() {
     }
 
@@ -93,6 +99,22 @@ public class Order {
         setPostalCode(customer.getPostalCode());
         setState(customer.getState());
         setCountry(customer.getCountry().getName());
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getOrderNumber() {
+        return orderNumber;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public List<OrderTrack> getOrderTracks() {
