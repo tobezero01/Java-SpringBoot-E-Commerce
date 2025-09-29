@@ -5,11 +5,13 @@ import com.eshop.client.dto.paypalDTO.*;
 import com.eshop.client.exception.CustomerNotFoundException;
 import com.eshop.client.exception.PaypalAPIException;
 import com.eshop.client.helper.ControllerHelper;
+import com.eshop.client.helper.Utility;
 import com.eshop.client.service.CheckoutAppService;
 import com.eshop.client.service.OrderEmailService;
 import com.eshop.client.service.PaypalService;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -31,7 +34,7 @@ public class PaypalController {
     private final OrderEmailService orderEmailService;
 
     @PostMapping("/create")
-    public ResponseEntity<PaypalCreateResponse> create(@RequestBody PaypalCreateRequest req) throws PaypalAPIException, CustomerNotFoundException {
+    public ResponseEntity<PaypalCreateResponse> create(@RequestBody PaypalCreateRequest req, HttpServletRequest httpReq) throws PaypalAPIException, CustomerNotFoundException {
         Customer customer = helper.requireAuthenticatedCustomer();
 
         // Tính tổng từ server
@@ -40,8 +43,14 @@ public class PaypalController {
         // Tạo local order (NEW, chưa clear giỏ)
         Order local = checkoutApp.createPendingPaypalOrder(customer, req.addressId(), req.note());
 
+        String base = Utility.getSiteURL(httpReq); // ví dụ http://localhost:8686/EShop
+        String returnUrl = base + "/paypal/return"; // bạn tự chọn endpoint
+        String cancelUrl  = base + "/paypal/cancel";
+
         // Tạo PayPal order server-side (capture)
-        Map<String, Object> created = paypalService.createOrder(sum.paymentTotal(), "USD"); // currency bạn có thể đọc từ setting
+        Map<String, Object> created = paypalService.createOrder(sum.paymentTotal(), "USD",
+                returnUrl, cancelUrl);
+
         String paypalOrderId = created.get("id").toString();
 
         // Lấy approve link
@@ -98,12 +107,12 @@ public class PaypalController {
         String captureId = null;
         Float amount = null;
         String currency = null;
-        Instant capturedAt = null;
+        Date capturedAt = null;
         try {
             // capture id trong purchase_units[0].payments.captures[0]
-            var pus = (List<Map<String, Object>>) cap.get("purchase_units");
-            if (pus != null && !pus.isEmpty()) {
-                Map<String, Object> pay = (Map<String, Object>) pus.get(0).get("payments");
+            List<Map<String, Object>> purchase_units = (List<Map<String, Object>>) cap.get("purchase_units");
+            if (purchase_units != null && !purchase_units.isEmpty()) {
+                Map<String, Object> pay = (Map<String, Object>) purchase_units.get(0).get("payments");
                 List<Map<String, Object>> captures = (List<Map<String, Object>>) pay.get("captures");
                 if (captures != null && !captures.isEmpty()) {
                     Map<String, Object> c0 = captures.get(0);
@@ -114,15 +123,27 @@ public class PaypalController {
                         amount = Float.parseFloat(String.valueOf(amt.get("value")));
                     }
                     if (c0.get("create_time") != null) {
-                        capturedAt = Instant.parse(String.valueOf(c0.get("create_time")));
+                        capturedAt =Date.from(Instant.parse(String.valueOf(c0.get("create_time"))));
                     }
                 }
             }
         } catch (Exception ignored) {
         }
 
+        boolean success = "COMPLETED".equalsIgnoreCase(status);
+        if (success) {
+            checkoutApp.finalizePaypalOrderAfterCapture(
+                    customer,
+                    req.localOrderNumber(),
+                    captureId,
+                    capturedAt,
+                    amount,
+                    currency
+            );
+        }
+
         return ResponseEntity.ok(new PaypalCaptureResponse(
-                "COMPLETED".equalsIgnoreCase(status),
+                success,
                 status,
                 captureId,
                 req.localOrderNumber(),

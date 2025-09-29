@@ -12,5 +12,5 @@ public record AddressDTO(
         String postalCode,
         Integer countryId,
         String countryName,
-        boolean defaultForShipping
+        Boolean defaultForShipping
 ) {}

@@ -5,6 +5,9 @@ import com.eshop.client.exception.JsonAuthEntryPoint;
 import com.eshop.client.helper.Utility;
 import com.eshop.client.security.jwt.JwtAuthenticationFilter;
 import com.eshop.client.security.jwt.JwtTokenService;
+import com.eshop.client.security.oauth.CustomerOAuth2User;
+import com.eshop.client.security.oauth.CustomerOAuth2UserService;
+import com.eshop.client.security.oauth.OAuthLoginSuccessHandler;
 import com.eshop.client.service.SettingService;
 import com.eshop.client.setting.EmailSettingBag;
 import lombok.RequiredArgsConstructor;
@@ -40,11 +43,8 @@ public class WebSecurityConfig {
     private final JsonAuthEntryPoint authEntryPoint;
     private final JsonAccessDeniedHandler accessDeniedHandler;
     private final SettingService settingService;
-
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+    private final CustomerOAuth2UserService customerOAuth2UserService;
+    private final OAuthLoginSuccessHandler oAuthLoginSuccessHandler;
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration cfg) throws Exception {
@@ -84,7 +84,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/home/**", "/api/categories/**",
                                 "/api/products/**").permitAll()
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/auth/**", "/oauth2/**","/login/oauth2/**").permitAll()
                         .requestMatchers(
                                 "/api/cart/**", "/api/checkout/**", "/api/orders/**",
                                 "/api/addresses/**", "/api/reviews/**", "/api/payments/**", "/api/geo/**"
@@ -92,10 +92,19 @@ public class WebSecurityConfig {
                         .anyRequest().authenticated()
 
                 )
+                .oauth2Login(oauth -> oauth
+                                // các baseUri này là mặc định, ghi rõ cho dễ đọc
+                                .authorizationEndpoint(a -> a.baseUri("/oauth2/authorization"))
+                                .redirectionEndpoint(r -> r.baseUri("/login/oauth2/code/*"))
+                        // nếu bạn có CustomerOAuth2UserService / successHandler:
+                        .userInfoEndpoint(u -> u.userService(customerOAuth2UserService))
+                        .successHandler(oAuthLoginSuccessHandler)
+                        .failureUrl("/login?error")
+                )
                 .exceptionHandling(e -> e .authenticationEntryPoint(authEntryPoint)
                         .accessDeniedHandler(accessDeniedHandler)
                 )
-                .headers(h -> h.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)); // nếu H2 console
+                .headers(h -> h.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
 
         ;
 

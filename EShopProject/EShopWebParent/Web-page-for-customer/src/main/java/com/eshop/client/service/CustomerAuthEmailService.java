@@ -23,15 +23,15 @@ public class CustomerAuthEmailService {
     private final SettingService settingService;
     private final JavaMailSender mailSender; // TIÊM BEAN
 
-    /** Email xác minh đăng ký: dùng CUSTOMER_VERIFY_SUBJECT/CONTENT */
     public void sendRegistrationVerification(HttpServletRequest req, Customer customer)
             throws MessagingException, UnsupportedEncodingException {
 
         EmailSettingBag bag = settingService.getEmailSettings();
-        String subject = bag.getCustomerVerifySubject();   // đã có trong MAIL_TEMPLATES
-        String content = bag.getCustomerVerifyContent();   // có [[name]] [[URL]]
+        String subject = bag.getCustomerVerifySubject();
+        String content = bag.getCustomerVerifyContent(); // có [[name]] [[URL]]
 
-        String verifyUrl = getSiteURL(req) + "/verify?code=" + customer.getVerificationCode();
+        // Nên trỏ thẳng vào API verify (hoặc trỏ FE rồi FE gọi API — tuỳ kiến trúc)
+        String verifyUrl = Utility.getSiteURL(req) + "/api/auth/verify?code=" + customer.getVerificationCode();
 
         MimeMessage msg = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(msg, "UTF-8");
@@ -46,7 +46,7 @@ public class CustomerAuthEmailService {
         mailSender.send(msg);
     }
 
-    /** Email reset mật khẩu: ưu tiên lấy từ setting nếu có; nếu không có -> dùng mặc định */
+    /** Email reset mật khẩu */
     public void sendResetPassword(HttpServletRequest req, String email, String token)
             throws MessagingException, UnsupportedEncodingException {
 
@@ -67,7 +67,8 @@ public class CustomerAuthEmailService {
                 """
         );
 
-        String link = getSiteURL(req) + "/reset_password?token=" + token;
+        // FE page: người dùng mở link này, nhập mật khẩu mới, FE gọi POST /api/auth/reset-password
+        String link = Utility.getSiteURL(req) + "/reset-password?token=" + token;
 
         MimeMessage msg = mailer.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(msg, "UTF-8");

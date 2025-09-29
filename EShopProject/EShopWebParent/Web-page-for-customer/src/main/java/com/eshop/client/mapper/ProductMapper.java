@@ -12,13 +12,15 @@ public final class ProductMapper {
                 p.getName(),
                 p.getAlias(),
                 p.getShortDescription(),
+                p.getFullDescription(),
                 p.getPrice(),
                 p.getDiscountPrice(),
                 p.getMainImagePath(),
                 p.getAverageRating(),
                 p.getReviewCount(),
                 p.getCategory() != null ? p.getCategory().getId() : null,
-                p.getCategory() != null ? p.getCategory().getName() : null
+                p.getCategory() != null ? p.getCategory().getName() : null,
+                p.isInStock()
         );
     }
 }

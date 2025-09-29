@@ -33,6 +33,7 @@ spring:
             scope:
               - email
               - profile
+              - openid
 server:
   port: 8686
   servlet:

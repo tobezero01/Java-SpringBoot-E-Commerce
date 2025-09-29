@@ -6,14 +6,21 @@ import com.eshop.common.entity.product.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CartItemRepository extends JpaRepository<CartItem, Integer> {
 
     public List<CartItem> findByCustomer(Customer customer);
 
     public CartItem findByCustomerAndProduct(Customer customer,Product product );
+
+    Optional<CartItem> findByCustomerIdAndProductId(Integer customerId, Integer productId);
+
+    @Query("select c from CartItem c where c.customer.id = :customerId")
+    List<CartItem> findAllByCustomerId(@Param("customerId") Integer customerId);
 
     @Modifying
     @Query("Update CartItem c Set c.quantity = ?1 Where c.customer.id = ?2 And c.product.id = ?3")

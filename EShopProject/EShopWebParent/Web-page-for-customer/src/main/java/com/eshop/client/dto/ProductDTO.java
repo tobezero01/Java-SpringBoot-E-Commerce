@@ -5,11 +5,13 @@ public record ProductDTO(
         String name,
         String alias,
         String shortDescription,
+        String fullDescription,
         Float price,
         Float discountPrice,
         String mainImagePath,
         Float averageRating,
         Integer reviewCount,
         Integer categoryId,
-        String categoryName
+        String categoryName,
+        Boolean inStock
 ) {}

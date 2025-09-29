@@ -69,6 +69,12 @@ public enum OrderStatus {
         public String defaultDescription() {
             return "Customer has been refunded";
         }
+    },
+    PENDING_PAYMENT_PAYPAL {
+        @Override
+        public String defaultDescription() {
+            return "Payment has been Pending with Paypal";
+        }
     };
 
     public abstract String defaultDescription();

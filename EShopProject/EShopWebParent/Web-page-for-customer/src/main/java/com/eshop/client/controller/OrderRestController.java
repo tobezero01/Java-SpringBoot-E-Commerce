@@ -7,10 +7,11 @@ import com.eshop.client.dto.response.OrderReturnResponse;
 import com.eshop.client.dto.response.PageResponse;
 import com.eshop.client.dto.response.ReturnCheckResponse;
 import com.eshop.client.exception.OrderNotFoundException;
-import com.eshop.client.exception.OrderReturnNotAllowedException;
 import com.eshop.client.mapper.OrderMapper;
+import com.eshop.client.service.AddressService;
 import com.eshop.client.service.CustomerService;
 import com.eshop.client.service.OrderService;
+import com.eshop.common.entity.Address;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,8 @@ public class OrderRestController {
     private final OrderService orderService;
     private final OrderMapper mapper;
     private final CustomerService customerService;
+    private final AddressService addressService;
+
 
     private Customer me() {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
@@ -47,10 +50,10 @@ public class OrderRestController {
     }
 
     @GetMapping("/{id}")
-    public OrderDetailDTO detail(@PathVariable Integer id) {
+    public OrderDetailDTO detail(@PathVariable Integer id) throws OrderNotFoundException {
         Customer customer = me();
         Order order = orderService.getOrder(id, customer);
-        if (order == null) throw new RuntimeException("Order not found"); // hoặc @ControllerAdvice chuẩn hóa
+        if (order == null) throw new OrderNotFoundException("Order not found");
         return mapper.toDetail(customer, order);
     }
 

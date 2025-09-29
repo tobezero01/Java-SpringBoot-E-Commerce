@@ -1,9 +1,13 @@
 package com.eshop.client.mapper;
 
+import com.eshop.client.dto.CheckoutSummaryDTO;
 import com.eshop.client.dto.OrderDetailDTO;
 import com.eshop.client.dto.OrderItemDTO;
 import com.eshop.client.dto.OrderSummaryDTO;
-import com.eshop.client.service.ReviewService;
+import com.eshop.client.helper.CheckoutInfo;
+import com.eshop.client.service.*;
+import com.eshop.common.entity.Address;
+import com.eshop.common.entity.CartItem;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;
 import com.eshop.common.entity.order.OrderDetail;
@@ -32,7 +36,7 @@ public class OrderMapper {
         return new OrderDetailDTO(
                 o.getId(), o.getOrderNumber(), o.getOrderTime(),
                 o.getStatus().name(), o.getPaymentMethod().name(),
-                o.getProductCost(), o.getShippingCost(), o.getTotal(),
+                o.getSubtotal(), o.getShippingCost(), o.getTotal(),
                 items,
                 o.getFirstName(), o.getLastName(), o.getPhoneNumber(), o.getAddressLine1(), o.getAddressLine2(),
                 o.getCity(), o.getState(), o.getPostalCode(), o.getCountry() == null ? null : o.getCountry()

@@ -21,6 +21,4 @@ public class UserRestController {
 	public String checkDuplicateEmail( Integer id, String email) {
 		return userService.isEmailUnique(id,email) ? "OK" : "Duplicated" ;
 	}
-
-
 }

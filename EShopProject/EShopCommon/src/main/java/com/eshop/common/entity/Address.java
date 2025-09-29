@@ -47,6 +47,10 @@ public class Address {
 
     public Address() {
     }
+    @Transient
+    public String getCountryName() {
+        return country.getName();
+    }
 
     public Address(Integer id) {
         this.id = id;

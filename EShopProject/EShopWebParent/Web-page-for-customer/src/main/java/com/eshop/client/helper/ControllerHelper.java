@@ -1,15 +1,12 @@
 package com.eshop.client.helper;
 
 import com.eshop.client.exception.CustomerNotFoundException;
-import com.eshop.client.exception.UnauthorizedException;
 import com.eshop.client.repository.CustomerRepository;
-import com.eshop.client.security.CustomerUserDetails;
-import com.eshop.client.service.CustomerService;
+
 import com.eshop.common.entity.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 @Component

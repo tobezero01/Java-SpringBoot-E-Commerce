@@ -28,16 +28,37 @@ public class OrderEmailService {
         helper.setFrom(emailSettings.getMailFrom(), emailSettings.getSenderName());
         helper.setTo(customer.getEmail());
 
-        String orderIdDisplay = (order.getOrderNumber() != null) ? order.getOrderNumber() : String.valueOf(order.getId());
-        String subject = emailSettings.getOrderConfirmationSubject().replace("[[orderId]]", orderIdDisplay);
+        String orderIdDisplay = (order.getOrderNumber() != null)
+                ? order.getOrderNumber() : String.valueOf(order.getId());
+
+        String subject = emailSettings.getOrderConfirmationSubject()
+                .replace("[[orderId]]", orderIdDisplay);
+
+        // link dùng tạm
+        //String orderDetailsLink = "http://localhost:8686/EShop/api/orders/" + order.getId();
+
         String content = emailSettings.getOrderConfirmationContent()
                 .replace("[[name]]", safe(customer.getFullName()))
                 .replace("[[orderId]]", orderIdDisplay)
-                .replace("[[total]]", String.format("%.2f", order.getTotal()));
+                .replace("[[shippingAddress]]", customer.getAddress())
+                .replace("[[orderTime]]", order.getOrderTime().toString())
+                .replace("[[paymentMethod]]", prettyPayment(order))
+                .replace("[[total]]", String.format("%.2f", order.getTotal())
+                //.replace("[[orderLink]]", orderDetailsLink)
+                );
+
 
         helper.setSubject(subject);
         helper.setText(content, true);
         mailSender.send(message);
+    }
+    private String prettyPayment(Order order) {
+        if (order.getPaymentMethod() == null) return "";
+        return switch (order.getPaymentMethod()) {
+            case COD    -> "Cash on Delivery";
+            case PAYPAL -> "PayPal";
+            default     -> order.getPaymentMethod().name();
+        };
     }
     private String safe(String s){ return s == null ? "" : s; }
 }

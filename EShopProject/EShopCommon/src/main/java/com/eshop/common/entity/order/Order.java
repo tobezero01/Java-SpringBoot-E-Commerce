@@ -72,11 +72,23 @@ public class Order {
     @OrderBy("updatedTime ASC")
     private List<OrderTrack> orderTracks = new ArrayList<>();
 
-    @Column(name = "order_number", length = 32, nullable = false, unique = true)
+    @Column(name = "order_number", length = 64, nullable = false, unique = true)
     private String orderNumber;
 
     @Column(name = "note", length = 256)
     private String note;
+
+    @Column(name = "payment_transaction_id", length = 64)
+    private String paymentTransactionId;
+
+    @Column(name = "paid_time")
+    private Date paidTime;
+
+    @Column(name = "paid_amount")
+    private Float paidAmount;
+
+    @Column(name = "paid_currency", length = 12)
+    private String paidCurrency;
 
     public Order() {
     }
@@ -297,6 +309,38 @@ public class Order {
         return orderDetails;
     }
 
+    public String getPaymentTransactionId() {
+        return paymentTransactionId;
+    }
+
+    public void setPaymentTransactionId(String paymentTransactionId) {
+        this.paymentTransactionId = paymentTransactionId;
+    }
+
+    public Date getPaidTime() {
+        return paidTime;
+    }
+
+    public void setPaidTime(Date paidTime) {
+        this.paidTime = paidTime;
+    }
+
+    public Float getPaidAmount() {
+        return paidAmount;
+    }
+
+    public void setPaidAmount(Float paidAmount) {
+        this.paidAmount = paidAmount;
+    }
+
+    public String getPaidCurrency() {
+        return paidCurrency;
+    }
+
+    public void setPaidCurrency(String paidCurrency) {
+        this.paidCurrency = paidCurrency;
+    }
+
     @Transient
     public String getDestination() {
         return city + ", "+ state + ", "+ country;
@@ -333,6 +377,8 @@ public class Order {
         if (!phoneNumber.isEmpty()) address += ". Phone Number : " + phoneNumber;
         return address;
     }
+
+
 
 
     @Transient

@@ -17,6 +17,7 @@ public interface ProductRepository extends JpaRepository<Product , Integer> {
             "And (p.category.id = ?1 or p.category.allParentIDs Like %?1%) Order By p.name ASC")
     public List<Product> listByCategory(Integer categoryId);
 
+//    @Query("Select p From Product p Where p.enabled = true AND p.alias LIKE %?1% ORDER BY p.alias ASC")
     public Product findByAlias(String alias);
 
     @Query(value = "select * from Products p where p.enabled = true and match (name , short_description , full_description) " +

@@ -1,6 +1,7 @@
 package com.eshop.client.dto.response;
 
-import java.time.Instant;
+
+import java.util.Date;
 
 public record PlaceOrderResponse(
         Integer orderId,
@@ -10,5 +11,5 @@ public record PlaceOrderResponse(
         Float productTotal,
         Float shippingCost,
         Float grandTotal,
-        Instant createdAt
+        Date createdAt
 ) {}

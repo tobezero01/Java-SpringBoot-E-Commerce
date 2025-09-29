@@ -14,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 @Service
@@ -23,6 +24,7 @@ public class PaypalService {
     private final SettingService settingService;
 
     /** Lấy Access Token từ PayPal (OAuth2 Client Credentials) */
+    // server2server
     private String getAccessToken(PaymentSettingBag bag) throws PaypalAPIException {
         String url = bag.getBaseUrl() + "/v1/oauth2/token";
         String credentials = bag.getClientId() + ":" + bag.getClientSecret();
@@ -49,12 +51,13 @@ public class PaypalService {
     }
 
     /** Gọi PayPal Orders API để lấy chi tiết đơn theo orderId */
+    //để đọc trạng thái/amount/currency
     private Map<String, Object> getOrder(String accessToken, PaymentSettingBag bag, String paypalOrderId) throws PaypalAPIException{
         String url = bag.getBaseUrl() + "/v2/checkout/orders/" + paypalOrderId;
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(accessToken);
-        headers.setAccept(java.util.List.of(MediaType.APPLICATION_JSON));
+        headers.setAccept(List.of(MediaType.APPLICATION_JSON));
 
         try {
             ResponseEntity<Map> resp = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), Map.class);
@@ -67,7 +70,8 @@ public class PaypalService {
     }
 
     /* ===== Create Order ===== */
-    public Map<String, Object> createOrder(Float amount, String currency) throws PaypalAPIException {
+    public Map<String, Object> createOrder(Float amount, String currency,
+                                           String returnUrl, String cancelUrl) throws PaypalAPIException {
         PaymentSettingBag bag = settingService.getPaymentSettings();
         String accessToken = getAccessToken(bag);
 
@@ -80,13 +84,19 @@ public class PaypalService {
         Map<String, Object> body = Map.of(
                 "intent", "CAPTURE",
                 "purchase_units", List.of(Map.of(
+                        "reference_id", "OD-PLACEHOLDER",
                         "amount", Map.of(
                                 "currency_code", currency,
-                                "value", String.format(java.util.Locale.US, "%.2f", amount)
+                                "value", String.format(Locale.US, "%.2f", amount)
                         )
                 )),
                 "application_context", Map.of(
-                        "shipping_preference", "NO_SHIPPING" // nếu không ship qua PayPal
+                        "return_url", returnUrl,
+                        "cancel_url", cancelUrl,
+                        "user_action", "PAY_NOW",          // hiện nút Pay Now rõ ràng hơn
+                        "brand_name", "EShop",
+                        "landing_page", "LOGIN",
+                        "shipping_preference", "NO_SHIPPING"
                 )
         );
 
@@ -131,12 +141,13 @@ public class PaypalService {
 
         Map<String, Object> amount = null;
         try {
-            Map<String, Object> purchase_units = (Map<String, Object>) order.get("purchase_units");
-            if (purchase_units != null && !purchase_units.isEmpty()) {
-                Map<String, Object> pu0 = (Map<String, Object>) purchase_units.get(0);
+            @SuppressWarnings("unchecked")
+            List<Map<String, Object>> pus = (List<Map<String, Object>>) order.get("purchase_units");
+            if (pus != null && !pus.isEmpty()) {
+                Map<String, Object> pu0 = pus.get(0);
                 amount = (Map<String, Object>) pu0.get("amount");
             }
-        }catch (ClassCastException ignored) {}
+        } catch (ClassCastException ignored) {}
 
         String currency = (amount != null) ? str(amount.get("currency_code")) : null;
         Float value = null;
@@ -153,34 +164,50 @@ public class PaypalService {
             }
         } catch (ClassCastException ignored) {}
 
-        boolean statusOk = "APPROVED".equalsIgnoreCase(status) || "COMPLETED".equalsIgnoreCase(status);
-
-        boolean amountOk = true;
-        if (expectedAmount != null && value != null) {
-            amountOk = Math.abs(expectedAmount - value) < 0.01f;
-        }
-        boolean currencyOk = true;
-        if (expectedCurrency != null && currency != null) {
-            currencyOk = expectedCurrency.equalsIgnoreCase(currency);
-        }
+        boolean statusOk   = "APPROVED".equalsIgnoreCase(status) || "COMPLETED".equalsIgnoreCase(status);
+        boolean amountOk   = (expectedAmount == null)   ? true : (value != null && Math.abs(expectedAmount - value) < 0.01f);
+        boolean currencyOk = (expectedCurrency == null) ? true : (currency != null && expectedCurrency.equalsIgnoreCase(expectedCurrency));
 
         boolean valid = statusOk && amountOk && currencyOk;
         String reason = valid ? null : ("Invalid: statusOk=" + statusOk + ", amountOk=" + amountOk + ", currencyOk=" + currencyOk);
 
         return new PaypalOrderValidation(
-                paypalOrderId,
-                status,
-                intent,
-                currency,
-                value,
-                payerEmail,
-                payerId,
-                valid,
-                reason
+                paypalOrderId, status, intent, currency, value, payerEmail, payerId, valid, reason
         );
     }
 
     private static String str(Object o) { return o == null ? null : o.toString(); }
 
     private String baseUrl(PaymentSettingBag bag) { return bag.getBaseUrl(); }
+
+
+    /*
+    id: mã Order trên PayPal (ví dụ 5O190127TN364715T).
+    intent: cách xử lý tiền, thường CAPTURE (thu ngay) hoặc AUTHORIZE (giữ tiền, thu sau).
+    status: trạng thái của order, hay gặp CREATED, APPROVED, COMPLETED.
+    payment_source: thông tin nguồn thanh toán (paypal/venmo/card…), có thể chứa email, account id, địa chỉ rút gọn.
+    payer: thông tin người trả tiền (tên, email_address, payer_id, address.country_code).
+    purchase_units: mảng các đơn vị mua (thường một phần tử), mỗi phần tử có số tiền, shipping, payments… (xem tiếp bên dưới).
+    create_time, update_time: thời điểm tạo/cập nhật (ISO-8601).
+    links: các HATEOAS link (self, approve, up, refund…) để điều hướng gọi API tiếp theo.
+
+    Bên trong purchase_units[]
+        reference_id: tham chiếu do bạn đặt (tùy chọn).
+        amount: tổng tiền của unit, gồm:
+        currency_code (ví dụ USD),
+        value (chuỗi tiền “230.00”),
+        có thể có breakdown (chi tiết như item_total, shipping, tax_total, discount…).
+        payee: tài khoản người bán (merchant) nhận tiền.
+        shipping: địa chỉ giao (nếu bạn để PayPal thu thập), gồm name.full_name và address (address_line_1, admin_area_1/2, postal_code, country_code).
+        payments: kết quả thanh toán sau khi capture/authorize, thường dùng:
+
+        captures[]: mảng các capture, mỗi phần tử có:
+            id: mã giao dịch capture (rất quan trọng để đối soát/hoàn tiền),
+            status (thường COMPLETED),
+            amount { currency_code, value },
+            final_capture (bool),
+            seller_protection, seller_receivable_breakdown (gross/paypal_fee/net),
+            create_time, update_time,
+            links (self, refund…).
+    * */
 }

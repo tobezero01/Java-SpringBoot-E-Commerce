@@ -5,7 +5,7 @@ public record RegisterRequest(
         String lastName,
         String email,
         String password,
-        String countryCode, // optional
+        String countryCode,
         String addressLine1,
         String addressLine2,
         String city,

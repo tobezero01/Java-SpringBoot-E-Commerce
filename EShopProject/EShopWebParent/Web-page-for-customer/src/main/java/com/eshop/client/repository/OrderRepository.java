@@ -6,7 +6,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Integer> {
@@ -20,4 +23,15 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
     public Page<Order> findAll(Integer customerId, Pageable pageable);
 
     public Order findByIdAndCustomer(Integer id, Customer customer);
+
+    Optional<Order> findByOrderNumberAndCustomerId(String orderNumber, Integer customerId);
+
+    @Query("""
+         select o from Order o
+         left join fetch o.orderDetails d
+         left join fetch d.product p
+         where o.id = :id and o.customer.id = :customerId
+         """)
+    Order findWithDetailsByIdAndCustomerId(@Param("id") Integer id,
+                                                     @Param("customerId") Integer customerId);
 }

@@ -21,7 +21,7 @@ public final class AddressMapper {
                 a.getState(),
                 a.getPostalCode(),
                 a.getCountry() != null ? a.getCountry().getId() : null,
-                a.getCountry() != null ? a.getCountry().getName() : null,
+                a.getCountryName() != null ? a.getCountryName() : null,
                 a.isDefaultForShipping()
         );
     }

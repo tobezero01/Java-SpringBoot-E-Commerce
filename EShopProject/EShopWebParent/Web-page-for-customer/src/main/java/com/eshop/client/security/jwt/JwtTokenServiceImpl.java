@@ -31,11 +31,6 @@ public class JwtTokenServiceImpl implements JwtTokenService{
     }
 
     @Override
-    public String generateAccessToken(UserDetails user) {
-        return generateAccessToken(user, Collections.emptyMap());
-    }
-
-    @Override
     public String generateAccessToken(UserDetails user, Map<String, Object> extraClaims) {
         Instant now = Instant.now();
         Instant exp = now.plusSeconds(ttlSeconds);

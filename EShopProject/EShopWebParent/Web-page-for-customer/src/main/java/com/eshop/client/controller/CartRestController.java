@@ -5,6 +5,7 @@ import com.eshop.client.dto.request.AddToCartRequest;
 import com.eshop.client.dto.request.UpdateQuantityRequest;
 import com.eshop.client.dto.response.CartActionResponse;
 import com.eshop.client.exception.CustomerNotFoundException;
+import com.eshop.client.exception.ProductNotFoundException;
 import com.eshop.client.exception.ShoppingCartException;
 import com.eshop.client.helper.ControllerHelper;
 import com.eshop.client.mapper.CartMapper;
@@ -57,7 +58,7 @@ public class CartRestController {
 
     /** POST /api/cart/items : thêm sản phẩm vào giỏ */
     @PostMapping("/items")
-    public ResponseEntity<CartActionResponse> addToCart(@RequestBody AddToCartRequest request) throws ShoppingCartException, CustomerNotFoundException {
+    public ResponseEntity<CartActionResponse> addToCart(@RequestBody AddToCartRequest request) throws ShoppingCartException, CustomerNotFoundException, ProductNotFoundException {
         Customer customer = helper.requireAuthenticatedCustomer();
         Integer updatedQuantity = cartService.addProductToCart(request.productId(), request.quantity(), customer);
         float subtotal = cartService.updateQuantity(request.productId(), updatedQuantity, customer);
@@ -70,7 +71,7 @@ public class CartRestController {
     /** PATCH /api/cart/items/{productId} : cập nhật số lượng */
     @PatchMapping("/items/{productId}")
     public ResponseEntity<CartActionResponse> updateQuantity(@PathVariable Integer productId,
-                                             @RequestBody UpdateQuantityRequest request) throws CustomerNotFoundException {
+                                             @RequestBody UpdateQuantityRequest request) throws CustomerNotFoundException, ShoppingCartException, ProductNotFoundException {
         Customer customer = helper.requireAuthenticatedCustomer();
         float subtotal = cartService.updateQuantity(productId, request.quantity(), customer);
         return ResponseEntity.ok(new CartActionResponse(productId, request.quantity(), subtotal,

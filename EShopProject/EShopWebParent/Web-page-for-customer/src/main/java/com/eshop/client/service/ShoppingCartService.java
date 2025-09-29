@@ -1,5 +1,7 @@
 package com.eshop.client.service;
 
+import com.eshop.client.exception.CartItemNotFoundException;
+import com.eshop.client.exception.ProductNotFoundException;
 import com.eshop.client.exception.ShoppingCartException;
 import com.eshop.client.repository.CartItemRepository;
 import com.eshop.client.repository.ProductRepository;
@@ -18,23 +20,38 @@ import java.util.List;
 public class ShoppingCartService {
     private final ProductRepository productRepository;
     private final CartItemRepository cartItemRepository;
+    private final static Integer MAX_QTY_PER_ITEM = 10;
 
-    public Integer addProductToCart(Integer productId, Integer quantity, Customer customer) throws ShoppingCartException {
+    public Integer addProductToCart(Integer productId, Integer quantity, Customer customer) throws ShoppingCartException, ProductNotFoundException {
         Integer updatedQuantity = quantity;
-        Product product = new Product(productId);
+        Product product = productRepository.findById(productId)
+                .orElseThrow(() -> new ProductNotFoundException("Could not find product with id = " + productId));
+
+        if (!product.isInStock()) {
+            throw new ShoppingCartException(
+                    "Product is Out of Stock"
+            );
+        }
         CartItem cartItem = cartItemRepository.findByCustomerAndProduct(customer, product);
 
-        if (cartItem != null) {
+        if (cartItem == null) {
+            updatedQuantity = quantity;
+            if (updatedQuantity > MAX_QTY_PER_ITEM) {
+                throw new ShoppingCartException(
+                        "Could not add more " + quantity + " item(s). Maximum allowed quantity is " + MAX_QTY_PER_ITEM
+                );
+            }
+            cartItem = new CartItem();
+            cartItem.setCustomer(customer);
+            cartItem.setProduct(product);
+        } else {
+            // cộng dồn số lượng
             updatedQuantity = cartItem.getQuantity() + quantity;
-            if (updatedQuantity > 5) {
-                if (updatedQuantity > 5) {
-                    throw new ShoppingCartException("Could not add more " + quantity + " item(s) because there's already " +
-                            cartItem.getQuantity() + " item(s) in your shopping cart. Maximum allowed quantity is 5.");
-                } else  {
-                    cartItem = new CartItem();
-                    cartItem.setCustomer(customer);
-                    cartItem.setProduct(product);
-                }
+            if (updatedQuantity > MAX_QTY_PER_ITEM) {
+                throw new ShoppingCartException(
+                        "Could not add more " + quantity + " item(s) because there's already " +
+                                cartItem.getQuantity() + " item(s) in your shopping cart. Maximum allowed quantity is " + MAX_QTY_PER_ITEM
+                );
             }
         }
         cartItem.setQuantity(updatedQuantity);
@@ -46,14 +63,27 @@ public class ShoppingCartService {
         return cartItemRepository.findByCustomer(customer);
     }
 
-    public float updateQuantity(Integer productId, Integer quantity, Customer customer) {
-        if (quantity > 0)  cartItemRepository.updateQuantity(quantity, customer.getId(), productId);
-        Product product = productRepository.findById(productId).get();
-        float subtotal = product.getDiscountPrice() * quantity;
+    public float updateQuantity(Integer productId, Integer quantity, Customer customer) throws ShoppingCartException, ProductNotFoundException {
+        if (quantity < 1 || quantity > MAX_QTY_PER_ITEM) {
+            throw new ShoppingCartException("Quantity must be between 1 and " + MAX_QTY_PER_ITEM);
+        }
+
+        CartItem item = cartItemRepository.findByCustomerIdAndProductId(customer.getId(), productId)
+                .orElseThrow(() -> new CartItemNotFoundException(
+                        "Product with id " + productId + " is not in your cart"));
+
+        if (!item.getProduct().isInStock()) {
+            throw new ShoppingCartException("Product is Out of Stock");
+        }
+        if (quantity > 0 )  cartItemRepository.updateQuantity(quantity, customer.getId(), productId);
+        float subtotal = item.getProduct().getDiscountPrice() * quantity;
         return subtotal;
     }
 
     public void removeProduct(Integer productId, Customer customer) {
+        CartItem item = cartItemRepository.findByCustomerIdAndProductId(customer.getId(), productId)
+                .orElseThrow(() -> new CartItemNotFoundException(
+                        "Product with id " + productId + " is not in your cart. Can't delete."));
         cartItemRepository.deleteByCustomerAndProduct(customer.getId(), productId);
     }
 
