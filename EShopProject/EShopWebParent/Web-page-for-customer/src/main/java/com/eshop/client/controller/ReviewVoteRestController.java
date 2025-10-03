@@ -4,7 +4,7 @@ import com.eshop.client.dto.VoteDTO;
 import com.eshop.client.dto.request.VoteRequest;
 import com.eshop.client.exception.CustomerNotFoundException;
 import com.eshop.client.helper.ControllerHelper;
-import com.eshop.client.service.ReviewAppService;
+import com.eshop.client.service.interfaceS.ReviewAppService;
 import com.eshop.common.entity.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -8,7 +8,7 @@ import com.eshop.client.security.jwt.JwtTokenService;
 import com.eshop.client.security.oauth.CustomerOAuth2User;
 import com.eshop.client.security.oauth.CustomerOAuth2UserService;
 import com.eshop.client.security.oauth.OAuthLoginSuccessHandler;
-import com.eshop.client.service.SettingService;
+import com.eshop.client.service.interfaceS.SettingService;
 import com.eshop.client.setting.EmailSettingBag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -83,7 +83,7 @@ public class WebSecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/home/**", "/api/categories/**",
-                                "/api/products/**").permitAll()
+                                "/api/products/**","/api/products/**/reviews").permitAll()
                         .requestMatchers("/api/auth/**", "/oauth2/**","/login/oauth2/**").permitAll()
                         .requestMatchers(
                                 "/api/cart/**", "/api/checkout/**", "/api/orders/**",

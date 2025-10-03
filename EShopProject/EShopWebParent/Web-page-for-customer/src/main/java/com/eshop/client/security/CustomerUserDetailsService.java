@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +25,13 @@ public class CustomerUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("No Customer Found with the Email : " + email);
         }
 
+        return new CustomerUserDetails(customer);
+    }
+
+    @Transactional(readOnly = true)
+    public CustomerUserDetails loadUserById(Integer id) {
+        Customer customer = customerRepository.findById(id)
+                .orElseThrow(() -> new UsernameNotFoundException("Customer not found by id: " + id));
         return new CustomerUserDetails(customer);
     }
 }

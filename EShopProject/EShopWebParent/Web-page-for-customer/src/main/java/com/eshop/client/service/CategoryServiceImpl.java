@@ -3,9 +3,9 @@ package com.eshop.client.service;
 import com.eshop.client.dto.CategoryNodeDTO;
 import com.eshop.client.exception.CategoryNotFoundException;
 import com.eshop.client.repository.CategoryRepository;
+import com.eshop.client.service.interfaceS.CategoryService;
 import com.eshop.common.entity.Category;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,10 +14,11 @@ import java.util.*;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class CategoryService {
+public class CategoryServiceImpl implements CategoryService {
 
     private final CategoryRepository categoryRepository;
 
+    @Override
     public List<Category> listNoChildrenCategories() {
         List<Category> enabled = categoryRepository.findAllEnabled();
         List<Category> res = new ArrayList<>();
@@ -28,12 +29,14 @@ public class CategoryService {
         return res;
     }
 
+    @Override
     public Category getCategory(String alias) throws CategoryNotFoundException {
-        Category c = categoryRepository.findByAliasEnabled(alias);
-        if (c == null) throw new CategoryNotFoundException("Category not found with alias " + alias);
-        return c;
+        Category category = categoryRepository.findByAliasEnabled(alias);
+        if (category == null) throw new CategoryNotFoundException("Category not found with alias " + alias);
+        return category;
     }
 
+    @Override
     public List<CategoryNodeDTO> listCategoryTree() {
         List<Category> categories = categoryRepository.findAllEnabled(); // tất cả đã enabled
 
@@ -47,11 +50,11 @@ public class CategoryService {
         // gắn children vào parent
         List<CategoryNodeDTO> roots = new ArrayList<>();
         for (Category category : categories) {
-            var node = nodes.get(category.getId());
+            CategoryNodeDTO node = nodes.get(category.getId());
             if (category.getParent() == null) {
                 roots.add(node);
             } else {
-                var parentNode = nodes.get(category.getParent().getId());
+                CategoryNodeDTO parentNode = nodes.get(category.getParent().getId());
                 if (parentNode != null) {
                     parentNode.children().add(node);
                 } else {
@@ -72,10 +75,12 @@ public class CategoryService {
         }
     }
 
+    @Override
     public List<Category> listTopLevelParents() {
         return categoryRepository.findAllTopLevel();
     }
 
+    @Override
     public List<Category> getAncestorsPath(Integer id) throws CategoryNotFoundException {
         Category cur = categoryRepository.getByIdOrThrow(id);
         LinkedList<Category> path = new LinkedList<>();

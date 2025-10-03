@@ -5,7 +5,11 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "customers", indexes = {
+        @Index(name="idx_customer_email", columnList = "email"),
+        @Index(name="idx_customer_firstName", columnList = "first_name"),
+        @Index(name="idx_customer_lastName", columnList = "last_name")
+})
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

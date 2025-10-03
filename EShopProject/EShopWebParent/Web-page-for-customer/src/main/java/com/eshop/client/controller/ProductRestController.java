@@ -4,7 +4,7 @@ import com.eshop.client.dto.ProductDTO;
 import com.eshop.client.dto.response.PageResponse;
 import com.eshop.client.exception.ProductNotFoundException;
 import com.eshop.client.mapper.ProductMapper;
-import com.eshop.client.service.ProductService;
+import com.eshop.client.service.interfaceS.ProductService;
 import com.eshop.common.entity.product.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,7 @@
 package com.eshop.client.security.oauth;
 
 import com.eshop.client.security.CustomerUserDetails;
-import com.eshop.client.service.CustomerService;
+import com.eshop.client.service.interfaceS.CustomerService;
 import com.eshop.common.entity.AuthenticationType;
 import com.eshop.common.entity.Customer;
 

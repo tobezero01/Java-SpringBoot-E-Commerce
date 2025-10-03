@@ -6,7 +6,7 @@ import com.eshop.client.dto.request.UpdateAddressRequest;
 import com.eshop.client.exception.CustomerNotFoundException;
 import com.eshop.client.helper.ControllerHelper;
 import com.eshop.client.mapper.AddressMapper;
-import com.eshop.client.service.AddressService;
+import com.eshop.client.service.interfaceS.AddressService;
 import com.eshop.common.entity.Address;
 import com.eshop.common.entity.Customer;
 import jakarta.validation.Valid;

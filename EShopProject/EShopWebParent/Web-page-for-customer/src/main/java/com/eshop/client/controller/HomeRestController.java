@@ -2,7 +2,7 @@ package com.eshop.client.controller;
 
 import com.eshop.client.dto.CategoryDTO;
 import com.eshop.client.mapper.CategoryMapper;
-import com.eshop.client.service.CategoryService;
+import com.eshop.client.service.interfaceS.CategoryService;
 import com.eshop.common.entity.Category;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

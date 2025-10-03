@@ -1,6 +1,6 @@
 package com.eshop.client.setting;
 
-import com.eshop.client.service.SettingService;
+import com.eshop.client.service.interfaceS.SettingService;
 import com.eshop.common.entity.setting.Setting;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;

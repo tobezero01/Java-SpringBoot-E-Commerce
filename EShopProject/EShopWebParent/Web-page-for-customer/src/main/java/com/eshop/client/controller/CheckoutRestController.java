@@ -5,7 +5,7 @@ import com.eshop.client.dto.request.PlaceOrderRequest;
 import com.eshop.client.dto.response.PlaceOrderResponse;
 import com.eshop.client.exception.CustomerNotFoundException;
 import com.eshop.client.helper.ControllerHelper;
-import com.eshop.client.service.CheckoutAppService;
+import com.eshop.client.service.interfaceS.CheckoutAppService;
 import com.eshop.common.entity.Customer;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;

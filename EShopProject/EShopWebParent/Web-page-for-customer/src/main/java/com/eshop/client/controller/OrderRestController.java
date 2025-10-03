@@ -8,9 +8,10 @@ import com.eshop.client.dto.response.PageResponse;
 import com.eshop.client.dto.response.ReturnCheckResponse;
 import com.eshop.client.exception.OrderNotFoundException;
 import com.eshop.client.mapper.OrderMapper;
-import com.eshop.client.service.AddressService;
-import com.eshop.client.service.CustomerService;
-import com.eshop.client.service.OrderService;
+
+import com.eshop.client.service.interfaceS.AddressService;
+import com.eshop.client.service.interfaceS.CustomerService;
+import com.eshop.client.service.interfaceS.OrderService;
 import com.eshop.common.entity.Address;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;

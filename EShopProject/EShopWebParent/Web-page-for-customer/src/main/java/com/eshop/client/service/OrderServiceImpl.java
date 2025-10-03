@@ -7,6 +7,7 @@ import com.eshop.client.exception.OrderReturnNotAllowedException;
 import com.eshop.client.helper.CheckoutInfo;
 import com.eshop.client.repository.OrderDetailRepository;
 import com.eshop.client.repository.OrderRepository;
+import com.eshop.client.service.interfaceS.OrderService;
 import com.eshop.common.entity.Address;
 import com.eshop.common.entity.CartItem;
 import com.eshop.common.entity.Customer;
@@ -24,13 +25,12 @@ import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
-public class OrderService {
+public class OrderServiceImpl implements OrderService {
     public static final int ORDERS_PER_PAGE = 5;
     private static final int RETURN_WINDOW_DAYS = 7;
     private final OrderRepository orderRepository;
@@ -38,6 +38,7 @@ public class OrderService {
     private final OrderDetailRepository orderDetailRepository;
 
 
+    @Override
     @Transactional
     public Order createOrder(Customer customer,
                              Address address,                 // có thể null → copy từ customer
@@ -100,6 +101,7 @@ public class OrderService {
         return order;
     }
 
+    @Override
     @Transactional(readOnly = true)
     public Order getByOrderNumberAndCustomer(String orderNumber, Customer customer) {
         return orderRepository.findByOrderNumberAndCustomerId(orderNumber, customer.getId())
@@ -119,6 +121,7 @@ public class OrderService {
 //        return orderDetail;
 //    }
 
+    @Override
     public Page<Order> listForCustomerByPage(Customer customer, int pageNum,
                                              String sortField, String sortDir, String keyWord) {
         Sort sort = Sort.by(sortField);
@@ -131,27 +134,36 @@ public class OrderService {
         return orderRepository.findAll(customer.getId(), pageable);
     }
 
+    @Override
     public Order getOrder(Integer id, Customer customer) {
         return orderRepository.findWithDetailsByIdAndCustomerId(id, customer.getId());
     }
 
+    @Override
     public boolean canReturn(Order order) {
         if (order == null) return false;
         if (order.isReturnRequested() || order.isReturned() || order.isRefunded() || order.isCanceled()) {
             return false;
         }
         if (!order.isDelivered()) return false;
-        Date deliver = order.getDeliverDate();
-        if (deliver == null) return false;
-        LocalDate deliverDate = Instant.ofEpochMilli(deliver.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-        LocalDate today = LocalDate.now();
-        long days = Duration.between(deliverDate.atStartOfDay(), today.plusDays(0).atStartOfDay()).toDays();
+        Optional<Instant> deliveredAtOpt = resolveDeliveredInstant(order);
+        if (deliveredAtOpt.isEmpty()) return false;
+        ZoneId zone = ZoneId.systemDefault();
+        LocalDate deliveredDate = deliveredAtOpt.get().atZone(zone).toLocalDate();
+        LocalDate today = LocalDate.now(zone);
+        long days = ChronoUnit.DAYS.between(deliveredDate, today);
         return days >= 0 && days <= RETURN_WINDOW_DAYS;
+//        Date deliver = order.getDeliverDate();
+//        if (deliver == null) return false;
+//        LocalDate deliverDate = Instant.ofEpochMilli(deliver.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
+//        LocalDate today = LocalDate.now();
+//        long days = Duration.between(deliverDate.atStartOfDay(), today.plusDays(0).atStartOfDay()).toDays();
+//        return days >= 0 && days <= RETURN_WINDOW_DAYS;
     }
 
+    @Override
     @Transactional
-    public OrderReturnResponse setOrderReturnRequested(OrderReturnRequest request, Customer customer)
-            throws OrderNotFoundException {
+    public OrderReturnResponse setOrderReturnRequested(OrderReturnRequest request, Customer customer) {
         Order order = orderRepository.findByIdAndCustomer(request.orderId(), customer);
         if (!canReturn(order)) throw new OrderReturnNotAllowedException("Order cannot return");
 
@@ -170,6 +182,7 @@ public class OrderService {
         return new OrderReturnResponse(order.getId(), order.getStatus().name());
     }
 
+    @Override
     public String buildReturnBlockReason(Order order) {
         if (order.isReturnRequested()) return "Đơn đã có yêu cầu trả hàng trước đó";
         if (order.isReturned()) return "Đơn đã được trả hàng";
@@ -179,15 +192,30 @@ public class OrderService {
         Date deliver = order.getDeliverDate();
         if (deliver == null) return "Không có ngày giao hàng để đối chiếu";
         LocalDate d = Instant.ofEpochMilli(deliver.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
-        LocalDate deadline = d.plusDays(RETURN_WINDOW_DAYS);
+        ZoneId zone = ZoneId.systemDefault();
+        Optional<Instant> deliveredAtOpt = resolveDeliveredInstant(order);
+        LocalDate deliveredDateInReal = deliveredAtOpt.get().atZone(zone).toLocalDate();
+        LocalDate deadline = deliveredDateInReal.plusDays(RETURN_WINDOW_DAYS);
         return "Quá hạn trả hàng (hạn đến " + deadline + ")";
     }
 
     private static String nullToEmpty(String s) { return s == null ? "" : s; }
 
+    @Override
     @Transactional
     public Order save(Order o) {
         return orderRepository.save(o);
+    }
+
+    private Optional<Instant> resolveDeliveredInstant(Order order) {
+        if (order.getOrderTracks() != null) {
+            Optional<Instant> fromTracks = order.getOrderTracks().stream()
+                    .filter(t -> t.getStatus() == OrderStatus.DELIVERED && t.getUpdatedTime() != null)
+                    .map(t -> t.getUpdatedTime().toInstant())
+                    .max(Comparator.naturalOrder());
+            if (fromTracks.isPresent()) return fromTracks;
+        }
+        return Optional.ofNullable(order.getDeliverDate()).map(Date::toInstant);
     }
 
 }

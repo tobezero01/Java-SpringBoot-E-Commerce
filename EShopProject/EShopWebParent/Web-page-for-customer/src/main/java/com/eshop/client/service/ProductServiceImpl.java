@@ -2,6 +2,7 @@ package com.eshop.client.service;
 
 import com.eshop.client.exception.ProductNotFoundException;
 import com.eshop.client.repository.ProductRepository;
+import com.eshop.client.service.interfaceS.ProductService;
 import com.eshop.common.entity.product.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,14 +16,16 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
-public class ProductService {
+public class ProductServiceImpl implements ProductService {
     public static final int SEARCH_RESULT_PER_PAGE = 5;
     private final ProductRepository productRepository;
 
+    @Override
     public List<Product> listByCategory( Integer categoryId) {
         return productRepository.listByCategory(categoryId);
     }
 
+    @Override
     public Product getProduct(String alias) throws ProductNotFoundException {
         Product product = productRepository.findByAlias(alias);
         if (product == null) {
@@ -31,6 +34,7 @@ public class ProductService {
         return product;
     }
 
+    @Override
     public Product getProduct(Integer id) throws ProductNotFoundException {
         try {
             Product product = productRepository.findById(id).get();
@@ -41,6 +45,7 @@ public class ProductService {
 
     }
 
+    @Override
     public Page<Product> search(String keyWord, int pageNum) {
         Pageable pageable = PageRequest.of(pageNum - 1, SEARCH_RESULT_PER_PAGE);
         return productRepository.search(keyWord, pageable);

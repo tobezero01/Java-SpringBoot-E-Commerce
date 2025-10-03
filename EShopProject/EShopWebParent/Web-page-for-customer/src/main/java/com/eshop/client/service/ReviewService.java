@@ -44,13 +44,6 @@ public class ReviewService {
         return reviewRepository.findByCustomer(customer.getId(), pageable);
     }
 
-    public Review getByCustomerAndId(Customer customer, Integer reviewId) throws ReviewNotFoundException {
-        Review review = reviewRepository.findCustomerAndId(customer.getId(), reviewId);
-        if (review == null) {
-            throw new ReviewNotFoundException("Customer doesn't have any reviews with ID = " + reviewId);
-        }
-        return review;
-    }
 
     /** 3 review mới nhất của sản phẩm (sắp xếp theo thời gian) */
     public Page<Review> list3MostRecentReviewByProduct(Product product) {
@@ -66,10 +59,8 @@ public class ReviewService {
 
         Sort sort;
         if ("helpful".equalsIgnoreCase(sortKey)) {
-            // nếu entity có trường tổng vote (vd: votes / upVotes - downVotes), chỉnh lại tên cột cho đúng
             sort = Sort.by("votes").descending().and(Sort.by("reviewTime").descending());
         } else {
-            // mặc định newest
             sort = Sort.by("reviewTime").descending();
         }
         Pageable pageable = PageRequest.of(Math.max(0, page - 1), Math.max(1, size), sort);

@@ -1,6 +1,8 @@
 package com.eshop.client.service;
 
 import com.eshop.client.helper.Utility;
+import com.eshop.client.service.interfaceS.CustomerAuthEmailService;
+import com.eshop.client.service.interfaceS.SettingService;
 import com.eshop.client.setting.EmailSettingBag;
 import com.eshop.common.entity.Customer;
 import jakarta.mail.MessagingException;
@@ -18,11 +20,12 @@ import static com.eshop.client.helper.Utility.getSiteURL;
 
 @Service
 @RequiredArgsConstructor
-public class CustomerAuthEmailService {
+public class CustomerAuthEmailServiceImpl implements CustomerAuthEmailService {
 
     private final SettingService settingService;
     private final JavaMailSender mailSender; // TIÊM BEAN
 
+    @Override
     public void sendRegistrationVerification(HttpServletRequest req, Customer customer)
             throws MessagingException, UnsupportedEncodingException {
 
@@ -47,6 +50,7 @@ public class CustomerAuthEmailService {
     }
 
     /** Email reset mật khẩu */
+    @Override
     public void sendResetPassword(HttpServletRequest req, String email, String token)
             throws MessagingException, UnsupportedEncodingException {
 

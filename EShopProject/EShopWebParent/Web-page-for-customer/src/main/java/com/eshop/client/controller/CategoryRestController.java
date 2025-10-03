@@ -4,7 +4,7 @@ import com.eshop.client.dto.CategoryDTO;
 import com.eshop.client.dto.CategoryNodeDTO;
 import com.eshop.client.exception.CategoryNotFoundException;
 import com.eshop.client.mapper.CategoryMapper;
-import com.eshop.client.service.CategoryService;
+import com.eshop.client.service.interfaceS.CategoryService;
 import com.eshop.common.entity.Category;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

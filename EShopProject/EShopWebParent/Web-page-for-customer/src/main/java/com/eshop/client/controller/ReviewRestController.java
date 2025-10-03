@@ -6,14 +6,14 @@ import com.eshop.client.dto.request.UpdateReviewRequest;
 import com.eshop.client.dto.response.PageResponse;
 import com.eshop.client.exception.CustomerNotFoundException;
 import com.eshop.client.helper.ControllerHelper;
-import com.eshop.client.service.ReviewAppService;
+import com.eshop.client.service.interfaceS.ReviewAppService;
 import com.eshop.common.entity.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/reviews")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class ReviewRestController {
 
@@ -29,7 +29,7 @@ public class ReviewRestController {
                                         @RequestParam(defaultValue = "10") int size,
                                         @RequestParam(defaultValue = "newest") String sort) {
         Customer current = null;
-        try { current = me(); } catch (Exception ignore) {} // nếu chưa đăng nhập -> myVote = "NONE"
+        try { current = me(); } catch (Exception ignore) {}
         Page<ReviewDTO> p = app.listByProduct(productId, page, size, sort, current);
         return PageResponse.of(p.getContent(), p.getNumber() + 1, p.getSize(), p.getTotalElements(), p.getTotalPages());
     }

@@ -6,9 +6,9 @@ import com.eshop.client.exception.CustomerNotFoundException;
 import com.eshop.client.exception.PaypalAPIException;
 import com.eshop.client.helper.ControllerHelper;
 import com.eshop.client.helper.Utility;
-import com.eshop.client.service.CheckoutAppService;
-import com.eshop.client.service.OrderEmailService;
-import com.eshop.client.service.PaypalService;
+import com.eshop.client.service.interfaceS.PaypalService;
+import com.eshop.client.service.interfaceS.CheckoutAppService;
+import com.eshop.client.service.interfaceS.OrderEmailService;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,11 +27,10 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/payments/paypal")
 @RequiredArgsConstructor
-public class PaypalController {
+public class PaypalRestController {
     private final PaypalService paypalService;
     private final ControllerHelper helper;
     private final CheckoutAppService checkoutApp;
-    private final OrderEmailService orderEmailService;
 
     @PostMapping("/create")
     public ResponseEntity<PaypalCreateResponse> create(@RequestBody PaypalCreateRequest req, HttpServletRequest httpReq) throws PaypalAPIException, CustomerNotFoundException {

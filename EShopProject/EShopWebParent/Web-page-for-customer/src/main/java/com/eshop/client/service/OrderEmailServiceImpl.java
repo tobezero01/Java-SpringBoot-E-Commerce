@@ -1,5 +1,7 @@
 package com.eshop.client.service;
 
+import com.eshop.client.service.interfaceS.OrderEmailService;
+import com.eshop.client.service.interfaceS.SettingService;
 import com.eshop.client.setting.EmailSettingBag;
 import com.eshop.common.entity.Customer;
 import com.eshop.common.entity.order.Order;
@@ -15,10 +17,11 @@ import java.io.UnsupportedEncodingException;
 
 @Service
 @RequiredArgsConstructor
-public class OrderEmailService {
+public class OrderEmailServiceImpl implements OrderEmailService {
     private final JavaMailSender mailSender;
     private final SettingService settingService;
 
+    @Override
     public void sendOrderConfirmation(Customer customer, Order order)
             throws MessagingException, UnsupportedEncodingException {
         EmailSettingBag emailSettings = settingService.getEmailSettings();

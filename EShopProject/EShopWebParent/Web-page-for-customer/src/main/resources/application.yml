@@ -1,50 +1,65 @@
-# Conversion to YAML from Properties formar report
-# Warnings:
-# - The yaml file had comments which are lost in the refactoring!
 spring:
   application:
-    name: EShopForCustomer
+    name: ${APP_NAME:EShopForCustomer}
+
   datasource:
-    url: jdbc:mysql://localhost:3306/eshopdb?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Bangkok
-    username: root
-    password: ducnhu1234
+    url: ${DB_URL:jdbc:mysql://localhost:3306/eshopdb?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Bangkok}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: false
+      ddl-auto: ${JPA_DDL_AUTO:update}
+    show-sql: ${JPA_SHOW_SQL:true}
     properties:
       hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: ${HIBERNATE_FORMAT_SQL:true}
+        dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.MySQLDialect}
+
   security:
     jwt:
-      issuer: "eshop-customer-api"
-      secret: keep-this-key-private-and-and-only-developer-have-permission-to-change-it-notify-by-Ducnhuad
-      access-ttl-seconds: 36000
+      issuer: ${JWT_ISSUER:eshop-customer-api}
+      secret: ${JWT_SECRET:}
+      access-ttl-seconds: ${JWT_ACCESS_TTL_SECONDS:3600}
+    auth:
+      refresh-ttl-days-remember: ${AUTH_REFRESH_TTL_DAYS_REMEMBER:30}
+      refresh-ttl-days-session: ${AUTH_REFRESH_TTL_DAYS_SESSION:1}
+      cookie:
+        secure: ${COOKIE_SECURE:false}     # Prod (HTTPS) -> true
+        domain: ${COOKIE_DOMAIN:}
     oauth2:
       client:
         registration:
           google:
-            client-id: 674516247445-plmsh9vd8uq9s0ss66cpgh1jd02fus79.apps.googleusercontent.com
-            client-secret: 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
-#            client-id: ${GOOGLE_CLIENT_ID:default-client-id}
-#            client-secret: ${GOOGLE_CLIENT_SECRET:default-client-secret}
+            client-id: ${GOOGLE_CLIENT_ID:}
+            client-secret: ${GOOGLE_CLIENT_SECRET:}
             scope:
               - email
               - profile
               - openid
+
 server:
-  port: 8686
+  port: ${SERVER_PORT:8386}
   servlet:
-    context-path: /EShop
+    context-path: ${SERVER_SERVLET_CONTEXT_PATH:/EShop}
+
 logging:
   pattern:
-    console : ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
+    console: ${LOGPATTERN_CONSOLE:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %msg%n}
   level:
-    root: warn
+    root: ${LOG_LEVEL_ROOT:warn}
     com:
-      eshop: debug
+      eshop: ${LOG_LEVEL_COM_ESHOP:info}
+    org:
+      hibernate:
+        SQL: ${LOG_LEVEL_ORG_HIBERNATE_SQL:warn}
+        tool:
+          schema: ${LOG_LEVEL_ORG_HIBERNATE_TOOL_SCHEMA:warn}
+        orm:
+          jdbc:
+            bind: ${LOG_LEVEL_ORG_HIBERNATE_ORM_JDBC_BIND:off}
+
+
 cors:
-  allowed-origins:
-    - "http://localhost:4200"
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}

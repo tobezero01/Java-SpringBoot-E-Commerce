@@ -2,6 +2,8 @@ package com.eshop.client.service;
 
 import com.eshop.client.dto.paypalDTO.PaypalOrderValidation;
 import com.eshop.client.exception.PaypalAPIException;
+import com.eshop.client.service.interfaceS.PaypalService;
+import com.eshop.client.service.interfaceS.SettingService;
 import com.eshop.client.setting.PaymentSettingBag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
@@ -19,7 +21,7 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class PaypalService {
+public class PaypalServiceImpl implements PaypalService {
     private final RestTemplate restTemplate;
     private final SettingService settingService;
 
@@ -70,6 +72,7 @@ public class PaypalService {
     }
 
     /* ===== Create Order ===== */
+    @Override
     public Map<String, Object> createOrder(Float amount, String currency,
                                            String returnUrl, String cancelUrl) throws PaypalAPIException {
         PaymentSettingBag bag = settingService.getPaymentSettings();
@@ -111,6 +114,7 @@ public class PaypalService {
     }
 
     /* ===== Capture Order ===== */
+    @Override
     public Map<String, Object> captureOrder(String paypalOrderId) throws PaypalAPIException {
         PaymentSettingBag bag = settingService.getPaymentSettings();
         String accessToken = getAccessToken(bag);
@@ -130,6 +134,7 @@ public class PaypalService {
         }
     }
 
+    @Override
     public PaypalOrderValidation validateOrder(String paypalOrderId, Float expectedAmount, String expectedCurrency)
             throws PaypalAPIException {
         PaymentSettingBag bag = settingService.getPaymentSettings();
